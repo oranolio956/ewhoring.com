@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-const faqs = [
+export const faqs = [
   {
     q: "How fast does this actually work?",
     a: "The '5-Message Protocol'. Men are biologically programmed to protect helpless women. We give you a script that bypasses their logic center. You will have a CFO named 'Gary' offering to pay your rent within 15 minutes of creating the account."

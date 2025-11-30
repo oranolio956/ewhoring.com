@@ -7,10 +7,12 @@ import { FloatingBlobs } from './components/FloatingBlobs';
 import { Ticker } from './components/Ticker';
 import { MoneyPhone } from './components/MoneyPhone';
 import { Testimonials } from './components/Testimonials';
-import { FAQ } from './components/FAQ';
+import { FAQ, faqs } from './components/FAQ';
 import { ROICalculator } from './components/ROICalculator';
 import { BannedBy } from './components/BannedBy';
 import { OriginStory } from './components/OriginStory';
+import { RealityCheck } from './components/RealityCheck';
+import { WhySection } from './components/WhySection';
 
 const App: React.FC = () => {
   const [visitorCount, setVisitorCount] = useState<string>("0");
@@ -49,11 +51,95 @@ const App: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // ADVANCED STRUCTURED DATA (JSON-LD Graph) for Google SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Oranolio Masterclass",
+        "url": "https://ewhoring.com",
+        "description": "The premier guide to digital social engineering and revenue generation.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Oranolio",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ewhoring.com/logo.png"
+            }
+        }
+      },
+      {
+        "@type": "Course",
+        "name": "The Oranolio E-Whoring Protocol",
+        "description": "The comprehensive guide to digital gender arbitrage, social engineering, and online revenue generation. Learn how to monetize male psychology.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Oranolio",
+          "sameAs": "https://ewhoring.com"
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "courseWorkload": "PT20M"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "12480",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "offers": {
+          "@type": "Offer",
+          "category": "Educational",
+          "priceCurrency": "USD",
+          "price": "150.00",
+          "availability": "https://schema.org/InStock",
+          "url": "https://ewhoring.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+            }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ewhoring.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Masterclass",
+                "item": "https://ewhoring.com/#manifesto"
+            }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
       
+      {/* Inject Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+
       {/* 0. Fake Urgency Banner */}
-      <div className="bg-[#FF8A75] text-[#1A2A3A] text-[10px] md:text-xs font-bold text-center py-2 uppercase tracking-widest z-[60] relative px-2">
+      <div className="bg-[#FF8A75] text-[#1A2A3A] text-[10px] md:text-xs font-bold text-center py-2 uppercase tracking-widest z-[60] relative px-2 cursor-pointer hover:underline">
          ⚠ Warning: Discord is patching the "Voice Changer" exploit soon. Join before the loophole closes.
       </div>
 
@@ -92,6 +178,12 @@ const App: React.FC = () => {
             <BentoGrid />
         </div>
         
+        {/* The Reality Check / Aggressive Filter */}
+        <RealityCheck />
+
+        {/* The Why / 29yo Rant */}
+        <WhySection />
+        
         <FAQ />
 
         {/* Footer / CTA Area */}
@@ -112,7 +204,7 @@ const App: React.FC = () => {
                Stop letting your conscience get in the way of your bag. Men are desperate. You are broke. The solution is simple.
              </p>
              
-             <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto">
+             <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200">
                 <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
                 <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
              </button>

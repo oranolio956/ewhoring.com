@@ -36,7 +36,7 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
   const shakeClass = excitementLevel > 0.8 ? 'animate-vibrate' : '';
 
   return (
-    <div className={`w-full h-full relative group cursor-pointer ${shakeClass}`}>
+    <div className={`w-full h-full relative group cursor-pointer ${shakeClass}`} role="img" aria-label="Oranolio Interactive Eye Mascot">
       <style>{`
         @keyframes vibrate {
           0% { transform: translate(0); }

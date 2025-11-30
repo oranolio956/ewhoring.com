@@ -4,93 +4,99 @@ import React from 'react';
 export const OriginStory: React.FC = () => {
   return (
     <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-b border-[#1A2A3A]/5">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Left: The Narrative */}
-        <div className="relative z-10">
+        {/* Header */}
+        <div className="mb-16 md:mb-24 text-center max-w-4xl mx-auto">
           <div className="inline-block bg-[#FF8A75] text-[#1A2A3A] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6 transform -rotate-2">
-            The Infinite Money Glitch
+            The Evolution of the Hustle
           </div>
-          
           <h2 className="text-4xl md:text-7xl font-bold text-[#1A2A3A] tracking-tighter mb-8 leading-[0.9]">
-            I REALIZED MEN <br/>
+            I AM A BETTER GIRL <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A]">
-              WANT TO BE LIED TO.
+              THAN REAL GIRLS.
             </span>
           </h2>
-          
-          <div className="space-y-6 text-lg md:text-xl text-[#1A2A3A]/80 font-medium leading-relaxed">
-            <p>
-              It started with 8 pizzas in 2014. But then I realized something darker: <br/>
-              <span className="bg-[#1A2A3A] text-[#FDFBF7] px-1">Men don't want supermodels. They want problems.</span>
-            </p>
-            
-            <p>
-              From 2019 to 2022, I made <strong>$30,000 a month</strong>. Not by being "sexy." 
-              But by acting like a <span className="text-[#FF8A75] font-bold">"retarded autistic girl with daddy issues."</span>
-            </p>
-            
-            <p className="border-l-4 border-[#2D9C8E] pl-6 italic text-[#1A2A3A]/60 text-base md:text-lg">
-              "I would just spam them with nonsense. Typos. Emojis. Trauma dumps.
-              It triggered their biological 'White Knight' instinct. They didn't want to date me; 
-              they wanted to <em className="not-italic font-bold text-[#1A2A3A]">save</em> me."
-            </p>
-            
-            <p>
-              The funniest part? <strong className="text-[#2D9C8E]">They loved it.</strong> 
-              I was the best relationship they ever had. They were sending thousands to 'fix' my life, 
-              and in return, I (a grown man in a gaming chair) gave them a sense of purpose. 
-              <br/><br/>
-              I wasn't scamming them. I was providing <em>emotional support</em>. Expensive emotional support.
-            </p>
-          </div>
-
-          <div className="mt-8 flex gap-8">
-             <div className="flex flex-col">
-                <span className="text-4xl font-['Space_Grotesk'] font-bold text-[#1A2A3A]">$30K</span>
-                <span className="text-[10px] uppercase tracking-widest text-[#1A2A3A]/40">Monthly Avg (2019-22)</span>
-             </div>
-             <div className="w-px bg-[#1A2A3A]/10"></div>
-             <div className="flex flex-col">
-                <span className="text-4xl font-['Space_Grotesk'] font-bold text-[#2D9C8E]">∞</span>
-                <span className="text-[10px] uppercase tracking-widest text-[#1A2A3A]/40">Dudes "Saving" Me</span>
-             </div>
-          </div>
+          <p className="text-xl text-[#1A2A3A]/60 max-w-2xl mx-auto">
+            Real women are boring. They have "boundaries." I have a sales quota. <br/>
+            <span className="text-[#1A2A3A] font-bold">Men love men's company.</span> They just want it packaged in a skirt.
+          </p>
         </div>
 
-        {/* Right: Visual Proof / The "Save Her" Graph */}
-        <div className="relative h-full min-h-[400px] flex items-center justify-center">
+        {/* The Timeline Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             
-            <div className="relative w-full max-w-md aspect-square bg-white border-2 border-[#1A2A3A] p-6 shadow-[8px_8px_0px_#1A2A3A] rotate-1">
-                {/* Fake Graph */}
-                <div className="absolute -top-4 -left-4 bg-[#FF8A75] text-[#1A2A3A] px-4 py-2 text-xs font-bold uppercase tracking-widest border border-[#1A2A3A] shadow-sm transform -rotate-3">
-                    The "White Knight" Curve
+            {/* The Old Way (Grind) */}
+            <div className="bg-[#1A2A3A]/5 p-8 md:p-12 rounded-3xl relative overflow-hidden border border-[#1A2A3A]/10 group hover:bg-[#1A2A3A]/10 transition-colors">
+                <div className="absolute top-0 right-0 bg-[#1A2A3A] text-[#FDFBF7] px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-bl-xl">
+                    The Grind (2014-2018)
                 </div>
+                <h3 className="text-3xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] mb-6 opacity-50">MANUAL LABOR</h3>
+                
+                <ul className="space-y-6 text-[#1A2A3A]/70 font-medium">
+                    <li className="flex gap-4">
+                        <span className="text-xl">📦</span>
+                        <div>
+                            <strong className="block text-[#1A2A3A]">The Dropbox Hustle</strong>
+                            Selling content folders for $20. Begging for sales. working too hard for peanuts.
+                        </div>
+                    </li>
+                    <li className="flex gap-4">
+                        <span className="text-xl">🔄</span>
+                        <div>
+                            <strong className="block text-[#1A2A3A]">The "Fake Refund" Loop</strong>
+                            "Oops, the payment didn't go through, send it again." Making them send $50 six times in a row before they caught on. High risk, high stress.
+                        </div>
+                    </li>
+                    <li className="flex gap-4">
+                        <span className="text-xl">⛽</span>
+                        <div>
+                            <strong className="block text-[#1A2A3A]">The Gas Waster</strong>
+                            Making dudes drive 1 hour for a "meetup" for $200, then ghosting them when they arrived. Funny? Yes. Efficient? No.
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-                <div className="h-full flex flex-col justify-between pt-8">
-                    <div className="flex items-end justify-between h-48 gap-2 relative border-b-2 border-[#1A2A3A] pb-0">
-                        {/* Bars */}
-                        <div className="w-1/4 bg-[#1A2A3A]/10 h-[20%] relative group">
-                            <div className="absolute bottom-full left-0 w-full text-center text-[10px] mb-1 font-mono">Normal</div>
-                        </div>
-                        <div className="w-1/4 bg-[#1A2A3A]/30 h-[40%] relative group">
-                            <div className="absolute bottom-full left-0 w-full text-center text-[10px] mb-1 font-mono">Hot</div>
-                        </div>
-                        <div className="w-1/4 bg-[#2D9C8E] h-[100%] relative group">
-                            <div className="absolute top-2 left-0 w-full text-center text-white font-bold text-xs animate-pulse">$$$</div>
-                            <div className="absolute bottom-full left-0 w-full text-center text-[10px] mb-1 font-mono font-bold text-[#2D9C8E]">"Broken"</div>
-                        </div>
-                    </div>
-                    <div className="text-center text-xs font-mono uppercase text-[#1A2A3A]/60 mt-4">
-                        How dumb they act vs. How many issues you have
-                    </div>
+            {/* The New Way (2025) */}
+            <div className="bg-[#1A2A3A] p-8 md:p-12 rounded-3xl relative overflow-hidden text-[#FDFBF7] shadow-2xl transform lg:-translate-y-4">
+                <div className="absolute top-0 right-0 bg-[#FF8A75] text-[#1A2A3A] px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-bl-xl animate-pulse">
+                    The Protocol (2025)
                 </div>
+                <h3 className="text-3xl font-['Space_Grotesk'] font-bold text-[#FDFBF7] mb-6 text-gradient-rich">PURE EFFICIENCY</h3>
+                
+                <ul className="space-y-6 text-[#FDFBF7]/80 font-medium">
+                    <li className="flex gap-4 items-start">
+                        <span className="text-xl mt-1">⚡</span>
+                        <div>
+                            <strong className="block text-[#FF8A75]">The 6-Message Payout</strong>
+                            I don't drive anywhere. I send 6 specific text messages. I get $150. Instant. No refunds.
+                        </div>
+                    </li>
+                    <li className="flex gap-4 items-start">
+                        <span className="text-xl mt-1">🥛</span>
+                        <div>
+                            <strong className="block text-[#FF8A75]">Milking The Whale</strong>
+                            Once they pay the $150, I own them. I can milk a single guy for $1,000 in 3 hours because I know exactly what he needs to hear.
+                        </div>
+                    </li>
+                    <li className="flex gap-4 items-start">
+                        <span className="text-xl mt-1">🧠</span>
+                        <div>
+                            <strong className="block text-[#FF8A75]">The "Bro" Advantage</strong>
+                            Real girls are retarded. They don't know how to talk to men. I know what men like because I AM A MAN. I am the perfect girlfriend because I'm actually a dude.
+                        </div>
+                    </li>
+                </ul>
 
-                {/* Sticker */}
-                <div className="absolute -bottom-8 -right-8 bg-[#F4D35E] text-[#1A2A3A] w-32 h-32 rounded-full flex items-center justify-center text-center p-4 shadow-xl border-4 border-[#1A2A3A] animate-float">
-                    <div className="leading-tight transform rotate-6">
-                        <div className="font-['Space_Grotesk'] text-4xl font-bold">100%</div>
-                        <div className="text-[10px] uppercase tracking-widest font-bold">Profit Margin</div>
+                <div className="mt-8 pt-8 border-t border-[#FDFBF7]/20 flex justify-between items-end">
+                    <div>
+                        <div className="text-[10px] uppercase tracking-widest opacity-50">Hourly Rate</div>
+                        <div className="text-4xl font-bold font-['Space_Grotesk']">$330/hr</div>
+                    </div>
+                    <div className="text-right">
+                         <div className="text-[10px] uppercase tracking-widest opacity-50">Effort</div>
+                         <div className="text-xl font-bold text-[#2D9C8E]">Zero.</div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ModuleItem } from '../types';
 import { Tooltip } from 'react-tooltip';
@@ -48,9 +47,9 @@ export const BentoGrid: React.FC = () => {
   return (
     <section className="relative z-10 py-16 md:py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-[100vw] overflow-hidden">
       
-      {/* Subliminal Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
-         ORANOLIO PROTOCOL
+      {/* Subliminal Watermark - Updated for Keyword Density */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
+         ORANOLIO E-WHORING PROTOCOL
       </div>
 
       <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
