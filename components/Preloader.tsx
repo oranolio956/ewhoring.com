@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
+  const [statusText, setStatusText] = useState("Initializing Protocol...");
 
   useEffect(() => {
     // Smooth progress bar simulation
@@ -20,6 +21,16 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
 
     return () => clearInterval(timer);
   }, [onComplete]);
+
+  // Dynamic Status Text Logic
+  useEffect(() => {
+    if (progress < 20) setStatusText("Encrypting Connection...");
+    else if (progress < 40) setStatusText("Verifying Banking Rails...");
+    else if (progress < 60) setStatusText("Scanning for Weak Currencies...");
+    else if (progress < 80) setStatusText("Blocking 'Hello Sir' IPs..."); // The 'Funny' Filter
+    else if (progress < 95) setStatusText("Purging Call Center Traffic...");
+    else setStatusText("Tier 1 Access Granted.");
+  }, [progress]);
 
   return (
     <div className="fixed inset-0 z-[100] bg-[#0F1923] flex flex-col items-center justify-center text-[#FDFBF7]">
@@ -43,8 +54,8 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
         </div>
 
         {/* Status Text */}
-        <div className="flex justify-between mt-2 font-mono text-[9px] text-[#FDFBF7]/40 uppercase">
-            <span>Secure Connection</span>
+        <div className="flex justify-between mt-2 font-mono text-[9px] text-[#FDFBF7]/60 uppercase">
+            <span className="text-[#FF8A75] animate-pulse">{statusText}</span>
             <span>{Math.round(Math.min(100, progress))}%</span>
         </div>
       </div>

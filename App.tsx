@@ -21,11 +21,25 @@ import { CustomCursor } from './components/CustomCursor';
 import { SalesToast } from './components/SalesToast';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
+import { ThePhilosophy } from './components/ThePhilosophy';
+import { GeoGate } from './components/GeoGate';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [visitorCount, setVisitorCount] = useState<string>("0");
   const [legalOpen, setLegalOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+      setScrollProgress(Number(scroll));
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     // Logic to generate a realistic, consistent "Weekly Unique Visitor" count
@@ -150,14 +164,41 @@ const App: React.FC = () => {
           <script type="application/ld+json">
             {JSON.stringify(structuredData)}
           </script>
+          
+          {/* Global Progress Bar */}
+          <div className="fixed top-0 left-0 h-1 bg-[#1A2A3A] z-[100] w-full">
+            <div 
+              className="h-full bg-[#FF8A75] shadow-[0_0_10px_#FF8A75]" 
+              style={{ width: `${scrollProgress * 100}%` }} 
+            />
+          </div>
 
           {/* 0. Fake Urgency Banner */}
           <div className="bg-[#FF8A75] text-[#1A2A3A] text-[10px] md:text-xs font-bold text-center py-2 uppercase tracking-widest z-[60] relative px-2 cursor-pointer hover:underline">
              ⚠ Warning: Discord is patching the "Voice Changer" exploit soon. Join before the loophole closes.
           </div>
 
-          {/* 1. Global Noise Overlay */}
+          {/* 1. Global Noise & Scanlines Overlay */}
           <div className="bg-noise" />
+          <div className="scanlines" />
+          
+          {/* Ambient Particles */}
+          <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+             {[...Array(15)].map((_, i) => (
+                <div 
+                  key={i} 
+                  className="particle" 
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    width: `${Math.random() * 4 + 1}px`,
+                    height: `${Math.random() * 4 + 1}px`,
+                    animationDelay: `${Math.random() * 10}s`,
+                    animationDuration: `${Math.random() * 20 + 10}s`
+                  }}
+                />
+             ))}
+          </div>
           
           {/* 2. Global Subliminal Branding Layer */}
           <div className="fixed inset-0 z-0 pointer-events-none bg-subliminal mix-blend-multiply opacity-50" />
@@ -197,8 +238,14 @@ const App: React.FC = () => {
             {/* The 7-Day Sprint Protocol */}
             <TheSprint />
             
+            {/* The Philosophy */}
+            <ThePhilosophy />
+
             {/* The Reality Check / Aggressive Filter */}
             <RealityCheck />
+            
+            {/* The Geographic Gate */}
+            <GeoGate />
             
             {/* The Tate Roast */}
             <FalseIdols />
@@ -226,7 +273,7 @@ const App: React.FC = () => {
                    Stop letting your conscience get in the way of your bag. Men are desperate. You are broke. The solution is simple.
                  </p>
                  
-                 <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200">
+                 <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200 btn-glitch">
                     <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
                     <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
                  </button>

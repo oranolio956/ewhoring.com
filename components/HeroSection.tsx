@@ -36,7 +36,7 @@ export const HeroSection: React.FC = () => {
       </header>
 
       {/* Bottom Editorial Content */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-auto border-t border-[#1A2A3A]/20 pt-8 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0">
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-auto border-t border-[#1A2A3A]/20 pt-8 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ DIGITAL GENDER ARBITRAGE // EST. 2014 ]
@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
            <div className="text-left lg:text-right w-full lg:w-auto">
                 <button 
                   onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} 
-                  className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200"
+                  className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch"
                   aria-label="Start The Grift"
                 >
                     START THE GRIFT
@@ -71,6 +71,11 @@ export const HeroSection: React.FC = () => {
                  *Results may vary. Tom generated $150 in 15 mins.
                </p>
            </div>
+        </div>
+        
+        {/* Animated Scroll Indicator */}
+        <div className="absolute left-1/2 bottom-[-10px] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+            <div className="w-[1px] h-12 bg-gradient-to-b from-[#1A2A3A] to-transparent"></div>
         </div>
       </article>
 

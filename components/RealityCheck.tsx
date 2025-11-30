@@ -41,12 +41,34 @@ export const RealityCheck: React.FC = () => {
                     </p>
                 </div>
 
+                {/* VOCABULARY FILTER */}
                 <div className="mt-8 pt-8 border-t border-[#1A2A3A]/10">
-                    <h4 className="text-xl font-bold text-[#1A2A3A] mb-2 font-['Space_Grotesk']">CHECK YOUR EGO</h4>
-                    <p className="text-[#1A2A3A]/60 text-sm">
-                        If your "current method" was working, you wouldn't be scrolling through my website right now. 
-                        You are here because you are stuck. I am here because I have the map. 
-                        <span className="text-[#2D9C8E] font-bold"> Know your place.</span>
+                    <h4 className="text-xl font-bold text-[#1A2A3A] mb-4 font-['Space_Grotesk'] uppercase flex items-center gap-2">
+                        <span className="text-[#FF8A75]">🚫</span> Vocabulary Filter
+                    </h4>
+                    <p className="text-[#1A2A3A]/80 text-sm mb-4 font-bold">
+                        Do NOT ever use these terms in my presence. If you speak like a "Discord Kid," you are banned immediately.
+                    </p>
+                    <div className="grid grid-cols-2 gap-3">
+                        <div className="bg-[#1A2A3A] text-[#FDFBF7] px-3 py-2 rounded text-xs font-mono flex justify-between">
+                            <span>"PMO" (Put Me On)</span>
+                            <span className="text-[#FF8A75]">BANNED</span>
+                        </div>
+                        <div className="bg-[#1A2A3A] text-[#FDFBF7] px-3 py-2 rounded text-xs font-mono flex justify-between">
+                            <span>"Motion"</span>
+                            <span className="text-[#FF8A75]">BANNED</span>
+                        </div>
+                        <div className="bg-[#1A2A3A] text-[#FDFBF7] px-3 py-2 rounded text-xs font-mono flex justify-between">
+                            <span>"Let's Cook"</span>
+                            <span className="text-[#FF8A75]">BANNED</span>
+                        </div>
+                        <div className="bg-[#1A2A3A] text-[#FDFBF7] px-3 py-2 rounded text-xs font-mono flex justify-between">
+                            <span>"Sauce"</span>
+                            <span className="text-[#FF8A75]">BANNED</span>
+                        </div>
+                    </div>
+                    <p className="text-[#1A2A3A]/60 text-xs mt-3 italic">
+                        "We speak English here. We articulate sentences. If you ask me to 'PMO', I will block you."
                     </p>
                 </div>
             </div>

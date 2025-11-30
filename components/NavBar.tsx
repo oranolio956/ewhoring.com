@@ -50,12 +50,15 @@ export const NavBar: React.FC = () => {
           Join The Harem
         </button>
         
-        {/* Primary CTA - Always Visible */}
+        {/* Primary CTA - Always Visible with Glitch Effect */}
         <button 
           onClick={() => scrollToSection('money-printer')}
-          className="px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm"
+          className="group relative px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm overflow-hidden btn-glitch"
         >
-          DOWNLOAD THE BRAIN
+          <span className="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-300 block">DOWNLOAD THE BRAIN</span>
+          <span className="absolute inset-0 z-10 flex items-center justify-center translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 font-mono text-[#1A2A3A]">
+            INITIATE
+          </span>
         </button>
       </div>
 
