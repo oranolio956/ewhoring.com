@@ -36,9 +36,13 @@ export const RealityCheck: React.FC = () => {
                         I can give you the exact scripts that extracted $30k/month. 
                         But if you <strong>suck at talking</strong>, you will make $0.
                     </p>
-                    <p className="p-4 bg-[#1A2A3A]/5 border-l-4 border-[#1A2A3A] text-sm md:text-base italic">
-                        "If you are too stupid to follow step-by-step instructions, that is a biological failure on your part, not a flaw in my protocol."
-                    </p>
+                    <div className="p-4 bg-[#FF0000]/5 border-l-4 border-[#FF0000] text-sm md:text-base">
+                        <strong className="block text-[#FF0000] uppercase text-xs tracking-widest mb-1">Skill Check:</strong>
+                        <p className="italic">
+                            "If you are new to the internet, or generally clueless about human psychology, DO NOT BUY THIS. 
+                            This is for people who already know how to be deceptive but lack the traffic."
+                        </p>
+                    </div>
                 </div>
 
                 {/* VOCABULARY FILTER */}

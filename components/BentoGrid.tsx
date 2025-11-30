@@ -64,6 +64,19 @@ export const BentoGrid: React.FC = () => {
           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FDFBF7]">
             THE METHOD
           </h2>
+          
+          {/* PREREQUISITES BADGE */}
+          <div className="mb-6 inline-flex flex-col border border-[#FF8A75]/30 bg-[#FF8A75]/5 p-3 rounded-lg">
+             <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF8A75] mb-1">
+                ⚠ PREREQUISITES:
+             </div>
+             <div className="text-[10px] md:text-xs font-mono text-[#FDFBF7]/80">
+                • Basic Social Engineering Skills<br/>
+                • Lack of Morality<br/>
+                • <span className="text-red-400">NO BEGINNERS / NO KIDS</span>
+             </div>
+          </div>
+
           <p className="text-base md:text-xl font-light text-[#FDFBF7]/70 leading-relaxed font-mono">
             // Subject: Wealth Extraction<br/>
             // Status: Active

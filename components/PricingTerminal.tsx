@@ -39,6 +39,9 @@ export const PricingTerminal: React.FC = () => {
                     <p>&gt; [OK] Simp_Farming_v2.exe</p>
                     <p>&gt; [OK] Voice_Changer_Pro.exe</p>
                     <p>&gt; [OK] Whale_Radar_Global.dat</p>
+                    <p>&gt; <span className="text-white">Verifying User Competence...</span></p>
+                    <p className="text-yellow-500 font-bold">&gt; WARNING: Social Engineering Skill Required.</p>
+                    <p className="text-red-500 opacity-80 italic">&gt; [CHECK] If you are a retard, this transaction will fail.</p>
                     <p>&gt; <span className="text-white">Calculating market value...</span> $4,500.00</p>
                     <p>&gt; <span className="text-white">Applying "Broke Loser" discount...</span></p>
                     <p className="animate-pulse">&gt; FINAL PRICE: $150.00</p>
@@ -52,7 +55,7 @@ export const PricingTerminal: React.FC = () => {
                             [ EXECUTE TRANSACTION ]
                         </button>
                         <p className="text-[10px] mt-4 text-center opacity-50">
-                            *By clicking execute, you agree to become rich and stop complaining.
+                            *By clicking execute, you certify that you know how to be a piece of shit. No refunds for incompetence.
                         </p>
                     </div>
                 </div>
@@ -78,7 +81,7 @@ export const PricingTerminal: React.FC = () => {
                 </ul>
 
                 <div className="mt-6 p-3 bg-red-900/20 border border-red-500/20 text-xs text-red-400">
-                    ERROR: Capacity Reached. I do not have time for you. Buy the protocol instead.
+                    ERROR: Capacity Reached. I do not have time to teach basics to new people.
                 </div>
             </div>
 

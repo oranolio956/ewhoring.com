@@ -57,6 +57,10 @@ export const TheSprint: React.FC = () => {
               <p className="font-bold text-[#FDFBF7] border-l-4 border-[#FF8A75] pl-4">
                 It takes exactly 7 days. After that, you are on your own. If you fail, it's because you didn't listen.
               </p>
+              
+              <div className="mt-6 text-[10px] font-mono opacity-50 bg-[#000]/20 p-2 rounded">
+                ⚠ NOTICE: This timeline assumes you are not an idiot. If you have zero social skills, this will take you 7 years. Do not buy if you are "learning how to talk."
+              </div>
             </div>
 
             <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} className="w-full py-4 bg-[#FDFBF7] text-[#1A2A3A] font-bold uppercase tracking-widest md:tracking-[0.2em] hover:bg-[#FF8A75] transition-colors rounded-lg shadow-[0_0_20px_rgba(255,138,117,0.3)] text-[3vw] md:text-base whitespace-nowrap">

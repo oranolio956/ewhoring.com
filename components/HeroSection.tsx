@@ -76,9 +76,20 @@ export const HeroSection: React.FC = () => {
                 >
                     START THE GRIFT
                 </button>
-               <p className="text-[10px] text-[#1A2A3A]/40 mt-3 font-mono">
-                 *Results may vary. Tom generated $150 in 15 mins.
-               </p>
+               
+               {/* SYSTEM REQUIREMENTS - SUBTLE WARNING */}
+               <div className="mt-4 p-3 border border-[#1A2A3A]/10 bg-[#1A2A3A]/5 rounded text-[10px] font-mono text-left w-full max-w-[300px] ml-auto">
+                  <div className="font-bold uppercase mb-1 text-[#1A2A3A]">⚠ System Requirements:</div>
+                  <ul className="space-y-1 opacity-70">
+                    <li className="flex justify-between"><span>Social IQ:</span> <span>110+ (Required)</span></li>
+                    <li className="flex justify-between"><span>Empathy:</span> <span>Disabled</span></li>
+                    <li className="flex justify-between text-red-600 font-bold"><span>Beginners:</span> <span>NOT SUPPORTED</span></li>
+                  </ul>
+                  <div className="mt-2 text-[9px] opacity-50 leading-tight">
+                    *If you have never manipulated a human before, this protocol will be too advanced for you. Do not buy.
+                  </div>
+               </div>
+
            </div>
         </div>
         

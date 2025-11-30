@@ -3,24 +3,28 @@ import React, { useState } from 'react';
 
 export const faqs = [
   {
-    q: "How fast does this actually work?",
-    a: "The '5-Message Protocol'. Men are biologically programmed to protect helpless women. We give you a script that bypasses their logic center. You will have a CFO named 'Gary' offering to pay your rent within 15 minutes of creating the account."
+    q: "Can I do this on my phone?",
+    a: "Yes. Do you have thumbs? Then yes. You can do this on a Samsung Smart Fridge if it has WiFi. Stop looking for excuses to be lazy. The device doesn't matter, the hustle does."
   },
   {
-    q: "What if they ask for a photo?",
-    a: "You send a picture of your elbow and tell them it's your 'side boob'. They will send you $50. Men are visually impaired when they are horny. It's science."
+    q: "Is the market saturated?",
+    a: "Saturated with idiots? Yes. Saturated with high-quality personas? No. Men turn 18 every day. The supply of lonely men is infinite. The supply of competent e-girls (who aren't actually 50-year-old scammers named Boris) is very low."
   },
   {
-    q: "Do I target broke college kids?",
-    a: "Gross. No. We target 'Whales'. Divorced Dads, lonely Sugar Daddies, and guys who own jet ski dealerships. We don't want $20 for skins. We want their alimony payments."
+    q: "Will you mentor me 1-on-1?",
+    a: "No. I am not your father. I provide the roadmap. You drive the car. If you need someone to hold your hand and tell you you're special, hire a therapist with the money you make."
   },
   {
-    q: "What if they ask to Voice Call?",
-    a: "You use the 'Abusive Ex' Defense. You tell them: 'My ex monitors my calls, I'm scared.' Boom. Now they feel like a hero for 'protecting' you, and they never ask to call again. It's not lying; it's storytelling."
+    q: "Do I need to show my face?",
+    a: "Read the site. We teach you how to be a GHOST. If you show your face, you are doing it wrong. You are likely a 30-year-old man. Nobody wants to see that. We use AI generated content and stolen valor."
   },
   {
-    q: "Does pretending to be a girl make me gay?",
-    a: "Is Tyler Perry gay? He put on a wig and became a billionaire. You are sitting in your underwear broke. Stop asking questions and put on the digital skirt. Your masculinity can handle a PayPal transfer."
+    q: "How fast do I get paid?",
+    a: "If you follow the protocol: 20 minutes. If you try to 'remix' the strategy because you think you're smarter than me: Never. The system works if you work."
+  },
+  {
+    q: "Is this legal?",
+    a: "We sell information. Selling a book about 'How to Rob a Bank' is legal. Actually robbing the bank is... a choice. We are the bookstore. You are the protagonist. Choose your own adventure."
   }
 ];
 
@@ -33,10 +37,10 @@ export const FAQ: React.FC = () => {
         <div className="mb-8 md:mb-12 text-center">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 font-['Space_Grotesk'] leading-none">
               QUESTIONS FROM <br/>
-              <span className="text-[#FF8A75]">INSECURE MEN</span>
+              <span className="text-[#FF8A75]">LAZY PEOPLE</span>
             </h2>
             <p className="text-[#FDFBF7]/50 uppercase tracking-widest text-[10px] md:text-xs font-bold mt-4">
-                (Who are about to be rich)
+                (Read this so you don't ask me stupid things)
             </p>
         </div>
 
@@ -69,7 +73,7 @@ export const FAQ: React.FC = () => {
         <div className="mt-8 md:mt-12 p-6 md:p-8 border border-dashed border-[#FDFBF7]/20 rounded-xl text-center bg-[#1A2A3A] relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-stripes.png')] opacity-10"></div>
             <p className="relative z-10 text-xs md:text-sm font-mono text-[#FDFBF7]/50 max-w-2xl mx-auto leading-relaxed">
-                *Disclaimer: We are not responsible if a 65-year-old oil tycoon named 'BigTex' falls in love with you and buys you a condominium in Miami. That is a tax liability you must handle yourself.
+                *Note: If you email support asking "Does this really work?", you will be blocked. We do not have time to convince you to make money.
             </p>
         </div>
       </div>
