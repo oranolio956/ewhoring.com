@@ -36,7 +36,7 @@ export const SideEffects: React.FC = () => {
 
                 <div className="relative z-10">
                     <div className="inline-block border border-[#FF4500] text-[#FF4500] px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 bg-[#FF4500]/10 rounded">
-                        ⚠ Medical Warning
+                        ⚠ Oranolio Labs Warning
                     </div>
                     <h3 className="text-3xl md:text-5xl font-bold text-[#FDFBF7] font-['Space_Grotesk'] mb-8">
                         POSSIBLE <br/>
@@ -109,6 +109,10 @@ export const SideEffects: React.FC = () => {
                         {/* Dialogue */}
                         <text x="50" y="80" fontFamily="monospace" fontSize="12" fill="#FF4500" className="animate-pulse font-bold">"I can't feel my face"</text>
                     </svg>
+                </div>
+                
+                <div className="absolute bottom-4 left-4 text-[8px] text-white/10 font-mono">
+                    PATENT PENDING: ORANOLIO
                 </div>
 
             </div>

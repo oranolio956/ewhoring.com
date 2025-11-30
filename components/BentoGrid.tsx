@@ -89,7 +89,7 @@ export const BentoGrid: React.FC = () => {
               className="group border-t border-[#FDFBF7]/20 py-6 md:py-10 hover:bg-[#FDFBF7]/5 transition-colors cursor-pointer md:cursor-help"
             >
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
-                <span className="font-mono text-xl text-[#2D9C8E] mb-2 md:mb-0">/ {module.price}</span>
+                <span className="font-mono text-lg md:text-xl text-[#2D9C8E] mb-2 md:mb-0 tracking-wider">ORANOLIO / {module.price}</span>
                 <div className="flex-1">
                   <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 md:group-hover:translate-x-4 transition-transform duration-300">
                     {module.title}
@@ -107,6 +107,7 @@ export const BentoGrid: React.FC = () => {
                     <div className="overflow-hidden">
                        <p className="text-sm text-[#FF8A75] border-l-2 border-[#FF8A75] pl-4 py-2 leading-relaxed bg-[#FDFBF7]/5 rounded-r-lg">
                          {module.details}
+                         <span className="block mt-2 text-[9px] uppercase opacity-50 font-mono tracking-widest">Property of Oranolio Corp</span>
                        </p>
                     </div>
                   </div>

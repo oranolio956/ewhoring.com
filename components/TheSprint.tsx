@@ -39,7 +39,7 @@ export const TheSprint: React.FC = () => {
           {/* Header / Rant */}
           <div className="lg:col-span-5 sticky top-24 h-fit">
             <div className="inline-block bg-[#FF8A75] text-[#1A2A3A] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
-              Time To Value: 168 Hours
+              System: Oranolio
             </div>
             
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95]">
@@ -89,7 +89,9 @@ export const TheSprint: React.FC = () => {
 
                   {/* Connector Line (Visual only) */}
                   {index !== days.length - 1 && (
-                     <div className="absolute left-[2.5rem] bottom-0 w-[1px] h-4 bg-[#FDFBF7]/10 -mb-4 z-0"></div>
+                     <div className="absolute left-[2.5rem] bottom-0 w-[1px] h-4 bg-[#FDFBF7]/10 -mb-4 z-0 flex items-center justify-center overflow-hidden">
+                        <span className="text-[6px] text-[#FDFBF7]/20 -rotate-90 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">ORANOLIO TIMELINE</span>
+                     </div>
                   )}
                 </div>
               ))}

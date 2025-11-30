@@ -146,8 +146,8 @@ export const RedditChat: React.FC = () => {
                         <div className="text-[#D7DADC] font-semibold text-xs leading-tight hover:underline cursor-pointer">
                             {currentChat.target}
                         </div>
-                        <div className="text-[#818384] text-[10px] font-medium">
-                            {currentChat.status}
+                        <div className="text-[#818384] text-[10px] font-medium flex items-center gap-1">
+                            {currentChat.status} <span className="text-[8px] opacity-50">• Oranolio Secure</span>
                         </div>
                     </div>
                 </div>
@@ -212,8 +212,9 @@ export const RedditChat: React.FC = () => {
                     <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors hidden sm:block">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
                     </button>
-                    <div className="flex-1 bg-[#272729] rounded-full h-10 flex items-center px-4 border border-[#343536] text-[#818384] text-sm cursor-not-allowed hover:border-[#4a4a4c] transition-colors">
-                        Message {currentChat.target}
+                    <div className="flex-1 bg-[#272729] rounded-full h-10 flex items-center px-4 border border-[#343536] text-[#818384] text-sm cursor-not-allowed hover:border-[#4a4a4c] transition-colors relative overflow-hidden">
+                        <span className="relative z-10">Message {currentChat.target}</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[8px] font-mono opacity-20 uppercase tracking-widest">Oranolio Chat</span>
                     </div>
                     <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -225,7 +226,7 @@ export const RedditChat: React.FC = () => {
             <div className="absolute top-16 left-1/2 -translate-x-1/2 z-10 pointer-events-none opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards]">
                  <div className="bg-[#1A2A3A]/80 backdrop-blur-md text-[#FDFBF7] text-[10px] font-bold px-4 py-1.5 rounded-full border border-[#FF8A75]/30 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse"></span>
-                    Strategy: {currentChat.strategy}
+                    Oranolio Strategy: {currentChat.strategy}
                  </div>
             </div>
             <style>{`

@@ -6,6 +6,13 @@ export const HeroSection: React.FC = () => {
   return (
     <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
       
+      {/* Vertical Branding - Architectural */}
+      <div className="absolute left-4 bottom-32 hidden lg:block -rotate-90 origin-bottom-left z-0">
+          <span className="text-[10px] font-mono font-bold tracking-[1em] text-[#1A2A3A]/20 uppercase">
+              Oranolio Systems // Est. 2014
+          </span>
+      </div>
+
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
       <header className="flex flex-col relative w-full max-w-[1920px] mx-auto">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10">
@@ -26,7 +33,7 @@ export const HeroSection: React.FC = () => {
            <h2 className="text-[clamp(1rem,3vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap leading-tight">
              congratulations,
              <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
-                <span>✓</span> Verified Catfish
+                <span>✓</span> Oranolio Verified
              </div>
            </h2>
         </div>
@@ -41,7 +48,7 @@ export const HeroSection: React.FC = () => {
       <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
-            [ DIGITAL GENDER ARBITRAGE // EST. 2014 ]
+            [ ORANOLIO ARBITRAGE // EST. 2014 ]
           </p>
           <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
             FROM "SUP BRO" TO <br className="hidden md:block" /> "HEY DADDY" IN 20 MINUTES.
@@ -77,6 +84,7 @@ export const HeroSection: React.FC = () => {
         
         {/* Animated Scroll Indicator */}
         <div className="absolute left-1/2 bottom-[2vh] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pointer-events-none">
+            <span className="text-[8px] font-mono uppercase tracking-widest text-[#1A2A3A]">Powered by Oranolio</span>
             <div className="w-[1px] h-12 bg-gradient-to-b from-[#1A2A3A] to-transparent"></div>
         </div>
       </article>

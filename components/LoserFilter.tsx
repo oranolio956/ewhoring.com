@@ -13,6 +13,12 @@ export const LoserFilter: React.FC = () => {
         <div className="absolute bottom-10 -right-10 bg-[#FF8A75] text-[#000] font-bold text-xs px-20 py-1 -rotate-3 tracking-[0.5em] whitespace-nowrap">
             NO BROKIES // NO BROKIES // NO BROKIES
         </div>
+        {/* Subtle repeating text background */}
+        <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none flex flex-col justify-center items-center -rotate-12 scale-150">
+            {Array(10).fill("ORANOLIO").map((text, i) => (
+                <div key={i} className="text-[10vw] font-black leading-none whitespace-nowrap">{text}</div>
+            ))}
+        </div>
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10 text-center w-full">
@@ -47,7 +53,10 @@ export const LoserFilter: React.FC = () => {
                         <li>❌ <span className="text-red-500 font-bold">Profit: $9.99</span></li>
                     </ul>
                 </div>
-                <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#2D9C8E] shadow-[0_0_30px_rgba(45,156,142,0.2)] transform md:scale-105">
+                <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#2D9C8E] shadow-[0_0_30px_rgba(45,156,142,0.2)] transform md:scale-105 relative overflow-hidden">
+                    <div className="absolute top-2 right-2 text-[8px] font-bold uppercase tracking-widest text-[#2D9C8E] border border-[#2D9C8E] px-2 py-0.5 rounded">
+                        ORANOLIO VERIFIED
+                    </div>
                     <h4 className="text-xs font-bold uppercase tracking-widest text-[#2D9C8E] mb-2">Oranolio Student</h4>
                     <ul className="space-y-2 text-sm text-[#FDFBF7] font-mono">
                         <li>✅ "I hate you, don't talk to me"</li>
