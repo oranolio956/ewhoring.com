@@ -21,8 +21,9 @@ export const HeroSection: React.FC = () => {
             YOU'RE A DUDE?
           </h1>
           
-          {/* Mascot - Improved Mobile Positioning to prevent overlap */}
-          <div className="absolute top-[-10%] right-[-15%] w-[40vw] h-[40vw] min-w-[120px] min-h-[120px] md:top-[-20%] md:right-[5%] md:w-[22vw] md:h-[22vw] opacity-60 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
+          {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
+          {/* Moved further right and reduced opacity on mobile */}
+          <div className="absolute top-[-15%] right-[-30%] w-[50vw] h-[50vw] min-w-[150px] min-h-[150px] md:top-[-20%] md:right-[5%] md:w-[22vw] md:h-[22vw] opacity-30 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
           </div>
         </div>
