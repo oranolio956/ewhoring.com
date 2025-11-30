@@ -14,23 +14,23 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
-      <header className="flex flex-col relative w-full max-w-[1920px] mx-auto">
+      <header className="flex flex-col relative w-full max-w-[1920px] mx-auto mb-8 md:mb-12">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10">
-          {/* Main Headline */}
-          <h1 className="text-[clamp(3rem,14vw,12rem)] leading-[0.85] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none">
+          {/* Main Headline - Adjusted clamp for better mobile fit */}
+          <h1 className="text-[clamp(2.5rem,13vw,12rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10">
             YOU'RE A DUDE?
           </h1>
           
-          {/* Mascot - Positioned safely for mobile vs desktop */}
-          <div className="absolute top-[-10%] right-0 w-[25vw] h-[25vw] min-w-[120px] min-h-[120px] md:top-[-10%] md:right-[5%] md:w-[18vw] md:h-[18vw] opacity-90 z-0 pointer-events-none md:pointer-events-auto">
+          {/* Mascot - Improved Mobile Positioning to prevent overlap */}
+          <div className="absolute top-[-15%] right-[-5%] w-[35vw] h-[35vw] min-w-[140px] min-h-[140px] md:top-[-20%] md:right-[5%] md:w-[22vw] md:h-[22vw] opacity-80 z-0 pointer-events-none md:pointer-events-auto">
              <Mascot />
           </div>
         </div>
         
         {/* Sub-headline */}
-        <div className="flex items-center gap-4 md:gap-12 ml-1 md:ml-[5vw] mt-[2vw] animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.2s_forwards] opacity-0 relative z-20">
-           <div className="h-[2px] w-[8vw] bg-[#FF8A75] shrink-0"></div>
-           <h2 className="text-[clamp(1rem,3vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap leading-tight">
+        <div className="flex items-center gap-2 md:gap-12 ml-1 md:ml-[5vw] mt-2 md:mt-[1vw] animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.2s_forwards] opacity-0 relative z-20 flex-wrap">
+           <div className="h-[2px] w-[15vw] md:w-[8vw] bg-[#FF8A75] shrink-0"></div>
+           <h2 className="text-[clamp(1rem,4vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap leading-tight">
              congratulations,
              <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
                 <span>✓</span> Oranolio Verified
@@ -39,13 +39,13 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Second Headline */}
-        <h1 className="text-[clamp(3rem,14vw,12rem)] leading-[0.85] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-[2vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
+        <h1 className="text-[clamp(2.5rem,13vw,12rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
           NOW YOU'RE NOT.
         </h1>
       </header>
 
       {/* Bottom Editorial Content */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-8 md:mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ ORANOLIO ARBITRAGE // EST. 2014 ]
@@ -67,7 +67,7 @@ export const HeroSection: React.FC = () => {
            </div>
         </div>
 
-        <div className="flex lg:col-span-4 justify-start lg:justify-end items-end gap-4 mt-4 lg:mt-0">
+        <div className="flex lg:col-span-4 justify-start lg:justify-end items-end gap-4 mt-4 lg:mt-0 w-full">
            <div className="text-left lg:text-right w-full lg:w-auto">
                 <button 
                   onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} 
@@ -78,7 +78,7 @@ export const HeroSection: React.FC = () => {
                 </button>
                
                {/* SYSTEM REQUIREMENTS - SUBTLE WARNING */}
-               <div className="mt-4 p-3 border border-[#1A2A3A]/10 bg-[#1A2A3A]/5 rounded text-[10px] font-mono text-left w-full max-w-[300px] ml-auto">
+               <div className="mt-4 p-3 border border-[#1A2A3A]/10 bg-[#1A2A3A]/5 rounded text-[10px] font-mono text-left w-full max-w-[350px] ml-auto">
                   <div className="font-bold uppercase mb-1 text-[#1A2A3A]">⚠ System Requirements:</div>
                   <ul className="space-y-1 opacity-70">
                     <li className="flex justify-between"><span>Social IQ:</span> <span>110+ (Required)</span></li>
@@ -94,7 +94,7 @@ export const HeroSection: React.FC = () => {
         </div>
         
         {/* Animated Scroll Indicator */}
-        <div className="absolute left-1/2 bottom-[2vh] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pointer-events-none">
+        <div className="absolute left-1/2 bottom-[1vh] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pointer-events-none">
             <span className="text-[8px] font-mono uppercase tracking-widest text-[#1A2A3A]">Powered by Oranolio</span>
             <div className="w-[1px] h-12 bg-gradient-to-b from-[#1A2A3A] to-transparent"></div>
         </div>
