@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +22,7 @@
     <meta property="og:url" content="https://ewhoring.com/" />
     <meta property="og:site_name" content="Oranolio Masterclass" />
     <meta property="og:title" content="POV: You are about to get rich (Oranolio)" />
-    <meta property="og:description" content="Stop scrolling. Stop being poor. The 2025 Protocol is live. Learn the system that has generated 7-figures since 2014." />
+    <meta property="og:description" content="Stop scrolling. Stop being poor. The 2025 Protocol is live. If you don't click this, you hate money." />
     <meta property="og:image" content="https://placehold.co/1200x630/1A2A3A/FF8A75/png?text=MEN+HAVE+WALLETS%0AYOU+HAVE+WIFI&font=montserrat" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -197,6 +198,13 @@
         backface-visibility: hidden;
         transform: translateZ(0);
       }
+      
+      /* Click Sparkle Animation */
+      @keyframes sparkle-burst {
+          0% { transform: scale(0); opacity: 0; }
+          50% { transform: scale(1); opacity: 1; }
+          100% { transform: scale(0); opacity: 0; }
+      }
 
       /* Cinematic Polish */
       body::before {
@@ -211,15 +219,15 @@
           z-index: 10;
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^18.3.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^18.3.1/",
-    "react/": "https://aistudiocdn.com/react@^18.3.1/",
-    "react-tooltip": "https://aistudiocdn.com/react-tooltip@^5.26.3",
-    "vite": "https://aistudiocdn.com/vite@^5.1.6",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^4.2.1"
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-tooltip": "https://aistudiocdn.com/react-tooltip@^5.30.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>

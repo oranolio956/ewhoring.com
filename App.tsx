@@ -30,6 +30,9 @@ import { PricingTerminal } from './components/PricingTerminal';
 import { SideEffects } from './components/SideEffects';
 import { HaterBlocker } from './components/HaterBlocker';
 import { ExitModal } from './components/ExitModal';
+import { CookieConsent } from './components/CookieConsent';
+import { AsSeenOn } from './components/AsSeenOn';
+import { ClickSparkle } from './components/ClickSparkle';
 
 const WARNING_MESSAGES = [
   "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
@@ -46,6 +49,7 @@ const App: React.FC = () => {
   const [legalOpen, setLegalOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [bannerIndex, setBannerIndex] = useState(0);
+  const [copyToast, setCopyToast] = useState(false);
 
   useEffect(() => {
     let frameId: number;
@@ -71,6 +75,16 @@ const App: React.FC = () => {
         setBannerIndex(prev => (prev + 1) % WARNING_MESSAGES.length);
     }, 4000);
     return () => clearInterval(bannerInterval);
+  }, []);
+
+  // Handle Copy Protection Mock
+  useEffect(() => {
+    const handleCopy = () => {
+        setCopyToast(true);
+        setTimeout(() => setCopyToast(false), 3000);
+    };
+    document.addEventListener('copy', handleCopy);
+    return () => document.removeEventListener('copy', handleCopy);
   }, []);
 
   useEffect(() => {
@@ -206,7 +220,14 @@ const App: React.FC = () => {
           <HaterBlocker />
           <ExitModal />
           <SalesToast />
+          <CookieConsent />
+          <ClickSparkle />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
+
+          {/* Copy Paste Mock Toast */}
+          <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[99999] bg-[#FF0000] text-white px-6 py-2 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl transition-all duration-300 ${copyToast ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}`}>
+             🚫 Don't steal the sauce. Write your own.
+          </div>
 
           {/* Inject Structured Data */}
           <script type="application/ld+json">
@@ -263,6 +284,9 @@ const App: React.FC = () => {
           
           <main className="relative z-10 w-full">
             <HeroSection />
+
+            {/* As Seen On Parody Bar */}
+            <AsSeenOn />
 
             <OriginStory />
             

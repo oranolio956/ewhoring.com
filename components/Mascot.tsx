@@ -7,7 +7,9 @@ interface MascotProps {
 
 export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isBlinking, setIsBlinking] = useState(false);
 
+  // Mouse Tracking
   useEffect(() => {
     let frameId: number;
     const handleMouseMove = (e: MouseEvent) => {
@@ -30,6 +32,21 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
         if (frameId) cancelAnimationFrame(frameId);
     };
   }, [excitementLevel]);
+
+  // Blinking Logic
+  useEffect(() => {
+      const blinkLoop = () => {
+          setIsBlinking(true);
+          setTimeout(() => setIsBlinking(false), 150); // Blink duration
+          
+          // Next blink in random 2-6 seconds
+          const nextBlink = Math.random() * 4000 + 2000;
+          setTimeout(blinkLoop, nextBlink);
+      };
+      
+      const timer = setTimeout(blinkLoop, 3000);
+      return () => clearTimeout(timer);
+  }, []);
 
   // Dynamic Styles based on excitement
   const pupilSize = 30 + (excitementLevel * 20); // 30 to 50
@@ -98,7 +115,7 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
         {/* Main Eye Structure */}
         <g 
           className="transition-transform duration-100 ease-out origin-center will-change-transform"
-          style={{ transform: `translate(${lookX}px, ${lookY}px)` }}
+          style={{ transform: `translate(${lookX}px, ${lookY}px) ${isBlinking ? 'scaleY(0.1)' : 'scaleY(1)'}` }}
         >
             {/* Sclera - Sharp Edges */}
             <path 
