@@ -8,7 +8,7 @@ const days = [
   { day: "04", title: "THE HARVEST", desc: "First $100 day. Psychology testing." },
   { day: "05", title: "SCALING", desc: "Automating replies. Filtering the poor." },
   { day: "06", title: "LAUNDRY", desc: "Crypto rails. Hiding the money from banks." },
-  { day: "07", title: "HANDOFF", desc: "I give you the keys. We never speak again." },
+  { day: "07", title: "HANDOFF", desc: "I give you the keys. (Realistically takes 2 days, but I added a buffer because most of you are stupid as f*ck. It is literally copy-paste.)" },
 ];
 
 export const TheSprint: React.FC = () => {
