@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ModuleItem } from '../types';
 import { Tooltip } from 'react-tooltip';
@@ -5,33 +6,33 @@ import { Tooltip } from 'react-tooltip';
 const modules: ModuleItem[] = [
   {
     id: 1,
-    title: "Digital HRT",
+    title: "The Honey Pot",
     description: "Building a female identity when you are a 30-year-old man.",
-    details: "How to find 'content' that isn't reverse searchable. How to hide your hairy knuckles in photos. The art of the 'broken camera' excuse.",
+    details: "Sourcing content that isn't reverse searchable. Concealing identifiers. The art of the 'broken camera' excuse. Creating a believable digital footprint.",
     price: "01",
     tags: ["Identity"]
   },
   {
     id: 2,
-    title: "Voice Training",
-    description: "Sounding like a waifu (without AI).",
-    details: "AI voice changers are for amateurs. I teach you the psychological text patterns that make them 'hear' a girl's voice in their head. It's wizardry.",
+    title: "Voice Changers",
+    description: "Sounding female without getting caught.",
+    details: "AI voice changers are for amateurs. I teach you the psychological text patterns that make them 'hear' a girl's voice in their head. It's linguistics.",
     price: "02",
     tags: ["Audio"]
   },
   {
     id: 3,
     title: "Simp Farming",
-    description: "They are desperate. Take advantage.",
-    details: "Where to find the saddest, loneliest men with 401ks. How to become their 'online girlfriend' while you play Call of Duty with the boys.",
+    description: "Targeting high-net-worth losers.",
+    details: "Where to find lonely men with disposable income. How to become their 'online girlfriend' while maintaining complete anonymity.",
     price: "03",
-    tags: ["Exploitation"]
+    tags: ["Acquisition"]
   },
   {
     id: 4,
     title: "The Cashout",
-    description: "Get the money. Block the number.",
-    details: "Structuring payments so your wife doesn't find out. Laundering crypto. How to emotionally devastate them so they are too embarrassed to call the police.",
+    description: "Structuring payments and anonymity.",
+    details: "Receiving funds without doxxing yourself. Crypto rails. How to manage multiple 'clients' efficiently without getting burned.",
     price: "04",
     tags: ["Safety"]
   }
@@ -47,17 +48,17 @@ export const BentoGrid: React.FC = () => {
   return (
     <section className="relative z-10 py-16 md:py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-[100vw] overflow-hidden">
       
-      {/* Subliminal Watermark - Updated for Keyword Density */}
+      {/* Subliminal Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
-         ORANOLIO E-WHORING PROTOCOL
+         ORANOLIO METHOD
       </div>
 
       <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
         
-        {/* Header - Sticky on Desktop, Normal on Mobile */}
+        {/* Header */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit">
           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FF8A75]">
-            THE MANIFESTO
+            THE METHOD
           </h2>
           <p className="text-base md:text-xl font-light text-[#FDFBF7]/70 leading-relaxed">
             Stop working at Wendy's. Start being "Wendy."
@@ -75,7 +76,7 @@ export const BentoGrid: React.FC = () => {
           </div>
         </div>
 
-        {/* List View (Educational) */}
+        {/* List View */}
         <div className="lg:col-span-8 flex flex-col">
           {modules.map((module) => (
             <div 
@@ -113,31 +114,37 @@ export const BentoGrid: React.FC = () => {
                 
                 <div className="hidden md:block opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-xs border border-[#FDFBF7] px-3 py-1 rounded-full uppercase tracking-widest text-[#FDFBF7] hover:bg-[#FDFBF7] hover:text-[#1A2A3A] transition-colors">
-                    Learn
+                    Access
                   </span>
                 </div>
                 {/* Mobile indicator */}
-                <div className="md:hidden mt-4 flex items-center gap-2">
-                   <div className={`w-1.5 h-1.5 rounded-full ${expandedId === module.id ? 'bg-[#FF8A75]' : 'bg-[#2D9C8E]'}`}></div>
-                   <span className="text-[#FDFBF7]/50 text-[10px] uppercase tracking-widest">
-                     {expandedId === module.id ? 'Hide Secret' : 'Reveal Secret'}
-                   </span>
+                <div className="md:hidden mt-2 text-[#FF8A75] text-xs font-bold uppercase tracking-widest">
+                   {expandedId === module.id ? '- Close' : '+ Details'}
                 </div>
               </div>
             </div>
           ))}
-          <div className="border-t border-[#FDFBF7]/20"></div>
         </div>
+        
+        <Tooltip 
+            id="syllabus-tooltip" 
+            style={{ 
+                backgroundColor: '#0F1923', 
+                color: '#FDFBF7', 
+                border: '1px solid #2D9C8E',
+                borderRadius: '0px',
+                padding: '12px 20px',
+                maxWidth: '300px',
+                fontSize: '12px',
+                lineHeight: '1.5',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                opacity: 1
+            }}
+            opacity={1}
+            border="1px solid #2D9C8E"
+        />
 
       </div>
-
-      {/* Shared Tooltip Instance */}
-      <Tooltip 
-        id="syllabus-tooltip"
-        place="top"
-        className="!hidden lg:!block !bg-[#1A2A3A] !text-[#FDFBF7] !border !border-[#FF8A75] !rounded-none !opacity-100 !px-6 !py-4 !max-w-md !font-sans !text-sm !leading-relaxed !tracking-wide !z-50 !shadow-[0_0_30px_rgba(255,138,117,0.2)]"
-        noArrow={false}
-      />
     </section>
   );
 };

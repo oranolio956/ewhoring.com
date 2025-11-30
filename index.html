@@ -3,12 +3,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     
     <!-- SEO & Metadata -->
-    <title>ORANOLIO | The #1 E-Whoring Masterclass & Social Engineering Course</title>
-    <meta name="description" content="The original 2014 blueprint for digital gender arbitrage. Learn how to monetize male psychology, automate revenue, and master the art of the e-whoring profile. Est 2014." />
-    <meta name="keywords" content="ewhoring, e-whoring guide, make money online, social engineering, catfish guide, oranolio, digital arbitrage, simp farming, discord money" />
+    <title>ORANOLIO | The #1 Digital Social Engineering Protocol</title>
+    <meta name="description" content="The original 2014 operating framework for digital gender arbitrage. Learn how to monetize male psychology, automate revenue, and master the art of the profile. Est 2014." />
+    <meta name="keywords" content="ewhoring, social engineering, make money online, arbitrage, digital marketing, profile optimization, oranolio" />
     <meta name="author" content="Oranolio" />
     <meta name="theme-color" content="#1A2A3A" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -18,17 +18,36 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ewhoring.com/" />
     <meta property="og:title" content="ORANOLIO | Stop Working. Start Earning." />
-    <meta property="og:description" content="Men have wallets. You have WiFi. Learn the $30k/mo protocol for extracting wealth from lonely men. The only guide you need." />
+    <meta property="og:description" content="Men have wallets. You have WiFi. The strict protocol for extracting wealth from the digital economy. No fluff. No feelings." />
     <meta property="og:image" content="https://pub-b7fd9c30ddbf43918306446cf03d3f32.r2.dev/oranolio-og.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://ewhoring.com/" />
-    <meta property="twitter:title" content="ORANOLIO | The E-Whoring Bible" />
-    <meta property="twitter:description" content="From 'Sup Bro' to 'Hey Daddy' in 20 minutes. Join the cult." />
+    <meta property="twitter:title" content="ORANOLIO | The Social Engineering Standard" />
+    <meta property="twitter:description" content="From 'Sup Bro' to 'Hey Daddy' in 20 minutes. Deploy the system." />
     <meta property="twitter:image" content="https://pub-b7fd9c30ddbf43918306446cf03d3f32.r2.dev/oranolio-og.jpg" />
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        cream: '#FDFBF7',
+                        navy: '#1A2A3A',
+                        teal: '#2D9C8E',
+                        coral: '#FF8A75',
+                        yellow: '#F4D35E',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://unpkg.com/react-tooltip@5.26.4/dist/react-tooltip.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +56,7 @@
       /* Custom Animations and Utilities */
       html, body {
         width: 100%;
-        overflow-x: hidden; /* CRITICAL: Prevents side scroll on mobile */
+        overflow-x: hidden;
         position: relative;
         font-family: 'Outfit', sans-serif;
         background-color: #FDFBF7;
@@ -45,9 +64,9 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         scroll-behavior: smooth;
+        overscroll-behavior-y: none;
       }
 
-      /* Premium Selection Color (Visual Pop) */
       ::selection {
         background: #2D9C8E;
         color: #FDFBF7;
@@ -73,92 +92,45 @@
         border-radius: 5px;
         border: 2px solid #FDFBF7;
       }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #FF8A75;
-      }
 
-      /* Noise Texture Overlay */
+      /* Noise Texture */
       .bg-noise {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
+        width: 100%;
+        height: 100%;
         pointer-events: none;
+        z-index: 5;
         opacity: 0.05;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
       }
 
       /* Subliminal Branding Pattern */
       .bg-subliminal {
-        background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' font-family='Space Grotesk' font-weight='900' font-size='14' fill='%231A2A3A' opacity='0.03' transform='rotate(-45 60 60)' text-anchor='middle'%3EORANOLIO%3C/text%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='bold' font-size='12' fill='%231A2A3A' transform='rotate(-45 50 50)'%3EORANOLIO%3C/text%3E%3C/svg%3E");
         background-repeat: repeat;
       }
-
-      /* Gradient Text Utility */
+      
       .text-gradient-rich {
-        background: linear-gradient(135deg, #1A2A3A 0%, #2D9C8E 50%, #FF8A75 100%);
+        background: linear-gradient(135deg, #2D9C8E 0%, #1A2A3A 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
       }
 
-      .text-gradient-gold {
-        background: linear-gradient(135deg, #F4D35E 0%, #B88A00 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      /* Floating Animation */
       @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0px); }
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
       }
       .animate-float {
         animation: float 6s ease-in-out infinite;
       }
-      .animate-float-delayed {
-        animation: float 8s ease-in-out infinite;
-        animation-delay: 2s;
-      }
-
-      /* Blob Animation */
-      @keyframes blob {
-        0% { transform: translate(0px, 0px) scale(1); }
-        33% { transform: translate(30px, -50px) scale(1.1); }
-        66% { transform: translate(-20px, 20px) scale(0.9); }
-        100% { transform: translate(0px, 0px) scale(1); }
-      }
-      .animate-blob {
-        animation: blob 7s infinite;
-      }
-      .animation-delay-2000 {
-        animation-delay: 2s;
-      }
-      .animation-delay-4000 {
-        animation-delay: 4s;
-      }
-
-      /* Glassmorphism Class */
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-      }
       
-      .glass-card-hover {
-        transition: all 0.4s ease;
-      }
-      .glass-card-hover:hover {
-        background: rgba(255, 255, 255, 0.6);
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 12px 40px 0 rgba(45, 156, 142, 0.15);
-        border-color: #2D9C8E;
+      /* Glass Utility */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
     </style>
   <script type="importmap">
@@ -167,9 +139,9 @@
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "react-tooltip": "https://aistudiocdn.com/react-tooltip@^5.30.0",
     "vite": "https://aistudiocdn.com/vite@^7.2.4",
-    "react-tooltip": "https://aistudiocdn.com/react-tooltip@^5.30.0"
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>

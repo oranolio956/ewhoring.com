@@ -40,9 +40,9 @@ export const WhySection: React.FC = () => {
                 </div>
             </div>
 
-            {/* Right: The Filter (No Kids) */}
-            <div className="lg:col-span-5">
-                <div className="bg-[#FDFBF7] text-[#1A2A3A] p-8 md:p-10 rounded-3xl transform rotate-2 shadow-[20px_20px_0px_rgba(255,138,117,1)] relative group hover:rotate-0 transition-transform duration-300">
+            {/* Right: The Filter (No Kids) - Container Constraints added */}
+            <div className="lg:col-span-5 px-4 md:px-0">
+                <div className="bg-[#FDFBF7] text-[#1A2A3A] p-8 md:p-10 rounded-3xl transform rotate-2 shadow-[10px_10px_0px_rgba(255,138,117,1)] md:shadow-[20px_20px_0px_rgba(255,138,117,1)] relative group hover:rotate-0 transition-transform duration-300 max-w-sm mx-auto">
                     
                     <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#FF8A75] rounded-full flex items-center justify-center text-3xl font-bold shadow-lg animate-bounce">
                         ✋

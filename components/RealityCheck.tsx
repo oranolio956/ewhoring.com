@@ -54,9 +54,15 @@ export const RealityCheck: React.FC = () => {
             {/* Column 2: The Contract / Visual */}
             <div className="relative">
                 <div className="absolute inset-0 bg-[#1A2A3A] transform rotate-3 rounded-3xl opacity-5"></div>
-                <div className="relative bg-[#1A2A3A] text-[#FDFBF7] p-8 md:p-12 rounded-3xl shadow-2xl flex flex-col gap-8">
+                <div className="relative bg-[#1A2A3A] text-[#FDFBF7] p-8 md:p-12 rounded-3xl shadow-2xl flex flex-col gap-8 overflow-hidden">
                     
-                    <div className="border-b border-[#FDFBF7]/20 pb-6 flex justify-between items-end">
+                    {/* Watermark branding */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-[0.03] pointer-events-none transform -rotate-45">
+                        <div className="text-6xl font-bold whitespace-nowrap">ORANOLIO</div>
+                        <div className="text-4xl font-mono">NON-DISCLOSURE</div>
+                    </div>
+
+                    <div className="border-b border-[#FDFBF7]/20 pb-6 flex justify-between items-end relative z-10">
                         <div>
                             <div className="text-[#FF8A75] text-xs font-bold uppercase tracking-widest mb-1">Agreement</div>
                             <div className="text-3xl font-['Space_Grotesk'] font-bold">THE DEAL</div>
@@ -67,7 +73,7 @@ export const RealityCheck: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="space-y-4 font-mono text-sm md:text-base">
+                    <div className="space-y-4 font-mono text-sm md:text-base relative z-10">
                         <div className="flex gap-4 items-start opacity-50">
                             <div className="mt-1">❌</div>
                             <div>
@@ -98,7 +104,7 @@ export const RealityCheck: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="bg-[#FDFBF7]/10 p-4 rounded-xl text-center mt-auto">
+                    <div className="bg-[#FDFBF7]/10 p-4 rounded-xl text-center mt-auto relative z-10">
                         <p className="text-xs uppercase tracking-widest opacity-70 mb-2">Final Warning</p>
                         <p className="font-bold text-[#FF8A75]">
                             WEALTH REQUIRES SOCIAL IQ. <br/>

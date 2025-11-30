@@ -4,49 +4,49 @@ import { Mascot } from './Mascot';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-between pt-24 pb-8 md:pt-32 md:pb-12 px-4 md:px-12 overflow-hidden w-full max-w-[100vw] mx-auto">
+    <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-between pt-24 pb-8 md:pt-32 md:pb-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
       
-      {/* Massive Background Typography - Fluid Clamping */}
+      {/* Massive Background Typography - Standard Breakpoints for Reliability */}
       <header className="flex flex-col relative mt-4 md:mt-0 w-full max-w-[1920px] mx-auto">
         <div className="relative w-full animate-[fadeInUp_1s_ease-out_forwards] opacity-0 z-10">
-          {/* Clamp font size: Minimum 3rem, Ideal 13vw, Max 10rem */}
-          <h1 className="text-[clamp(3.5rem,13vw,11rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full hover:scale-[1.01] transition-transform duration-500 cursor-default">
+          {/* Robust Responsive Text Sizes */}
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full hover:scale-[1.01] transition-transform duration-500 cursor-default">
             YOU'RE A DUDE?
           </h1>
           
-          {/* Mascot - Positioning adapts to screen ratio */}
-          <div className="absolute top-[-20px] right-0 w-[clamp(5rem,15vw,12rem)] h-[clamp(5rem,15vw,12rem)] md:top-0 md:right-[10%] opacity-90 z-0 pointer-events-none md:pointer-events-auto">
+          {/* Mascot */}
+          <div className="absolute top-[-20px] right-0 w-24 h-24 md:w-48 md:h-48 lg:w-64 lg:h-64 opacity-90 z-0 pointer-events-none md:pointer-events-auto">
              <Mascot />
           </div>
         </div>
         
-        <div className="flex items-center gap-4 md:gap-12 ml-1 md:ml-24 mt-4 animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
-           <div className="h-[2px] w-12 md:w-32 bg-[#FF8A75]"></div>
-           <h2 className="text-[clamp(1rem,3vw,2rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3">
+        <div className="flex items-center gap-4 md:gap-12 ml-1 md:ml-24 mt-4 md:mt-8 animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
+           <div className="h-[2px] w-8 md:w-32 bg-[#FF8A75]"></div>
+           <h2 className="text-lg md:text-2xl lg:text-3xl font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap">
              congratulations,
-             <div className="bg-[#2D9C8E] text-white text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest animate-pulse shadow-lg shadow-[#2D9C8E]/30">
-                <span>✓</span> Verified Girl
+             <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
+                <span>✓</span> Verified Catfish
              </div>
            </h2>
         </div>
 
-        <h1 className="text-[clamp(3.5rem,13vw,11rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-2 relative z-20 animate-[fadeInUp_1s_ease-out_0.6s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 relative z-20 animate-[fadeInUp_1s_ease-out_0.6s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500">
           NOW YOU'RE NOT.
         </h1>
       </header>
 
-      {/* Bottom Editorial Content - Responsive Grid */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-auto border-t border-[#1A2A3A]/20 pt-8 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0">
+      {/* Bottom Editorial Content */}
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-auto border-t border-[#1A2A3A]/20 pt-8 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
-            [ DIGITAL GENDER REASSIGNMENT // EST. 2014 ]
+            [ DIGITAL GENDER ARBITRAGE // EST. 2014 ]
           </p>
           <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
             FROM "SUP BRO" TO <br className="hidden md:block" /> "HEY DADDY" IN 20 MINUTES.
             <br className="hidden md:block"/>
-            <span className="text-[#2D9C8E] italic normal-case font-serif text-lg md:text-xl block mt-4 max-w-xl">
-              I teach hairy men how to create a 19-year-old avatar and extract a $150 weekly allowance. 
-              Real girls suck at this. You know what men want because you ARE a man. It's not magic. It's biology.
+            <span className="text-[#2D9C8E] italic normal-case font-serif text-base md:text-xl block mt-4 max-w-xl">
+              I teach you how to engineer a high-value female identity and monetize male psychology. 
+              Real girls are terrible at this. You know what men want because you ARE a man. It's just biology.
             </span>
           </h3>
         </div>
@@ -54,7 +54,7 @@ export const HeroSection: React.FC = () => {
         <div className="lg:col-span-2 flex flex-col justify-end">
            <div className="flex gap-2 items-center bg-white/50 w-fit px-3 py-2 rounded-full backdrop-blur-sm border border-[#1A2A3A]/10">
              <div className="w-2 h-2 rounded-full bg-[#FF8A75] animate-pulse"></div>
-             <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#FF8A75]">Zero Morals Required</span>
+             <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#FF8A75]">Grift Active</span>
            </div>
         </div>
 
@@ -63,12 +63,12 @@ export const HeroSection: React.FC = () => {
                 <button 
                   onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} 
                   className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200"
-                  aria-label="Start Learning the E-Whoring Grift"
+                  aria-label="Start The Grift"
                 >
                     START THE GRIFT
                 </button>
                <p className="text-[10px] text-[#1A2A3A]/40 mt-3 font-mono">
-                 *Results may vary. Tom made $150 in 15 mins.
+                 *Results may vary. Tom generated $150 in 15 mins.
                </p>
            </div>
         </div>

@@ -130,12 +130,12 @@ export const MoneyPhone: React.FC = () => {
   }, []);
 
   return (
-    <section id="money-printer" className="relative w-full py-12 md:py-24 px-4 overflow-hidden flex flex-col items-center max-w-[100vw]">
+    <section id="money-printer" className="relative w-full py-12 md:py-24 px-4 overflow-hidden flex flex-col items-center max-w-full">
       
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-32 max-w-7xl mx-auto w-full">
         
         {/* Left: Text & Mascot Reaction */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10 order-2 lg:order-1 w-full lg:w-1/2">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10 order-2 lg:order-1 w-full lg:w-1/2 px-4">
           <h2 className="text-4xl md:text-6xl font-bold text-[#1A2A3A] mb-6">
             TAX THE <br/>
             <span className="text-gradient-rich">F*CKING LOSERS</span>
@@ -156,10 +156,10 @@ export const MoneyPhone: React.FC = () => {
         </div>
 
         {/* Right: The Phone Graphic - Aspect Ratio Lock */}
-        <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center">
+        <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center py-8">
           
           {/* Constrain container size relative to screen width AND aspect ratio */}
-          <div className="relative w-[75vw] max-w-[320px] lg:max-w-[360px] aspect-[9/19]">
+          <div className="relative w-[80vw] sm:w-[320px] lg:w-[360px] aspect-[9/19]">
             
             {/* Unified Rotation Wrapper */}
             <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right">
@@ -216,49 +216,49 @@ export const MoneyPhone: React.FC = () => {
                   ></div>
 
                   {/* Status Bar */}
-                  <div className="flex justify-between px-6 mb-4 text-[#1A2A3A]/40 text-[10px] md:text-xs font-bold relative z-10">
+                  <div className="flex justify-between px-6 mb-4 text-[#1A2A3A]/40 text-[9px] md:text-[10px] font-bold relative z-10">
                      <span>3:00 AM</span>
                      <div className="flex gap-1">
-                       <span className="font-mono text-[9px] tracking-tight">ORANOLIO LTE</span>
+                       <span className="font-mono tracking-tight">LTE</span>
                        <span>69%</span>
                      </div>
                   </div>
 
                   {/* App Header */}
                   <div className="px-6 mb-4 relative z-10">
-                    <div className="text-[#FF8A75] font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">Oranolio Wallet</div>
-                    <div className="text-3xl lg:text-4xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] tabular-nums tracking-tight">
+                    <div className="text-[#FF8A75] font-bold text-[9px] md:text-[10px] uppercase tracking-widest mb-1">Oranolio Wallet</div>
+                    <div className="text-2xl md:text-3xl lg:text-4xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] tabular-nums tracking-tight">
                       ${balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </div>
-                    <div className="text-[10px] md:text-xs text-[#1A2A3A]/40 mt-1 flex items-center gap-1">
+                    <div className="text-[9px] md:text-[10px] text-[#1A2A3A]/40 mt-1 flex items-center gap-1">
                       <span className="w-2 h-2 bg-[#FF8A75] rounded-full animate-pulse"></span>
                       DRAINING 401Ks...
                     </div>
                   </div>
 
                   {/* Feed Area OR Detail View */}
-                  <div className="flex-1 bg-white rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] p-4 overflow-hidden flex flex-col gap-3 relative z-10">
+                  <div className="flex-1 bg-white rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] p-3 md:p-4 overflow-hidden flex flex-col gap-3 relative z-10">
                      
                      {selectedTx ? (
                         <div className="flex flex-col h-full animate-in slide-in-from-right fade-in duration-300">
                            <button 
                              onClick={() => setSelectedTx(null)} 
-                             className="flex items-center gap-1 text-[#1A2A3A]/40 text-xs font-bold uppercase tracking-widest mb-4 hover:text-[#FF8A75] transition-colors"
+                             className="flex items-center gap-1 text-[#1A2A3A]/40 text-[10px] font-bold uppercase tracking-widest mb-4 hover:text-[#FF8A75] transition-colors"
                            >
                              ← Back to Feed
                            </button>
 
                            <div className="flex flex-col items-center mb-6">
-                             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF8A75] to-[#1A2A3A] flex items-center justify-center text-white font-bold text-2xl mb-3 shadow-lg">
+                             <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#FF8A75] to-[#1A2A3A] flex items-center justify-center text-white font-bold text-2xl mb-3 shadow-lg">
                                :(
                              </div>
-                             <h3 className="text-[#1A2A3A] font-bold text-lg font-['Space_Grotesk']">{selectedTx.user}</h3>
-                             <p className="text-[#2D9C8E] font-bold font-mono text-xl">+${selectedTx.amount}.00</p>
+                             <h3 className="text-[#1A2A3A] font-bold text-base md:text-lg font-['Space_Grotesk']">{selectedTx.user}</h3>
+                             <p className="text-[#2D9C8E] font-bold font-mono text-lg md:text-xl">+${selectedTx.amount}.00</p>
                            </div>
 
-                           <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100 mb-auto relative">
+                           <div className="bg-gray-50 p-3 md:p-4 rounded-2xl border border-gray-100 mb-auto relative">
                               <div className="absolute top-0 left-4 -translate-y-1/2 w-3 h-3 bg-gray-50 border-t border-l border-gray-100 transform rotate-45"></div>
-                              <p className="text-[#1A2A3A]/80 italic font-serif leading-relaxed">"{selectedTx.message}"</p>
+                              <p className="text-[#1A2A3A]/80 italic font-serif leading-relaxed text-sm">"{selectedTx.message}"</p>
                            </div>
 
                            <div className="grid grid-cols-2 gap-2 mt-4">
@@ -272,7 +272,7 @@ export const MoneyPhone: React.FC = () => {
                         </div>
                      ) : (
                         <>
-                           <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#1A2A3A]/30 mb-2 flex items-center justify-between">
+                           <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#1A2A3A]/30 mb-2 flex items-center justify-between">
                               <span>Simp Alerts</span>
                               <div className="flex items-center gap-2">
                                 <span className="text-[9px] text-red-400 font-mono tracking-tighter" title="Blocked Users">{blockedUsers.size} BLOCKED</span>
@@ -286,15 +286,15 @@ export const MoneyPhone: React.FC = () => {
                                 onClick={() => setSelectedTx(tx)}
                                 className="flex items-center gap-3 animate-in slide-in-from-bottom fade-in duration-300 group cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition-colors relative"
                               >
-                                <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-100 flex items-center justify-center text-sm md:text-lg shadow-sm group-hover:scale-110 transition-transform">
                                   💸
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                  <div className="text-[#1A2A3A] font-bold text-xs truncate group-hover:text-[#FF8A75] transition-colors">{tx.user}</div>
-                                  <div className="text-[#1A2A3A]/60 text-[10px] truncate">"{tx.message}"</div>
+                                  <div className="text-[#1A2A3A] font-bold text-[10px] md:text-xs truncate group-hover:text-[#FF8A75] transition-colors">{tx.user}</div>
+                                  <div className="text-[#1A2A3A]/60 text-[9px] md:text-[10px] truncate">"{tx.message}"</div>
                                 </div>
                                 <div className="flex flex-col items-end gap-1">
-                                    <div className="text-[#2D9C8E] font-bold font-mono text-xs">
+                                    <div className="text-[#2D9C8E] font-bold font-mono text-[10px] md:text-xs">
                                     +${tx.amount}
                                     </div>
                                     <button 
