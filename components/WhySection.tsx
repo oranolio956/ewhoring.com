@@ -1,7 +1,9 @@
 
 import React from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 export const WhySection: React.FC = () => {
+  const { openPayment } = usePayment();
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/10">
       
@@ -72,6 +74,19 @@ export const WhySection: React.FC = () => {
                     </p>
 
                 </div>
+            </div>
+
+            {/* Additional Payment CTA */}
+            <div className="lg:col-span-12 mt-12 text-center">
+                <button
+                    onClick={openPayment}
+                    className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FDFBF7] hover:text-[#1A2A3A] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
+                >
+                    READY TO BECOME A GIRL? →
+                </button>
+                <p className="text-xs text-[#FDFBF7]/60 mt-2 font-mono">
+                    Limited time offer - Don't wait for me to change my mind
+                </p>
             </div>
 
         </div>

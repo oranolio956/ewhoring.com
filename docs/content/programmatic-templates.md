@@ -39,3 +39,4 @@
 3. Generated files land in `public/generated/` with ready-made meta blocks + schema.
 4. Upload XML diff to `sitemap.xml` and ping IndexNow API.
 
+

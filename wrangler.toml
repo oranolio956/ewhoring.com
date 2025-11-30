@@ -12,3 +12,4 @@ preview_id = "your_kv_preview_id_here"
 
 [build]
 command = "npm run build"
+

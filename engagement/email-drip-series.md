@@ -11,3 +11,4 @@
 
 Automation stack: Resend (SMTP) + Supabase triggers → route to Telegram bot for live follow-up. All copy lives in `/content/email/`.
 
+

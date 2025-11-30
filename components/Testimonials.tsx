@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 const reviews = [
   {
@@ -29,6 +30,7 @@ const reviews = [
 ];
 
 export const Testimonials: React.FC = () => {
+  const { openPayment } = usePayment();
   return (
     <section id="testimonials" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden">
       {/* Decorative Background Text - Branding Injection */}
@@ -89,6 +91,19 @@ export const Testimonials: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-12 text-center">
+          <button
+            onClick={openPayment}
+            className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
+          >
+            JOIN THE SUCCESS STORIES →
+          </button>
+          <p className="text-xs text-[#1A2A3A]/60 mt-2 font-mono">
+            Don't be the guy still watching these stories
+          </p>
         </div>
       </div>
     </section>

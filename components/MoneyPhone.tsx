@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Mascot } from './Mascot';
+import { usePayment } from '../contexts/PaymentContext';
 
 interface Transaction {
   id: number;
@@ -24,6 +25,7 @@ const MESSAGES = [
 ];
 
 export const MoneyPhone: React.FC = () => {
+  const { openPayment } = usePayment();
   const [balance, setBalance] = useState(142050.00);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [selectedTx, setSelectedTx] = useState<Transaction | null>(null);
@@ -156,6 +158,13 @@ export const MoneyPhone: React.FC = () => {
             They are actually texting <span className="font-bold text-[#1A2A3A]">YOU</span> (a 30-year-old man in sweatpants). <br/>
             <span className="italic text-[#FF8A75] font-bold block mt-2">It's literally free money.</span>
           </p>
+
+          <button
+            onClick={openPayment}
+            className="mb-6 bg-[#FF8A75] text-[#1A2A3A] px-6 py-3 font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm cursor-pointer mx-auto lg:mx-0"
+          >
+            GET RICH NOW →
+          </button>
           
           <div className="w-32 h-32 md:w-48 md:h-48 relative mx-auto lg:mx-0">
             <Mascot excitementLevel={excitement} />

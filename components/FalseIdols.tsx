@@ -1,7 +1,9 @@
 
 import React from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 export const FalseIdols: React.FC = () => {
+  const { openPayment } = usePayment();
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
@@ -113,6 +115,19 @@ export const FalseIdols: React.FC = () => {
 
             </div>
 
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-8 text-center">
+          <button
+            onClick={openPayment}
+            className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
+          >
+            STOP WORSHIPPING → START WINNING
+          </button>
+          <p className="text-xs text-[#FDFBF7]/60 mt-2 font-mono">
+            Real men don't follow influencers. They become them.
+          </p>
         </div>
       </div>
     </section>

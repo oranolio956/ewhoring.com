@@ -1,8 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 export const NavBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { openPayment } = usePayment();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,8 +64,8 @@ export const NavBar: React.FC = () => {
                 </button>
                 
                 {/* Primary CTA - Always Visible, prioritizes screen space */}
-                <button 
-                  onClick={() => scrollToSection('money-printer')}
+                <button
+                  onClick={openPayment}
                   className="group relative px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm overflow-hidden btn-glitch shrink-0 active:scale-95 duration-100"
                 >
                   <span className="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-300 block">DOWNLOAD THE BRAIN</span>

@@ -102,3 +102,4 @@ export const AuthorityStack: React.FC = () => (
   </section>
 );
 
+

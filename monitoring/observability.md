@@ -50,3 +50,4 @@ CREATE TABLE IF NOT EXISTS ewhoring.serp_monitor (
 - **Metabase** for deep dives hooking directly into BigQuery tables above.
 - **Grafana Cloud** for real-time log-derived alerts (ingests via Loki).
 
+

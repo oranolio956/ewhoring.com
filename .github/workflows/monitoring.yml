@@ -97,3 +97,4 @@ jobs:
           curl -X POST -H 'Content-type: application/json' \
             --data '{"content": "🚨 SEO Monitoring Alert: Workflow failed - check logs"}' \
             ${{ secrets.DISCORD_WEBHOOK_URL }}
+
