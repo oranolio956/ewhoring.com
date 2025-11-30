@@ -187,6 +187,71 @@ export const faqs = [
   {
     q: "How do I scale from $500 to $5000/week?",
     a: "Multiple personas, multiple platforms, automation, and moving upmarket. One persona on one platform caps around $1-2k/month. Scaling requires systems. The Protocol is designed for scaling."
+  },
+  // Additional PAA-Targeted Questions
+  {
+    q: "Is ewhoring safe?",
+    a: "If done correctly with proper OpSec: VPN, burner accounts, anonymous payments, no personal info shared - yes. The danger comes from being sloppy with identity. Follow the Protocol's security guidelines and you're protected."
+  },
+  {
+    q: "What is the best ewhoring method for beginners?",
+    a: "Discord dating server method. Lowest barrier to entry, fastest feedback loop, most forgiving of mistakes. Join 5-10 dating servers, build rapport, monetize through gift cards and Nitro. Graduate to Telegram and dating apps after."
+  },
+  {
+    q: "How long does it take to make money ewhoring?",
+    a: "Following the Protocol: first payment within 24-48 hours. Most students see $100+ in first week. Reaching $1000/week typically takes 2-4 weeks of consistent effort. Timeline depends entirely on how closely you follow the system."
+  },
+  {
+    q: "Can I do ewhoring part-time?",
+    a: "Yes. 2-4 hours daily is enough to generate $500-2000/month. Many operators do this alongside jobs or school. The key is consistency - 2 hours every day beats 14 hours on weekends."
+  },
+  {
+    q: "What's the difference between ewhoring and being a sugar baby?",
+    a: "Sugar baby = you (real person) date rich people. Ewhoring = fake persona extracts money from regular people. Ewhoring is more scalable (multiple personas), more anonymous, and doesn't require meeting anyone in person."
+  },
+  {
+    q: "Do I need to be attractive to ewhore?",
+    a: "Your real appearance is irrelevant. You're operating a digital persona. Could be a 300lb dude named Gary running 'Jessica, 22, college student.' The persona's appearance matters, yours doesn't."
+  },
+  {
+    q: "How do I find simps to pay me?",
+    a: "Simps are everywhere men are lonely: Discord dating/lonely servers, Telegram social groups, Reddit relationship subs, dating apps, gaming communities. The Protocol includes a map of where to find them by platform."
+  },
+  {
+    q: "What's the best time to ewhore?",
+    a: "Evening hours (7PM-12AM) in your target's timezone. Lonely people are loneliest at night. Weekends have higher engagement. Avoid Monday mornings - everyone's too busy pretending to work."
+  },
+  {
+    q: "Can I get my money back if ewhoring doesn't work?",
+    a: "No refunds for laziness. The Protocol works for 12,000+ students. If you follow instructions and fail, something is wrong with your execution, not the system. We don't refund effort problems."
+  },
+  {
+    q: "Is ewhoring ethical?",
+    a: "That's for you to decide. We sell information. Lonely men paying for attention is as old as civilization. We don't force anyone to pay. Adults making transactions. Your moral compass is your own."
+  },
+  {
+    q: "What countries is ewhoring popular in?",
+    a: "Targets: USA, UK, Canada, Australia (English-speaking + disposable income). Operators: Global - India, Philippines, Eastern Europe, South America. Location doesn't matter if you have internet."
+  },
+  {
+    q: "How do I handle reverse image searches?",
+    a: "AI-generated images can't be reverse searched. For non-AI content: edit images (flip, filter, crop), use lesser-known sources, or create original faceless content. The Protocol covers image OpSec."
+  },
+  {
+    q: "What if someone threatens to expose me?",
+    a: "If your OpSec is correct, there's nothing to expose. They don't know who you are. Block and move on. Never pay blackmail - it never ends. The Protocol covers handling difficult situations."
+  },
+  {
+    q: "Can I ewhore on Reddit?",
+    a: "Reddit is better for funnel building than direct monetization. Post in relevant subs, build karma, then direct traffic to Discord/Telegram/OnlyFans. Don't sell directly on Reddit - accounts get banned."
+  },
+  {
+    q: "What's the Oranolio Protocol exactly?",
+    a: "A complete 7-day system covering: persona creation, platform deployment, conversation scripts, payment processing, scaling strategies, and ongoing support. Based on 10+ years of testing. Over 12,000 students since 2014."
+  },
+  {
+    q: "How do I know if ewhoring is for me?",
+    a: "Can you: follow instructions, type coherently, dedicate 2-4 hours daily, and not feel guilty about strangers paying for attention? Then yes. If any of those are no, this isn't for you."
   }
 ];
 
