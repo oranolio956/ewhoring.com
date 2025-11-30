@@ -13,7 +13,7 @@ export const PricingTerminal: React.FC = () => {
       <div className="max-w-5xl mx-auto relative z-10 w-full">
         
         <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4">
+            <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4 drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
                 DEPLOY <span className="text-[#00FF00]">THE GRIFT</span>
             </h2>
             <p className="text-[#00FF00]/60 uppercase tracking-widest text-xs">
@@ -39,6 +39,9 @@ export const PricingTerminal: React.FC = () => {
                     <p>&gt; [OK] Simp_Farming_v2.exe</p>
                     <p>&gt; [OK] Voice_Changer_Pro.exe</p>
                     <p>&gt; [OK] Whale_Radar_Global.dat</p>
+                    <p className="text-[#00FF00]/50">&gt; Checking Legal Framework...</p>
+                    <p className="text-[#00FF00]">&gt; [SAFE] Educational Use Only Verified.</p>
+                    <p className="text-[#00FF00]">&gt; [SAFE] Plausible Deniability Established.</p>
                     <p>&gt; <span className="text-white">Verifying User Competence...</span></p>
                     <p className="text-yellow-500 font-bold">&gt; WARNING: Social Engineering Skill Required.</p>
                     <p className="text-red-500 opacity-80 italic">&gt; [CHECK] If you are a retard, this transaction will fail.</p>
@@ -51,13 +54,18 @@ export const PricingTerminal: React.FC = () => {
                             <span className="text-white font-bold text-xl">TOTAL ACCESS:</span>
                             <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$150</span>
                         </div>
-                        <button className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base">
+                        <button className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00]">
                             [ EXECUTE TRANSACTION ]
                         </button>
                         <p className="text-[10px] mt-4 text-center opacity-50">
                             *By clicking execute, you certify that you know how to be a piece of shit. No refunds for incompetence.
                         </p>
                     </div>
+                </div>
+                
+                {/* Subtle Branding */}
+                <div className="absolute bottom-2 right-2 text-[8px] text-[#00FF00]/10 font-mono pointer-events-none">
+                    ORANOLIO_SYSTEMS_LLC
                 </div>
 
             </div>
@@ -82,6 +90,14 @@ export const PricingTerminal: React.FC = () => {
 
                 <div className="mt-6 p-3 bg-red-900/20 border border-red-500/20 text-xs text-red-400">
                     ERROR: Capacity Reached. I do not have time to teach basics to new people.
+                </div>
+                
+                {/* Satisfaction Seal */}
+                <div className="mt-8 flex justify-center">
+                    <div className="w-20 h-20 rounded-full border-2 border-yellow-500 flex items-center justify-center text-yellow-500 text-[8px] font-bold text-center p-1 uppercase transform rotate-6 opacity-50">
+                        100% Satisfaction*<br/>
+                        (For Me)
+                    </div>
                 </div>
             </div>
 

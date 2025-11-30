@@ -31,7 +31,7 @@ export const NavBar: React.FC = () => {
           scrolled ? 'bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#1A2A3A]/5 shadow-sm' : 'bg-transparent'
         }`}
       >
-        <div className="w-full h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] px-4 md:px-6 flex items-center justify-between max-w-[1920px] mx-auto pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
+        <div className="w-full h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] px-6 md:px-8 lg:px-12 flex items-center justify-between max-w-[1920px] mx-auto pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))]">
             
             {/* Branding - Always Visible, Shrinks if needed but stays readable */}
             <a 
@@ -56,7 +56,7 @@ export const NavBar: React.FC = () => {
                 {/* Secondary Button - Hides on small phones (<450px) to ensure Main CTA fits */}
                 <button 
                   onClick={openHackForums}
-                  className="hidden min-[450px]:block px-3 py-1.5 md:px-4 md:py-2 border border-[#1A2A3A] text-[#1A2A3A] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded-sm whitespace-nowrap"
+                  className="hidden min-[450px]:block px-3 py-1.5 md:px-4 md:py-2 border border-[#1A2A3A] text-[#1A2A3A] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded-sm whitespace-nowrap active:scale-95 duration-100"
                 >
                   Join The Harem
                 </button>
@@ -64,7 +64,7 @@ export const NavBar: React.FC = () => {
                 {/* Primary CTA - Always Visible, prioritizes screen space */}
                 <button 
                   onClick={() => scrollToSection('money-printer')}
-                  className="group relative px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm overflow-hidden btn-glitch shrink-0"
+                  className="group relative px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm overflow-hidden btn-glitch shrink-0 active:scale-95 duration-100"
                 >
                   <span className="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-300 block">DOWNLOAD THE BRAIN</span>
                   <span className="absolute inset-0 z-10 flex items-center justify-center translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 font-mono text-[#1A2A3A]">

@@ -13,6 +13,13 @@ export const HeroSection: React.FC = () => {
           </span>
       </div>
 
+      {/* Hidden Legal Framework - "Safe Harbor" */}
+      <div className="absolute top-24 right-4 md:right-12 text-[9px] font-mono text-[#1A2A3A]/20 text-right leading-tight pointer-events-none select-none hidden md:block">
+        OPERATING UNDER U.S. SATIRE LAWS<br/>
+        SECTION 230 PROTECTION ACTIVE<br/>
+        NO LIABILITY ASSUMED
+      </div>
+
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
       <div className="flex flex-col relative w-full max-w-[1920px] mx-auto mb-8 md:mb-12">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10 will-change-transform transform-gpu">
@@ -22,7 +29,6 @@ export const HeroSection: React.FC = () => {
           </h1>
           
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
-          {/* Moved further right and reduced opacity on mobile */}
           <div className="absolute top-[-15%] right-[-30%] w-[50vw] h-[50vw] min-w-[150px] min-h-[150px] md:top-[-20%] md:right-[5%] md:w-[22vw] md:h-[22vw] opacity-30 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
           </div>

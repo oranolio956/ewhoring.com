@@ -32,6 +32,12 @@ export const OriginStory: React.FC = () => {
                 <div className="absolute top-0 right-0 bg-[#1A2A3A] text-[#FDFBF7] px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-bl-xl">
                     Method v1.0 (2014-2019)
                 </div>
+                
+                {/* LEGAL STAMP */}
+                <div className="absolute bottom-4 right-4 border-2 border-[#1A2A3A]/20 text-[#1A2A3A]/20 px-2 py-1 text-[10px] font-bold uppercase tracking-widest transform -rotate-12 pointer-events-none">
+                    STATUTE OF LIMITATIONS: EXPIRED
+                </div>
+
                 <h3 className="text-2xl md:text-3xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] mb-6 opacity-50">THE PIZZA ERA</h3>
                 
                 <ul className="space-y-4 md:space-y-6 text-[#1A2A3A]/70 font-medium text-sm md:text-base">
