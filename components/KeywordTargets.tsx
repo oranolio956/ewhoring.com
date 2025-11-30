@@ -7,67 +7,67 @@ import { usePayment } from '../contexts/PaymentContext';
 const platforms = [
   {
     id: 1,
-    name: "DISCORD",
-    tag: "SIMP CENTRAL",
-    color: "#5865F2",
-    description: "Where lonely men pretend to have girlfriends. Your new hunting ground.",
-    details: "Join dating servers full of dudes who haven't touched grass since 2019. Build rapport in public (be charming, not desperate). Then DM. Use our scripts. Collect Nitro gifts like Pokémon cards. Average IQ of target: room temperature.",
-    stats: { roi: "★★★★★", speed: "20 min", victims: "Infinite" }
+    name: "LINKEDIN",
+    tag: "EXECUTIVE WHALES",
+    color: "#0077B5",
+    description: "CEOs, lawyers, and doctors looking for discreet arrangements. Average transaction: $2,000+",
+    details: "Professional men in their 40s-60s who can afford luxury lifestyles. They want 'sugar babies' who understand their world. Position yourself as a graduate student or young professional. These men pay for companionship, gifts, and exclusivity.",
+    stats: { roi: "★★★★★", speed: "1 week", victims: "High-value" }
   },
   {
     id: 2,
     name: "TELEGRAM",
-    tag: "BIG FISH",
+    tag: "CRYPTO WHALES",
     color: "#0088cc",
-    description: "Where crypto bros pay $200 for attention. Less volume, bigger wallets.",
-    details: "These aren't Discord kids. These are grown men with disposable income and zero game. Create premium channels. Accept Bitcoin so their wives don't see the transaction. The targets here tip in hundreds, not Nitro.",
-    stats: { roi: "★★★★☆", speed: "1-2 days", victims: "Wealthy" }
+    description: "Crypto millionaires who tip in Bitcoin. One whale can fund your entire operation.",
+    details: "These are tech entrepreneurs and crypto traders with millions in liquid assets. They tip $500+ per conversation and send Lambos as gifts. Build relationships, not transactions. The psychology is different here - they want intellectual equals.",
+    stats: { roi: "★★★★★", speed: "3-5 days", victims: "Ultra-wealthy" }
   },
   {
     id: 3,
-    name: "REDDIT",
-    tag: "SAD BOY HQ",
-    color: "#FF4500",
-    description: "r/lonely has 500k members. r/ForeverAlone has 600k. Do the math.",
-    details: "Don't sell here directly (you'll get banned). Use Reddit to build persona credibility. Post sad girl things. Get karma. Then funnel them to Discord or Snap. They'll already trust you because you 'get them.'",
-    stats: { roi: "★★★☆☆", speed: "Slow build", victims: "Pre-warmed" }
+    name: "DISCORD",
+    tag: "TECH EXECS",
+    color: "#5865F2",
+    description: "Silicon Valley engineers and startup founders. They pay premium for 'exclusive access.'",
+    details: "Join programming and tech communities. Position yourself as a 'tech-savvy model' interested in their world. These men have high IQs but low emotional intelligence. They pay $200-500 per 'private session' and buy expensive gifts.",
+    stats: { roi: "★★★★☆", speed: "2-3 days", victims: "High-income" }
   },
   {
     id: 4,
-    name: "TINDER",
-    tag: "GIFT CARD FARM",
-    color: "#FE3C72",
-    description: "Match. Flirt. 'My phone broke, can you help?' Classic never dies.",
-    details: "Swipe right on everyone. Match with the ugly ones (they're more desperate). Chat for 2-3 days. Drop the bomb: 'I really want to FaceTime but my phone is cracked 🥺 can you help?' Works 40% of the time. Every time.",
-    stats: { roi: "★★★★☆", speed: "3 days", victims: "Down bad" }
+    name: "SEEKING.COM",
+    tag: "SUGAR DADDY CENTRAL",
+    color: "#FF6B6B",
+    description: "The original sugar daddy site. Men here explicitly want to pay for arrangements.",
+    details: "No games, no pretense. These men are 50+ executives who want clear arrangements: $5,000-10,000/month for exclusivity. They fly you to Dubai, buy you apartments, and treat you like royalty. This is the big leagues.",
+    stats: { roi: "★★★★★", speed: "1-2 weeks", victims: "Maximum value" }
   },
   {
     id: 5,
-    name: "BUMBLE",
-    tag: "PREMIUM LOSERS",
-    color: "#FFC629",
-    description: "Same as Tinder but the men have jobs. Sugar daddy angle works here.",
-    details: "Women message first on Bumble, so they think you're invested. Use this psychology against them. These targets will pay for 'dates' that never happen, send 'emergency money,' and believe literally anything you say.",
-    stats: { roi: "★★★★☆", speed: "3-5 days", victims: "Employed" }
+    name: "LUXURY ESCORT SITES",
+    tag: "7-FIGURE CLIENTS",
+    color: "#8B5CF6",
+    description: "Investment bankers and hedge fund managers. They pay $1,000+ per hour.",
+    details: "These are the elite - Wall Street traders, Hollywood producers, tech billionaires. They want sophistication, discretion, and luxury experiences. One client can set you up for life. The entry barrier is high, but the payoff is extraordinary.",
+    stats: { roi: "★★★★★", speed: "2-4 weeks", victims: "Elite clients" }
   },
   {
     id: 6,
-    name: "SNAPCHAT",
-    tag: "RECURRING REVENUE",
-    color: "#FFFC00",
-    description: "Sell 'Premium Snap' access. They pay monthly to see... nothing.",
-    details: "The genius of Premium Snap: auto-delete creates artificial scarcity. Charge $30/month for 'exclusive content.' Post once a week. They renew because they're addicted to the idea of you. Passive income, baby.",
-    stats: { roi: "★★★★☆", speed: "Passive", victims: "Addicted" }
+    name: "PRIVATE CLUBS",
+    tag: "CELEBRITY CIRCLE",
+    color: "#10B981",
+    description: "Access to athletes, actors, and politicians through exclusive networks.",
+    details: "This is where the real money is. Celebrities and public figures pay premium for absolute discretion. They arrange through trusted networks and pay $10,000+ for weekend arrangements. The connections compound - one client introduces you to his friends.",
+    stats: { roi: "★★★★★", speed: "1 month+", victims: "Celebrity level" }
   }
 ];
 
 const methods = [
-  { name: "THE CLASSIC", desc: "Fake pics + dating apps = money. Your grandpa's ewhoring method. Still works.", level: "Beginner" },
-  { name: "GFE (GIRLFRIEND EXP)", desc: "Charge monthly for 'good morning' texts. They think you're dating. You're not.", level: "$$$$" },
-  { name: "FINDOM", desc: "They PAY you to IGNORE them. I'm not joking. Google it.", level: "Advanced" },
-  { name: "AI-ENHANCED", desc: "Generate infinite unique content with AI. ChatGPT for scaling convos. 2025 meta.", level: "Big Brain" },
-  { name: "DATING APP ARBITRAGE", desc: "Farm gift cards from Tinder/Bumble matches. Volume play.", level: "High Effort" },
-  { name: "PREMIUM SNAP/OF", desc: "Monthly subscriptions. You post once a week. They pay forever.", level: "Passive" }
+  { name: "SUGAR DADDY ARRANGEMENTS", desc: "Monthly allowances ($5K-10K) for exclusivity. No games, just clear financial arrangements.", level: "Elite" },
+  { name: "LUXURY COMPANIONSHIP", desc: "Travel with executives to Dubai, Paris, NYC. All expenses paid + generous compensation.", level: "$$$$" },
+  { name: "CRYPTO WHALE MINING", desc: "Target blockchain entrepreneurs. They tip in BTC and send Lambos as gifts.", level: "High-Value" },
+  { name: "EXECUTIVE NETWORKING", desc: "Access to CEOs and high-level professionals through LinkedIn and private clubs.", level: "VIP" },
+  { name: "CELEBRITY CIRCLE ACCESS", desc: "Build connections with athletes, actors, politicians through exclusive networks.", level: "Ultra-Premium" },
+  { name: "WEALTH MANAGEMENT", desc: "Position yourself as a 'financial advisor' to help them 'invest' in you.", level: "Strategic" }
 ];
 
 export const KeywordTargets: React.FC = () => {
@@ -86,7 +86,7 @@ export const KeywordTargets: React.FC = () => {
           TARGET ACQUIRED // TARGET ACQUIRED // TARGET ACQUIRED
         </div>
 
-        <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
           
           {/* Header */}
           <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
@@ -96,12 +96,12 @@ export const KeywordTargets: React.FC = () => {
             </div>
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FDFBF7] font-['Space_Grotesk']">
               WHERE THE <br/>
-              <span className="text-[#2D9C8E]">LOSERS LIVE</span>
+              <span className="text-[#2D9C8E]">SUGAR DADDIES LIVE</span>
             </h2>
-            
+
             <p className="text-base md:text-lg font-light text-[#FDFBF7]/70 leading-relaxed mb-6">
-              Every platform has lonely men with money and zero game. 
-              Here's where to find them. <span className="text-[#FF8A75] font-bold">Click each one for the full playbook.</span>
+              Forget broke college kids. We target wealthy professionals and executives.
+              Here's where the high-net-worth individuals congregate. <span className="text-[#FF8A75] font-bold">Click each platform for the sugar daddy playbook.</span>
             </p>
 
             <div className="p-4 md:p-6 border-l-2 border-[#FF8A75] bg-[#FF8A75]/5">
@@ -178,7 +178,7 @@ export const KeywordTargets: React.FC = () => {
       <section id="methods" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] text-[#1A2A3A] relative overflow-hidden border-t border-[#1A2A3A]/5">
         
         <div className="absolute top-0 right-0 text-[30rem] leading-none font-bold text-[#1A2A3A]/[0.03] translate-x-1/4 -translate-y-1/4 pointer-events-none font-['Space_Grotesk']">
-          💀
+          METHODS
         </div>
 
         <div className="max-w-6xl mx-auto relative z-10 w-full">
@@ -188,12 +188,12 @@ export const KeywordTargets: React.FC = () => {
               Choose Your Weapon
             </div>
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6 font-['Space_Grotesk']">
-              THE METHODS <br/>
-              <span className="text-[#FF8A75]">(THAT ACTUALLY WORK)</span>
+              SUGAR DADDY <br/>
+              <span className="text-[#FF8A75]">STRATEGIES</span>
             </h2>
             <p className="text-lg text-[#1A2A3A]/60 max-w-2xl mx-auto">
-              Forget whatever garbage you found on Hackforums in 2018. 
-              Those methods are <span className="line-through">burned</span> <span className="text-[#FF8A75] font-bold">cremated</span>.
+              Forget broke college kids and basic scams.
+              We target <span className="text-[#FF8A75] font-bold">wealthy professionals</span> who pay premium for sophistication and discretion.
             </p>
           </div>
 
@@ -223,21 +223,20 @@ export const KeywordTargets: React.FC = () => {
             ))}
           </div>
 
-          {/* Hackforums Roast */}
+          {/* Sugar Daddy Focus */}
           <div className="mt-12 p-6 md:p-8 border-2 border-dashed border-[#FF8A75] bg-[#FF8A75]/5 relative">
             <div className="absolute -top-3 left-6 bg-[#FDFBF7] px-3">
-              <span className="text-xs font-bold text-[#FF8A75] uppercase tracking-widest">⚠ PSA</span>
+              <span className="text-xs font-bold text-[#FF8A75] uppercase tracking-widest">💎 ELITE FOCUS</span>
             </div>
             <h4 className="text-xl font-bold mb-3 font-['Space_Grotesk']">
-              Why Your Free Nulled/HF Methods Don't Work
+              Why We Target Sugar Daddies, Not Basic Scams
             </h4>
             <p className="text-[#1A2A3A]/70 mb-4">
-              Those "free ewhoring packs" you downloaded? <strong>Every image is flagged.</strong> 
-              That script you copy-pasted? <strong>Recognized instantly.</strong> 
-              The "method" from 2018? <strong>Patched 6 years ago.</strong>
+              Basic ewhoring methods work for <strong>$200-500/week</strong> from desperate college kids.
+              Sugar daddy strategies deliver <strong>$5,000-50,000/month</strong> from wealthy professionals who want sophistication.
             </p>
             <p className="text-[#1A2A3A] font-bold">
-              You're using a musket in a drone war. No wonder you're broke.
+              We're not doing simple things. We're milking the wealthy elite who can afford to pay premium.
             </p>
           </div>
         </div>
@@ -373,9 +372,9 @@ export const KeywordTargets: React.FC = () => {
           {/* Quote */}
           <div className="mt-12 p-6 border-l-2 border-[#FF8A75] bg-[#FDFBF7]/5">
             <p className="text-lg md:text-xl italic text-[#FDFBF7]/80">
-              "The demand for female attention will never decrease. Ever. Men are biologically programmed to be desperate. You're just monetizing nature."
+              "The wealthy never stop getting wealthier. Target the top 1% who spend $10,000+ on arrangements. One sugar daddy can fund your entire lifestyle."
             </p>
-            <p className="text-xs text-[#FF8A75] mt-2 font-mono font-bold">— ORANOLIO, EXPLOITING LOSERS SINCE 2014</p>
+            <p className="text-xs text-[#FF8A75] mt-2 font-mono font-bold">— ORANOLIO, SUGAR DADDY SPECIALIST</p>
           </div>
         </div>
       </section>

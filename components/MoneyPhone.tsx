@@ -150,13 +150,13 @@ export const MoneyPhone: React.FC = () => {
         {/* Left: Text & Mascot Reaction */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10 order-2 lg:order-1 w-full lg:w-1/2 px-4">
           <h2 className="text-4xl md:text-6xl font-bold text-[#1A2A3A] mb-6">
-            TAX THE <br/>
-            <span className="text-gradient-rich">F*CKING LOSERS</span>
+            TARGET <br/>
+            <span className="text-gradient-rich">SUGAR DADDIES</span>
           </h2>
           <p className="text-lg md:text-xl text-[#1A2A3A]/60 mb-8 max-w-md mx-auto lg:mx-0">
-            They think they are texting a 22-year-old student. <br/>
+            They think they are texting a 22-year-old model. <br/>
             They are actually texting <span className="font-bold text-[#1A2A3A]">YOU</span> (a 30-year-old man in sweatpants). <br/>
-            <span className="italic text-[#FF8A75] font-bold block mt-2">It's literally free money.</span>
+            <span className="italic text-[#FF8A75] font-bold block mt-2">We target wealthy men who pay $500+ per conversation.</span>
           </p>
 
           <button
@@ -178,7 +178,7 @@ export const MoneyPhone: React.FC = () => {
         <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center py-8">
           
           {/* Constrain size using max-width and aspect ratio lock. This ensures it never breaks. */}
-          <div className="relative w-[85vw] max-w-[320px] lg:max-w-[360px] aspect-[9/19] touch-pan-y" style={{ touchAction: 'pan-y' }}>
+          <div className="relative w-[90vw] max-w-[320px] sm:max-w-[340px] lg:max-w-[360px] aspect-[9/19] touch-pan-y" style={{ touchAction: 'pan-y' }}>
             
             {/* Rotation Wrapper with Physics Easing */}
             <div className="w-full h-full relative transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right will-change-transform">

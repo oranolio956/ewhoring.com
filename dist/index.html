@@ -178,6 +178,12 @@
         overscroll-behavior-y: auto; /* Restored native bounce for smoother feel */
         touch-action: pan-y; /* Prioritize vertical scroll */
       }
+
+      /* iOS Safe Area Support */
+      .safe-top { padding-top: env(safe-area-inset-top); }
+      .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+      .safe-left { padding-left: env(safe-area-inset-left); }
+      .safe-right { padding-right: env(safe-area-inset-right); }
       
       /* Global Responsive Constraints */
       img, svg, video {
@@ -347,7 +353,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-D6Kv3WY2.js"></script>
+  <script type="module" crossorigin src="/assets/index-DqIq5AkX.js"></script>
 </head>
   <body>
     <div id="root"></div>

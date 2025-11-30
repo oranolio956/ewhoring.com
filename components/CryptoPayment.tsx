@@ -138,19 +138,24 @@ export const CryptoPayment: React.FC<CryptoPaymentProps> = ({ isOpen, onClose })
       />
       
       {/* Modal */}
-      <div className="relative bg-[#0F1923] border border-[#2D9C8E]/50 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-[0_0_60px_rgba(45,156,142,0.15)]">
+      <div className="relative bg-[#0F1923] border border-[#2D9C8E]/50 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-[0_0_60px_rgba(45,156,142,0.15)] rounded-lg">
         
         {/* Security Header Bar */}
-        <div className="bg-[#2D9C8E]/10 border-b border-[#2D9C8E]/30 px-4 py-2 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-[10px] font-mono text-[#2D9C8E] uppercase tracking-wider">Secure Payment</span>
+        <div className="bg-gradient-to-r from-[#2D9C8E]/10 to-[#1A2A3A]/20 border-b border-[#2D9C8E]/30 px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-6 h-6 bg-[#2D9C8E] rounded-full flex items-center justify-center">
+              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <span className="text-[11px] font-semibold text-[#2D9C8E] uppercase tracking-wide">Secure Payment Portal</span>
+              <div className="text-[9px] text-[#FDFBF7]/60 font-mono">Bank-grade encryption</div>
+            </div>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 bg-[#2D9C8E] rounded-full animate-pulse"></span>
-            <span className="text-[10px] font-mono text-[#FDFBF7]/50">256-bit encrypted</span>
+            <span className="text-[9px] font-mono text-[#FDFBF7]/70">TLS 1.3 Protected</span>
           </div>
         </div>
 
@@ -181,12 +186,19 @@ export const CryptoPayment: React.FC<CryptoPaymentProps> = ({ isOpen, onClose })
           </div>
           
           {/* Order Summary */}
-          <div className="mt-4 p-3 bg-[#0F1923] border border-[#FDFBF7]/10 rounded">
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-[#FDFBF7]/60">The Oranolio Protocol</span>
-              <span className="text-xl font-bold text-[#FDFBF7] font-['Space_Grotesk']">${PRODUCT_PRICE}</span>
+          <div className="mt-4 p-4 bg-gradient-to-r from-[#0F1923] to-[#1A2A3A] border border-[#FDFBF7]/10 rounded-lg">
+            <div className="flex justify-between items-center mb-3">
+              <div>
+                <span className="text-sm font-semibold text-[#FDFBF7]">The Oranolio Protocol</span>
+                <div className="text-[10px] text-[#FDFBF7]/60">Digital Course & Resources</div>
+              </div>
+              <span className="text-2xl font-bold text-[#2D9C8E] font-['Space_Grotesk']">${PRODUCT_PRICE}</span>
             </div>
-            <div className="text-[10px] text-[#FDFBF7]/40 mt-1">One-time payment • Lifetime access</div>
+            <div className="flex justify-between text-[11px] text-[#FDFBF7]/70">
+              <span>One-time payment</span>
+              <span>Lifetime access</span>
+            </div>
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#2D9C8E]/30 to-transparent mt-3"></div>
           </div>
         </div>
 
@@ -227,27 +239,27 @@ export const CryptoPayment: React.FC<CryptoPaymentProps> = ({ isOpen, onClose })
                 ))}
               </div>
 
-              {/* Trust Badges */}
+              {/* Trust Indicators */}
               <div className="mt-6 pt-4 border-t border-[#FDFBF7]/10">
-                <div className="flex justify-center gap-6 text-[#FDFBF7]/30">
-                  <div className="flex items-center gap-1 text-[10px]">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="flex flex-col items-center gap-2 p-2 bg-[#1A2A3A]/30 rounded-lg border border-[#2D9C8E]/20">
+                    <svg className="w-5 h-5 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Verified</span>
+                    <span className="text-[9px] font-semibold text-[#FDFBF7] text-center">Verified Merchant</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[10px]">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex flex-col items-center gap-2 p-2 bg-[#1A2A3A]/30 rounded-lg border border-[#2D9C8E]/20">
+                    <svg className="w-5 h-5 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                     </svg>
-                    <span>Encrypted</span>
+                    <span className="text-[9px] font-semibold text-[#FDFBF7] text-center">Bank-Level Security</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[10px]">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex flex-col items-center gap-2 p-2 bg-[#1A2A3A]/30 rounded-lg border border-[#2D9C8E]/20">
+                    <svg className="w-5 h-5 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                       <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Instant Access</span>
+                    <span className="text-[9px] font-semibold text-[#FDFBF7] text-center">Instant Delivery</span>
                   </div>
                 </div>
               </div>
@@ -368,13 +380,29 @@ export const CryptoPayment: React.FC<CryptoPaymentProps> = ({ isOpen, onClose })
         </div>
 
         {/* Footer */}
-        <div className="bg-[#1A2A3A] border-t border-[#FDFBF7]/10 p-4">
-          <div className="flex items-center justify-center gap-4 text-[10px] text-[#FDFBF7]/30">
-            <span>🔒 SSL Secured</span>
-            <span>•</span>
-            <span>No Hidden Fees</span>
-            <span>•</span>
-            <span>Instant Delivery</span>
+        <div className="bg-gradient-to-r from-[#1A2A3A] to-[#0F1923] border-t border-[#2D9C8E]/20 p-4">
+          <div className="flex items-center justify-center gap-6 text-[11px] text-[#FDFBF7]/60">
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+              </svg>
+              <span>SSL Secured</span>
+            </div>
+            <div className="w-[1px] h-4 bg-[#2D9C8E]/30"></div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span>No Hidden Fees</span>
+            </div>
+            <div className="w-[1px] h-4 bg-[#2D9C8E]/30"></div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-[#2D9C8E]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span>Instant Access</span>
+            </div>
           </div>
         </div>
       </div>

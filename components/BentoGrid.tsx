@@ -53,7 +53,7 @@ export const BentoGrid: React.FC = () => {
          ORANOLIO PROTOCOL
       </div>
 
-      <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
         
         {/* Header */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">

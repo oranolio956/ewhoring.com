@@ -17,7 +17,6 @@ import { WhySection } from './components/WhySection';
 import { TheSprint } from './components/TheSprint';
 import { RedditChat } from './components/RedditChat';
 import { ScamFooter } from './components/ScamFooter';
-import { Preloader } from './components/Preloader';
 import { SalesToast } from './components/SalesToast';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
@@ -68,7 +67,6 @@ const GlobalCTAButton: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  const [loading, setLoading] = useState(true);
   const [visitorCount, setVisitorCount] = useState<string>("0");
   const [legalOpen, setLegalOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -658,10 +656,7 @@ const App: React.FC = () => {
 
   return (
     <PaymentProvider>
-      {loading && <Preloader onComplete={() => setLoading(false)} />}
-      
-      {!loading && (
-        <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
+      <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
           
           <HaterBlocker />
           <ExitModal />
@@ -856,7 +851,7 @@ const App: React.FC = () => {
               </div>
             </footer>
           </main>
-          
+
           {/* Inline styles for marquee animation since we aren't using a tailwind plugin */}
           <style>{`
             @keyframes marquee {
@@ -865,7 +860,6 @@ const App: React.FC = () => {
             }
           `}</style>
         </div>
-      )}
       <Analytics />
     </PaymentProvider>
   );

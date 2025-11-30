@@ -4,6 +4,7 @@ import { usePayment } from '../contexts/PaymentContext';
 
 export const NavBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { openPayment } = usePayment();
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export const NavBar: React.FC = () => {
           scrolled ? 'bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#1A2A3A]/5 shadow-sm' : 'bg-transparent'
         }`}
       >
-        <div className="w-full h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] px-6 md:px-8 lg:px-12 flex items-center justify-between max-w-[1920px] mx-auto pl-[max(1.5rem,env(safe-area-inset-left))] pr-[max(1.5rem,env(safe-area-inset-right))]">
+        <div className="w-full h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between max-w-7xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
             
             {/* Branding - Always Visible, Shrinks if needed but stays readable */}
             <a 
@@ -49,6 +50,17 @@ export const NavBar: React.FC = () => {
 
             {/* Actions Container */}
             <div className="flex gap-2 md:gap-4 items-center shrink-0">
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="md:hidden p-2 text-[#1A2A3A] hover:bg-[#1A2A3A]/5 rounded transition-colors"
+                  aria-label="Toggle mobile menu"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                  </svg>
+                </button>
+
                 {/* 'Methods Leaked' - Hidden on mobile, visible on tablet+ */}
                 <button onClick={openHackForums} className="hidden sm:flex items-center gap-2 bg-[#FDFBF7]/50 px-3 py-1 rounded-full border border-[#1A2A3A]/5 backdrop-blur-sm hover:bg-white transition-colors cursor-pointer">
                     <div className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse"></div>
@@ -76,6 +88,32 @@ export const NavBar: React.FC = () => {
             </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed top-[calc(4rem+env(safe-area-inset-top))] left-0 right-0 bg-white/95 backdrop-blur-md border-b border-[#1A2A3A]/10 z-40 shadow-lg">
+          <div className="px-4 py-6 space-y-4">
+            <button onClick={openHackForums} className="w-full flex items-center gap-2 bg-[#FDFBF7]/50 px-4 py-3 rounded-lg border border-[#1A2A3A]/5 hover:bg-white transition-colors">
+              <div className="w-2 h-2 bg-[#FF8A75] rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium">Methods Leaked</span>
+            </button>
+
+            <button
+              onClick={openHackForums}
+              className="w-full px-4 py-3 border border-[#1A2A3A] text-[#1A2A3A] text-sm font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded"
+            >
+              Join The Harem
+            </button>
+
+            <button
+              onClick={openPayment}
+              className="w-full group relative px-6 py-3 bg-[#1A2A3A] text-[#FDFBF7] text-sm font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg rounded overflow-hidden btn-glitch"
+            >
+              DOWNLOAD THE BRAIN
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Vertical Navigation (Desktop Only) - Semantic Links */}
       <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-8 mix-blend-darken pl-[env(safe-area-inset-left)]">

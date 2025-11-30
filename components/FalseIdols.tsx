@@ -8,7 +8,7 @@ export const FalseIdols: React.FC = () => {
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-[#FF8A75] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-[#FF8A75] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10 w-full">
         
@@ -59,14 +59,14 @@ export const FalseIdols: React.FC = () => {
             <div className="relative flex justify-center w-full">
                 
                 {/* Speech Bubble */}
-                <div className="absolute top-0 right-0 md:right-10 bg-[#1A2A3A] text-white p-4 rounded-xl rounded-bl-none transform -rotate-6 z-20 shadow-xl max-w-[160px] md:max-w-[200px]">
+                <div className="absolute top-0 right-0 md:right-10 bg-[#1A2A3A] text-white p-4 rounded-xl rounded-bl-none transform -rotate-6 z-20 shadow-xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]">
                     <p className="text-[10px] md:text-xs font-mono font-bold uppercase">
                         "BREATHE AIR! YOU DON'T NEED MONEY YOU NEED SPARKLING WATER!"
                     </p>
                 </div>
 
                 {/* The Character SVG - Constrained Width */}
-                <svg viewBox="0 0 400 400" className="w-full max-w-[320px] h-auto md:w-96 md:h-96 drop-shadow-2xl hover:scale-105 transition-transform duration-300">
+                <svg viewBox="0 0 400 400" className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300">
                     <defs>
                         <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
                             <stop offset="0%" stopColor="#E0AC69" />
