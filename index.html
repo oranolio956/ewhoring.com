@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>ORANOLIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/react-tooltip@5.26.4/dist/react-tooltip.css" />
@@ -11,10 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
       /* Custom Animations and Utilities */
-      body {
+      html, body {
+        width: 100%;
+        overflow-x: hidden; /* CRITICAL: Prevents side scroll on mobile */
+        position: relative;
         font-family: 'Outfit', sans-serif;
         background-color: #FDFBF7;
-        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
       }
       
       h1, h2, h3, h4, h5, h6, .display-text {

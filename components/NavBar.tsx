@@ -1,34 +1,77 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const NavBar: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      {/* Top Left Branding */}
-      <div className="fixed top-6 left-6 z-50 mix-blend-difference">
-        <span className="font-['Space_Grotesk'] font-bold text-[#1A2A3A] text-xl tracking-tighter hover:italic cursor-pointer transition-all">
+      {/* Mobile Backdrop Bar - Adapts to scroll state */}
+      <div className={`fixed top-0 left-0 right-0 h-16 z-40 transition-all duration-500 pointer-events-none ${scrolled ? 'bg-[#FDFBF7]/90 backdrop-blur-xl border-b border-[#1A2A3A]/5 shadow-sm' : ''}`}></div>
+
+      {/* Branding - Fluid Positioning */}
+      <div className="fixed top-4 left-4 md:top-6 md:left-6 z-50 mix-blend-difference" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <span className="font-['Space_Grotesk'] font-bold text-[#1A2A3A] text-base md:text-xl tracking-tighter hover:italic cursor-pointer transition-all select-none">
           ORANOLIO ©
         </span>
       </div>
 
-      {/* Top Right Actions */}
-      <div className="fixed top-6 right-6 z-50 flex gap-4">
-        <button className="hidden md:block px-6 py-2 border border-[#1A2A3A] text-[#1A2A3A] text-xs font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors">
-          Manifesto
+      {/* Actions - Responsive Stacking */}
+      <div className="fixed top-3 right-3 md:top-6 md:right-6 z-50 flex gap-2 md:gap-4 items-center">
+        {/* 'Methods Leaked' - Hidden on mobile, visible on tablet+ */}
+        <div className="hidden sm:flex items-center gap-2 mr-2 md:mr-4 bg-[#FDFBF7]/50 px-3 py-1 rounded-full border border-[#1A2A3A]/5 backdrop-blur-sm">
+            <div className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse"></div>
+            <span className="text-[10px] font-mono uppercase text-[#1A2A3A]/60 tracking-widest whitespace-nowrap">Methods Leaked</span>
+        </div>
+        
+        {/* Secondary Button - Hides on very small screens to prioritize CTA */}
+        <button 
+          onClick={() => scrollToSection('manifesto')}
+          className="hidden min-[400px]:block px-4 py-2 border border-[#1A2A3A] text-[#1A2A3A] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded-sm"
+        >
+          Join The Harem
         </button>
-        <button className="px-6 py-2 bg-[#1A2A3A] text-[#FDFBF7] text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors">
-          Enroll
+        
+        {/* Primary CTA - Always Visible */}
+        <button 
+          onClick={() => scrollToSection('money-printer')}
+          className="px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm"
+        >
+          Steal Identity
         </button>
       </div>
 
-      {/* Vertical Navigation (Desktop) */}
-      <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-8">
-        {['Philosophy', 'Syllabus', 'Pricing'].map((item, index) => (
-          <div key={item} className="group flex items-center gap-4 cursor-pointer">
-             <span className="text-[10px] font-mono text-[#1A2A3A]/40">0{index + 1}</span>
-             <span className="text-sm uppercase tracking-widest text-[#1A2A3A] font-medium relative overflow-hidden">
-               <span className="block group-hover:-translate-y-full transition-transform duration-300">{item}</span>
-               <span className="absolute top-full left-0 block group-hover:-translate-y-full transition-transform duration-300 text-[#FF8A75]">{item}</span>
+      {/* Vertical Navigation (Desktop Only) - Hidden on Touch Devices */}
+      <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-8 mix-blend-darken">
+        {[
+          { label: 'The Con', id: 'hero' }, 
+          { label: 'Victims', id: 'money-printer' }, 
+          { label: 'Cashout', id: 'manifesto' }
+        ].map((item, index) => (
+          <div 
+            key={item.label} 
+            onClick={() => scrollToSection(item.id)}
+            className="group flex items-center gap-4 cursor-pointer"
+          >
+             <span className="text-[10px] font-mono text-[#1A2A3A]/40 font-bold">0{index + 1}</span>
+             <span className="text-sm uppercase tracking-widest text-[#1A2A3A] font-bold relative overflow-hidden">
+               <span className="block group-hover:-translate-y-full transition-transform duration-300">{item.label}</span>
+               <span className="absolute top-full left-0 block group-hover:-translate-y-full transition-transform duration-300 text-[#FF8A75]">{item.label}</span>
              </span>
           </div>
         ))}

@@ -4,57 +4,81 @@ import { Mascot } from './Mascot';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative z-10 min-h-screen flex flex-col justify-between pt-32 pb-12 px-6 md:px-12 overflow-hidden">
+    <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-between pt-24 pb-8 md:pt-32 md:pb-12 px-4 md:px-12 overflow-hidden w-full max-w-[100vw] mx-auto">
       
-      {/* Massive Background Typography */}
-      <div className="flex flex-col relative">
-        <div className="relative">
-          <h1 className="text-[12vw] leading-[0.8] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken">
-            ORANOLIO
+      {/* Massive Background Typography - Fluid Clamping */}
+      <div className="flex flex-col relative mt-4 md:mt-0 w-full max-w-[1920px] mx-auto">
+        <div className="relative w-full animate-[fadeInUp_1s_ease-out_forwards] opacity-0 z-10">
+          {/* Clamp font size: Minimum 3rem, Ideal 13vw, Max 10rem */}
+          <h1 className="text-[clamp(3.5rem,13vw,11rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full">
+            YOU'RE A DUDE?
           </h1>
-          <div className="absolute top-0 right-0 md:right-20 w-32 h-32 md:w-48 md:h-48">
+          
+          {/* Mascot - Positioning adapts to screen ratio */}
+          <div className="absolute top-[-20px] right-0 w-[clamp(5rem,15vw,12rem)] h-[clamp(5rem,15vw,12rem)] md:top-0 md:right-[10%] opacity-90 z-0 pointer-events-none md:pointer-events-auto">
              <Mascot />
           </div>
         </div>
         
-        <div className="flex items-center gap-4 md:gap-12 ml-2 md:ml-24 mt-4">
+        <div className="flex items-center gap-4 md:gap-12 ml-1 md:ml-24 mt-4 animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
            <div className="h-[2px] w-12 md:w-32 bg-[#FF8A75]"></div>
-           <h2 className="text-2xl md:text-4xl font-light italic text-[#1A2A3A] font-serif">
-             teaches
+           <h2 className="text-[clamp(1rem,3vw,2rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3">
+             congratulations,
+             <div className="bg-[#2D9C8E] text-white text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest animate-pulse">
+                <span>✓</span> Verified Girl
+             </div>
            </h2>
         </div>
 
-        <h1 className="text-[12vw] leading-[0.8] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 relative z-20">
-          EWHORE
+        <h1 className="text-[clamp(3.5rem,13vw,11rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-2 relative z-20 animate-[fadeInUp_1s_ease-out_0.6s_forwards] opacity-0 drop-shadow-sm max-w-full">
+          NOW YOU'RE NOT.
         </h1>
       </div>
 
-      {/* Bottom Editorial Content */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mt-12 md:mt-0 border-t border-[#1A2A3A]/20 pt-8">
-        <div className="md:col-span-4">
-          <p className="text-xs font-mono uppercase text-[#1A2A3A]/60 mb-2">
-            [ Course ID: 99-A ]
+      {/* Bottom Editorial Content - Responsive Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-auto border-t border-[#1A2A3A]/20 pt-8 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0">
+        <div className="lg:col-span-6">
+          <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
+            [ DIGITAL GENDER REASSIGNMENT // EST. 2014 ]
           </p>
-          <p className="text-lg leading-tight font-medium text-[#1A2A3A]">
-            The definitive guide to digital persona architecture.
-            <br />
-            Construct desire. Monetize the signal.
+          <p className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
+            FROM "SUP BRO" TO <br className="hidden md:block" /> "HEY DADDY" IN 20 MINUTES.
+            <br className="hidden md:block"/>
+            <span className="text-[#2D9C8E] italic normal-case font-serif text-lg md:text-xl block mt-4 max-w-xl">
+              We teach hairy men how to create a 19-year-old avatar, get a $150 "weekly allowance" from a stranger named Tex, and never work again. It's not magic. It's arbitrage.
+            </span>
           </p>
         </div>
         
-        <div className="md:col-span-4 flex flex-col justify-end">
-           <div className="flex gap-2 items-center">
+        <div className="lg:col-span-2 flex flex-col justify-end">
+           <div className="flex gap-2 items-center bg-white/50 w-fit px-3 py-2 rounded-full backdrop-blur-sm border border-[#1A2A3A]/10">
              <div className="w-2 h-2 rounded-full bg-[#FF8A75] animate-pulse"></div>
-             <span className="text-xs font-bold uppercase tracking-widest">Live Cohort Open</span>
+             <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#FF8A75]">Zero Morals Required</span>
            </div>
         </div>
 
-        <div className="md:col-span-4 flex justify-end items-end">
-           <p className="text-right text-xs max-w-[200px] text-[#1A2A3A]/50">
-             *Results vary. This is high-performance psychological warfare, not a template.
-           </p>
+        <div className="flex lg:col-span-4 justify-start lg:justify-end items-end gap-4 mt-4 lg:mt-0">
+           <div className="text-left lg:text-right w-full lg:w-auto">
+                <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200">
+                    START THE GRIFT
+                </button>
+               <p className="text-[10px] text-[#1A2A3A]/40 mt-3 font-mono">
+                 *Results may vary. Tom made $150 in 15 mins.
+               </p>
+           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
     </section>
   );
 };

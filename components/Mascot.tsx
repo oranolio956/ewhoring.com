@@ -6,27 +6,31 @@ interface MascotProps {
 }
 
 export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
-  const [rotation, setRotation] = useState(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    // If excitement is high, auto-rotate faster. If low, rely on scroll.
-    let animationFrameId: number;
-    
-    const animate = () => {
-      if (excitementLevel > 0) {
-        setRotation(prev => prev + (0.5 + excitementLevel * 5)); // Spin faster with excitement
-      } else {
-        setRotation(window.scrollY * 0.2);
-      }
-      animationFrameId = requestAnimationFrame(animate);
+    const handleMouseMove = (e: MouseEvent) => {
+      // Calculate normalized mouse position (-1 to 1)
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      setMousePos({ x, y });
     };
 
-    animationFrameId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrameId);
+    if (excitementLevel === 0) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
+    
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [excitementLevel]);
 
   // Dynamic Styles based on excitement
   const pupilSize = 30 + (excitementLevel * 20); // 30 to 50
+  
+  // Calculate eye look direction
+  // If excited, it looks center/shakes. If idle, it tracks mouse.
+  const lookX = excitementLevel > 0 ? 0 : mousePos.x * 30;
+  const lookY = excitementLevel > 0 ? 0 : mousePos.y * 20;
+
   const irisColorStart = excitementLevel > 0.5 ? '#F4D35E' : '#2D9C8E'; // Teal to Gold
   const irisColorEnd = excitementLevel > 0.5 ? '#FF8A75' : '#1A2A3A'; // Navy to Coral
   const shakeClass = excitementLevel > 0.8 ? 'animate-vibrate' : '';
@@ -62,7 +66,7 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
         </defs>
         
         {/* Outer Ring - Rotates */}
-        <g transform={`rotate(${rotation} 100 100)`}>
+        <g className={`origin-center ${excitementLevel > 0 ? 'animate-[spin_4s_linear_infinite]' : 'transition-transform duration-1000'}`} style={{ transform: excitementLevel === 0 ? `rotate(${mousePos.x * 10}deg)` : undefined }}>
           <path 
             d="M100 20 L180 100 L100 180 L20 100 Z" 
             fill="none" 
@@ -77,8 +81,11 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
            />
         </g>
 
-        {/* The Eye - Abstract */}
-        <g className="transition-transform duration-500 group-hover:scale-110 origin-center">
+        {/* The Eye - Tracks Mouse or Reacts */}
+        <g 
+          className="transition-transform duration-100 ease-out origin-center"
+          style={{ transform: `translate(${lookX}px, ${lookY}px)` }}
+        >
             {/* Sclera */}
             <path 
                 d={`M20 100 Q100 ${40 - excitementLevel * 20} 180 100 Q100 ${160 + excitementLevel * 20} 20 100 Z`}

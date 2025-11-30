@@ -6,6 +6,11 @@ import { BentoGrid } from './components/BentoGrid';
 import { FloatingBlobs } from './components/FloatingBlobs';
 import { Ticker } from './components/Ticker';
 import { MoneyPhone } from './components/MoneyPhone';
+import { Testimonials } from './components/Testimonials';
+import { FAQ } from './components/FAQ';
+import { ROICalculator } from './components/ROICalculator';
+import { BannedBy } from './components/BannedBy';
+import { OriginStory } from './components/OriginStory';
 
 const App: React.FC = () => {
   const [visitorCount, setVisitorCount] = useState<string>("0");
@@ -45,62 +50,84 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white">
+    <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
+      
+      {/* 0. Fake Urgency Banner */}
+      <div className="bg-[#FF8A75] text-[#1A2A3A] text-[10px] md:text-xs font-bold text-center py-2 uppercase tracking-widest z-[60] relative px-2">
+         ⚠ Warning: Discord is patching the "Voice Changer" exploit soon. Join before the loophole closes.
+      </div>
+
       {/* 1. Global Noise Overlay */}
       <div className="bg-noise" />
       
       {/* 2. Floating Blobs Background */}
       <FloatingBlobs />
 
-      {/* 3. Content */}
+      {/* 3. Content - Wrapped for Ultra Wide screens to prevent content stretching */}
       <NavBar />
       
-      <main className="relative z-10">
+      <main className="relative z-10 w-full">
         <HeroSection />
+
+        <OriginStory />
+        
+        {/* Social Proof Parody */}
+        <BannedBy />
         
         {/* New Revenue Simulation Section */}
         <MoneyPhone />
 
         <Ticker />
-        <BentoGrid />
         
+        {/* Earnings Calculator */}
+        <ROICalculator />
+
+        <Testimonials />
+
+        {/* ID for smooth scrolling */}
+        <div id="manifesto">
+            <BentoGrid />
+        </div>
+        
+        <FAQ />
+
         {/* Footer / CTA Area */}
-        <section className="py-24 text-center px-4">
-          <div className="glass-panel max-w-5xl mx-auto rounded-[3rem] p-12 md:p-24 relative overflow-hidden group">
-             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#2D9C8E]/10 pointer-events-none"></div>
+        <section className="py-16 md:py-24 text-center px-4 bg-[#FDFBF7]">
+          <div className="glass-panel max-w-5xl mx-auto rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 relative overflow-hidden group border border-[#1A2A3A]/5">
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FF8A75]/10 pointer-events-none"></div>
              
              {/* Animated Headline */}
-             <div className="mb-12 relative z-10">
-                <h2 className="text-5xl md:text-8xl font-bold text-[#1A2A3A] leading-[0.85] tracking-tighter">
-                  <span className="block hover:translate-x-2 transition-transform duration-500">EVOLVE OR EXPIRE.</span>
-                  <span className="block text-gradient-rich italic mt-2 animate-float">CLAIM TOTAL DOMINANCE.</span>
+             <div className="mb-8 md:mb-12 relative z-10">
+                <h2 className="text-4xl md:text-8xl font-bold text-[#1A2A3A] leading-[0.9] tracking-tighter">
+                  <span className="block hover:translate-x-2 transition-transform duration-500">MORALS?</span>
+                  <span className="block text-gradient-rich italic mt-2 animate-float">TOO EXPENSIVE.</span>
                 </h2>
              </div>
              
-             <p className="text-lg md:text-xl text-[#1A2A3A]/60 mb-12 max-w-lg mx-auto font-medium relative z-10">
-               The Oranolio method is not for everyone. It is for the few who are ready to rule the digital landscape.
+             <p className="text-base md:text-xl text-[#1A2A3A]/60 mb-8 md:mb-12 max-w-lg mx-auto font-medium relative z-10">
+               Stop letting your conscience get in the way of your bag. Men are desperate. You are broke. The solution is simple.
              </p>
              
-             <button className="group relative px-10 py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-sm md:text-base z-10">
-                <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">Join the Waitlist</span>
-                <div className="absolute inset-0 bg-[#2D9C8E] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
+             <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto">
+                <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
+                <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
              </button>
           </div>
         </section>
 
-        <footer className="py-12 flex flex-col items-center justify-center gap-4 text-[#1A2A3A]/80">
-          <div className="text-sm md:text-base uppercase tracking-widest font-extrabold">
-             © {new Date().getFullYear()} Oranolio. A new era of digital mastery.
+        <footer className="py-8 md:py-12 flex flex-col items-center justify-center gap-4 text-[#1A2A3A]/80 mb-8 bg-[#FDFBF7]">
+          <div className="text-[10px] md:text-base uppercase tracking-widest font-extrabold text-center px-4">
+             © {new Date().getFullYear()} Oranolio. Exploiting Losers Since 2014.
           </div>
           
           {/* Unique Visitor Tracker - Interactive */}
-          <div className="group flex items-center gap-3 px-5 py-2 border border-[#2D9C8E]/30 rounded-full bg-[#FDFBF7]/50 backdrop-blur-sm cursor-help transition-all duration-300 hover:scale-105 hover:bg-[#1A2A3A] hover:border-[#1A2A3A] shadow-sm hover:shadow-lg hover:shadow-[#2D9C8E]/20">
-            <span className="relative flex h-2 w-2">
+          <div className="group flex items-center gap-3 px-5 py-2 border border-[#2D9C8E]/30 rounded-full bg-white/50 backdrop-blur-sm cursor-help transition-all duration-300 hover:scale-105 hover:bg-[#1A2A3A] hover:border-[#1A2A3A] shadow-sm hover:shadow-lg hover:shadow-[#2D9C8E]/20 mx-4">
+            <span className="relative flex h-2 w-2 flex-shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2D9C8E] opacity-75 group-hover:bg-[#FF8A75]"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2D9C8E] group-hover:bg-[#FF8A75] transition-colors duration-300"></span>
             </span>
-            <span className="font-mono text-xs text-[#1A2A3A] tracking-wider group-hover:text-[#FDFBF7] transition-colors duration-300">
-              LIVE WEEKLY VISITORS: <span className="font-bold">{visitorCount}</span>
+            <span className="font-mono text-[10px] md:text-xs text-[#1A2A3A] tracking-wider group-hover:text-[#FDFBF7] transition-colors duration-300 whitespace-nowrap">
+              ACTIVE DUDES ONLINE: <span className="font-bold">{visitorCount}</span>
             </span>
           </div>
         </footer>
