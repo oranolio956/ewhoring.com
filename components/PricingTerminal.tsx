@@ -1,9 +1,7 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 
 export const PricingTerminal: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'standard' | 'mentorship'>('standard');
-
   return (
     <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
       

@@ -1,10 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Mascot } from './Mascot';
 
 export const ScamFooter: React.FC = () => {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <section className="py-24 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
@@ -24,10 +22,7 @@ export const ScamFooter: React.FC = () => {
            </div>
         </div>
 
-        <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-        >
+        <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help">
           IS THIS A SCAM?
         </h2>
 
