@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { NavBar } from './components/NavBar';
 import { HeroSection } from './components/HeroSection';
 import { BentoGrid } from './components/BentoGrid';
@@ -410,6 +411,7 @@ const App: React.FC = () => {
           `}</style>
         </div>
       )}
+      <Analytics />
     </>
   );
 };
