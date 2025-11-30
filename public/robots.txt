@@ -1,0 +1,55 @@
+# ================================================
+# robots.txt for ewhoring.com
+# Oranolio Protocol - Maximum Search Visibility
+# ================================================
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+
+# Specific bot permissions
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+# Disallow non-essential paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Sitemaps
+Sitemap: https://ewhoring.com/sitemap.xml
+
+# Host directive for Yandex
+Host: https://ewhoring.com
+
+# Crawl-delay for politeness (optional)
+# Crawl-delay: 1
+
