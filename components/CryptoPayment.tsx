@@ -60,10 +60,11 @@ const QRCode: React.FC<{ data: string; size?: number }> = ({ data, size = 180 })
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}&bgcolor=FFFFFF&color=1A2A3A&margin=1`;
   
   return (
-    <img 
-      src={qrUrl} 
-      alt="QR Code" 
-      width={size} 
+    <img
+      src={qrUrl}
+      alt="Cryptocurrency payment QR code for secure transaction"
+      width={size}
+      loading="lazy" 
       height={size}
       className="mx-auto"
       style={{ imageRendering: 'pixelated' }}
