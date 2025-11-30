@@ -24,7 +24,7 @@ export const PunchMadeParody: React.FC = () => {
 
       {/* Full Screen SWAT Chaos Overlay */}
       {swatState === 'swatting' && (
-          <div className="fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center overflow-hidden">
+          <div className="fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center overflow-hidden cursor-none">
              <div className="absolute inset-0 animate-[police-strobe_0.1s_infinite]"></div>
              <div className="relative z-10 text-center animate-[shake-hard_0.1s_infinite]">
                  <h1 className="text-[15vw] font-black text-white leading-none uppercase drop-shadow-[10px_10px_0px_#FF0000]">OH SHIT!!!</h1>

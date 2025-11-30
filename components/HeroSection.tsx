@@ -6,23 +6,23 @@ export const HeroSection: React.FC = () => {
   return (
     <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-between pt-24 pb-8 md:pt-32 md:pb-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
       
-      {/* Massive Background Typography - Standard Breakpoints for Reliability */}
+      {/* Massive Background Typography - Viewport Width Locked */}
       <header className="flex flex-col relative mt-4 md:mt-0 w-full max-w-[1920px] mx-auto">
         <div className="relative w-full animate-[fadeInUp_1s_ease-out_forwards] opacity-0 z-10">
-          {/* Robust Responsive Text Sizes */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full hover:scale-[1.01] transition-transform duration-500 cursor-default">
+          {/* Using VW units ensures it fills screen exactly the same on iPhone SE as 4K Monitor */}
+          <h1 className="text-[14vw] leading-[0.8] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full hover:scale-[1.01] transition-transform duration-500 cursor-default">
             YOU'RE A DUDE?
           </h1>
           
-          {/* Mascot */}
-          <div className="absolute top-[-20px] right-0 w-24 h-24 md:w-48 md:h-48 lg:w-64 lg:h-64 opacity-90 z-0 pointer-events-none md:pointer-events-auto">
+          {/* Mascot - Responsive Positioning */}
+          <div className="absolute top-[-10%] right-[5%] w-[18vw] h-[18vw] opacity-90 z-0 pointer-events-none md:pointer-events-auto">
              <Mascot />
           </div>
         </div>
         
-        <div className="flex items-center gap-4 md:gap-12 ml-1 md:ml-24 mt-4 md:mt-8 animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
-           <div className="h-[2px] w-8 md:w-32 bg-[#FF8A75]"></div>
-           <h2 className="text-lg md:text-2xl lg:text-3xl font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-4 md:gap-12 ml-1 md:ml-[5vw] mt-[2vw] animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
+           <div className="h-[2px] w-[8vw] bg-[#FF8A75]"></div>
+           <h2 className="text-[clamp(1rem,2.5vw,2rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap">
              congratulations,
              <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
                 <span>✓</span> Verified Catfish
@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
            </h2>
         </div>
 
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 relative z-20 animate-[fadeInUp_1s_ease-out_0.6s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500">
+        <h1 className="text-[14vw] leading-[0.8] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-[2vw] relative z-20 animate-[fadeInUp_1s_ease-out_0.6s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500">
           NOW YOU'RE NOT.
         </h1>
       </header>

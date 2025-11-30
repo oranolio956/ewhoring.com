@@ -28,6 +28,8 @@ import { OranolioSlam } from './components/OranolioSlam';
 import { ReceiptVault } from './components/ReceiptVault';
 import { PricingTerminal } from './components/PricingTerminal';
 import { SideEffects } from './components/SideEffects';
+import { HaterBlocker } from './components/HaterBlocker';
+import { ExitModal } from './components/ExitModal';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -169,6 +171,8 @@ const App: React.FC = () => {
       {!loading && (
         <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
           
+          <HaterBlocker />
+          <ExitModal />
           <SalesToast />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
 

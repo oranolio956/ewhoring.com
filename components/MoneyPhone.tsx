@@ -173,7 +173,7 @@ export const MoneyPhone: React.FC = () => {
         <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center py-8">
           
           {/* Constrain container size relative to screen width AND aspect ratio */}
-          <div className="relative w-[80vw] sm:w-[320px] lg:w-[360px] aspect-[9/19]">
+          <div className="relative w-[80vw] sm:w-[320px] lg:w-[360px] aspect-[9/19] touch-pan-y">
             
             {/* Unified Rotation Wrapper */}
             <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right will-change-transform">

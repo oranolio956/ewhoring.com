@@ -130,8 +130,8 @@ export const RedditChat: React.FC = () => {
           </p>
         </div>
 
-        {/* Reddit Chat UI Container */}
-        <div className="max-w-[450px] mx-auto rounded-t-xl overflow-hidden shadow-2xl font-sans text-sm relative border border-[#343536]">
+        {/* Reddit Chat UI Container - Responsive Width Locked */}
+        <div className="w-full max-w-[450px] mx-auto rounded-t-xl overflow-hidden shadow-2xl font-sans text-sm relative border border-[#343536]">
             
             {/* Reddit Header */}
             <div className="flex items-center justify-between px-3 py-2 border-b border-[#343536]" style={{ backgroundColor: REDDIT_HEADER }}>
@@ -151,15 +151,9 @@ export const RedditChat: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center gap-3 pr-2">
-                    <button className="text-[#818384] hover:bg-[#343536] p-1.5 rounded-full transition-colors">
+                <div className="flex items-center gap-2 pr-2">
+                    <button className="text-[#818384] hover:bg-[#343536] p-1.5 rounded-full transition-colors hidden sm:block">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                    </button>
-                    <button className="text-[#818384] hover:bg-[#343536] p-1.5 rounded-full transition-colors">
-                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.41 7.41L18 6l-6 6-6-6L4.59 7.41 10.59 13.41 12 14.83l1.41-1.42L19.41 7.41z"/></svg>
-                    </button>
-                    <button className="text-[#818384] hover:bg-[#343536] p-1.5 rounded-full transition-colors">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
                     </button>
                 </div>
             </div>
@@ -215,7 +209,7 @@ export const RedditChat: React.FC = () => {
             {/* Chat Footer (Input) */}
             <div className="p-3 border-t border-[#343536]" style={{ backgroundColor: REDDIT_BG }}>
                 <div className="flex items-center gap-2">
-                    <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors">
+                    <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors hidden sm:block">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
                     </button>
                     <div className="flex-1 bg-[#272729] rounded-full h-10 flex items-center px-4 border border-[#343536] text-[#818384] text-sm cursor-not-allowed hover:border-[#4a4a4c] transition-colors">
