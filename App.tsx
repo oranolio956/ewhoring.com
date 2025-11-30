@@ -730,75 +730,57 @@ const App: React.FC = () => {
           <NavBar />
           
           <main className="relative z-10 w-full">
+            {/* === HOOK & ATTENTION === */}
             <HeroSection />
 
-            {/* As Seen On Parody Bar */}
+            {/* === SOCIAL PROOF === */}
             <AsSeenOn />
 
+            {/* === AUTHORITY BUILDING === */}
+            <OranolioSlam />
             <OriginStory />
-            
-            {/* SEO Content - Definitions, Comparisons, Featured Snippet Bait */}
-            <SEOContent />
-            
-            {/* Aggressive Keyword Targeting - Discord, Telegram, Methods, etc */}
-            <KeywordTargets />
-            
-            {/* The Chat Simulation */}
-            <RedditChat />
-            
-            {/* Visual Proof / Receipts */}
-            <ReceiptVault />
 
-            {/* Social Proof Parody */}
+            {/* === PROBLEM IDENTIFICATION === */}
             <BannedBy />
-            
-            {/* New Revenue Simulation Section */}
-            <MoneyPhone />
+            <FalseIdols />
 
-            <Ticker />
-            
-            {/* Earnings Calculator */}
+            {/* === SOLUTION DEMONSTRATION === */}
+            <div id="money-printer">
+                <MoneyPhone />
+            </div>
+            <ReceiptVault />
             <ROICalculator />
 
-            {/* DRAMATIC SLAM ANIMATION HERE */}
-            <OranolioSlam />
-
+            {/* === SOCIAL PROOF REINFORCEMENT === */}
             <Testimonials />
+            <RedditChat />
 
-            {/* ID for smooth scrolling */}
-            <div id="manifesto">
-                <BentoGrid />
-            </div>
-
-            {/* The 7-Day Sprint Protocol */}
+            {/* === PROCESS EXPLANATION === */}
             <TheSprint />
-            
-            {/* The Philosophy */}
+            <BentoGrid />
+
+            {/* === OBJECTION HANDLING === */}
+            <SEOContent />
             <ThePhilosophy />
-            
-            {/* Side Effects */}
+            <WhySection />
             <SideEffects />
 
-            {/* The Reality Check / Aggressive Filter */}
+            {/* === QUALIFICATION GATES === */}
             <RealityCheck />
-            
-            {/* The Loser Filter - Aggressive */}
             <LoserFilter />
-            
-            {/* The Geographic Gate */}
             <GeoGate />
-            
-            {/* The Tate Roast */}
-            <FalseIdols />
-            
-            {/* The PunchMade Parody */}
-            <PunchMadeParody />
 
-            {/* The Why / 29yo Rant */}
-            <WhySection />
-            
-            {/* The Final Checkout */}
-            <PricingTerminal />
+            {/* === ENTERTAINMENT & VARIETY === */}
+            <PunchMadeParody />
+            <KeywordTargets />
+
+            {/* === BRANDING === */}
+            <Ticker />
+
+            {/* === FINAL OFFER === */}
+            <div id="pricing">
+                <PricingTerminal />
+            </div>
 
             <FAQ />
 

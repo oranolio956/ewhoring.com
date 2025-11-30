@@ -80,9 +80,10 @@ export const NavBar: React.FC = () => {
       {/* Vertical Navigation (Desktop Only) - Semantic Links */}
       <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-8 mix-blend-darken pl-[env(safe-area-inset-left)]">
         {[
-          { label: 'The Con', id: 'hero' }, 
-          { label: 'Victims', id: 'money-printer' }, 
-          { label: 'Cashout', id: 'manifesto' }
+          { label: 'The Hook', id: 'hero' },
+          { label: 'The Money', id: 'money-printer' },
+          { label: 'The Process', id: 'manifesto' },
+          { label: 'The Price', id: 'pricing' }
         ].map((item, index) => (
           <a 
             key={item.label} 
