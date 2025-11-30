@@ -10,7 +10,7 @@ export const faqs = [
   },
   {
     q: "How much money can you make ewhoring?",
-    a: "Realistic earnings range from $500-$5000 per week depending on effort and skill level. Beginners typically make $200-$500 in their first week. Advanced operators running multiple personas can exceed $10,000/month. The key is consistency and following proven methods rather than improvising."
+    a: "Realistic earnings range from $500-$5000 per week depending on effort and skill level. Beginners typically make $200-$500 in their first week. Advanced operators running multiple personas can exceed $10,000/month. The key is consistency and following proven methods rather than improvising. <a href='/ewhoring-vs-onlyfans.html'>Compare ewhoring vs OnlyFans</a> for detailed breakdowns."
   },
   {
     q: "Is ewhoring illegal?",
@@ -203,7 +203,7 @@ export const faqs = [
   },
   {
     q: "Can I do ewhoring part-time?",
-    a: "Yes. 2-4 hours daily is enough to generate $500-2000/month. Many operators do this alongside jobs or school. The key is consistency - 2 hours every day beats 14 hours on weekends."
+    a: "Yes. 2-4 hours daily is enough to generate $500-2000/month. Many operators do this alongside jobs or school. The key is consistency - 2 hours every day beats 14 hours on weekends. <a href='/ewhoring-scripts-discord.html'>Check our Discord conversation scripts</a> for proven templates."
   },
   {
     q: "What's the difference between ewhoring and being a sugar baby?",

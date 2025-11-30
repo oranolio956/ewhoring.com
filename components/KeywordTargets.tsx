@@ -332,9 +332,39 @@ export const KeywordTargets: React.FC = () => {
               SIMP HABITATS <span className="text-[#FF8A75]">🎯</span>
             </h2>
             <p className="text-lg text-[#FDFBF7]/60 max-w-2xl mx-auto">
-              Lonely men are EVERYWHERE. Here's where they congregate in the highest concentrations. 
+              Lonely men are EVERYWHERE. Here's where they congregate in the highest concentrations.
               It's like fishing. These are the ponds.
             </p>
+
+            {/* Content Clusters */}
+            <div className="mt-6 p-4 bg-[#FDFBF7]/5 rounded-lg border border-[#FDFBF7]/10">
+              <h3 className="text-sm font-bold text-[#FF8A75] uppercase tracking-widest mb-3">📚 Content Clusters</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <h4 className="font-bold text-[#FDFBF7] mb-2">City Guides</h4>
+                  <ul className="space-y-1 text-[#FDFBF7]/70">
+                    <li><a href='/discord-ewhoring-london.html' className='hover:text-[#2D9C8E]'>London Guide</a></li>
+                    <li><a href='/discord-ewhoring-new-york.html' className='hover:text-[#2D9C8E]'>New York Guide</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#FDFBF7] mb-2">Scripts & Methods</h4>
+                  <ul className="space-y-1 text-[#FDFBF7]/70">
+                    <li><a href='/ewhoring-scripts-discord.html' className='hover:text-[#2D9C8E]'>Discord Scripts</a></li>
+                    <li><a href='/ewhoring-scripts-telegram.html' className='hover:text-[#2D9C8E]'>Telegram Scripts</a></li>
+                    <li><a href='/ewhoring-vs-onlyfans.html' className='hover:text-[#2D9C8E]'>Method Comparison</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#FDFBF7] mb-2">Learning Resources</h4>
+                  <ul className="space-y-1 text-[#FDFBF7]/70">
+                    <li><a href='/how-to-start-ewhoring.html' className='hover:text-[#2D9C8E]'>Beginner Guide</a></li>
+                    <li><a href='/ewhoring-for-beginners-step-by-step.html' className='hover:text-[#2D9C8E]'>Step-by-Step</a></li>
+                    <li><a href='/ewhoring-success-stories.html' className='hover:text-[#2D9C8E]'>Success Stories</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">

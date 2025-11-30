@@ -54,7 +54,8 @@ export const NavBar: React.FC = () => {
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className="md:hidden p-2 text-[#1A2A3A] hover:bg-[#1A2A3A]/5 rounded transition-colors"
-                  aria-label="Toggle mobile menu"
+                  aria-label="Toggle navigation menu"
+                  aria-expanded={mobileMenuOpen}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -77,6 +78,7 @@ export const NavBar: React.FC = () => {
                 {/* Primary CTA - Always Visible, prioritizes screen space */}
                 <button
                   onClick={openPayment}
+                  aria-label="Download the brain - access the complete ewhoring protocol"
                   className="group relative px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm overflow-hidden btn-glitch shrink-0 active:scale-95 duration-100"
                 >
                   <span className="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-300 block">DOWNLOAD THE BRAIN</span>
