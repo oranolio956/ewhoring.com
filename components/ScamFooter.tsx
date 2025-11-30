@@ -1,8 +1,29 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mascot } from './Mascot';
 
+const CONTROVERSIAL_ENTITIES = [
+    "your Parole Officer",
+    "the FBI agent watching your webcam",
+    "your nonexistent father figure",
+    "your future court-appointed therapist",
+    "Satan (he's a big fan)",
+    "the Discord Trust & Safety team",
+    "the jury of your peers",
+    "your crying mother",
+    "the voices in your head"
+];
+
 export const ScamFooter: React.FC = () => {
+  const [entityIndex, setEntityIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        setEntityIndex((prev) => (prev + 1) % CONTROVERSIAL_ENTITIES.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
@@ -45,7 +66,11 @@ export const ScamFooter: React.FC = () => {
                 </div>
                 <p>
                     Everything we teach can be used for entertainment, roleplay, and content creation. 
-                    If you choose to use it for... <em>other</em> purposes, that is between you and God.
+                    If you choose to use it for... <em>other</em> purposes, that is between you and...
+                    <br/>
+                    <span className="block mt-2 text-[#FF8A75] font-black text-2xl uppercase tracking-wider animate-pulse border-b-2 border-[#FF8A75] w-fit mx-auto transform -rotate-1">
+                        {CONTROVERSIAL_ENTITIES[entityIndex]}
+                    </span>
                 </p>
                 
                 <div className="py-8">
