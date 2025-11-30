@@ -194,9 +194,8 @@ const App: React.FC = () => {
              ⚠ Warning: Discord is patching the "Voice Changer" exploit soon. Join before the loophole closes.
           </div>
 
-          {/* 1. Global Noise & Scanlines Overlay */}
+          {/* 1. Global Noise Overlay (Clean Version) */}
           <div className="bg-noise" />
-          <div className="scanlines" />
           
           {/* Ambient Particles - Optimized with will-change */}
           <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
