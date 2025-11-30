@@ -31,10 +31,8 @@ export const PricingTerminal: React.FC = () => {
                 
                 {/* Header Bar */}
                 <div className="flex items-center gap-2 mb-6 border-b border-[#00FF00]/20 pb-4">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <div className="ml-auto text-xs opacity-50 truncate">bash --login oranolio_protocol</div>
+                    <div className="text-[#00FF00] text-xs font-bold">ORANOLIO@TERMINAL:~$</div>
+                    <div className="ml-auto text-xs opacity-50 truncate">protocol.exe</div>
                 </div>
 
                 <div className="space-y-4 text-sm md:text-base leading-relaxed break-words drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
@@ -57,11 +55,11 @@ export const PricingTerminal: React.FC = () => {
                             <span className="text-white font-bold text-xl">TOTAL ACCESS:</span>
                             <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$150</span>
                         </div>
-                        <button 
+                        <button
                             onClick={openPayment}
                             className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00] cursor-pointer"
                         >
-                            [ EXECUTE TRANSACTION ]
+                            BUY THE DAMN THING
                         </button>
                         <p className="text-[10px] mt-4 text-center opacity-50">
                             *By clicking execute, you certify that you know how to be a piece of shit. No refunds for incompetence.
@@ -98,13 +96,6 @@ export const PricingTerminal: React.FC = () => {
                     ERROR: Capacity Reached. I do not have time to teach basics to new people.
                 </div>
                 
-                {/* Satisfaction Seal */}
-                <div className="mt-8 flex justify-center">
-                    <div className="w-20 h-20 rounded-full border-2 border-yellow-500 flex items-center justify-center text-yellow-500 text-[8px] font-bold text-center p-1 uppercase transform rotate-6 opacity-50">
-                        100% Satisfaction*<br/>
-                        (For Me)
-                    </div>
-                </div>
             </div>
 
         </div>

@@ -163,13 +163,13 @@ export const MoneyPhone: React.FC = () => {
             onClick={openPayment}
             className="mb-6 bg-[#FF8A75] text-[#1A2A3A] px-6 py-3 font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm cursor-pointer mx-auto lg:mx-0"
           >
-            GET RICH NOW →
+            DOWNLOAD THE BRAIN →
           </button>
           
           <div className="w-32 h-32 md:w-48 md:h-48 relative mx-auto lg:mx-0">
             <Mascot excitementLevel={excitement} />
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-xs font-mono uppercase tracking-widest text-[#1A2A3A]/40 whitespace-nowrap bg-[#FDFBF7] px-2 py-1 rounded-full border border-[#1A2A3A]/5">
-              Simp Wallet Drainer v2.0
+              Sugar Daddy Protocol
             </div>
           </div>
         </div>
@@ -265,7 +265,6 @@ export const MoneyPhone: React.FC = () => {
                               <span>Simp Alerts</span>
                               <div className="flex items-center gap-2">
                                 <span className="text-[9px] text-red-400 font-mono tracking-tighter" title="Blocked Users">{blockedUsers.size} BLOCKED</span>
-                                <span className="text-[#2D9C8E] animate-pulse">● LIVE</span>
                               </div>
                            </div>
                            {transactions.map((tx) => (

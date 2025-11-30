@@ -90,10 +90,6 @@ export const KeywordTargets: React.FC = () => {
           
           {/* Header */}
           <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
-            <div className="mb-4 flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#FF8A75] animate-pulse"></div>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">Hunting Grounds</span>
-            </div>
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FDFBF7] font-['Space_Grotesk']">
               WHERE THE <br/>
               <span className="text-[#2D9C8E]">SUGAR DADDIES LIVE</span>
@@ -185,7 +181,7 @@ export const KeywordTargets: React.FC = () => {
           
           <div className="text-center mb-12 md:mb-16">
             <div className="inline-block bg-[#1A2A3A] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
-              Choose Your Weapon
+              Sugar Daddy Playbook
             </div>
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6 font-['Space_Grotesk']">
               SUGAR DADDY <br/>
@@ -200,13 +196,10 @@ export const KeywordTargets: React.FC = () => {
           {/* Methods Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {methods.map((method, i) => (
-              <div 
+              <div
                 key={i}
                 className="group p-6 md:p-8 border border-[#1A2A3A]/10 hover:border-[#2D9C8E] transition-all duration-300 hover:bg-[#1A2A3A] hover:text-[#FDFBF7] relative overflow-hidden"
               >
-                <span className="absolute top-4 right-4 text-6xl font-bold text-[#1A2A3A]/[0.05] group-hover:text-[#FDFBF7]/[0.05] font-['Space_Grotesk']">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 
                 <div className="relative z-10">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF8A75] mb-2 block">
@@ -328,20 +321,12 @@ export const KeywordTargets: React.FC = () => {
       {/* WHERE TO FIND SIMPS */}
       {/* ============================================== */}
       <section id="find-simps" className="py-16 md:py-24 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden">
-        
-        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-          {[...Array(5)].map((_, i) => (
-            <div key={i} className="text-[10vw] font-black leading-none whitespace-nowrap text-center" style={{ transform: `rotate(-12deg) translateY(${i * 20}%)` }}>
-              SIMP SIMP SIMP SIMP SIMP
-            </div>
-          ))}
-        </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           
           <div className="text-center mb-12">
             <div className="inline-block bg-[#2D9C8E] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
-              Target Acquisition
+              Where Simps Live
             </div>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-['Space_Grotesk']">
               SIMP HABITATS <span className="text-[#FF8A75]">🎯</span>
@@ -369,13 +354,6 @@ export const KeywordTargets: React.FC = () => {
             ))}
           </div>
 
-          {/* Quote */}
-          <div className="mt-12 p-6 border-l-2 border-[#FF8A75] bg-[#FDFBF7]/5">
-            <p className="text-lg md:text-xl italic text-[#FDFBF7]/80">
-              "The wealthy never stop getting wealthier. Target the top 1% who spend $10,000+ on arrangements. One sugar daddy can fund your entire lifestyle."
-            </p>
-            <p className="text-xs text-[#FF8A75] mt-2 font-mono font-bold">— ORANOLIO, SUGAR DADDY SPECIALIST</p>
-          </div>
         </div>
       </section>
 
