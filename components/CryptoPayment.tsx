@@ -15,7 +15,7 @@ const CRYPTO_OPTIONS = [
     symbol: 'BTC',
     icon: '₿',
     color: '#F7931A',
-    address: 'YOUR_BTC_ADDRESS_HERE', // Replace with your BTC address
+    address: 'bc1qxv394xty8p380gq25qf70nm5r84zemgwzh3z06',
     network: 'Bitcoin Network'
   },
   {
@@ -24,7 +24,7 @@ const CRYPTO_OPTIONS = [
     symbol: 'ETH',
     icon: 'Ξ',
     color: '#627EEA',
-    address: 'YOUR_ETH_ADDRESS_HERE', // Replace with your ETH address
+    address: '0xde0F05DAB6c6c335161505B36268ccFc104E506f',
     network: 'Ethereum Network (ERC-20)'
   },
   {
@@ -33,8 +33,8 @@ const CRYPTO_OPTIONS = [
     symbol: 'USDT',
     icon: '₮',
     color: '#26A17B',
-    address: 'YOUR_USDT_ADDRESS_HERE', // Replace with your USDT address (ERC-20 or TRC-20)
-    network: 'TRC-20 (Tron Network)'
+    address: '0xde0F05DAB6c6c335161505B36268ccFc104E506f',
+    network: 'ERC-20 (Ethereum Network)'
   },
   {
     id: 'ltc',
@@ -42,7 +42,7 @@ const CRYPTO_OPTIONS = [
     symbol: 'LTC',
     icon: 'Ł',
     color: '#BFBBBB',
-    address: 'YOUR_LTC_ADDRESS_HERE', // Replace with your LTC address
+    address: 'LW1rr8n8u437YkHuBjKdhNkhAWqJy2tezG',
     network: 'Litecoin Network'
   },
   {
@@ -51,7 +51,7 @@ const CRYPTO_OPTIONS = [
     symbol: 'SOL',
     icon: '◎',
     color: '#9945FF',
-    address: 'YOUR_SOL_ADDRESS_HERE', // Replace with your SOL address
+    address: '3BPJBjiPSvHfmjp6isCAfi1HtxJsjFSV3GWuCFaQK1Te',
     network: 'Solana Network'
   }
 ];
