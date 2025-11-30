@@ -35,6 +35,11 @@ export const WhySection: React.FC = () => {
                         Now, I just want to see if I can take a random loser (you) and turn them into a weapon before I completely move on to something boring like Real Estate.
                     </p>
                     <p>
+                        Consider this my version of charity. I could build a well in a village, but I'd rather build a legion of digital menaces. 
+                        I'm about to pivot into "legitimate business" where I have to wear a suit and pretend to have morals. 
+                        Before I go legit, I want to light one last fire in the dumpster. <strong className="text-[#FF8A75]">You are the match.</strong>
+                    </p>
+                    <p>
                         This is my final lap. I am dumping my entire brain into this site because I want to watch the chaos unfold.
                     </p>
                 </div>
