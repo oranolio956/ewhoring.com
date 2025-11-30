@@ -121,12 +121,7 @@ export const RealityCheck: React.FC = () => {
                         
                         {/* Legal Insert */}
                         <div className="p-3 bg-red-900/30 border border-red-500/30 rounded mt-4 text-[10px] leading-tight relative overflow-hidden group">
-                            <strong>LEGAL NOTICE:</strong> By accessing this information, you agree that you are solely responsible for your actions. This is educational material. We are not responsible if you get banned from Discord for being "too effective."
-                            
-                            {/* Hidden Loophole Text */}
-                            <div className="absolute inset-0 bg-[#1A2A3A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span className="text-[#2D9C8E] font-bold uppercase tracking-widest">PLAUSIBLE DENIABILITY ESTABLISHED</span>
-                            </div>
+                            <strong>LEGAL NOTICE:</strong> By purchasing, you acknowledge this product is for educational purposes only. You agree to the Terms of Service and hold Oranolio harmless from any liability.
                         </div>
                     </div>
 

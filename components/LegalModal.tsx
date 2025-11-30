@@ -12,106 +12,87 @@ export const LegalModal: React.FC<{ isOpen: boolean, onClose: () => void }> = ({
         {/* Header */}
         <div className="p-6 border-b-2 border-[#1A2A3A] bg-[#1A2A3A] text-[#FDFBF7] flex justify-between items-center">
             <div>
-                <h2 className="text-2xl md:text-3xl font-bold font-['Space_Grotesk'] uppercase tracking-widest text-[#FF0000] animate-pulse">
-                    ⚠ LIABILITY WAIVER & TOS
+                <h2 className="text-xl md:text-2xl font-bold font-['Space_Grotesk'] uppercase tracking-widest text-[#FDFBF7]">
+                    TERMS OF SERVICE & LEGAL DISCLAIMER
                 </h2>
                 <p className="text-[10px] font-mono opacity-70 mt-1">
-                    DOCUMENT_ID: ORANOLIO_INDEMNITY_V9.9 // BINDING CONTRACT
+                    LAST UPDATED: OCTOBER 2025 // BINDING AGREEMENT
                 </p>
             </div>
             <button onClick={onClose} className="text-4xl hover:text-[#FF8A75] transition-colors">&times;</button>
         </div>
         
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-8 md:p-12 font-serif text-[#1A2A3A] text-sm leading-relaxed space-y-8 bg-[url('https://www.transparenttextures.com/patterns/legal-paper.png')]">
+        <div className="flex-1 overflow-y-auto p-8 md:p-12 font-sans text-[#1A2A3A] text-sm leading-relaxed space-y-8 bg-white">
           
-          <div className="border-l-4 border-[#FF0000] pl-6 py-2 bg-[#FF0000]/5">
-              <p className="font-bold uppercase text-xs tracking-widest text-[#FF0000] mb-2">Notice to Purchaser</p>
-              <p className="font-bold">
-                  BY ACCESSING THIS WEBSITE, PURCHASING THE "PROTOCOL," OR READING ANY MATERIAL PRODUCED BY "ORANOLIO," YOU AGREE TO THE FOLLOWING TERMS WITHOUT RESERVATION. IF YOU DO NOT AGREE, CLOSE THIS TAB IMMEDIATELY AND RETURN TO YOUR POVERTY.
+          <div className="border-l-4 border-[#1A2A3A] pl-6 py-2 bg-[#F3F4F6]">
+              <p className="font-bold uppercase text-xs tracking-widest text-[#1A2A3A] mb-2">IMPORTANT NOTICE</p>
+              <p className="font-medium text-xs md:text-sm">
+                  PLEASE READ THESE TERMS CAREFULLY. BY ACCESSING THIS WEBSITE OR PURCHASING ANY PRODUCTS ("THE PROTOCOL"), YOU AGREE TO BE BOUND BY THE FOLLOWING TERMS AND CONDITIONS. IF YOU DO NOT AGREE, YOU MAY NOT ACCESS OR USE THIS SITE.
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">1. The "Educational Purpose" & Satire Clause</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">1. Educational and Entertainment Purpose Only</h3>
               <p>
-                  You acknowledge that "The Oranolio Protocol" and all associated content are sold strictly as <strong>informational, educational, and satirical material</strong>. The strategies, scripts, and personas described are works of fiction designed to illustrate the vulnerabilities of human psychology. 
+                  The content provided on this website and within "The Oranolio Protocol" (the "Product") is strictly for <strong>educational, informational, and entertainment purposes only</strong>. The Product is a theoretical analysis of social engineering, digital marketing strategies, and human psychology.
               </p>
               <p className="mt-2">
-                  Any implementation of these strategies in the real world is done solely at your own discretion and risk. Oranolio Holdings Inc. does not condone, encourage, or solicit fraud, identity theft, or financial crimes. We are selling a book. If you hit someone with the book, that is assault, and the book author is not liable.
+                  Oranolio Holdings Inc. ("The Company") does not condone, encourage, or advocate for the commission of any illegal acts, including but not limited to fraud, identity theft, wire fraud, blackmail, or extortion. Any anecdotes or examples used are hypothetical or satirical in nature.
               </p>
           </div>
           
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">2. Zero Earnings Guarantee (The "Idiot Clause")</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">2. Earnings Disclaimer</h3>
               <p>
-                  Oranolio Holdings Inc. makes <strong>ZERO</strong> guarantees regarding your financial success. The revenue figures ($1k/day, $30k/mo) cited on this website are the personal results of the Author, who is significantly smarter and harder working than you.
+                  In accordance with FTC guidelines, we make no guarantees regarding your ability to generate income using the strategies provided. The revenue figures ($30,000/mo, $1,000/day) referenced on this website are exceptional results and are not intended to serve as a guarantee, warranty, or prediction of your future earnings.
               </p>
               <p className="mt-2">
-                  <strong>YOUR RESULTS MAY VARY.</strong> Your results will likely be zero if you are lazy, inarticulate, or lack social intelligence. We are selling a roadmap, not a car. If you drive the car into a ditch, do not call the map maker.
+                  Your success depends on various factors including your background, dedication, social intelligence, and market conditions. All business entails risk. By purchasing this Product, you acknowledge that you may earn nothing.
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">3. Platform Terms of Service Violations</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">3. Third-Party Platforms & Affiliation</h3>
               <p>
-                  You acknowledge that the techniques described may violate the Terms of Service (TOS) of third-party platforms including but not limited to: Discord, Tinder, Bumble, Hinge, CashApp, PayPal, Venmo, and Snapchat.
+                  This website and the Product are not affiliated with, endorsed by, or sponsored by Discord, Tinder, Bumble, Hinge, Match Group, PayPal, Cash App, or any other third-party platform mentioned.
               </p>
               <p className="mt-2">
-                  <strong>WE DO NOT CONTROL THESE PLATFORMS.</strong> If your account is banned, suspended, or deleted, Oranolio Holdings Inc. bears no responsibility. You are operating in a hostile environment. Getting banned is a skill issue. Do not cry to support if you get IP banned from Tinder. That is the cost of doing business.
+                  You are solely responsible for complying with the Terms of Service (TOS) of any platform you use. The Company is not liable for account suspensions, bans, or legal actions taken against you by third-party platforms resulting from your use of this information.
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">4. The "Jail Cell" Provision (Criminal Liability)</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">4. Limitation of Liability</h3>
               <p>
-                  You agree that you are solely responsible for ensuring your actions comply with the laws of your jurisdiction. Oranolio Holdings Inc. is not a law firm and offers no legal advice.
+                  To the fullest extent permitted by law, Oranolio Holdings Inc. shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, resulting from the use or the inability to use the Product.
               </p>
               <p className="mt-2">
-                  If you choose to use the provided information to commit fraud, wire fraud, blackmail, extortion, or impersonation of a real person without consent, <strong>YOU DO SO ALONE.</strong> Oranolio Holdings Inc. will cooperate fully with law enforcement if you are found to be using our educational material for illegal acts. We are the teachers; you are the students. If a student brings a gun to school, the teacher is not arrested.
+                  You assume full responsibility for your actions. The Company is an information provider only and does not offer legal, financial, or professional advice.
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">5. Indemnification in Perpetuity</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">5. Indemnification</h3>
               <p>
-                  You agree to indemnify, defend, and hold harmless Oranolio Holdings Inc., its officers, directors, employees, and the mascot "Mascot.tsx" from any and all claims, liabilities, damages, losses, or expenses (including exhaustive legal fees) arising out of your use of the Protocol.
-              </p>
-              <p className="mt-2 text-[#FF0000] font-bold">
-                  TRANSLATION: If you get sued because you scammed the wrong guy, you cannot sue us to recover your losses. In fact, if we get dragged into your court case, you are paying our legal bills.
+                  You agree to indemnify, defend, and hold harmless The Company, its officers, directors, employees, agents, and licensors from and against all claims, losses, expenses, damages, and costs, including reasonable attorneys' fees, resulting from any violation of these Terms or any activity related to your use of the Product (including negligent or wrongful conduct).
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">6. Strict No-Refund Policy</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">6. Refund Policy for Digital Goods</h3>
               <p>
-                  The Oranolio Protocol is a digital information product. Upon purchase, you receive immediate access to intellectual property that cannot be "returned."
+                  The Product is a digital information good delivered via internet download. Upon purchase, you receive immediate access to the intellectual property.
               </p>
               <p className="mt-2">
-                  <strong>ALL SALES ARE FINAL.</strong> Do not email us saying "it didn't work." It works; you didn't. Do not email us saying "I need the money back for rent." You should have thought about that before buying. Chargebacks will be fought with this signed affidavit and your IP address log, and we will win.
+                  <strong>ALL SALES ARE FINAL.</strong> Due to the nature of digital goods, we do not offer refunds or exchanges. By completing your purchase, you waive your right to a refund and acknowledge that any chargeback attempts will be contested with this agreement as proof of purchase and delivery.
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">7. Psychological Impact Disclaimer</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">7. Governing Law</h3>
               <p>
-                  The strategies contained herein utilize advanced psychological manipulation, "Dark Triad" personality traits, and emotional exploitation. Prolonged use of these techniques may result in:
-              </p>
-              <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li>Loss of empathy for the male gender.</li>
-                  <li>Desensitization to emotional distress signals.</li>
-                  <li>A permanent cynical worldview.</li>
-                  <li>The inability to form genuine romantic connections.</li>
-              </ul>
-              <p className="mt-2">
-                  Oranolio Holdings Inc. is not responsible for your resulting moral decay, loss of soul, or inability to feel love. You chose the money.
-              </p>
-          </div>
-
-          <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">8. Final Acknowledgment</h3>
-              <p>
-                  By clicking the button below, you confirm that you are of legal age in your jurisdiction, you are of sound mind, and you possess the disposable income required to purchase this luxury information product. You confirm you are not a journalist, law enforcement officer, or a "hater."
+                  These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which The Company is established, without regard to its conflict of law provisions.
               </p>
           </div>
 
@@ -122,11 +103,11 @@ export const LegalModal: React.FC<{ isOpen: boolean, onClose: () => void }> = ({
             <div className="flex items-start gap-3">
                 <input type="checkbox" id="legal-check" className="mt-1 w-5 h-5 accent-[#1A2A3A]" />
                 <label htmlFor="legal-check" className="text-xs md:text-sm font-bold text-[#1A2A3A]">
-                    I HAVE READ THE DEATH WARRANT ABOVE. I UNDERSTAND THAT IF I FAIL, IT IS MY FAULT. I RELEASE ORANOLIO FROM ALL LIABILITY.
+                    I HAVE READ AND AGREE TO THE TERMS OF SERVICE, EARNINGS DISCLAIMER, AND PRIVACY POLICY. I UNDERSTAND THIS IS FOR EDUCATIONAL PURPOSES.
                 </label>
             </div>
-            <button onClick={onClose} className="w-full py-4 bg-[#FF0000] text-white font-black text-xl uppercase tracking-widest hover:bg-[#1A2A3A] transition-colors shadow-[5px_5px_0px_#1A2A3A] active:translate-y-[2px] active:shadow-none border-2 border-[#1A2A3A]">
-                I ACCEPT THE RISK. LET ME IN.
+            <button onClick={onClose} className="w-full py-4 bg-[#1A2A3A] text-white font-bold text-lg uppercase tracking-widest hover:bg-[#2D9C8E] transition-colors shadow-lg">
+                I AGREE & PROCEED
             </button>
         </div>
       </div>

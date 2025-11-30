@@ -1,29 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Mascot } from './Mascot';
 
-const CONTROVERSIAL_ENTITIES = [
-    "your Parole Officer",
-    "the FBI agent watching your webcam",
-    "your nonexistent father figure",
-    "your future court-appointed therapist",
-    "Satan (he's a big fan)",
-    "the Discord Trust & Safety team",
-    "the jury of your peers",
-    "your crying mother",
-    "the voices in your head"
-];
-
 export const ScamFooter: React.FC = () => {
-  const [entityIndex, setEntityIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-        setEntityIndex((prev) => (prev + 1) % CONTROVERSIAL_ENTITIES.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
@@ -53,7 +32,7 @@ export const ScamFooter: React.FC = () => {
                     <span className="text-[#2D9C8E] font-bold text-2xl block mb-4">Yes. Selling information is legal.</span> 
                 </p>
                 <p>
-                   We sell a <strong>Protocol</strong>. It is a PDF and video course. Selling a course on "Social Engineering" is no different than selling a book on "Acting" or "Creative Writing."
+                   We sell a <strong>Protocol</strong>. It is a digital course containing educational material on social dynamics and digital marketing. Selling a course on "Social Engineering" is no different than selling a book on "Acting" or "Creative Writing."
                 </p>
                 <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#FDFBF7]/10 text-sm md:text-base">
                     <p className="italic mb-2">
@@ -61,17 +40,9 @@ export const ScamFooter: React.FC = () => {
                         If I sell you a hammer, and you break a window, that is <strong>your</strong> problem."
                     </p>
                     <p className="font-bold text-[#FF8A75]">
-                        We sell hammers. We do not break windows.
+                        We provide the tools. We do not control how you use them.
                     </p>
                 </div>
-                <p>
-                    Everything we teach can be used for entertainment, roleplay, and content creation. 
-                    If you choose to use it for... <em>other</em> purposes, that is between you and...
-                    <br/>
-                    <span className="block mt-2 text-[#FF8A75] font-black text-2xl uppercase tracking-wider animate-pulse border-b-2 border-[#FF8A75] w-fit mx-auto transform -rotate-1">
-                        {CONTROVERSIAL_ENTITIES[entityIndex]}
-                    </span>
-                </p>
                 
                 <div className="py-8">
                     <button 
@@ -81,8 +52,16 @@ export const ScamFooter: React.FC = () => {
                         I ACCEPT THE LIABILITY
                     </button>
                     <div className="text-[10px] uppercase tracking-[0.2em] mt-4 opacity-50 font-mono">
-                        By clicking, you confirm you are not a fed.
+                        By clicking, you agree to our Terms of Service.
                     </div>
+                </div>
+
+                {/* STATIC LEGAL DISCLAIMER - Hidden in plain sight */}
+                <div className="mt-12 pt-8 border-t border-[#FDFBF7]/10 text-[10px] text-[#FDFBF7]/30 font-mono text-left leading-tight">
+                    <p className="uppercase font-bold mb-2">Legal Disclaimer:</p>
+                    <p>
+                        The information presented on this website is for educational and entertainment purposes only. Oranolio Holdings Inc. provides theoretical strategies for digital persona management. We do not guarantee any specific financial results. The user assumes all risk and liability for the use of this information. We are not responsible for any actions taken by users on third-party platforms. This site uses cookies for analytics. All rights reserved.
+                    </p>
                 </div>
             </div>
         </div>
