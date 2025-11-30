@@ -724,7 +724,7 @@ const App: React.FC = () => {
           {/* 4. Content */}
           <NavBar />
           
-          <main className="relative z-10 w-full">
+          <main id="main-content" className="relative z-10 w-full">
             {/* === HOOK & ATTENTION === */}
             <HeroSection />
 
