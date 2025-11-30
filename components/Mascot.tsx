@@ -35,7 +35,6 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
   const pupilSize = 30 + (excitementLevel * 20); // 30 to 50
   
   // Calculate eye look direction
-  // If excited, it looks center/shakes. If idle, it tracks mouse.
   const lookX = excitementLevel > 0 ? 0 : mousePos.x * 30;
   const lookY = excitementLevel > 0 ? 0 : mousePos.y * 20;
 
@@ -57,6 +56,14 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
         .animate-vibrate {
           animation: vibrate 0.3s linear infinite;
         }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes spin-reverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
       `}</style>
       <svg viewBox="0 0 200 200" className="w-full h-full overflow-visible">
         <defs>
@@ -73,34 +80,33 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
           </filter>
         </defs>
         
-        {/* Outer Ring - Rotates */}
-        <g className={`origin-center ${excitementLevel > 0 ? 'animate-[spin_4s_linear_infinite]' : 'transition-transform duration-1000'}`} style={{ transform: excitementLevel === 0 ? `rotate(${mousePos.x * 10}deg)` : undefined }}>
-          <path 
-            d="M100 20 L180 100 L100 180 L20 100 Z" 
-            fill="none" 
-            stroke={excitementLevel > 0.5 ? '#F4D35E' : '#1A2A3A'}
-            strokeWidth={1 + excitementLevel * 2}
-            className="opacity-20 transition-colors duration-500"
-          />
-           <circle 
-             cx="100" cy="100" r={70 + excitementLevel * 5} 
-             stroke="#FF8A75" strokeWidth="1" fill="none" strokeDasharray="4 4" 
-             className="transition-all duration-500"
-           />
+        {/* HUD Elements - Technical Overlay */}
+        <g className="opacity-30 pointer-events-none">
+            {/* Outer Rotating Ring */}
+            <circle cx="100" cy="100" r="90" stroke="#1A2A3A" strokeWidth="1" fill="none" strokeDasharray="10 20" className="animate-[spin-slow_20s_linear_infinite] origin-center" />
+            
+            {/* Inner Counter-Rotating Ring */}
+            <circle cx="100" cy="100" r="85" stroke="#2D9C8E" strokeWidth="0.5" fill="none" strokeDasharray="50 50" className="animate-[spin-reverse_15s_linear_infinite] origin-center" />
+            
+            {/* Crosshair markers */}
+            <line x1="100" y1="10" x2="100" y2="20" stroke="#1A2A3A" strokeWidth="1" />
+            <line x1="100" y1="180" x2="100" y2="190" stroke="#1A2A3A" strokeWidth="1" />
+            <line x1="10" y1="100" x2="20" y2="100" stroke="#1A2A3A" strokeWidth="1" />
+            <line x1="180" y1="100" x2="190" y2="100" stroke="#1A2A3A" strokeWidth="1" />
         </g>
 
-        {/* The Eye - Tracks Mouse or Reacts */}
+        {/* Main Eye Structure */}
         <g 
           className="transition-transform duration-100 ease-out origin-center will-change-transform"
           style={{ transform: `translate(${lookX}px, ${lookY}px)` }}
         >
-            {/* Sclera */}
+            {/* Sclera - Sharp Edges */}
             <path 
                 d={`M20 100 Q100 ${40 - excitementLevel * 20} 180 100 Q100 ${160 + excitementLevel * 20} 20 100 Z`}
                 fill="#FDFBF7" 
                 stroke="#1A2A3A" 
                 strokeWidth="2"
-                className="transition-all duration-300"
+                className="transition-all duration-300 drop-shadow-lg"
             />
             
             {/* Iris */}
@@ -110,7 +116,7 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
               className="transition-all duration-300"
             />
             
-            {/* Pupil (Reacts to excitement) */}
+            {/* Pupil (Reacts to excitement) - Rectangular/Digital shape instead of round */}
             <rect 
                 x={95 - (excitementLevel * 5)} 
                 y={70 + (excitementLevel * 10)} 
@@ -119,6 +125,9 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
                 fill="#FDFBF7" 
                 className={excitementLevel > 0.8 ? "animate-pulse" : ""}
             />
+            
+            {/* Digital Glint */}
+            <rect x="110" y="85" width="8" height="8" fill="white" opacity="0.8" />
         </g>
         
         {/* Glitch Elements - Only show when excited */}

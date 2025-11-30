@@ -8,8 +8,8 @@ export const SideEffects: React.FC = () => {
       <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden border border-[#FDFBF7]/10 shadow-2xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2">
             
-            {/* LEFT SIDE: THE FLAWS (Medical Warning) */}
-            <div className="bg-[#0F1923] p-8 md:p-16 relative overflow-hidden flex flex-col justify-between min-h-[600px] lg:min-h-auto">
+            {/* LEFT SIDE: THE FLAWS */}
+            <div className="bg-[#0F1923] p-8 md:p-16 relative overflow-hidden flex flex-col justify-between min-h-[600px] lg:min-h-auto border-r border-[#FDFBF7]/5">
                 
                 {/* Background "Powder" Particles */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
@@ -38,9 +38,9 @@ export const SideEffects: React.FC = () => {
                     <div className="inline-block border border-[#FF4500] text-[#FF4500] px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6 bg-[#FF4500]/10 rounded">
                         ⚠ Oranolio Labs Warning
                     </div>
-                    <h3 className="text-3xl md:text-5xl font-bold text-[#FDFBF7] font-['Space_Grotesk'] mb-8">
-                        POSSIBLE <br/>
-                        SIDE EFFECTS
+                    <h3 className="text-3xl md:text-5xl font-bold text-[#FDFBF7] font-['Space_Grotesk'] mb-8 uppercase leading-none">
+                        The Flaws <br/>
+                        <span className="text-[#FF4500] text-xl md:text-2xl block mt-2 tracking-widest opacity-80">(Side Effects)</span>
                     </h3>
                     <ul className="space-y-4 font-mono text-sm md:text-base text-[#FDFBF7]/60">
                         <li className="flex items-center gap-3">
@@ -136,7 +136,7 @@ export const SideEffects: React.FC = () => {
 
                 <div className="relative z-10 text-center">
                     <div className="text-[#1A2A3A] text-xs font-bold uppercase tracking-[0.5em] mb-4">
-                        BUT YOU WILL BE
+                        The Benefits
                     </div>
                     <h2 className="text-[15vw] md:text-[10rem] font-black text-[#1A2A3A] leading-none tracking-tighter drop-shadow-xl hover:scale-105 transition-transform duration-300 cursor-default">
                         RICH

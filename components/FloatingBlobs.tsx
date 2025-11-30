@@ -3,32 +3,50 @@ import React from 'react';
 
 export const FloatingBlobs: React.FC = () => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none">
-      {/* Base Layer - Not a solid color, but a deep mesh */}
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* Base Layer */}
       <div className="absolute inset-0 bg-[#FDFBF7]"></div>
+
+      {/* TACTICAL GRID - Replaces soft blobs with precision engineering look */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+           style={{ 
+             backgroundImage: 'linear-gradient(#1A2A3A 1px, transparent 1px), linear-gradient(90deg, #1A2A3A 1px, transparent 1px)', 
+             backgroundSize: '40px 40px' 
+           }}>
+      </div>
+
+      {/* Floating Crosshairs - The "Sniper/Targeting" Aesthetic */}
+      {[...Array(6)].map((_, i) => (
+        <div 
+            key={i}
+            className="absolute w-4 h-4 flex items-center justify-center opacity-20"
+            style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `float ${10 + Math.random() * 10}s linear infinite`
+            }}
+        >
+            <div className="absolute w-full h-[1px] bg-[#1A2A3A]"></div>
+            <div className="absolute h-full w-[1px] bg-[#1A2A3A]"></div>
+        </div>
+      ))}
+
+      {/* Large Geometric Watermarks - Architectural, not organic */}
+      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] border-[1px] border-[#1A2A3A]/5 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] border-[1px] border-[#1A2A3A]/5 rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
       
-      {/* Editorial Gradient Mesh - Static, Heavy, Expensive looking */}
-      <div 
-        className="absolute top-[-20%] left-[-10%] w-[80%] h-[80%] opacity-40 blur-[120px]"
-        style={{
-          background: 'radial-gradient(circle at center, #FF8A75 0%, transparent 60%)'
-        }}
-      />
-      <div 
-        className="absolute bottom-[-10%] right-[-10%] w-[90%] h-[90%] opacity-30 blur-[100px]"
-        style={{
-          background: 'radial-gradient(circle at center, #2D9C8E 0%, transparent 70%)'
-        }}
-      />
-      
-      {/* Sharp Geometric Accents - Anti-Blob */}
-      <div className="absolute top-[15%] right-[10%] w-[1px] h-[200px] bg-[#1A2A3A] opacity-20"></div>
-      <div className="absolute top-[15%] right-[10%] w-[200px] h-[1px] bg-[#1A2A3A] opacity-20"></div>
-      
-      {/* Grain Overlay for Texture (removes digital sheen) */}
-      <div className="absolute inset-0 opacity-[0.08]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E")`
+      {/* Digital Noise Overlay */}
+      <div className="absolute inset-0 opacity-[0.4] mix-blend-overlay" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")`
       }}></div>
+      
+      <style>{`
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(10px, -10px); }
+            100% { transform: translate(0, 0); }
+        }
+      `}</style>
     </div>
   );
 };
