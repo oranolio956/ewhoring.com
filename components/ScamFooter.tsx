@@ -20,7 +20,7 @@ export const ScamFooter: React.FC = () => {
            <Mascot excitementLevel={0} /> 
            {/* Speech Bubble */}
            <div className="absolute -top-4 -right-12 bg-[#2D9C8E] text-[#1A2A3A] text-[10px] font-bold px-3 py-1 rounded-tr-xl rounded-bl-xl shadow-lg transform rotate-12 whitespace-nowrap">
-              Compliance Checked.
+              I Got This.
            </div>
         </div>
 
@@ -58,16 +58,13 @@ export const ScamFooter: React.FC = () => {
                     </div>
                 </div>
 
-                {/* STATIC LEGAL DISCLAIMER - Hidden in plain sight */}
-                <div className="mt-12 pt-8 border-t border-[#FDFBF7]/10 text-[10px] text-[#FDFBF7]/30 font-mono text-left leading-tight">
-                    <p className="uppercase font-bold mb-2">Legal Disclaimer:</p>
-                    <p>
-                        The information presented on this website is for educational and entertainment purposes only. Oranolio Holdings Inc. provides theoretical strategies for digital persona management. We do not guarantee any specific financial results. The user assumes all risk and liability for the use of this information. We are not responsible for any actions taken by users on third-party platforms. This site uses cookies for analytics. All rights reserved.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-4 text-[9px] tracking-widest">
-                        <a href="/privacy.html" className="underline hover:text-[#2D9C8E]">Privacy Policy</a>
+                {/* Legal Links */}
+                <div className="mt-12 text-center text-[10px] text-[#FDFBF7]/40 font-mono">
+                    <p>This is educational content. Use at your own risk.</p>
+                    <div className="mt-2 flex justify-center gap-4">
+                        <a href="/privacy.html" className="underline hover:text-[#2D9C8E]">Privacy</a>
                         <a href="/terms.html" className="underline hover:text-[#2D9C8E]">Terms</a>
-                        <a href="/press-kit.html" className="underline hover:text-[#2D9C8E]">Press Kit</a>
+                        <a href="/press-kit.html" className="underline hover:text-[#2D9C8E]">Press</a>
                     </div>
                 </div>
             </div>

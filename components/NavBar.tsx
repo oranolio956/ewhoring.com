@@ -61,18 +61,17 @@ export const NavBar: React.FC = () => {
                   </svg>
                 </button>
 
-                {/* 'Methods Leaked' - Hidden on mobile, visible on tablet+ */}
+                {/* 'Community' - Hidden on mobile, visible on tablet+ */}
                 <button onClick={openHackForums} className="hidden sm:flex items-center gap-2 bg-[#FDFBF7]/50 px-3 py-1 rounded-full border border-[#1A2A3A]/5 backdrop-blur-sm hover:bg-white transition-colors cursor-pointer">
-                    <div className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse"></div>
-                    <span className="text-[10px] font-mono uppercase text-[#1A2A3A]/60 tracking-widest whitespace-nowrap">Methods Leaked</span>
+                    <span className="text-[10px] font-mono uppercase text-[#1A2A3A]/60 tracking-widest whitespace-nowrap">Community</span>
                 </button>
                 
                 {/* Secondary Button - Hides on small phones (<450px) to ensure Main CTA fits */}
-                <button 
+                <button
                   onClick={openHackForums}
                   className="hidden min-[450px]:block px-3 py-1.5 md:px-4 md:py-2 border border-[#1A2A3A] text-[#1A2A3A] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded-sm whitespace-nowrap active:scale-95 duration-100"
                 >
-                  Join The Harem
+                  Forum
                 </button>
                 
                 {/* Primary CTA - Always Visible, prioritizes screen space */}
@@ -115,25 +114,24 @@ export const NavBar: React.FC = () => {
         </div>
       )}
 
-      {/* Vertical Navigation (Desktop Only) - Semantic Links */}
-      <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-8 mix-blend-darken pl-[env(safe-area-inset-left)]">
+      {/* Vertical Navigation (Desktop Only) - Clean Links */}
+      <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-6 pl-[env(safe-area-inset-left)]">
         {[
-          { label: 'The Hook', id: 'hero' },
-          { label: 'The Money', id: 'money-printer' },
-          { label: 'The Process', id: 'manifesto' },
-          { label: 'The Price', id: 'pricing' }
+          { label: 'Hook', id: 'hero' },
+          { label: 'Money', id: 'money-printer' },
+          { label: 'Process', id: 'manifesto' },
+          { label: 'Price', id: 'pricing' }
         ].map((item, index) => (
-          <a 
-            key={item.label} 
+          <a
+            key={item.label}
             href={`#${item.id}`}
             onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
-            className="group flex items-center gap-4 cursor-pointer"
+            className="group flex items-center gap-3 cursor-pointer hover:text-[#FF8A75] transition-colors"
             aria-label={`Scroll to ${item.label}`}
           >
-             <span className="text-[10px] font-mono text-[#1A2A3A]/40 font-bold">0{index + 1}</span>
-             <span className="text-sm uppercase tracking-widest text-[#1A2A3A] font-bold relative overflow-hidden">
-               <span className="block group-hover:-translate-y-full transition-transform duration-300">{item.label}</span>
-               <span className="absolute top-full left-0 block group-hover:-translate-y-full transition-transform duration-300 text-[#FF8A75]">{item.label}</span>
+             <span className="text-[10px] font-mono text-[#1A2A3A]/40 font-bold">{String(index + 1).padStart(2, '0')}</span>
+             <span className="text-xs uppercase tracking-widest text-[#1A2A3A] font-bold group-hover:text-[#FF8A75]">
+               {item.label}
              </span>
           </a>
         ))}

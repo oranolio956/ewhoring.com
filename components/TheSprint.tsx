@@ -42,7 +42,7 @@ export const TheSprint: React.FC = () => {
           {/* Header / Rant */}
           <div className="lg:col-span-5 sticky top-24 h-fit">
             <div className="inline-block bg-[#FF8A75] text-[#1A2A3A] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
-              System: Oranolio
+              The 7-Day Protocol
             </div>
             
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95]">
@@ -67,7 +67,7 @@ export const TheSprint: React.FC = () => {
             </div>
 
             <button onClick={openPayment} className="w-full py-4 bg-[#FDFBF7] text-[#1A2A3A] font-bold uppercase tracking-widest md:tracking-[0.2em] hover:bg-[#FF8A75] transition-colors rounded-lg shadow-[0_0_20px_rgba(255,138,117,0.3)] text-[3vw] md:text-base whitespace-nowrap cursor-pointer">
-               Initialize Protocol
+               START THE 7 DAYS
             </button>
           </div>
 
@@ -75,18 +75,18 @@ export const TheSprint: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="space-y-4">
               {days.map((item, index) => (
-                <div key={index} className="group relative flex items-stretch bg-[#FDFBF7]/5 border border-[#FDFBF7]/10 hover:border-[#FF8A75] transition-colors rounded-xl overflow-hidden">
-                  
+                <div key={index} className="group relative flex items-stretch bg-[#FDFBF7]/5 border border-[#FDFBF7]/10 rounded-xl overflow-hidden">
+
                   {/* Day Number */}
-                  <div className="bg-[#1A2A3A] w-20 flex items-center justify-center border-r border-[#FDFBF7]/10 group-hover:bg-[#FF8A75] transition-colors">
-                    <span className="font-mono text-2xl font-bold text-[#FDFBF7]/30 group-hover:text-[#1A2A3A]">
+                  <div className="bg-[#1A2A3A] w-20 flex items-center justify-center border-r border-[#FDFBF7]/10">
+                    <span className="font-mono text-2xl font-bold text-[#FDFBF7]/60">
                       {item.day}
                     </span>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="p-6 flex-1">
-                    <h3 className="text-xl font-bold font-['Space_Grotesk'] text-[#FDFBF7] mb-1 group-hover:text-[#FF8A75] transition-colors">
+                    <h3 className="text-xl font-bold font-['Space_Grotesk'] text-[#FDFBF7] mb-1">
                       {item.title}
                     </h3>
                     <p className="text-sm text-[#FDFBF7]/60 font-mono">

@@ -58,24 +58,12 @@ export const BentoGrid: React.FC = () => {
         {/* Header */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
           <div className="mb-4 flex items-center gap-2">
-            <div className="w-2 h-2 bg-[#FF8A75] animate-pulse"></div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">Classified Material</span>
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">The Protocol</span>
           </div>
           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FDFBF7]">
             THE METHOD
           </h2>
           
-          {/* PREREQUISITES BADGE */}
-          <div className="mb-6 inline-flex flex-col border border-[#FF8A75]/30 bg-[#FF8A75]/5 p-3 rounded-lg">
-             <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF8A75] mb-1">
-                ⚠ PREREQUISITES:
-             </div>
-             <div className="text-[10px] md:text-xs font-mono text-[#FDFBF7]/80">
-                • Basic Social Engineering Skills<br/>
-                • Lack of Morality<br/>
-                • <span className="text-red-400">NO BEGINNERS / NO KIDS</span>
-             </div>
-          </div>
 
           <p className="text-base md:text-xl font-light text-[#FDFBF7]/70 leading-relaxed font-mono">
             // Subject: Wealth Extraction<br/>
@@ -99,9 +87,6 @@ export const BentoGrid: React.FC = () => {
               // Mobile: Click to expand
               onClick={() => toggleExpand(module.id)}
               className="group border-b border-[#FDFBF7]/10 py-8 md:py-10 hover:bg-[#FDFBF7]/5 transition-all cursor-pointer md:cursor-help relative overflow-hidden"
-            >
-              {/* Hover highlight bar */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#2D9C8E] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
 
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12 pl-4">
                 <span className="font-mono text-xs md:text-sm text-[#2D9C8E] mb-2 md:mb-0 tracking-widest opacity-60 group-hover:opacity-100">
