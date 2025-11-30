@@ -23,9 +23,9 @@ export const HeroSection: React.FC = () => {
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
       <div className="flex flex-col relative w-full max-w-[1920px] mx-auto mb-8 md:mb-12">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10 will-change-transform transform-gpu">
-          {/* Main Headline - Adjusted clamp for better mobile fit */}
+          {/* Main Headline - SEO Optimized H1 */}
           <h1 className="text-[clamp(2.25rem,13vw,12rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10 transform-gpu">
-            YOU'RE A DUDE?
+            <span className="sr-only">Ewhore Discord Servers 2025 - Complete Ewhoring Guide - </span>YOU'RE A DUDE?
           </h1>
           
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}

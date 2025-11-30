@@ -3,7 +3,7 @@ import React from 'react';
 
 export const PricingTerminal: React.FC = () => {
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
+    <section id="pricing" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
       
       {/* Matrix Rain Effect (Static CSS implementation for performance) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 

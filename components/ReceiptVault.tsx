@@ -3,7 +3,7 @@ import React from 'react';
 
 export const ReceiptVault: React.FC = () => {
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
+    <section id="receipts" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
       {/* Background text */}
       <div className="absolute right-0 bottom-0 text-[10vw] font-bold text-[#1A2A3A]/[0.03] leading-none pointer-events-none select-none font-['Space_Grotesk']">
