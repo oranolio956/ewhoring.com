@@ -69,12 +69,6 @@ export const HeroSection: React.FC = () => {
             </h3>
         </div>
         
-        <div className="lg:col-span-2 flex flex-col justify-end items-start lg:items-center">
-           <div className="flex gap-2 items-center bg-white/50 w-fit px-3 py-2 rounded-full backdrop-blur-sm border border-[#1A2A3A]/10">
-             <div className="w-2 h-2 rounded-full bg-[#FF8A75] animate-pulse"></div>
-             <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#FF8A75]">Grift Active</span>
-           </div>
-        </div>
 
         <div className="flex lg:col-span-4 justify-start lg:justify-end items-end gap-4 mt-4 lg:mt-0 w-full">
            <div className="text-left lg:text-right w-full lg:w-auto">
@@ -86,27 +80,10 @@ export const HeroSection: React.FC = () => {
                     START THE GRIFT
                 </button>
                
-               {/* SYSTEM REQUIREMENTS - SUBTLE WARNING */}
-               <div className="mt-4 p-3 border border-[#1A2A3A]/10 bg-[#1A2A3A]/5 rounded text-[10px] font-mono text-left w-full max-w-xs ml-auto">
-                  <div className="font-bold uppercase mb-1 text-[#1A2A3A]">⚠ System Requirements:</div>
-                  <ul className="space-y-1 opacity-70">
-                    <li className="flex justify-between"><span>Social IQ:</span> <span>110+ (Required)</span></li>
-                    <li className="flex justify-between"><span>Empathy:</span> <span>Disabled</span></li>
-                    <li className="flex justify-between text-red-600 font-bold"><span>Beginners:</span> <span>NOT SUPPORTED</span></li>
-                  </ul>
-                  <div className="mt-2 text-[9px] opacity-50 leading-tight">
-                    *If you have never manipulated a human before, this protocol will be too advanced for you. Do not buy.
-                  </div>
-               </div>
 
            </div>
         </div>
         
-        {/* Animated Scroll Indicator */}
-        <div className="absolute left-1/2 bottom-[1vh] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pointer-events-none transform-gpu">
-            <span className="text-[8px] font-mono uppercase tracking-widest text-[#1A2A3A]">Powered by Oranolio</span>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-[#1A2A3A] to-transparent"></div>
-        </div>
       </article>
 
       <style>{`

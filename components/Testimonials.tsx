@@ -99,10 +99,10 @@ export const Testimonials: React.FC = () => {
             onClick={openPayment}
             className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
           >
-            JOIN THE SUCCESS STORIES →
+            BECOME THE NEXT SUCCESS STORY →
           </button>
           <p className="text-xs text-[#1A2A3A]/60 mt-2 font-mono">
-            Don't be the guy still watching these stories
+            Stop reading and start doing
           </p>
         </div>
       </div>

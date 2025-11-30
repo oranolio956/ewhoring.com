@@ -82,10 +82,10 @@ export const WhySection: React.FC = () => {
                     onClick={openPayment}
                     className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FDFBF7] hover:text-[#1A2A3A] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
                 >
-                    READY TO BECOME A GIRL? →
+                    GET THE FULL BRAIN DUMP →
                 </button>
                 <p className="text-xs text-[#FDFBF7]/60 mt-2 font-mono">
-                    Limited time offer - Don't wait for me to change my mind
+                    Everything I know about fleecing sugar daddies
                 </p>
             </div>
 
