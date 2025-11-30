@@ -48,7 +48,7 @@ export const FalseIdols: React.FC = () => {
                         <div className="p-4 text-center font-bold bg-[#FF8A75]/5 border-t border-[#1A2A3A]/10">Stay anonymous & rich</div>
 
                         <div className="p-4 text-center opacity-60 border-t border-[#1A2A3A]/10">Yell at camera</div>
-                        <div className="p-4 text-center font-bold bg-[#FF8A75]/5 border-t border-[#1A2A3A]/10">Type "uwu" -> Get Paid</div>
+                        <div className="p-4 text-center font-bold bg-[#FF8A75]/5 border-t border-[#1A2A3A]/10">Type "uwu" -&gt; Get Paid</div>
                     </div>
                 </div>
             </div>

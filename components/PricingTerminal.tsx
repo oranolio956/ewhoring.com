@@ -37,13 +37,13 @@ export const PricingTerminal: React.FC = () => {
                 </div>
 
                 <div className="space-y-4 text-sm md:text-base leading-relaxed">
-                    <p>> <span className="text-white">Loading modules...</span></p>
-                    <p>> [OK] Simp_Farming_v2.exe</p>
-                    <p>> [OK] Voice_Changer_Pro.exe</p>
-                    <p>> [OK] Whale_Radar_Global.dat</p>
-                    <p>> <span className="text-white">Calculating market value...</span> $4,500.00</p>
-                    <p>> <span className="text-white">Applying "Broke Loser" discount...</span></p>
-                    <p className="animate-pulse">> FINAL PRICE: $150.00</p>
+                    <p>&gt; <span className="text-white">Loading modules...</span></p>
+                    <p>&gt; [OK] Simp_Farming_v2.exe</p>
+                    <p>&gt; [OK] Voice_Changer_Pro.exe</p>
+                    <p>&gt; [OK] Whale_Radar_Global.dat</p>
+                    <p>&gt; <span className="text-white">Calculating market value...</span> $4,500.00</p>
+                    <p>&gt; <span className="text-white">Applying "Broke Loser" discount...</span></p>
+                    <p className="animate-pulse">&gt; FINAL PRICE: $150.00</p>
                     
                     <div className="mt-8 pt-8 border-t border-[#00FF00]/20">
                         <div className="flex justify-between items-end mb-4">
