@@ -1,213 +1,166 @@
 import React from 'react';
 
 // SEO Content Component - Featured Snippet Bait
-// Contains definitions, comparison tables, and keyword-rich content for Google
+// MATCHING ORIGINAL SITE DESIGN - dark industrial aesthetic
 
 export const SEOContent: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 px-4 bg-[#0F1923] text-[#FDFBF7]" id="learn">
-      <div className="max-w-5xl mx-auto">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden" id="learn">
+      
+      {/* Background Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.02] rotate-12 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
+        EWHORING
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
         
         {/* Definition Section - Targets "What is ewhoring" featured snippet */}
-        <article className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 font-['Space_Grotesk'] text-center">
-            What is <span className="text-[#FF8A75]">Ewhoring</span>?
+        <div className="mb-16 md:mb-24">
+          <div className="mb-4 flex items-center gap-2 justify-center">
+            <div className="w-8 h-[1px] bg-[#FF8A75]"></div>
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">Definition</span>
+            <div className="w-8 h-[1px] bg-[#FF8A75]"></div>
+          </div>
+          
+          <h2 className="text-4xl md:text-7xl font-bold mb-8 font-['Space_Grotesk'] text-center tracking-tighter">
+            WHAT IS <span className="text-[#2D9C8E]">EWHORING</span>?
           </h2>
           
           {/* Definition paragraph - optimized for featured snippets */}
-          <div className="speakable bg-[#1A2A3A] p-8 rounded-2xl border border-[#2D9C8E]/30 mb-8">
+          <div className="speakable border-l-2 border-[#2D9C8E] pl-6 md:pl-8 py-4 bg-[#FDFBF7]/5 max-w-4xl mx-auto">
             <p className="text-lg md:text-xl leading-relaxed text-[#FDFBF7]/90">
-              <strong>Ewhoring</strong> is the practice of creating and monetizing fake female online personas 
-              to generate revenue from male users on platforms like Discord, Telegram, and dating apps. 
-              It involves <em>social engineering</em>, <em>digital persona creation</em>, and various 
+              <strong className="text-[#FDFBF7]">Ewhoring</strong> is the practice of creating and monetizing fake female online personas 
+              to generate revenue from male users on platforms like <span className="text-[#2D9C8E]">Discord</span>, <span className="text-[#2D9C8E]">Telegram</span>, and dating apps. 
+              It involves social engineering, digital persona creation, and various 
               monetization strategies including selling content, receiving gift cards, and running premium 
               subscriptions. The term originated in online forums around 2010 and has evolved into a 
               structured methodology for online income generation.
             </p>
           </div>
+        </div>
 
-          {/* Key Points List - Targets PAA "How does ewhoring work" */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-[#1A2A3A]/50 p-6 rounded-xl border border-[#FDFBF7]/10">
-              <h3 className="text-xl font-bold mb-4 text-[#2D9C8E]">How Ewhoring Works:</h3>
-              <ol className="list-decimal list-inside space-y-2 text-[#FDFBF7]/80">
-                <li>Create anonymous accounts and personas</li>
-                <li>Build believable female identity with images</li>
-                <li>Join high-traffic platforms (Discord, Telegram)</li>
-                <li>Engage with potential paying users</li>
-                <li>Monetize through various payment methods</li>
-                <li>Scale with multiple personas</li>
-              </ol>
-            </div>
-            
-            <div className="bg-[#1A2A3A]/50 p-6 rounded-xl border border-[#FDFBF7]/10">
-              <h3 className="text-xl font-bold mb-4 text-[#FF8A75]">Average Earnings:</h3>
-              <ul className="space-y-2 text-[#FDFBF7]/80">
-                <li><strong>Beginners:</strong> $200-$500/week</li>
-                <li><strong>Intermediate:</strong> $500-$2,000/week</li>
-                <li><strong>Advanced:</strong> $2,000-$5,000/week</li>
-                <li><strong>Multi-persona:</strong> $5,000-$15,000/month</li>
-              </ul>
+        {/* How It Works + Earnings Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 md:mb-24">
+          
+          {/* How It Works */}
+          <div className="lg:col-span-7">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 font-['Space_Grotesk'] uppercase">
+              How Ewhoring Works
+            </h3>
+            <div className="space-y-4">
+              {[
+                { num: "01", text: "Create anonymous accounts and personas" },
+                { num: "02", text: "Build believable female identity with images" },
+                { num: "03", text: "Join high-traffic platforms (Discord, Telegram, Reddit)" },
+                { num: "04", text: "Engage with potential paying users" },
+                { num: "05", text: "Monetize through various payment methods" },
+                { num: "06", text: "Scale with multiple personas" }
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 group">
+                  <span className="font-mono text-xs text-[#2D9C8E] mt-1 opacity-60">[{item.num}]</span>
+                  <p className="text-[#FDFBF7]/80 group-hover:text-[#FDFBF7] transition-colors">{item.text}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </article>
+          
+          {/* Earnings Card */}
+          <div className="lg:col-span-5">
+            <div className="border border-[#FF8A75]/30 p-6 md:p-8 bg-[#FF8A75]/5">
+              <h3 className="text-xl font-bold mb-6 font-['Space_Grotesk'] uppercase text-[#FF8A75]">
+                Average Earnings
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { level: "Beginners", range: "$200-$500/week" },
+                  { level: "Intermediate", range: "$500-$2,000/week" },
+                  { level: "Advanced", range: "$2,000-$5,000/week" },
+                  { level: "Multi-persona", range: "$5,000-$15,000/month" }
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-center border-b border-[#FDFBF7]/10 pb-3">
+                    <span className="text-sm font-mono text-[#FDFBF7]/60">{item.level}:</span>
+                    <span className="font-bold text-[#2D9C8E]">{item.range}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Comparison Table - Targets "Ewhoring vs OnlyFans" featured snippet */}
-        <article className="mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 font-['Space_Grotesk'] text-center">
-            Ewhoring vs OnlyFans vs Fansly: <span className="text-[#2D9C8E]">Complete Comparison</span>
-          </h2>
+        <div className="mb-16 md:mb-24">
+          <div className="text-center mb-8">
+            <div className="inline-block bg-[#1A2A3A] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-4">
+              Comparison
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] tracking-tighter">
+              EWHORING VS ONLYFANS VS FANSLY
+            </h2>
+          </div>
           
           <div className="overflow-x-auto">
-            <table className="w-full bg-[#1A2A3A] rounded-xl overflow-hidden text-sm md:text-base">
-              <thead className="bg-[#2D9C8E] text-[#FDFBF7]">
-                <tr>
-                  <th className="p-4 text-left font-bold">Factor</th>
-                  <th className="p-4 text-center font-bold">Ewhoring</th>
-                  <th className="p-4 text-center font-bold">OnlyFans</th>
-                  <th className="p-4 text-center font-bold">Fansly</th>
+            <table className="w-full text-sm md:text-base">
+              <thead>
+                <tr className="border-b border-[#2D9C8E]">
+                  <th className="p-4 text-left font-bold font-['Space_Grotesk'] uppercase text-[#FDFBF7]/60">Factor</th>
+                  <th className="p-4 text-center font-bold text-[#2D9C8E]">Ewhoring</th>
+                  <th className="p-4 text-center font-bold text-[#FDFBF7]/60">OnlyFans</th>
+                  <th className="p-4 text-center font-bold text-[#FDFBF7]/60">Fansly</th>
                 </tr>
               </thead>
-              <tbody className="text-[#FDFBF7]/80">
-                <tr className="border-b border-[#FDFBF7]/10">
-                  <td className="p-4 font-medium">Startup Cost</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">$0</td>
-                  <td className="p-4 text-center">$0</td>
-                  <td className="p-4 text-center">$0</td>
-                </tr>
-                <tr className="border-b border-[#FDFBF7]/10 bg-[#FDFBF7]/5">
-                  <td className="p-4 font-medium">Time to First $</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">20 min - 2 hrs</td>
-                  <td className="p-4 text-center">1-4 weeks</td>
-                  <td className="p-4 text-center">1-4 weeks</td>
-                </tr>
-                <tr className="border-b border-[#FDFBF7]/10">
-                  <td className="p-4 font-medium">Face Required</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">No</td>
-                  <td className="p-4 text-center">Optional</td>
-                  <td className="p-4 text-center">Optional</td>
-                </tr>
-                <tr className="border-b border-[#FDFBF7]/10 bg-[#FDFBF7]/5">
-                  <td className="p-4 font-medium">Platform Fee</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">0%</td>
-                  <td className="p-4 text-center">20%</td>
-                  <td className="p-4 text-center">20%</td>
-                </tr>
-                <tr className="border-b border-[#FDFBF7]/10">
-                  <td className="p-4 font-medium">Anonymity</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">Full</td>
-                  <td className="p-4 text-center">Partial (KYC)</td>
-                  <td className="p-4 text-center">Partial (KYC)</td>
-                </tr>
-                <tr className="border-b border-[#FDFBF7]/10 bg-[#FDFBF7]/5">
-                  <td className="p-4 font-medium">Scalability</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">Multi-persona</td>
-                  <td className="p-4 text-center">Single brand</td>
-                  <td className="p-4 text-center">Single brand</td>
-                </tr>
-                <tr className="border-b border-[#FDFBF7]/10">
-                  <td className="p-4 font-medium">Content Creation</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">Sourced/AI</td>
-                  <td className="p-4 text-center">Self-created</td>
-                  <td className="p-4 text-center">Self-created</td>
-                </tr>
-                <tr className="bg-[#FDFBF7]/5">
-                  <td className="p-4 font-medium">Best For</td>
-                  <td className="p-4 text-center text-[#2D9C8E]">Fast cash, anonymity</td>
-                  <td className="p-4 text-center">Brand building</td>
-                  <td className="p-4 text-center">Alt to OF</td>
-                </tr>
+              <tbody className="font-mono text-sm">
+                {[
+                  { factor: "Startup Cost", ew: "$0", of: "$0", fa: "$0", highlight: false },
+                  { factor: "Time to First $", ew: "20 min", of: "1-4 weeks", fa: "1-4 weeks", highlight: true },
+                  { factor: "Face Required", ew: "No", of: "Optional", fa: "Optional", highlight: true },
+                  { factor: "Platform Fee", ew: "0%", of: "20%", fa: "20%", highlight: true },
+                  { factor: "Anonymity", ew: "Full", of: "Partial", fa: "Partial", highlight: true },
+                  { factor: "Scalability", ew: "Multi-persona", of: "Single", fa: "Single", highlight: true }
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-[#FDFBF7]/5 hover:bg-[#FDFBF7]/5 transition-colors">
+                    <td className="p-4 text-[#FDFBF7]/70">{row.factor}</td>
+                    <td className={`p-4 text-center ${row.highlight ? 'text-[#2D9C8E] font-bold' : 'text-[#FDFBF7]/80'}`}>{row.ew}</td>
+                    <td className="p-4 text-center text-[#FDFBF7]/50">{row.of}</td>
+                    <td className="p-4 text-center text-[#FDFBF7]/50">{row.fa}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-        </article>
-
-        {/* Best Platforms Section - Targets "Best platforms for ewhoring" */}
-        <article className="mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 font-['Space_Grotesk'] text-center">
-            Best Platforms for Ewhoring in <span className="text-[#F4D35E]">2025</span>
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Discord */}
-            <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#5865F2]/50 hover:border-[#5865F2] transition-colors">
-              <div className="text-4xl mb-4">💬</div>
-              <h3 className="text-xl font-bold mb-2 text-[#5865F2]">Discord</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Highest volume platform. Join dating/lonely servers, build rapport, monetize through Nitro gifts, PayPal, gift cards.
-              </p>
-              <div className="text-[#2D9C8E] font-bold">ROI: ★★★★★</div>
-            </div>
-
-            {/* Telegram */}
-            <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#0088cc]/50 hover:border-[#0088cc] transition-colors">
-              <div className="text-4xl mb-4">✈️</div>
-              <h3 className="text-xl font-bold mb-2 text-[#0088cc]">Telegram</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Best for premium groups and 1-on-1 monetization. Higher ticket sales, crypto-friendly, less moderation.
-              </p>
-              <div className="text-[#2D9C8E] font-bold">ROI: ★★★★☆</div>
-            </div>
-
-            {/* Dating Apps */}
-            <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#FF6B6B]/50 hover:border-[#FF6B6B] transition-colors">
-              <div className="text-4xl mb-4">💕</div>
-              <h3 className="text-xl font-bold mb-2 text-[#FF6B6B]">Dating Apps</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Tinder, Bumble, Hinge for initial contact. Move to private chat quickly. Gift card farming paradise.
-              </p>
-              <div className="text-[#2D9C8E] font-bold">ROI: ★★★★☆</div>
-            </div>
-          </div>
-        </article>
+        </div>
 
         {/* Quick Start Guide - Targets "How to start ewhoring" */}
-        <article>
-          <h2 className="text-2xl md:text-4xl font-bold mb-8 font-['Space_Grotesk'] text-center">
-            How to Start Ewhoring: <span className="text-[#FF8A75]">Quick Start Guide</span>
-          </h2>
-          
-          <div className="bg-[#1A2A3A] p-8 rounded-2xl border border-[#FDFBF7]/10">
-            <ol className="space-y-6">
-              <li className="flex gap-4">
-                <span className="flex-shrink-0 w-10 h-10 bg-[#2D9C8E] rounded-full flex items-center justify-center font-bold">1</span>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Set Up Anonymous Accounts</h4>
-                  <p className="text-[#FDFBF7]/70">Get a VPN, create new email, set up burner phone number. Never use real identity.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="flex-shrink-0 w-10 h-10 bg-[#2D9C8E] rounded-full flex items-center justify-center font-bold">2</span>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Build Your Persona</h4>
-                  <p className="text-[#FDFBF7]/70">Choose a name, age, location. Source or generate images. Create believable backstory.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="flex-shrink-0 w-10 h-10 bg-[#2D9C8E] rounded-full flex items-center justify-center font-bold">3</span>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Join Target Platforms</h4>
-                  <p className="text-[#FDFBF7]/70">Start with Discord dating servers. Build presence. Don't spam - build relationships.</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <span className="flex-shrink-0 w-10 h-10 bg-[#2D9C8E] rounded-full flex items-center justify-center font-bold">4</span>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">Monetize</h4>
-                  <p className="text-[#FDFBF7]/70">Use proven scripts. Payment before content. Gift cards, crypto, CashApp. Scale up.</p>
-                </div>
-              </li>
-            </ol>
+        <div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] tracking-tighter">
+              QUICK START <span className="text-[#FF8A75]">GUIDE</span>
+            </h2>
           </div>
           
-          <p className="text-center mt-8 text-[#FDFBF7]/50 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { num: "1", title: "Anonymous Setup", desc: "VPN, new email, burner number. Never use real identity." },
+              { num: "2", title: "Build Persona", desc: "Name, age, location. Source images. Create backstory." },
+              { num: "3", title: "Join Platforms", desc: "Discord servers, Telegram groups. Build presence." },
+              { num: "4", title: "Monetize", desc: "Use scripts. Payment first. Gift cards, crypto." }
+            ].map((step, i) => (
+              <div key={i} className="group p-6 border border-[#FDFBF7]/10 hover:border-[#2D9C8E] transition-all relative">
+                <span className="absolute -top-4 -left-2 text-5xl font-bold text-[#2D9C8E]/20 font-['Space_Grotesk'] group-hover:text-[#2D9C8E]/40 transition-colors">
+                  {step.num}
+                </span>
+                <h4 className="font-bold text-lg mb-2 font-['Space_Grotesk'] uppercase relative z-10">{step.title}</h4>
+                <p className="text-sm text-[#FDFBF7]/60 font-mono relative z-10">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-center mt-8 text-[#FDFBF7]/40 text-sm font-mono">
             Want the complete 7-day protocol with scripts, templates, and advanced methods? 
             <a href="#pricing" className="text-[#FF8A75] hover:underline ml-1">Get the Oranolio Protocol →</a>
           </p>
-        </article>
+        </div>
 
       </div>
     </section>
   );
 };
-

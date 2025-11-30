@@ -1,530 +1,406 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// AGGRESSIVE KEYWORD TARGETING COMPONENT
-// Targets: Discord servers, Telegram groups, Hackforums methods, all ewhoring variations
-// Google-compliant: Proper semantic HTML, useful content, no hidden text abuse
+// AGGRESSIVE KEYWORD TARGETING - MATCHING ORIGINAL SITE DESIGN
+// Targets: Discord servers, Telegram groups, Reddit, Tinder, Dating Apps, all ewhoring variations
+
+const platforms = [
+  {
+    id: 1,
+    name: "DISCORD",
+    tag: "HIGHEST VOLUME",
+    color: "#5865F2",
+    description: "Dating servers, lonely servers, e-girl communities. Nitro gifts, PayPal, gift cards.",
+    details: "Join dating/lonely servers with 1k+ members. Build rapport in public channels first. Move to DMs. Use proven scripts. Collect via Nitro, Amazon cards, CashApp.",
+    stats: { roi: "★★★★★", speed: "Fast", risk: "Medium" }
+  },
+  {
+    id: 2,
+    name: "TELEGRAM",
+    tag: "HIGH TICKET",
+    color: "#0088cc",
+    description: "Premium groups, crypto payments, minimal moderation. Best for $50-200 sales.",
+    details: "Create premium channels with tiered access. Native crypto support for anonymity. Run bots for automated responses. Higher ticket sales, less volume.",
+    stats: { roi: "★★★★☆", speed: "Medium", risk: "Low" }
+  },
+  {
+    id: 3,
+    name: "REDDIT",
+    tag: "TRAFFIC SOURCE",
+    color: "#FF4500",
+    description: "r/lonely, r/dating, r/ForeverAlone. Build following, drive to monetization platforms.",
+    details: "Post in lonely/dating subreddits. Build karma, don't sell directly. Use as funnel to Discord/Telegram. Great for establishing persona credibility.",
+    stats: { roi: "★★★☆☆", speed: "Slow", risk: "Low" }
+  },
+  {
+    id: 4,
+    name: "TINDER",
+    tag: "GIFT CARD FARMING",
+    color: "#FE3C72",
+    description: "Match → Build rapport → Extract gifts. Move to Telegram/Snap for monetization.",
+    details: "Swipe right on everyone. Match, flirt, build connection over 2-3 days. 'My phone is broken, can you send me a gift card for a new one?' Classic.",
+    stats: { roi: "★★★★☆", speed: "Medium", risk: "High" }
+  },
+  {
+    id: 5,
+    name: "BUMBLE",
+    tag: "PREMIUM TARGETS",
+    color: "#FFC629",
+    description: "Higher income users than Tinder. Same playbook, bigger payouts.",
+    details: "Women message first = they're invested. Use this psychology. Sugar daddy angle works well. Move to private platform ASAP before ban.",
+    stats: { roi: "★★★★☆", speed: "Medium", risk: "High" }
+  },
+  {
+    id: 6,
+    name: "SNAPCHAT",
+    tag: "PREMIUM CONTENT",
+    color: "#FFFC00",
+    description: "Premium Snap subscriptions. Recurring revenue from 'exclusive' access.",
+    details: "Sell 'premium Snapchat' access for $20-50/month. Auto-delete creates urgency. Great combined with Discord/Tinder traffic.",
+    stats: { roi: "★★★★☆", speed: "Fast", risk: "Medium" }
+  }
+];
+
+const methods = [
+  { name: "THE CLASSIC", desc: "Persona + dating platforms + pic selling", level: "Beginner" },
+  { name: "GFE METHOD", desc: "Girlfriend Experience - recurring monthly simps", level: "Intermediate" },
+  { name: "FINDOM", desc: "Financial domination - pay to be ignored", level: "Advanced" },
+  { name: "AI-ENHANCED", desc: "AI images + ChatGPT scaling + voice cloning", level: "2025 Meta" },
+  { name: "DATING ARBITRAGE", desc: "Tinder/Bumble → gift card extraction", level: "High Volume" },
+  { name: "PREMIUM SNAP", desc: "Monthly subscriptions + PPV content", level: "Passive" }
+];
 
 export const KeywordTargets: React.FC = () => {
+  const [expandedPlatform, setExpandedPlatform] = useState<number | null>(null);
+
   return (
     <>
       {/* ============================================== */}
-      {/* DISCORD EWHORING SERVERS SECTION */}
-      {/* Targets: ewhore discord servers, ewhoring discord, discord ewhore */}
+      {/* PLATFORM BREAKDOWN - DISCORD/TELEGRAM/REDDIT/TINDER */}
       {/* ============================================== */}
-      <section id="discord-servers" className="py-16 md:py-24 px-4 bg-[#5865F2]/10">
-        <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] text-[#1A2A3A] mb-4">
-              Ewhore Discord Servers & Methods 2025
+      <section id="discord-servers" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+        
+        {/* Background Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12vw] font-bold text-[#FDFBF7]/[0.02] -rotate-12 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
+          PLATFORMS
+        </div>
+
+        <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
+          
+          {/* Header */}
+          <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
+            <div className="mb-4 flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#FF8A75] animate-pulse"></div>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">Target Platforms</span>
+            </div>
+            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FDFBF7] font-['Space_Grotesk']">
+              WHERE THE <br/>
+              <span className="text-[#2D9C8E]">SIMPS LIVE</span>
             </h2>
-            <p className="text-lg text-[#1A2A3A]/70 max-w-3xl mx-auto">
-              The complete guide to finding and monetizing Discord servers for ewhoring. 
-              Learn which Discord ewhore servers actually work and how to avoid getting banned.
+            
+            <p className="text-base md:text-lg font-light text-[#FDFBF7]/70 leading-relaxed mb-8">
+              Every platform has lonely men with wallets. Here's where to find them and how to extract value. <span className="text-[#FF8A75]">Click each platform for the full playbook.</span>
             </p>
-          </header>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Discord Method Card */}
-            <article className="bg-white p-8 rounded-2xl shadow-lg border border-[#5865F2]/20">
-              <h3 className="text-2xl font-bold text-[#5865F2] mb-4">
-                Best Discord Servers for Ewhoring
-              </h3>
-              <p className="text-[#1A2A3A]/80 mb-4">
-                Finding the right <strong>ewhore Discord servers</strong> is crucial. You want servers with:
+            <div className="p-4 md:p-6 border-l-2 border-[#2D9C8E] bg-[#FDFBF7]/5">
+              <p className="text-xs md:text-sm text-[#FDFBF7]/60 font-mono">
+                // Multi-platform strategy = 3x revenue<br/>
+                // Never rely on one source<br/>
+                // The Protocol covers ALL of these
               </p>
-              <ul className="space-y-2 text-[#1A2A3A]/70 mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#2D9C8E]">✓</span>
-                  <span>High male-to-female ratio (dating servers, lonely servers)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#2D9C8E]">✓</span>
-                  <span>Active DMs enabled (no verification walls)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#2D9C8E]">✓</span>
-                  <span>Minimal moderation on selling</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#2D9C8E]">✓</span>
-                  <span>18+ verified communities</span>
-                </li>
-              </ul>
-              <p className="text-sm text-[#1A2A3A]/60">
-                The Oranolio Protocol includes a curated list of 50+ active Discord servers optimized for ewhoring.
-              </p>
-            </article>
-
-            {/* Discord Monetization */}
-            <article className="bg-white p-8 rounded-2xl shadow-lg border border-[#5865F2]/20">
-              <h3 className="text-2xl font-bold text-[#5865F2] mb-4">
-                Discord Ewhoring Monetization Guide
-              </h3>
-              <p className="text-[#1A2A3A]/80 mb-4">
-                How to make money <strong>ewhoring on Discord</strong>:
-              </p>
-              <ol className="space-y-3 text-[#1A2A3A]/70 mb-6">
-                <li className="flex items-start gap-3">
-                  <span className="bg-[#5865F2] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                  <span>Join target servers with your persona account</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="bg-[#5865F2] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
-                  <span>Engage naturally in public channels first</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="bg-[#5865F2] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-                  <span>Move conversations to DMs</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="bg-[#5865F2] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
-                  <span>Use proven scripts to extract payment</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="bg-[#5865F2] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">5</span>
-                  <span>Collect via Nitro gifts, PayPal, gift cards</span>
-                </li>
-              </ol>
-            </article>
+            </div>
           </div>
 
-          {/* Discord FAQ for PAA */}
-          <div className="bg-[#1A2A3A] p-8 rounded-2xl text-[#FDFBF7]">
-            <h3 className="text-xl font-bold mb-6 text-[#5865F2]">Discord Ewhoring FAQ</h3>
-            <div className="space-y-4">
-              <details className="group">
-                <summary className="cursor-pointer font-medium hover:text-[#5865F2] transition-colors">
-                  How do I find ewhore Discord servers?
-                </summary>
-                <p className="mt-2 text-[#FDFBF7]/70 pl-4 border-l-2 border-[#5865F2]">
-                  Search Disboard.org for "dating", "lonely", "e-girl", or "18+" servers. Join servers with high member counts and active chat. The Protocol includes a vetted server list updated monthly.
-                </p>
-              </details>
-              <details className="group">
-                <summary className="cursor-pointer font-medium hover:text-[#5865F2] transition-colors">
-                  Can I get banned for ewhoring on Discord?
-                </summary>
-                <p className="mt-2 text-[#FDFBF7]/70 pl-4 border-l-2 border-[#5865F2]">
-                  Yes, if you're obvious about it. Use burner accounts, don't spam, build rapport first. The Protocol teaches ban evasion and account farming techniques.
-                </p>
-              </details>
-              <details className="group">
-                <summary className="cursor-pointer font-medium hover:text-[#5865F2] transition-colors">
-                  What's the best way to get paid on Discord?
-                </summary>
-                <p className="mt-2 text-[#FDFBF7]/70 pl-4 border-l-2 border-[#5865F2]">
-                  Discord Nitro gifts are easiest (instant, no chargebacks). Also: Amazon gift cards, Steam cards, PayPal friends & family, or crypto. Never accept "I'll pay after."
-                </p>
-              </details>
+          {/* Platform List */}
+          <div className="lg:col-span-8 flex flex-col justify-center">
+            {platforms.map((platform) => (
+              <div 
+                key={platform.id}
+                onClick={() => setExpandedPlatform(expandedPlatform === platform.id ? null : platform.id)}
+                className="group border-b border-[#FDFBF7]/10 py-6 md:py-8 hover:bg-[#FDFBF7]/5 transition-all cursor-pointer relative overflow-hidden"
+              >
+                {/* Hover highlight bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 transition-transform duration-300 origin-top" 
+                     style={{ backgroundColor: platform.color, transform: expandedPlatform === platform.id ? 'scaleY(1)' : 'scaleY(0)' }}></div>
+
+                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 pl-4">
+                  <div className="flex items-center gap-3 mb-2 md:mb-0">
+                    <span className="font-mono text-xs tracking-widest opacity-60" style={{ color: platform.color }}>
+                      [ {String(platform.id).padStart(2, '0')} ]
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded" 
+                          style={{ backgroundColor: `${platform.color}20`, color: platform.color }}>
+                      {platform.tag}
+                    </span>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-4xl font-bold mb-2 group-hover:translate-x-2 transition-transform duration-300 font-['Space_Grotesk'] uppercase"
+                        style={{ color: expandedPlatform === platform.id ? platform.color : '#FDFBF7' }}>
+                      {platform.name}
+                    </h3>
+                    <p className="text-sm md:text-base text-[#FDFBF7]/60 max-w-xl font-mono">
+                      {platform.description}
+                    </p>
+                    
+                    {/* Expanded Details */}
+                    <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${expandedPlatform === platform.id ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
+                      <div className="overflow-hidden">
+                        <div className="border-l-2 pl-4 py-3 bg-[#FDFBF7]/5" style={{ borderColor: platform.color }}>
+                          <p className="text-sm text-[#FDFBF7]/80 mb-4 leading-relaxed">
+                            {platform.details}
+                          </p>
+                          <div className="flex flex-wrap gap-4 text-xs font-mono">
+                            <span className="text-[#2D9C8E]">ROI: {platform.stats.roi}</span>
+                            <span className="text-[#FDFBF7]/50">|</span>
+                            <span>Speed: {platform.stats.speed}</span>
+                            <span className="text-[#FDFBF7]/50">|</span>
+                            <span className={platform.stats.risk === 'High' ? 'text-[#FF8A75]' : ''}>Risk: {platform.stats.risk}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Expand indicator */}
+                  <div className="text-[#FF8A75] text-xs font-bold uppercase tracking-widest font-mono mt-2 md:mt-0">
+                    {expandedPlatform === platform.id ? '[-] COLLAPSE' : '[+] EXPAND'}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================== */}
+      {/* EWHORING METHODS SECTION */}
+      {/* ============================================== */}
+      <section id="methods" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] text-[#1A2A3A] relative overflow-hidden border-t border-[#1A2A3A]/5">
+        
+        {/* Background Decor */}
+        <div className="absolute top-0 right-0 text-[30rem] leading-none font-bold text-[#1A2A3A]/[0.03] translate-x-1/4 -translate-y-1/4 pointer-events-none font-['Space_Grotesk']">
+          M
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10 w-full">
+          
+          <div className="text-center mb-12 md:mb-16">
+            <div className="inline-block bg-[#1A2A3A] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
+              The Arsenal
+            </div>
+            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6 font-['Space_Grotesk']">
+              EWHORING METHODS <br/>
+              <span className="text-[#2D9C8E]">2025 EDITION</span>
+            </h2>
+            <p className="text-lg text-[#1A2A3A]/60 max-w-2xl mx-auto">
+              Forget the free Hackforums methods from 2018. Those are burned. 
+              <span className="text-[#FF8A75] font-bold"> This is the current meta.</span>
+            </p>
+          </div>
+
+          {/* Methods Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {methods.map((method, i) => (
+              <div 
+                key={i}
+                className="group p-6 md:p-8 border border-[#1A2A3A]/10 hover:border-[#2D9C8E] transition-all duration-300 hover:bg-[#1A2A3A] hover:text-[#FDFBF7] relative overflow-hidden"
+              >
+                {/* Number badge */}
+                <span className="absolute top-4 right-4 text-6xl font-bold text-[#1A2A3A]/[0.05] group-hover:text-[#FDFBF7]/[0.05] font-['Space_Grotesk']">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                
+                <div className="relative z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF8A75] mb-2 block">
+                    {method.level}
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 font-['Space_Grotesk'] uppercase">
+                    {method.name}
+                  </h3>
+                  <p className="text-sm text-[#1A2A3A]/60 group-hover:text-[#FDFBF7]/70 font-mono">
+                    {method.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Hackforums Warning */}
+          <div className="mt-12 p-6 md:p-8 border-2 border-dashed border-[#FF8A75] bg-[#FF8A75]/5 relative">
+            <div className="absolute -top-3 left-6 bg-[#FDFBF7] px-3">
+              <span className="text-xs font-bold text-[#FF8A75] uppercase tracking-widest">⚠ WARNING</span>
+            </div>
+            <h4 className="text-xl font-bold mb-3 font-['Space_Grotesk']">
+              Why Free Methods Don't Work Anymore
+            </h4>
+            <p className="text-[#1A2A3A]/70 mb-4">
+              Those "free ewhoring packs" and leaked methods from Hackforums/Nulled? They're burned. 
+              Every image is reverse-searched. Every script is recognized. Platforms patched the exploits.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs font-mono text-[#1A2A3A]/60">
+              <span>✗ Images flagged</span>
+              <span>✗ Scripts detected</span>
+              <span>✗ Methods patched</span>
+              <span>✗ Accounts instabanned</span>
+              <span>✗ Zero updates</span>
+              <span>✗ No support</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ============================================== */}
-      {/* TELEGRAM EWHORING SECTION */}
-      {/* Targets: ewhoring telegram, telegram ewhore groups, telegram premium selling */}
+      {/* CATFISH MONEY GUIDE */}
       {/* ============================================== */}
-      <section id="telegram-groups" className="py-16 md:py-24 px-4 bg-[#0088cc]/10">
-        <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] text-[#1A2A3A] mb-4">
-              Telegram Ewhoring Guide & Groups 2025
-            </h2>
-            <p className="text-lg text-[#1A2A3A]/70 max-w-3xl mx-auto">
-              Telegram is the #1 platform for premium content selling and high-ticket ewhoring. 
-              Learn how to find <strong>Telegram ewhore groups</strong> and build premium channels.
-            </p>
-          </header>
+      <section id="fake-girl-guide" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+        
+        <div className="absolute bottom-0 left-0 text-[20rem] leading-none font-bold text-[#FDFBF7]/[0.02] -translate-x-1/4 translate-y-1/4 pointer-events-none font-['Space_Grotesk']">
+          $$$
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <article className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="text-4xl mb-4">💎</div>
-              <h3 className="text-xl font-bold text-[#0088cc] mb-3">Premium Telegram Groups</h3>
-              <p className="text-[#1A2A3A]/70 text-sm">
-                Create paid Telegram groups with tiered access. Charge $20-$100/month for "exclusive content." 
-                Telegram's crypto integration makes payments seamless.
-              </p>
-            </article>
-            <article className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="text-4xl mb-4">🔒</div>
-              <h3 className="text-xl font-bold text-[#0088cc] mb-3">Anonymous Payments</h3>
-              <p className="text-[#1A2A3A]/70 text-sm">
-                Telegram supports crypto payments natively. Accept Bitcoin, USDT, or TON. 
-                No KYC, no chargebacks, complete anonymity for ewhoring operations.
-              </p>
-            </article>
-            <article className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="text-4xl mb-4">📈</div>
-              <h3 className="text-xl font-bold text-[#0088cc] mb-3">Scaling on Telegram</h3>
-              <p className="text-[#1A2A3A]/70 text-sm">
-                Run multiple personas across different niches. GFE, findom, custom requests. 
-                Telegram bots can automate welcome messages and payment verification.
-              </p>
-            </article>
-          </div>
-
-          {/* Telegram vs Discord comparison */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold text-center text-[#1A2A3A] mb-6">
-              Telegram vs Discord for Ewhoring
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-[#0088cc] text-white">
-                  <tr>
-                    <th className="p-3 text-left">Feature</th>
-                    <th className="p-3 text-center">Telegram</th>
-                    <th className="p-3 text-center">Discord</th>
-                  </tr>
-                </thead>
-                <tbody className="text-[#1A2A3A]">
-                  <tr className="border-b">
-                    <td className="p-3">Crypto Payments</td>
-                    <td className="p-3 text-center text-[#2D9C8E] font-bold">Native ✓</td>
-                    <td className="p-3 text-center">Manual</td>
-                  </tr>
-                  <tr className="border-b bg-gray-50">
-                    <td className="p-3">Anonymity</td>
-                    <td className="p-3 text-center text-[#2D9C8E] font-bold">Higher ✓</td>
-                    <td className="p-3 text-center">Moderate</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-3">User Volume</td>
-                    <td className="p-3 text-center">Moderate</td>
-                    <td className="p-3 text-center text-[#2D9C8E] font-bold">Higher ✓</td>
-                  </tr>
-                  <tr className="border-b bg-gray-50">
-                    <td className="p-3">Avg. Ticket Size</td>
-                    <td className="p-3 text-center text-[#2D9C8E] font-bold">$50-200 ✓</td>
-                    <td className="p-3 text-center">$5-50</td>
-                  </tr>
-                  <tr>
-                    <td className="p-3">Ban Risk</td>
-                    <td className="p-3 text-center text-[#2D9C8E] font-bold">Lower ✓</td>
-                    <td className="p-3 text-center">Higher</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="max-w-6xl mx-auto relative z-10 w-full">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: The Steps */}
+            <div className="lg:col-span-7">
+              <div className="inline-block bg-[#FF8A75] text-[#1A2A3A] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
+                Step-by-Step
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95] font-['Space_Grotesk']">
+                HOW TO MAKE MONEY <br/>
+                <span className="text-[#2D9C8E]">AS A FAKE GIRL</span>
+              </h2>
+              
+              <div className="space-y-6">
+                {[
+                  { step: "01", title: "CREATE IDENTITY", desc: "Name, age (18-25), location, occupation. Consistent backstory. The Protocol includes templates." },
+                  { step: "02", title: "SOURCE CONTENT", desc: "AI-generated images or purchased packs. Never reverse-searchable. We teach generation." },
+                  { step: "03", title: "DEPLOY TO PLATFORMS", desc: "Discord → Telegram → Dating Apps. Cast wide net. Quality over spam." },
+                  { step: "04", title: "EXTRACT PAYMENT", desc: "Psychological triggers. Payment BEFORE content. Gift cards, crypto, CashApp." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
+                    <span className="flex-shrink-0 w-12 h-12 border border-[#2D9C8E] flex items-center justify-center font-mono text-[#2D9C8E] group-hover:bg-[#2D9C8E] group-hover:text-[#1A2A3A] transition-all">
+                      {item.step}
+                    </span>
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 font-['Space_Grotesk'] uppercase">{item.title}</h4>
+                      <p className="text-[#FDFBF7]/60 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ============================================== */}
-      {/* HACKFORUMS / UNDERGROUND METHODS SECTION */}
-      {/* Targets: hackforums ewhoring, ewhoring methods, ewhoring pack, nulled methods */}
-      {/* ============================================== */}
-      <section id="methods" className="py-16 md:py-24 px-4 bg-[#1A2A3A] text-[#FDFBF7]">
-        <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] mb-4">
-              Advanced Ewhoring Methods 2025
-            </h2>
-            <p className="text-lg text-[#FDFBF7]/70 max-w-3xl mx-auto">
-              Battle-tested <strong>ewhoring methods</strong> from 10+ years of experience. 
-              These aren't the recycled Hackforums methods from 2018 - this is the current meta.
-            </p>
-          </header>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {/* Method Cards */}
-            <article className="bg-[#FDFBF7]/5 p-6 rounded-xl border border-[#FDFBF7]/10 hover:border-[#FF8A75]/50 transition-colors">
-              <h3 className="text-xl font-bold text-[#FF8A75] mb-3">The Classic Method</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Traditional ewhoring: fake persona + dating platforms + pic selling. 
-                Still works, but requires more sophistication in 2025.
-              </p>
-              <span className="text-xs bg-[#2D9C8E]/20 text-[#2D9C8E] px-3 py-1 rounded-full">Beginner Friendly</span>
-            </article>
-
-            <article className="bg-[#FDFBF7]/5 p-6 rounded-xl border border-[#FDFBF7]/10 hover:border-[#FF8A75]/50 transition-colors">
-              <h3 className="text-xl font-bold text-[#FF8A75] mb-3">GFE Method</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Girlfriend Experience: long-term relationships with simps. Higher effort, 
-                but 10x the revenue per target. Recurring monthly payments.
-              </p>
-              <span className="text-xs bg-[#F4D35E]/20 text-[#F4D35E] px-3 py-1 rounded-full">High ROI</span>
-            </article>
-
-            <article className="bg-[#FDFBF7]/5 p-6 rounded-xl border border-[#FDFBF7]/10 hover:border-[#FF8A75]/50 transition-colors">
-              <h3 className="text-xl font-bold text-[#FF8A75] mb-3">Findom Method</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Financial domination: targets pay for the privilege of being dominated. 
-                Niche but extremely profitable with the right persona.
-              </p>
-              <span className="text-xs bg-[#FF8A75]/20 text-[#FF8A75] px-3 py-1 rounded-full">Advanced</span>
-            </article>
-
-            <article className="bg-[#FDFBF7]/5 p-6 rounded-xl border border-[#FDFBF7]/10 hover:border-[#FF8A75]/50 transition-colors">
-              <h3 className="text-xl font-bold text-[#FF8A75] mb-3">AI-Enhanced Method</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Use AI image generation for unlimited unique content. ChatGPT for conversation 
-                scaling. Voice cloning for calls. The 2025 meta.
-              </p>
-              <span className="text-xs bg-[#5865F2]/20 text-[#5865F2] px-3 py-1 rounded-full">Cutting Edge</span>
-            </article>
-
-            <article className="bg-[#FDFBF7]/5 p-6 rounded-xl border border-[#FDFBF7]/10 hover:border-[#FF8A75]/50 transition-colors">
-              <h3 className="text-xl font-bold text-[#FF8A75] mb-3">Premium Snap Method</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Sell "premium Snapchat" access. Monthly subscriptions + pay-per-view content. 
-                Works great combined with ewhoring traffic sources.
-              </p>
-              <span className="text-xs bg-[#2D9C8E]/20 text-[#2D9C8E] px-3 py-1 rounded-full">Passive Income</span>
-            </article>
-
-            <article className="bg-[#FDFBF7]/5 p-6 rounded-xl border border-[#FDFBF7]/10 hover:border-[#FF8A75]/50 transition-colors">
-              <h3 className="text-xl font-bold text-[#FF8A75] mb-3">Dating App Arbitrage</h3>
-              <p className="text-[#FDFBF7]/70 text-sm mb-4">
-                Tinder, Bumble, Hinge for lead generation. Move to private platforms for 
-                monetization. Gift card farming paradise.
-              </p>
-              <span className="text-xs bg-[#F4D35E]/20 text-[#F4D35E] px-3 py-1 rounded-full">High Volume</span>
-            </article>
-          </div>
-
-          {/* Why not free methods */}
-          <div className="bg-[#FF8A75]/10 p-8 rounded-2xl border border-[#FF8A75]/30">
-            <h3 className="text-2xl font-bold mb-4 text-[#FF8A75]">
-              Why Free Hackforums/Nulled Methods Don't Work Anymore
-            </h3>
-            <p className="text-[#FDFBF7]/80 mb-4">
-              Those "free ewhoring packs" and leaked methods from 2018? They're burned. 
-              Every image has been reverse-searched. Every script is recognized. 
-              The Oranolio Protocol is updated monthly with:
-            </p>
-            <ul className="grid md:grid-cols-2 gap-2 text-[#FDFBF7]/70">
-              <li>✓ Fresh AI-generated content packs</li>
-              <li>✓ Updated conversation scripts</li>
-              <li>✓ Current platform exploits</li>
-              <li>✓ New payment method guides</li>
-              <li>✓ Active server/group lists</li>
-              <li>✓ Ban evasion techniques</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================== */}
-      {/* MAKE MONEY AS A FAKE GIRL SECTION */}
-      {/* Targets: pretending to be a girl online, catfish money, fake girl money */}
-      {/* ============================================== */}
-      <section id="fake-girl-guide" className="py-16 md:py-24 px-4 bg-gradient-to-b from-[#FDFBF7] to-[#FF8A75]/10">
-        <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] text-[#1A2A3A] mb-4">
-              How to Make Money Pretending to Be a Girl Online
-            </h2>
-            <p className="text-lg text-[#1A2A3A]/70 max-w-3xl mx-auto">
-              The complete guide to <strong>making money as a fake girl online</strong>. 
-              Whether you call it catfishing, ewhoring, or digital arbitrage - this is how it's done.
-            </p>
-          </header>
-
-          {/* Step by step */}
-          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl mb-12">
-            <h3 className="text-2xl font-bold text-[#1A2A3A] mb-8 text-center">
-              Step-by-Step: Catfishing for Money
-            </h3>
-            <div className="space-y-8">
-              <div className="flex gap-6 items-start">
-                <div className="w-16 h-16 bg-[#2D9C8E] rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">1</div>
-                <div>
-                  <h4 className="text-xl font-bold text-[#1A2A3A] mb-2">Create Your Fake Identity</h4>
-                  <p className="text-[#1A2A3A]/70">
-                    Choose a believable name, age (18-25 works best), and location. Create a backstory: 
-                    college student, aspiring model, bored housewife. Consistency is key.
-                  </p>
+            {/* Right: Income Potential */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#FDFBF7] text-[#1A2A3A] p-8 md:p-10 transform -rotate-2 relative group hover:rotate-0 transition-transform duration-300">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#2D9C8E] flex items-center justify-center text-white text-xl font-bold">
+                  💰
                 </div>
-              </div>
-              <div className="flex gap-6 items-start">
-                <div className="w-16 h-16 bg-[#2D9C8E] rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">2</div>
-                <div>
-                  <h4 className="text-xl font-bold text-[#1A2A3A] mb-2">Source Your Content</h4>
-                  <p className="text-[#1A2A3A]/70">
-                    AI-generated images, purchased packs, or ethically sourced content. 
-                    Never use images that can be reverse-searched. The Protocol includes generation guides.
-                  </p>
+                
+                <h3 className="text-xl font-bold font-['Space_Grotesk'] mb-6 uppercase border-b border-[#1A2A3A]/10 pb-4">
+                  Income Potential
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-mono">First Week:</span>
+                    <span className="font-bold text-[#2D9C8E]">$500+</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-mono">Monthly (1 persona):</span>
+                    <span className="font-bold text-[#2D9C8E]">$3,000+</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-mono">Monthly (multi):</span>
+                    <span className="font-bold text-[#FF8A75]">$15,000+</span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-6 items-start">
-                <div className="w-16 h-16 bg-[#2D9C8E] rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">3</div>
-                <div>
-                  <h4 className="text-xl font-bold text-[#1A2A3A] mb-2">Deploy to Platforms</h4>
-                  <p className="text-[#1A2A3A]/70">
-                    Discord servers, Telegram groups, dating apps, Reddit. Cast a wide net. 
-                    Quality over quantity - build genuine-seeming connections.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-6 items-start">
-                <div className="w-16 h-16 bg-[#FF8A75] rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">4</div>
-                <div>
-                  <h4 className="text-xl font-bold text-[#1A2A3A] mb-2">Extract Payment</h4>
-                  <p className="text-[#1A2A3A]/70">
-                    Use psychological triggers: scarcity, exclusivity, emotional connection. 
-                    Payment ALWAYS before content. Gift cards, crypto, CashApp. Never Venmo (reversible).
-                  </p>
+                
+                <div className="mt-6 pt-4 border-t border-[#1A2A3A]/10 text-xs text-[#1A2A3A]/50">
+                  *Results vary. Depends on effort and following the Protocol.
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Income potential callout */}
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="bg-[#1A2A3A] p-6 rounded-xl text-[#FDFBF7]">
-              <div className="text-4xl font-bold text-[#2D9C8E] mb-2">$500+</div>
-              <p className="text-sm text-[#FDFBF7]/70">First Week (Following Protocol)</p>
-            </div>
-            <div className="bg-[#1A2A3A] p-6 rounded-xl text-[#FDFBF7]">
-              <div className="text-4xl font-bold text-[#FF8A75] mb-2">$3,000+</div>
-              <p className="text-sm text-[#FDFBF7]/70">Monthly (Single Persona)</p>
-            </div>
-            <div className="bg-[#1A2A3A] p-6 rounded-xl text-[#FDFBF7]">
-              <div className="text-4xl font-bold text-[#F4D35E] mb-2">$15,000+</div>
-              <p className="text-sm text-[#FDFBF7]/70">Monthly (Multi-Persona)</p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ============================================== */}
-      {/* ONLYFANS WITHOUT FACE SECTION */}
-      {/* Targets: onlyfans without showing face, faceless onlyfans, anonymous onlyfans */}
+      {/* FIND SIMPS SECTION */}
       {/* ============================================== */}
-      <section id="faceless-onlyfans" className="py-16 md:py-24 px-4 bg-[#00AFF0]/10">
-        <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] text-[#1A2A3A] mb-4">
-              OnlyFans Without Showing Your Face: Complete Guide
+      <section id="find-simps" className="py-16 md:py-24 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden">
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          
+          <div className="text-center mb-12">
+            <div className="inline-block bg-[#2D9C8E] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
+              Target Acquisition
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-['Space_Grotesk']">
+              WHERE TO FIND <span className="text-[#FF8A75]">SIMPS</span>
             </h2>
-            <p className="text-lg text-[#1A2A3A]/70 max-w-3xl mx-auto">
-              Yes, you can make money on <strong>OnlyFans without showing your face</strong>. 
-              Here's exactly how faceless creators are earning $5k-$50k/month.
+            <p className="text-lg text-[#FDFBF7]/60 max-w-2xl mx-auto">
+              The supply of lonely men is infinite. 50,000 men turn 18 every single day. Here's where they congregate.
             </p>
-          </header>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <article className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-[#1A2A3A] mb-4">Faceless OnlyFans Niches</h3>
-              <ul className="space-y-3 text-[#1A2A3A]/70">
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">👠</span>
-                  <span><strong>Feet content</strong> - Massive market, no face required</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">💪</span>
-                  <span><strong>Fitness/body</strong> - Workout content, progress pics</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">🎭</span>
-                  <span><strong>Masked content</strong> - Mystery aesthetic sells</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">✋</span>
-                  <span><strong>Hand/nail content</strong> - Surprisingly profitable</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-2xl">🎨</span>
-                  <span><strong>Cosplay (masked)</strong> - Character faces only</span>
-                </li>
-              </ul>
-            </article>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {[
+              { icon: "💬", name: "Discord", spots: "Dating servers, lonely servers, anime communities" },
+              { icon: "✈️", name: "Telegram", spots: "Premium groups, DM communities" },
+              { icon: "🔥", name: "Tinder/Bumble", spots: "The desperate ones with money" },
+              { icon: "🎮", name: "Gaming", spots: "Twitch chats, gaming Discords" },
+              { icon: "📸", name: "Instagram", spots: "Comment sections of models" },
+              { icon: "🔴", name: "Reddit", spots: "r/lonely, r/dating, r/ForeverAlone" }
+            ].map((item, i) => (
+              <div key={i} className="p-4 md:p-6 border border-[#FDFBF7]/10 hover:border-[#2D9C8E]/50 transition-colors group">
+                <span className="text-3xl mb-3 block">{item.icon}</span>
+                <h4 className="font-bold text-lg mb-2 font-['Space_Grotesk'] group-hover:text-[#2D9C8E] transition-colors">{item.name}</h4>
+                <p className="text-xs text-[#FDFBF7]/50 font-mono">{item.spots}</p>
+              </div>
+            ))}
+          </div>
 
-            <article className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-[#1A2A3A] mb-4">Ewhoring + OnlyFans Combo</h3>
-              <p className="text-[#1A2A3A]/70 mb-4">
-                The ultimate strategy: use <strong>ewhoring techniques</strong> to drive traffic to a 
-                faceless OnlyFans. You get:
-              </p>
-              <ul className="space-y-2 text-[#1A2A3A]/70">
-                <li>✓ Instant monetization via ewhoring</li>
-                <li>✓ Long-term passive income via OF subscriptions</li>
-                <li>✓ Complete anonymity maintained</li>
-                <li>✓ Multiple revenue streams</li>
-                <li>✓ Scalable with multiple personas</li>
-              </ul>
-              <p className="mt-4 text-sm text-[#1A2A3A]/60">
-                The Oranolio Protocol includes the full OnlyFans integration playbook.
-              </p>
-            </article>
+          {/* Quote */}
+          <div className="mt-12 p-6 border-l-2 border-[#FF8A75] bg-[#FDFBF7]/5">
+            <p className="text-lg md:text-xl italic text-[#FDFBF7]/80">
+              "The demand for female attention will never decrease. Ever."
+            </p>
+            <p className="text-xs text-[#FF8A75] mt-2 font-mono">— ORANOLIO, EST. 2014</p>
           </div>
         </div>
       </section>
 
       {/* ============================================== */}
-      {/* SIMPS / LONELY MEN SECTION */}
-      {/* Targets: how to find simps, simp money, exploit lonely men, findom simps */}
+      {/* INTERNAL LINKS NAV */}
       {/* ============================================== */}
-      <section id="find-simps" className="py-16 md:py-24 px-4 bg-[#1A2A3A] text-[#FDFBF7]">
+      <nav className="py-8 px-4 bg-[#1A2A3A] border-t border-[#FDFBF7]/10" aria-label="Related Topics">
         <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-['Space_Grotesk'] mb-4">
-              How to Find Simps & Make Money From Lonely Men
-            </h2>
-            <p className="text-lg text-[#FDFBF7]/70 max-w-3xl mx-auto">
-              The psychology of <strong>simps</strong> and how to ethically monetize male loneliness. 
-              Where to find them, what they want, and how to convert attention into cash.
-            </p>
-          </header>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-[#FDFBF7]/5 p-8 rounded-2xl border border-[#FDFBF7]/10">
-              <h3 className="text-2xl font-bold text-[#FF8A75] mb-4">Where Simps Congregate</h3>
-              <ul className="space-y-3 text-[#FDFBF7]/80">
-                <li>📱 <strong>Discord</strong> - Dating servers, lonely servers, anime communities</li>
-                <li>✈️ <strong>Telegram</strong> - Premium groups, DM communities</li>
-                <li>💕 <strong>Dating Apps</strong> - Tinder, Bumble (the desperate ones)</li>
-                <li>🎮 <strong>Gaming Communities</strong> - Twitch chats, gaming Discords</li>
-                <li>📸 <strong>Instagram</strong> - Comment sections of models/influencers</li>
-                <li>🔴 <strong>Reddit</strong> - r/lonely, r/dating, r/ForeverAlone</li>
-              </ul>
-            </div>
-
-            <div className="bg-[#FDFBF7]/5 p-8 rounded-2xl border border-[#FDFBF7]/10">
-              <h3 className="text-2xl font-bold text-[#2D9C8E] mb-4">What Simps Pay For</h3>
-              <ul className="space-y-3 text-[#FDFBF7]/80">
-                <li>💬 <strong>Attention</strong> - Just talking to a "girl" has value</li>
-                <li>📷 <strong>Pictures</strong> - Custom content requests</li>
-                <li>❤️ <strong>GFE</strong> - Girlfriend experience, daily texting</li>
-                <li>🎁 <strong>Gifting</strong> - They want to "provide" for you</li>
-                <li>👑 <strong>Findom</strong> - Financial domination (pay to be ignored)</li>
-                <li>🔥 <strong>Exclusivity</strong> - "Only for you" content</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-[#FF8A75]/20 p-8 rounded-2xl border border-[#FF8A75]/30 text-center">
-            <p className="text-xl font-medium text-[#FDFBF7]">
-              "The supply of lonely men is infinite. 50,000 men turn 18 every single day. 
-              The demand for female attention will never decrease."
-            </p>
-            <p className="text-[#FDFBF7]/50 mt-4">- Oranolio, Est. 2014</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================== */}
-      {/* INTERNAL LINKS SECTION - SEO JUICE */}
-      {/* ============================================== */}
-      <nav className="py-12 px-4 bg-[#0F1923] text-[#FDFBF7]" aria-label="Related Topics">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl font-bold mb-6 text-center text-[#FDFBF7]/50">Explore More Topics</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href="#discord-servers" className="px-4 py-2 bg-[#5865F2]/20 hover:bg-[#5865F2]/40 rounded-full text-sm transition-colors">Ewhore Discord Servers</a>
-            <a href="#telegram-groups" className="px-4 py-2 bg-[#0088cc]/20 hover:bg-[#0088cc]/40 rounded-full text-sm transition-colors">Telegram Ewhoring</a>
-            <a href="#methods" className="px-4 py-2 bg-[#FF8A75]/20 hover:bg-[#FF8A75]/40 rounded-full text-sm transition-colors">Ewhoring Methods 2025</a>
-            <a href="#fake-girl-guide" className="px-4 py-2 bg-[#2D9C8E]/20 hover:bg-[#2D9C8E]/40 rounded-full text-sm transition-colors">Catfish Money Guide</a>
-            <a href="#faceless-onlyfans" className="px-4 py-2 bg-[#00AFF0]/20 hover:bg-[#00AFF0]/40 rounded-full text-sm transition-colors">Faceless OnlyFans</a>
-            <a href="#find-simps" className="px-4 py-2 bg-[#F4D35E]/20 hover:bg-[#F4D35E]/40 rounded-full text-sm transition-colors">How to Find Simps</a>
-            <a href="#learn" className="px-4 py-2 bg-[#FDFBF7]/10 hover:bg-[#FDFBF7]/20 rounded-full text-sm transition-colors">What is Ewhoring</a>
-            <a href="#pricing" className="px-4 py-2 bg-[#FF8A75]/20 hover:bg-[#FF8A75]/40 rounded-full text-sm transition-colors">Get the Protocol</a>
-            <a href="#faq" className="px-4 py-2 bg-[#FDFBF7]/10 hover:bg-[#FDFBF7]/20 rounded-full text-sm transition-colors">Ewhoring FAQ</a>
+          <p className="text-xs font-mono text-[#FDFBF7]/30 mb-4 uppercase tracking-widest text-center">// Quick Navigation</p>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+            {[
+              { href: "#discord-servers", label: "Discord Servers" },
+              { href: "#methods", label: "Ewhoring Methods" },
+              { href: "#fake-girl-guide", label: "Catfish Guide" },
+              { href: "#find-simps", label: "Find Simps" },
+              { href: "#learn", label: "What is Ewhoring" },
+              { href: "#sprint", label: "7-Day Protocol" },
+              { href: "#pricing", label: "Get Access" },
+              { href: "#faq", label: "FAQ" }
+            ].map((link, i) => (
+              <a 
+                key={i}
+                href={link.href} 
+                className="px-3 py-1.5 text-xs font-mono border border-[#FDFBF7]/20 hover:border-[#2D9C8E] hover:text-[#2D9C8E] transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
     </>
   );
 };
-
