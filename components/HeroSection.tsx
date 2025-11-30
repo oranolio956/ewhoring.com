@@ -4,7 +4,7 @@ import { Mascot } from './Mascot';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
+    <header id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
       
       {/* Vertical Branding - Architectural */}
       <div className="absolute left-4 bottom-32 hidden lg:block -rotate-90 origin-bottom-left z-0">
@@ -14,15 +14,15 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
-      <header className="flex flex-col relative w-full max-w-[1920px] mx-auto mb-8 md:mb-12">
+      <div className="flex flex-col relative w-full max-w-[1920px] mx-auto mb-8 md:mb-12">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10">
           {/* Main Headline - Adjusted clamp for better mobile fit */}
-          <h1 className="text-[clamp(2.5rem,13vw,12rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10">
+          <h1 className="text-[clamp(2rem,13vw,12rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10">
             YOU'RE A DUDE?
           </h1>
           
           {/* Mascot - Improved Mobile Positioning to prevent overlap */}
-          <div className="absolute top-[-15%] right-[-5%] w-[35vw] h-[35vw] min-w-[140px] min-h-[140px] md:top-[-20%] md:right-[5%] md:w-[22vw] md:h-[22vw] opacity-80 z-0 pointer-events-none md:pointer-events-auto">
+          <div className="absolute top-[-10%] right-[-15%] w-[40vw] h-[40vw] min-w-[120px] min-h-[120px] md:top-[-20%] md:right-[5%] md:w-[22vw] md:h-[22vw] opacity-60 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply">
              <Mascot />
           </div>
         </div>
@@ -39,10 +39,10 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Second Headline */}
-        <h1 className="text-[clamp(2.5rem,13vw,12rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
+        <div className="text-[clamp(2.5rem,13vw,12rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
           NOW YOU'RE NOT.
-        </h1>
-      </header>
+        </div>
+      </div>
 
       {/* Bottom Editorial Content */}
       <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
@@ -110,6 +110,6 @@ export const HeroSection: React.FC = () => {
           to { opacity: 1; }
         }
       `}</style>
-    </section>
+    </header>
   );
 };

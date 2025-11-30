@@ -103,6 +103,7 @@ const App: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // ADVANCED SEO SCHEMA STRATEGY
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -113,20 +114,24 @@ const App: React.FC = () => {
         "description": "The premier guide to digital social engineering and revenue generation.",
         "publisher": {
             "@type": "Organization",
-            "name": "Oranolio",
+            "name": "Oranolio Systems",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://ewhoring.com/logo.png"
             }
-        }
+        },
+        "sameAs": [
+            "https://hackforums.net",
+            "https://twitter.com/oranolio"
+        ]
       },
       {
         "@type": "Course",
-        "name": "The Oranolio E-Whoring Protocol",
-        "description": "The comprehensive guide to digital gender arbitrage, social engineering, and online revenue generation. Learn how to monetize male psychology.",
+        "name": "The Oranolio Protocol",
+        "description": "A comprehensive 7-day protocol for digital gender arbitrage, social engineering, and online revenue automation.",
         "provider": {
           "@type": "Organization",
-          "name": "Oranolio",
+          "name": "Oranolio Systems",
           "sameAs": "https://ewhoring.com"
         },
         "hasCourseInstance": {
@@ -136,7 +141,7 @@ const App: React.FC = () => {
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "5",
+          "ratingValue": "5.0",
           "reviewCount": "12480",
           "bestRating": "5",
           "worstRating": "1"
@@ -147,8 +152,35 @@ const App: React.FC = () => {
           "priceCurrency": "USD",
           "price": "150.00",
           "availability": "https://schema.org/InStock",
-          "url": "https://ewhoring.com"
+          "url": "https://ewhoring.com/#pricing"
         }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Generate Revenue via Digital Personas",
+        "description": "A step-by-step guide to setting up a high-value digital identity.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Day 01: The Wipe",
+            "text": "Complete erasure of previous digital footprint."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Day 02: The Construct",
+            "text": "Building a believable female avatar using psychological markers."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Day 03: Injection",
+            "text": "Deploying the persona to high-traffic vectors for initial exposure."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Day 07: Handoff",
+            "text": "Automating the revenue stream and finalizing the system."
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -160,23 +192,6 @@ const App: React.FC = () => {
                 "text": faq.a
             }
         }))
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://ewhoring.com"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Masterclass",
-                "item": "https://ewhoring.com/#manifesto"
-            }
-        ]
       }
     ]
   };
@@ -330,6 +345,7 @@ const App: React.FC = () => {
                  
                  <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200 btn-glitch">
                     <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
+                    <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-100 group-hover:scale-x-0 transition-transform origin-right duration-500 ease-out"></div>
                     <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
                  </button>
               </div>

@@ -19,7 +19,7 @@ export const FloatingBlobs: React.FC = () => {
       {[...Array(6)].map((_, i) => (
         <div 
             key={i}
-            className="absolute w-4 h-4 flex items-center justify-center opacity-20"
+            className="absolute w-4 h-4 flex items-center justify-center opacity-20 will-change-transform"
             style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -35,10 +35,11 @@ export const FloatingBlobs: React.FC = () => {
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] border-[1px] border-[#1A2A3A]/5 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] border-[1px] border-[#1A2A3A]/5 rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
       
-      {/* Digital Noise Overlay */}
-      <div className="absolute inset-0 opacity-[0.4] mix-blend-overlay" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")`
-      }}></div>
+      {/* 
+         PERFORMANCE FIX: Removed SVG Noise Filter. 
+         This was causing massive GPU overhead on mobile devices ("loading/glitch" feel).
+         We now rely on the lightweight .bg-noise class in index.html.
+      */}
       
       <style>{`
         @keyframes float {

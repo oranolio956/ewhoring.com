@@ -24,6 +24,13 @@ export const ExitModal: React.FC = () => {
       <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setIsOpen(false)}></div>
       
       <div className="relative bg-[#1A2A3A] w-full max-w-lg rounded-3xl p-8 border border-[#FF8A75] shadow-2xl animate-[shake_0.5s_ease-in-out]">
+        <style>{`
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+                20%, 40%, 60%, 80% { transform: translateX(4px); }
+            }
+        `}</style>
         <div className="absolute -top-12 left-1/2 -translate-x-1/2 text-6xl">
             🏃‍♂️💨
         </div>

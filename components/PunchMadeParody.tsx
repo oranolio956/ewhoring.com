@@ -1,13 +1,19 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export const PunchMadeParody: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [clarenceMode, setClarenceMode] = useState<'hidden' | 'rapping' | 'interrupted' | 'yelling'>('hidden');
   const [swatState, setSwatState] = useState<'idle' | 'swatting' | 'arrested'>('idle');
+  
+  const animationContainerRef = useRef<HTMLDivElement>(null);
 
   const triggerClarence = () => {
       setClarenceMode('rapping');
+      // Scroll to the animation so the user sees it
+      setTimeout(() => {
+        animationContainerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
   };
 
   useEffect(() => {
@@ -136,7 +142,7 @@ export const PunchMadeParody: React.FC = () => {
             </div>
 
             {/* Right: The Animated Character */}
-            <div className="order-1 lg:order-2 relative flex flex-col items-center w-full min-h-[400px]">
+            <div ref={animationContainerRef} className="order-1 lg:order-2 relative flex flex-col items-center w-full min-h-[400px]">
                 
                 {clarenceMode !== 'hidden' ? (
                      // THE CLARENCE ANIMATION SCENE
@@ -354,4 +360,3 @@ export const PunchMadeParody: React.FC = () => {
     </section>
   );
 };
-    

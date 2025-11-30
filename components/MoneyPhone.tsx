@@ -36,8 +36,11 @@ export const MoneyPhone: React.FC = () => {
   const textureRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  // Mouse Parallax Logic - Optimized with RAF
+  // Mouse Parallax Logic - Optimized with RAF and Mobile Check
   useEffect(() => {
+    // Disable on mobile to save battery and prevent jitter
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
     let frameId: number;
     const handleMouseMove = (e: MouseEvent) => {
       if (frameId) return;
@@ -55,8 +58,11 @@ export const MoneyPhone: React.FC = () => {
     };
   }, []);
 
-  // Scroll Parallax Logic - Optimized
+  // Scroll Parallax Logic - DISABLED ON MOBILE for smooth scrolling
   useEffect(() => {
+    // Strict mobile check - if screen is small, do not attach scroll listeners
+    if (window.innerWidth < 768) return;
+
     let frameId: number;
     const handleScroll = () => {
         if (frameId) return;
@@ -186,8 +192,9 @@ export const MoneyPhone: React.FC = () => {
                     Oranolio
                 </div>
                 
+                {/* Dynamic Reflection (Desktop Only) */}
                 <div 
-                  className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/10 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out blur-md will-change-transform"
+                  className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/10 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out blur-md will-change-transform hidden md:block"
                   style={{ 
                       transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px) rotate(45deg)`,
                       opacity: 0.5
