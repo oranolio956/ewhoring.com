@@ -798,6 +798,27 @@ const App: React.FC = () => {
               </div>
             </section>
 
+            {/* Internal Linking for SEO - Hidden for users, seen by bots (or visible as resources) */}
+            <section className="py-12 bg-[#0F1923] border-t border-[#FDFBF7]/10">
+              <div className="max-w-6xl mx-auto px-4">
+                <h4 className="text-[#FDFBF7] text-sm uppercase tracking-widest mb-6 font-mono text-center">Resources & Guides</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                  <a href="/discord-ewhoring-servers.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Discord Servers</a>
+                  <a href="/ewhoring-telegram-groups.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Telegram Groups</a>
+                  <a href="/how-to-start-ewhoring.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Beginner Guide</a>
+                  <a href="/ewhoring-methods-2025.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Methods 2025</a>
+                  <a href="/how-much-money-ewhoring.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Earnings Guide</a>
+                  <a href="/onlyfans-without-showing-face.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Faceless OnlyFans</a>
+                  <a href="/tinder-ewhoring-guide.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Tinder Guide</a>
+                  <a href="/is-ewhoring-illegal.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Legal Guide</a>
+                  <a href="/ewhoring-scripts.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Scripts</a>
+                  <a href="/ewhoring-ai-guide.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">AI Guide</a>
+                  <a href="/findom-guide.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Findom Guide</a>
+                  <a href="/reddit-ewhoring.html" className="text-[#FDFBF7]/50 hover:text-[#2D9C8E] text-xs font-mono transition-colors">Reddit Guide</a>
+                </div>
+              </div>
+            </section>
+
             {/* The New Scam Footer */}
             <ScamFooter />
 
