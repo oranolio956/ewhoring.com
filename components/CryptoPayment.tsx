@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 // Configure your wallet addresses below
 // ============================================
 
-const TELEGRAM_SUCCESS_URL = "https://t.me/oranolio"; // Change to your Telegram
+const TELEGRAM_SUCCESS_URL = "https://t.me/oranoliokay"; // Change to your Telegram
 const PRODUCT_PRICE = 150; // USD price
 
 const CRYPTO_OPTIONS = [
