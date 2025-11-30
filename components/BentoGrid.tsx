@@ -46,8 +46,14 @@ export const BentoGrid: React.FC = () => {
   };
 
   return (
-    <section className="relative z-10 py-16 md:py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-[100vw]">
-      <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <section className="relative z-10 py-16 md:py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-[100vw] overflow-hidden">
+      
+      {/* Subliminal Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
+         ORANOLIO PROTOCOL
+      </div>
+
+      <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
         
         {/* Header - Sticky on Desktop, Normal on Mobile */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit">

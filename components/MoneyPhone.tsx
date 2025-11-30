@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Mascot } from './Mascot';
 
 interface Transaction {
@@ -12,12 +12,15 @@ interface Transaction {
 
 const USERS = [
   "DesperateDan", "WalletCuck99", "LonelyITGuy", "WifeLeftMe", 
-  "GoodBoyNeedsOwner", "SadDad4Real", "ATM_Human", "NoSelfRespect"
+  "GoodBoyNeedsOwner", "SadDad4Real", "ATM_Human", "NoSelfRespect",
+  "PayPig_88", "SimpCommander", "GamerGurl_Fan", "CryptoLoser",
+  "TechLead_Divorced", "NiceGuy_Tm", "FeetLover_TX", "RentPayer69"
 ];
 
 const MESSAGES = [
   "Just a small tribute goddess", "Sorry I looked at you", "For your roblox skins", "Pls degrade me", 
-  "Here is my rent money", "I am literally pathetic", "Buying you lunch <3", "Mommy? Sorry. Mommy?"
+  "Here is my rent money", "I am literally pathetic", "Buying you lunch <3", "Mommy? Sorry. Mommy?",
+  "I don't deserve a reply", "Use this for your nails", "Im sorry im male", "Tax me harder"
 ];
 
 export const MoneyPhone: React.FC = () => {
@@ -26,6 +29,12 @@ export const MoneyPhone: React.FC = () => {
   const [selectedTx, setSelectedTx] = useState<Transaction | null>(null);
   const [excitement, setExcitement] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [blockedUsers, setBlockedUsers] = useState<Set<string>>(new Set());
+  
+  // Refs for Parallax
+  const phoneRef = useRef<HTMLDivElement>(null);
+  const textureRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   // Mouse Parallax Logic
   useEffect(() => {
@@ -38,13 +47,56 @@ export const MoneyPhone: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Scroll Parallax Logic (Depth Effect)
+  useEffect(() => {
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+        
+        if (textureRef.current) {
+            // Texture moves at medium speed
+            const yPos = scrollY * 0.12;
+            textureRef.current.style.backgroundPosition = `0px ${yPos}px`;
+        }
+        
+        if (bgRef.current) {
+             // Gradient background moves slower, creating depth separation
+             const yPos = scrollY * 0.06;
+             bgRef.current.style.transform = `translateY(${yPos}px)`;
+        }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Block User Handler
+  const blockUser = (e: React.MouseEvent, user: string) => {
+    e.stopPropagation(); // Prevent opening details
+    setBlockedUsers(prev => {
+        const newSet = new Set(prev);
+        newSet.add(user);
+        return newSet;
+    });
+    // Remove all current transactions from this user immediately
+    setTransactions(prev => prev.filter(tx => tx.user !== user));
+    // If we are viewing this user, close the details
+    if (selectedTx?.user === user) {
+        setSelectedTx(null);
+    }
+  };
+
   // Simulation Loop
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
 
     const addTransaction = () => {
+      // Filter out blocked users
+      const availableUsers = USERS.filter(u => !blockedUsers.has(u));
+      
+      // If everyone is blocked, just recycle (or pause, but recycling keeps the site alive)
+      const pool = availableUsers.length > 0 ? availableUsers : ["New_Victim_01"];
+
       const amount = Math.floor(Math.random() * 450) + 50;
-      const user = USERS[Math.floor(Math.random() * USERS.length)];
+      const user = pool[Math.floor(Math.random() * pool.length)];
       const message = MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
       
       const newTx: Transaction = {
@@ -58,7 +110,7 @@ export const MoneyPhone: React.FC = () => {
       setTransactions(prev => [newTx, ...prev].slice(0, 5));
       setBalance(prev => prev + amount);
       
-      // Increased excitement gain (was 0.1)
+      // Increased excitement gain
       setExcitement(prev => Math.min(prev + 0.25, 1.0));
 
       const nextDelay = Math.max(200, 2000 - (excitement * 1500));
@@ -67,12 +119,11 @@ export const MoneyPhone: React.FC = () => {
 
     timeout = setTimeout(addTransaction, 1000);
     return () => clearTimeout(timeout);
-  }, [excitement]);
+  }, [excitement, blockedUsers]); // Re-run if blocked list changes
 
   // Decay excitement
   useEffect(() => {
     const decay = setInterval(() => {
-      // Slower decay rate (was 0.05)
       setExcitement(prev => Math.max(0, prev - 0.02));
     }, 1000);
     return () => clearInterval(decay);
@@ -105,7 +156,7 @@ export const MoneyPhone: React.FC = () => {
         </div>
 
         {/* Right: The Phone Graphic - Aspect Ratio Lock */}
-        <div className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center">
+        <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center">
           
           {/* Constrain container size relative to screen width AND aspect ratio */}
           <div className="relative w-[75vw] max-w-[320px] lg:max-w-[360px] aspect-[9/19]">
@@ -113,7 +164,7 @@ export const MoneyPhone: React.FC = () => {
             {/* Unified Rotation Wrapper */}
             <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right">
               
-              {/* Hand SVG - Positioned absolutely relative to the phone container */}
+              {/* Hand SVG */}
               <svg className="absolute -bottom-[15%] -right-[20%] w-[140%] h-[140%] z-0 pointer-events-none drop-shadow-2xl" viewBox="0 0 400 600">
                  <path d="M180 500 Q200 400 280 300 L300 320 Q240 450 180 550" fill="#E8E4D9" stroke="#1A2A3A" strokeWidth="3" /> 
                  <path d="M150 600 L200 450 Q230 400 350 350 L360 380 Q250 450 160 600 Z" fill="#E8E4D9" stroke="#1A2A3A" strokeWidth="3" />
@@ -123,15 +174,23 @@ export const MoneyPhone: React.FC = () => {
               {/* Phone Container */}
               <div className="absolute inset-0 bg-[#1A2A3A] rounded-[15%] border-[6px] md:border-[8px] border-[#1A2A3A] shadow-2xl z-10 overflow-hidden ring-1 ring-white/20">
                 
-                {/* Casing Highlights */}
-                <div className="absolute inset-0 rounded-[14%] shadow-[inset_0_0_15px_rgba(255,255,255,0.15)] pointer-events-none z-50"></div>
+                {/* 1. Volumetric Casing Highlights (Curved Metal Effect) */}
+                <div className="absolute inset-0 rounded-[15%] shadow-[inset_4px_4px_15px_rgba(255,255,255,0.1),inset_-4px_-4px_15px_rgba(0,0,0,0.4)] pointer-events-none z-50"></div>
                 
-                {/* Dynamic Glare */}
+                {/* 2. Static Screen Glass Sheen (Diagonal Reflection) */}
+                <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-white/5 via-white/0 to-transparent skew-x-12 z-50 pointer-events-none mix-blend-overlay"></div>
+                
+                {/* Branding on the Chin */}
+                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-50 text-[6px] font-bold text-white/10 uppercase tracking-[0.2em] pointer-events-none font-['Space_Grotesk']">
+                    Oranolio
+                </div>
+                
+                {/* Dynamic Glare - Reacts to Mouse */}
                 <div 
-                  className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/5 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out"
+                  className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/10 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out blur-md"
                   style={{ 
                       transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px) rotate(45deg)`,
-                      opacity: 0.6
+                      opacity: 0.5
                   }}
                 ></div>
 
@@ -141,21 +200,33 @@ export const MoneyPhone: React.FC = () => {
                 {/* Screen Content */}
                 <div className="w-full h-full bg-[#FDFBF7] flex flex-col pt-[12%] relative">
                   
-                  {/* Fingerprint Texture */}
-                  <div className="absolute inset-0 opacity-[0.03] bg-repeat z-40 pointer-events-none" style={{backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+")'}}></div>
+                  {/* Parallax Gradient Background */}
+                  <div 
+                    ref={bgRef}
+                    className="absolute -top-[20%] -left-[20%] -right-[20%] -bottom-[20%] bg-gradient-to-br from-[#FDFBF7] via-[#FDFBF7] to-[#2D9C8E]/5 z-0 pointer-events-none will-change-transform"
+                  ></div>
+
+                  {/* Fingerprint Texture with Parallax */}
+                  <div 
+                    ref={textureRef}
+                    className="absolute inset-0 opacity-[0.05] bg-repeat z-0 pointer-events-none mix-blend-multiply will-change-transform" 
+                    style={{
+                        backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+")'
+                    }}
+                  ></div>
 
                   {/* Status Bar */}
                   <div className="flex justify-between px-6 mb-4 text-[#1A2A3A]/40 text-[10px] md:text-xs font-bold relative z-10">
                      <span>3:00 AM</span>
                      <div className="flex gap-1">
-                       <span>5G</span>
+                       <span className="font-mono text-[9px] tracking-tight">ORANOLIO LTE</span>
                        <span>69%</span>
                      </div>
                   </div>
 
                   {/* App Header */}
                   <div className="px-6 mb-4 relative z-10">
-                    <div className="text-[#FF8A75] font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">Total Exploited</div>
+                    <div className="text-[#FF8A75] font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">Oranolio Wallet</div>
                     <div className="text-3xl lg:text-4xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] tabular-nums tracking-tight">
                       ${balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </div>
@@ -191,8 +262,8 @@ export const MoneyPhone: React.FC = () => {
                            </div>
 
                            <div className="grid grid-cols-2 gap-2 mt-4">
-                              <button onClick={() => setSelectedTx(null)} className="bg-[#1A2A3A] text-white text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-[#FF8A75] transition-colors shadow-lg">
-                                Ignore
+                              <button onClick={(e) => blockUser(e, selectedTx.user)} className="bg-[#1A2A3A] text-white text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-red-600 transition-colors shadow-lg">
+                                Block User 🚫
                               </button>
                               <button onClick={() => setSelectedTx(null)} className="border border-[#1A2A3A] text-[#1A2A3A] text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-gray-50 transition-colors">
                                 Send 💋 ($5)
@@ -203,14 +274,17 @@ export const MoneyPhone: React.FC = () => {
                         <>
                            <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[#1A2A3A]/30 mb-2 flex items-center justify-between">
                               <span>Simp Alerts</span>
-                              <span className="text-[#2D9C8E] animate-pulse">● LIVE</span>
+                              <div className="flex items-center gap-2">
+                                <span className="text-[9px] text-red-400 font-mono tracking-tighter" title="Blocked Users">{blockedUsers.size} BLOCKED</span>
+                                <span className="text-[#2D9C8E] animate-pulse">● LIVE</span>
+                              </div>
                            </div>
                            
                            {transactions.map((tx) => (
                               <div 
                                 key={tx.id} 
                                 onClick={() => setSelectedTx(tx)}
-                                className="flex items-center gap-3 animate-in slide-in-from-bottom fade-in duration-300 group cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition-colors"
+                                className="flex items-center gap-3 animate-in slide-in-from-bottom fade-in duration-300 group cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition-colors relative"
                               >
                                 <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">
                                   💸
@@ -219,8 +293,17 @@ export const MoneyPhone: React.FC = () => {
                                   <div className="text-[#1A2A3A] font-bold text-xs truncate group-hover:text-[#FF8A75] transition-colors">{tx.user}</div>
                                   <div className="text-[#1A2A3A]/60 text-[10px] truncate">"{tx.message}"</div>
                                 </div>
-                                <div className="text-[#2D9C8E] font-bold font-mono text-xs">
-                                  +${tx.amount}
+                                <div className="flex flex-col items-end gap-1">
+                                    <div className="text-[#2D9C8E] font-bold font-mono text-xs">
+                                    +${tx.amount}
+                                    </div>
+                                    <button 
+                                        onClick={(e) => blockUser(e, tx.user)}
+                                        className="opacity-0 group-hover:opacity-100 transition-opacity bg-red-100 hover:bg-red-500 hover:text-white text-red-500 rounded-full w-5 h-5 flex items-center justify-center text-[10px]"
+                                        title="Block User"
+                                    >
+                                        🚫
+                                    </button>
                                 </div>
                               </div>
                            ))}

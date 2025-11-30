@@ -31,9 +31,9 @@ const reviews = [
 export const Testimonials: React.FC = () => {
   return (
     <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden">
-      {/* Decorative Background Text */}
-      <div className="absolute top-0 left-0 text-[clamp(150px,20vw,400px)] font-bold text-[#1A2A3A]/[0.02] leading-none pointer-events-none select-none font-['Space_Grotesk']">
-        RESULTS
+      {/* Decorative Background Text - Branding Injection */}
+      <div className="absolute top-0 left-0 text-[clamp(100px,18vw,350px)] font-bold text-[#1A2A3A]/[0.03] leading-none pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap z-0">
+        ORANOLIO
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">

@@ -60,10 +60,13 @@ const App: React.FC = () => {
       {/* 1. Global Noise Overlay */}
       <div className="bg-noise" />
       
-      {/* 2. Floating Blobs Background */}
+      {/* 2. Global Subliminal Branding Layer */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-subliminal mix-blend-multiply opacity-50" />
+      
+      {/* 3. Floating Blobs Background */}
       <FloatingBlobs />
 
-      {/* 3. Content - Wrapped for Ultra Wide screens to prevent content stretching */}
+      {/* 4. Content - Wrapped for Ultra Wide screens to prevent content stretching */}
       <NavBar />
       
       <main className="relative z-10 w-full">
@@ -92,7 +95,8 @@ const App: React.FC = () => {
         <FAQ />
 
         {/* Footer / CTA Area */}
-        <section className="py-16 md:py-24 text-center px-4 bg-[#FDFBF7]">
+        <section className="py-16 md:py-24 text-center px-4 bg-[#FDFBF7] relative">
+          <div className="absolute inset-0 bg-subliminal opacity-20 pointer-events-none"></div>
           <div className="glass-panel max-w-5xl mx-auto rounded-[2rem] md:rounded-[3rem] p-8 md:p-24 relative overflow-hidden group border border-[#1A2A3A]/5">
              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FF8A75]/10 pointer-events-none"></div>
              
