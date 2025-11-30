@@ -5,6 +5,7 @@ import { HeroSection } from './components/HeroSection';
 import { BentoGrid } from './components/BentoGrid';
 import { FloatingBlobs } from './components/FloatingBlobs';
 import { Ticker } from './components/Ticker';
+import { MoneyPhone } from './components/MoneyPhone';
 
 const App: React.FC = () => {
   const [visitorCount, setVisitorCount] = useState<string>("0");
@@ -26,13 +27,21 @@ const App: React.FC = () => {
         const growthFactor = weekNumber * 340; 
         const dayFactor = now.getDay() * 215; 
         const hourlyFactor = now.getHours() * 12; // Ticks up during the day
+        const minuteFactor = now.getMinutes() * 3; // Ticks up during the hour
         
-        const total = baseTraffic + growthFactor + dayFactor + hourlyFactor;
+        const total = baseTraffic + growthFactor + dayFactor + hourlyFactor + minuteFactor;
         
         return total.toLocaleString();
     };
 
     setVisitorCount(calculateVisitors());
+    
+    // Update every minute to keep it "Live"
+    const interval = setInterval(() => {
+        setVisitorCount(calculateVisitors());
+    }, 60000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -48,6 +57,10 @@ const App: React.FC = () => {
       
       <main className="relative z-10">
         <HeroSection />
+        
+        {/* New Revenue Simulation Section */}
+        <MoneyPhone />
+
         <Ticker />
         <BentoGrid />
         
@@ -80,14 +93,14 @@ const App: React.FC = () => {
              © {new Date().getFullYear()} Oranolio. A new era of digital mastery.
           </div>
           
-          {/* Unique Visitor Tracker */}
-          <div className="flex items-center gap-2 px-4 py-2 border border-[#2D9C8E]/30 rounded-full bg-[#FDFBF7]/50 backdrop-blur-sm">
+          {/* Unique Visitor Tracker - Interactive */}
+          <div className="group flex items-center gap-3 px-5 py-2 border border-[#2D9C8E]/30 rounded-full bg-[#FDFBF7]/50 backdrop-blur-sm cursor-help transition-all duration-300 hover:scale-105 hover:bg-[#1A2A3A] hover:border-[#1A2A3A] shadow-sm hover:shadow-lg hover:shadow-[#2D9C8E]/20">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2D9C8E] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2D9C8E]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2D9C8E] opacity-75 group-hover:bg-[#FF8A75]"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2D9C8E] group-hover:bg-[#FF8A75] transition-colors duration-300"></span>
             </span>
-            <span className="font-mono text-xs text-[#1A2A3A] tracking-wider">
-              WEEKLY UNIQUE TRAFFIC: <span className="font-bold">{visitorCount}</span>
+            <span className="font-mono text-xs text-[#1A2A3A] tracking-wider group-hover:text-[#FDFBF7] transition-colors duration-300">
+              LIVE WEEKLY VISITORS: <span className="font-bold">{visitorCount}</span>
             </span>
           </div>
         </footer>
