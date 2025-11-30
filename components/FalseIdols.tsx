@@ -54,17 +54,17 @@ export const FalseIdols: React.FC = () => {
             </div>
 
             {/* Right: The Caricature */}
-            <div className="relative flex justify-center">
+            <div className="relative flex justify-center w-full">
                 
                 {/* Speech Bubble */}
-                <div className="absolute top-0 right-10 bg-[#1A2A3A] text-white p-4 rounded-xl rounded-bl-none transform -rotate-6 z-20 shadow-xl max-w-[200px]">
-                    <p className="text-xs font-mono font-bold uppercase">
+                <div className="absolute top-0 right-0 md:right-10 bg-[#1A2A3A] text-white p-4 rounded-xl rounded-bl-none transform -rotate-6 z-20 shadow-xl max-w-[160px] md:max-w-[200px]">
+                    <p className="text-[10px] md:text-xs font-mono font-bold uppercase">
                         "BREATHE AIR! YOU DON'T NEED MONEY YOU NEED SPARKLING WATER!"
                     </p>
                 </div>
 
-                {/* The Character SVG */}
-                <svg viewBox="0 0 400 400" className="w-80 h-80 md:w-96 md:h-96 drop-shadow-2xl hover:scale-105 transition-transform duration-300">
+                {/* The Character SVG - Constrained Width */}
+                <svg viewBox="0 0 400 400" className="w-full max-w-[320px] h-auto md:w-96 md:h-96 drop-shadow-2xl hover:scale-105 transition-transform duration-300">
                     <defs>
                         <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
                             <stop offset="0%" stopColor="#E0AC69" />

@@ -36,7 +36,7 @@ export const MoneyPhone: React.FC = () => {
   const textureRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  // Mouse Parallax Logic - Optimized
+  // Mouse Parallax Logic - Optimized with RAF
   useEffect(() => {
     let frameId: number;
     const handleMouseMove = (e: MouseEvent) => {
@@ -55,7 +55,7 @@ export const MoneyPhone: React.FC = () => {
     };
   }, []);
 
-  // Scroll Parallax Logic (Depth Effect) - Optimized
+  // Scroll Parallax Logic - Optimized
   useEffect(() => {
     let frameId: number;
     const handleScroll = () => {
@@ -63,12 +63,10 @@ export const MoneyPhone: React.FC = () => {
         frameId = requestAnimationFrame(() => {
             const scrollY = window.scrollY;
             if (textureRef.current) {
-                // Texture moves at medium speed
                 const yPos = scrollY * 0.12;
                 textureRef.current.style.backgroundPosition = `0px ${yPos}px`;
             }
             if (bgRef.current) {
-                 // Gradient background moves slower, creating depth separation
                  const yPos = scrollY * 0.06;
                  bgRef.current.style.transform = `translateY(${yPos}px)`;
             }
@@ -84,15 +82,13 @@ export const MoneyPhone: React.FC = () => {
 
   // Block User Handler
   const blockUser = (e: React.MouseEvent, user: string) => {
-    e.stopPropagation(); // Prevent opening details
+    e.stopPropagation();
     setBlockedUsers(prev => {
         const newSet = new Set(prev);
         newSet.add(user);
         return newSet;
     });
-    // Remove all current transactions from this user immediately
     setTransactions(prev => prev.filter(tx => tx.user !== user));
-    // If we are viewing this user, close the details
     if (selectedTx?.user === user) {
         setSelectedTx(null);
     }
@@ -103,10 +99,7 @@ export const MoneyPhone: React.FC = () => {
     let timeout: ReturnType<typeof setTimeout>;
 
     const addTransaction = () => {
-      // Filter out blocked users
       const availableUsers = USERS.filter(u => !blockedUsers.has(u));
-      
-      // If everyone is blocked, just recycle (or pause, but recycling keeps the site alive)
       const pool = availableUsers.length > 0 ? availableUsers : ["New_Victim_01"];
 
       const amount = Math.floor(Math.random() * 450) + 50;
@@ -123,8 +116,6 @@ export const MoneyPhone: React.FC = () => {
 
       setTransactions(prev => [newTx, ...prev].slice(0, 5));
       setBalance(prev => prev + amount);
-      
-      // Increased excitement gain
       setExcitement(prev => Math.min(prev + 0.25, 1.0));
 
       const nextDelay = Math.max(200, 2000 - (excitement * 1500));
@@ -133,7 +124,7 @@ export const MoneyPhone: React.FC = () => {
 
     timeout = setTimeout(addTransaction, 1000);
     return () => clearTimeout(timeout);
-  }, [excitement, blockedUsers]); // Re-run if blocked list changes
+  }, [excitement, blockedUsers]);
 
   // Decay excitement
   useEffect(() => {
@@ -160,7 +151,6 @@ export const MoneyPhone: React.FC = () => {
             <span className="italic text-[#FF8A75] font-bold block mt-2">It's literally free money.</span>
           </p>
           
-          {/* Reaction Mascot - Optimized Props */}
           <div className="w-32 h-32 md:w-48 md:h-48 relative mx-auto lg:mx-0">
             <Mascot excitementLevel={excitement} />
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-xs font-mono uppercase tracking-widest text-[#1A2A3A]/40 whitespace-nowrap bg-[#FDFBF7] px-2 py-1 rounded-full border border-[#1A2A3A]/5">
@@ -169,14 +159,14 @@ export const MoneyPhone: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: The Phone Graphic - Aspect Ratio Lock */}
+        {/* Right: The Phone Graphic - Perfectly Responsive */}
         <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center py-8">
           
-          {/* Constrain container size relative to screen width AND aspect ratio */}
-          <div className="relative w-[80vw] sm:w-[320px] lg:w-[360px] aspect-[9/19] touch-pan-y">
+          {/* Constrain size using max-width and aspect ratio lock. This ensures it never breaks. */}
+          <div className="relative w-[85vw] max-w-[320px] lg:max-w-[360px] aspect-[9/19] touch-pan-y" style={{ touchAction: 'pan-y' }}>
             
-            {/* Unified Rotation Wrapper */}
-            <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right will-change-transform">
+            {/* Rotation Wrapper with Physics Easing */}
+            <div className="w-full h-full relative transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right will-change-transform">
               
               {/* Hand SVG */}
               <svg className="absolute -bottom-[15%] -right-[20%] w-[140%] h-[140%] z-0 pointer-events-none drop-shadow-2xl" viewBox="0 0 400 600">
@@ -185,21 +175,17 @@ export const MoneyPhone: React.FC = () => {
                  <path d="M120 600 L160 500 L250 500 Q280 480 260 450 Q240 420 160 480 L100 600 Z" fill="#E8E4D9" stroke="#1A2A3A" strokeWidth="3" />
               </svg>
 
-              {/* Phone Container */}
+              {/* Phone Body */}
               <div className="absolute inset-0 bg-[#1A2A3A] rounded-[15%] border-[6px] md:border-[8px] border-[#1A2A3A] shadow-2xl z-10 overflow-hidden ring-1 ring-white/20">
                 
-                {/* 1. Volumetric Casing Highlights (Curved Metal Effect) */}
+                {/* Highlights */}
                 <div className="absolute inset-0 rounded-[15%] shadow-[inset_4px_4px_15px_rgba(255,255,255,0.1),inset_-4px_-4px_15px_rgba(0,0,0,0.4)] pointer-events-none z-50"></div>
-                
-                {/* 2. Static Screen Glass Sheen (Diagonal Reflection) */}
                 <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-white/5 via-white/0 to-transparent skew-x-12 z-50 pointer-events-none mix-blend-overlay"></div>
                 
-                {/* Branding on the Chin */}
-                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-50 text-[6px] font-bold text-white/10 uppercase tracking-[0.2em] pointer-events-none font-['Space_Grotesk']">
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-50 text-[6px] font-bold text-white/10 uppercase tracking-[0.2em] pointer-events-none font-['Space_Grotesk']">
                     Oranolio
                 </div>
                 
-                {/* Dynamic Glare - Reacts to Mouse */}
                 <div 
                   className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/10 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out blur-md will-change-transform"
                   style={{ 
@@ -211,26 +197,14 @@ export const MoneyPhone: React.FC = () => {
                 {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[4%] bg-[#1A2A3A] rounded-b-xl z-30 shadow-sm border-b border-white/5"></div>
                 
-                {/* Screen Content */}
+                {/* Screen */}
                 <div className="w-full h-full bg-[#FDFBF7] flex flex-col pt-[12%] relative">
                   
-                  {/* Parallax Gradient Background */}
-                  <div 
-                    ref={bgRef}
-                    className="absolute -top-[20%] -left-[20%] -right-[20%] -bottom-[20%] bg-gradient-to-br from-[#FDFBF7] via-[#FDFBF7] to-[#2D9C8E]/5 z-0 pointer-events-none will-change-transform"
-                  ></div>
-
-                  {/* Fingerprint Texture with Parallax */}
-                  <div 
-                    ref={textureRef}
-                    className="absolute inset-0 opacity-[0.05] bg-repeat z-0 pointer-events-none mix-blend-multiply will-change-transform" 
-                    style={{
-                        backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+")'
-                    }}
-                  ></div>
+                  <div ref={bgRef} className="absolute -top-[20%] -left-[20%] -right-[20%] -bottom-[20%] bg-gradient-to-br from-[#FDFBF7] via-[#FDFBF7] to-[#2D9C8E]/5 z-0 pointer-events-none will-change-transform"></div>
+                  <div ref={textureRef} className="absolute inset-0 opacity-[0.05] bg-repeat z-0 pointer-events-none mix-blend-multiply will-change-transform" style={{backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+")'}}></div>
 
                   {/* Status Bar */}
-                  <div className="flex justify-between px-6 mb-4 text-[#1A2A3A]/40 text-[9px] md:text-[10px] font-bold relative z-10">
+                  <div className="flex justify-between px-6 mb-2 text-[#1A2A3A]/40 text-[9px] md:text-[10px] font-bold relative z-10">
                      <span>3:00 AM</span>
                      <div className="flex gap-1">
                        <span className="font-mono tracking-tight">LTE</span>
@@ -240,97 +214,65 @@ export const MoneyPhone: React.FC = () => {
 
                   {/* App Header */}
                   <div className="px-6 mb-4 relative z-10">
-                    <div className="text-[#FF8A75] font-bold text-[9px] md:text-[10px] uppercase tracking-widest mb-1">Oranolio Wallet</div>
-                    <div className="text-2xl md:text-3xl lg:text-4xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] tabular-nums tracking-tight">
+                    <div className="text-[#FF8A75] font-bold text-[9px] uppercase tracking-widest mb-1">Oranolio Wallet</div>
+                    <div className="text-2xl lg:text-4xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] tabular-nums tracking-tight">
                       ${balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                    </div>
-                    <div className="text-[9px] md:text-[10px] text-[#1A2A3A]/40 mt-1 flex items-center gap-1">
-                      <span className="w-2 h-2 bg-[#FF8A75] rounded-full animate-pulse"></span>
-                      DRAINING 401Ks...
                     </div>
                   </div>
 
-                  {/* Feed Area OR Detail View */}
+                  {/* Interactive Feed */}
                   <div className="flex-1 bg-white rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] p-3 md:p-4 overflow-hidden flex flex-col gap-3 relative z-10">
-                     
                      {selectedTx ? (
                         <div className="flex flex-col h-full animate-in slide-in-from-right fade-in duration-300">
                            <button 
                              onClick={() => setSelectedTx(null)} 
                              className="flex items-center gap-1 text-[#1A2A3A]/40 text-[10px] font-bold uppercase tracking-widest mb-4 hover:text-[#FF8A75] transition-colors"
                            >
-                             ← Back to Feed
+                             ← Back
                            </button>
-
                            <div className="flex flex-col items-center mb-6">
-                             <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#FF8A75] to-[#1A2A3A] flex items-center justify-center text-white font-bold text-2xl mb-3 shadow-lg">
-                               :(
-                             </div>
-                             <h3 className="text-[#1A2A3A] font-bold text-base md:text-lg font-['Space_Grotesk']">{selectedTx.user}</h3>
-                             <p className="text-[#2D9C8E] font-bold font-mono text-lg md:text-xl">+${selectedTx.amount}.00</p>
+                             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#FF8A75] to-[#1A2A3A] flex items-center justify-center text-white font-bold text-2xl mb-3 shadow-lg">:(</div>
+                             <h3 className="text-[#1A2A3A] font-bold text-base font-['Space_Grotesk']">{selectedTx.user}</h3>
+                             <p className="text-[#2D9C8E] font-bold font-mono text-xl">+${selectedTx.amount}.00</p>
                            </div>
-
-                           <div className="bg-gray-50 p-3 md:p-4 rounded-2xl border border-gray-100 mb-auto relative">
-                              <div className="absolute top-0 left-4 -translate-y-1/2 w-3 h-3 bg-gray-50 border-t border-l border-gray-100 transform rotate-45"></div>
+                           <div className="bg-gray-50 p-3 rounded-2xl border border-gray-100 mb-auto relative">
                               <p className="text-[#1A2A3A]/80 italic font-serif leading-relaxed text-sm">"{selectedTx.message}"</p>
                            </div>
-
                            <div className="grid grid-cols-2 gap-2 mt-4">
-                              <button onClick={(e) => blockUser(e, selectedTx.user)} className="bg-[#1A2A3A] text-white text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-red-600 transition-colors shadow-lg">
-                                Block User 🚫
-                              </button>
-                              <button onClick={() => setSelectedTx(null)} className="border border-[#1A2A3A] text-[#1A2A3A] text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-gray-50 transition-colors">
-                                Send 💋 ($5)
-                              </button>
+                              <button onClick={(e) => blockUser(e, selectedTx.user)} className="bg-[#1A2A3A] text-white text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-red-600 transition-colors shadow-lg">Block 🚫</button>
+                              <button onClick={() => setSelectedTx(null)} className="border border-[#1A2A3A] text-[#1A2A3A] text-[10px] py-3 rounded-lg font-bold uppercase tracking-wide hover:bg-gray-50 transition-colors">Ignore</button>
                            </div>
                         </div>
                      ) : (
                         <>
-                           <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#1A2A3A]/30 mb-2 flex items-center justify-between">
+                           <div className="text-[9px] font-bold uppercase tracking-widest text-[#1A2A3A]/30 mb-2 flex items-center justify-between">
                               <span>Simp Alerts</span>
                               <div className="flex items-center gap-2">
                                 <span className="text-[9px] text-red-400 font-mono tracking-tighter" title="Blocked Users">{blockedUsers.size} BLOCKED</span>
                                 <span className="text-[#2D9C8E] animate-pulse">● LIVE</span>
                               </div>
                            </div>
-                           
                            {transactions.map((tx) => (
-                              <div 
-                                key={tx.id} 
-                                onClick={() => setSelectedTx(tx)}
-                                className="flex items-center gap-3 animate-in slide-in-from-bottom fade-in duration-300 group cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition-colors relative"
-                              >
-                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-100 flex items-center justify-center text-sm md:text-lg shadow-sm group-hover:scale-110 transition-transform">
-                                  💸
-                                </div>
+                              <div key={tx.id} onClick={() => setSelectedTx(tx)} className="flex items-center gap-3 animate-in slide-in-from-bottom fade-in duration-300 group cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition-colors relative">
+                                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm shadow-sm group-hover:scale-110 transition-transform">💸</div>
                                 <div className="flex-1 min-w-0">
-                                  <div className="text-[#1A2A3A] font-bold text-[10px] md:text-xs truncate group-hover:text-[#FF8A75] transition-colors">{tx.user}</div>
-                                  <div className="text-[#1A2A3A]/60 text-[9px] md:text-[10px] truncate">"{tx.message}"</div>
+                                  <div className="text-[#1A2A3A] font-bold text-[10px] truncate group-hover:text-[#FF8A75] transition-colors">{tx.user}</div>
+                                  <div className="text-[#1A2A3A]/60 text-[9px] truncate">"{tx.message}"</div>
                                 </div>
                                 <div className="flex flex-col items-end gap-1">
-                                    <div className="text-[#2D9C8E] font-bold font-mono text-[10px] md:text-xs">
-                                    +${tx.amount}
-                                    </div>
-                                    <button 
-                                        onClick={(e) => blockUser(e, tx.user)}
-                                        className="opacity-0 group-hover:opacity-100 transition-opacity bg-red-100 hover:bg-red-500 hover:text-white text-red-500 rounded-full w-5 h-5 flex items-center justify-center text-[10px]"
-                                        title="Block User"
-                                    >
-                                        🚫
-                                    </button>
+                                    <div className="text-[#2D9C8E] font-bold font-mono text-[10px]">+${tx.amount}</div>
+                                    <button onClick={(e) => blockUser(e, tx.user)} className="opacity-0 group-hover:opacity-100 transition-opacity bg-red-100 hover:bg-red-500 hover:text-white text-red-500 rounded-full w-5 h-5 flex items-center justify-center text-[10px]" title="Block">🚫</button>
                                 </div>
                               </div>
                            ))}
                         </>
                      )}
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

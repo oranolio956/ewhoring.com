@@ -19,7 +19,6 @@
     <meta property="og:url" content="https://ewhoring.com/" />
     <meta property="og:title" content="POV: You are about to get rich (Oranolio)" />
     <meta property="og:description" content="Stop scrolling. Stop being poor. The 2025 Protocol is live. If you don't click this, you hate money." />
-    <!-- Dynamic Text Image: Navy Background (#1A2A3A), Coral Text (#FF8A75) -->
     <meta property="og:image" content="https://placehold.co/1200x630/1A2A3A/FF8A75/png?text=MEN+HAVE+WALLETS%0AYOU+HAVE+WIFI&font=montserrat" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -55,8 +54,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
     <style>
-      /* Custom Animations and Utilities */
+      :root {
+        --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
       html, body {
         width: 100%;
         overflow-x: hidden;
@@ -64,11 +67,16 @@
         font-family: 'Outfit', 'sans-serif';
         background-color: #FDFBF7;
         -webkit-tap-highlight-color: transparent;
-        -webkit-font-smoothing: subpixel-antialiased;
+        -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        scroll-behavior: smooth;
-        overscroll-behavior-y: none;
+        overscroll-behavior-y: none; /* Prevents rubber banding */
+      }
+      
+      /* Global Responsive Constraints */
+      img, svg, video {
+        max-width: 100%;
+        height: auto;
       }
 
       /* Clean Selection */
@@ -85,7 +93,7 @@
         font-family: 'Space Grotesk', sans-serif;
       }
 
-      /* Custom Scrollbar */
+      /* Custom Scrollbar - Optimized for GPU */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -97,7 +105,7 @@
         border-radius: 0px;
       }
 
-      /* Noise Texture - Subtle & Clean (Original Look) */
+      /* Noise Texture - Subtle & Clean */
       .bg-noise {
         position: fixed;
         top: 0;
@@ -130,7 +138,7 @@
         animation: float 6s ease-in-out infinite;
       }
       
-      /* Glass Utility - Refined */
+      /* Glass Utility */
       .glass-panel {
         background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(20px);
@@ -171,7 +179,6 @@
         pointer-events: none;
         animation: floatParticle 10s infinite linear;
       }
-
     </style>
   <script type="importmap">
 {
@@ -189,5 +196,25 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
+    <script>
+      // Initialize Smooth Scroll
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
   </body>
 </html>
