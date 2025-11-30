@@ -3,7 +3,7 @@ import React from 'react';
 
 export const LoserFilter: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#000000] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
+    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
       {/* Background Warning Tape */}
       <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
@@ -38,7 +38,7 @@ export const LoserFilter: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-12 text-left">
-                <div className="bg-[#1A1A1A] p-6 rounded-xl border border-[#333] opacity-50 grayscale">
+                <div className="bg-[#0F1923] p-6 rounded-xl border border-[#333] opacity-50 grayscale">
                     <h4 className="text-xs font-bold uppercase tracking-widest text-[#666] mb-2">You (A Loser)</h4>
                     <ul className="space-y-2 text-sm text-[#888] font-mono">
                         <li>❌ "Pls sir send $20 for skins"</li>

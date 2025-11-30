@@ -55,11 +55,6 @@ const CONVERSATIONS = [
 // Reddit Dark Mode Colors
 const REDDIT_BG = "#1A1A1B";
 const REDDIT_HEADER = "#1A1A1B";
-const REDDIT_BORDER = "#343536";
-const REDDIT_MSG_THEM = "#343536";
-const REDDIT_MSG_ME = "#0079D3"; // Reddit Blue for sent messages
-const REDDIT_TEXT = "#D7DADC";
-const REDDIT_TEXT_SEC = "#818384";
 
 export const RedditChat: React.FC = () => {
   const [activeChat, setActiveChat] = useState(0);
@@ -141,7 +136,7 @@ export const RedditChat: React.FC = () => {
             {/* Reddit Header */}
             <div className="flex items-center justify-between px-3 py-2 border-b border-[#343536]" style={{ backgroundColor: REDDIT_HEADER }}>
                 <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full overflow-hidden relative">
+                    <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-lg">
                          <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: currentChat.avatar_color }}>
                              u/
                          </div>
@@ -172,32 +167,31 @@ export const RedditChat: React.FC = () => {
             {/* Chat Body */}
             <div 
                 ref={scrollRef} 
-                className="h-[400px] overflow-y-auto px-4 py-4 space-y-2 relative" 
+                className="h-[400px] overflow-y-auto px-4 py-4 space-y-3 relative" 
                 style={{ backgroundColor: REDDIT_BG }}
             >
                 {/* Timestamp */}
-                <div className="text-center text-[#818384] text-[10px] font-bold uppercase tracking-wider mb-4 mt-2">
+                <div className="text-center text-[#818384] text-[10px] font-bold uppercase tracking-wider mb-6 mt-2 opacity-50">
                     TODAY
                 </div>
 
                 {visibleMessages.map((msg, i) => (
                     <div key={i} className={`flex w-full ${msg.sender === 'me' ? 'justify-end' : 'justify-start'} mb-1`}>
                         {msg.sender === 'system' ? (
-                            <div className="w-full flex justify-center my-4">
-                                <span className="text-[#2D9C8E] text-xs font-bold px-3 py-1 bg-[#2D9C8E]/10 rounded-full border border-[#2D9C8E]/30 flex items-center gap-1">
+                            <div className="w-full flex justify-center my-4 animate-pulse">
+                                <span className="text-[#2D9C8E] text-xs font-bold px-4 py-1.5 bg-[#2D9C8E]/10 rounded-full border border-[#2D9C8E]/30 flex items-center gap-2 shadow-[0_0_15px_rgba(45,156,142,0.2)]">
                                     💰 {msg.text}
                                 </span>
                             </div>
                         ) : (
-                            <div className={`max-w-[80%] rounded-2xl px-4 py-2 text-[13px] leading-relaxed break-words ${
+                            <div className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13px] leading-relaxed break-words shadow-md transition-all duration-300 ${
                                 msg.sender === 'me' 
-                                ? 'text-white' 
-                                : 'text-[#D7DADC]'
+                                ? 'text-white bg-gradient-to-br from-[#0079D3] to-[#005fa3]' 
+                                : 'text-[#D7DADC] bg-[#343536] border border-white/5'
                             }`}
                             style={{ 
-                                backgroundColor: msg.sender === 'me' ? REDDIT_MSG_ME : REDDIT_MSG_THEM,
-                                borderBottomRightRadius: msg.sender === 'me' ? '4px' : '16px',
-                                borderBottomLeftRadius: msg.sender === 'me' ? '16px' : '4px'
+                                borderBottomRightRadius: msg.sender === 'me' ? '4px' : '20px',
+                                borderBottomLeftRadius: msg.sender === 'me' ? '20px' : '4px'
                             }}>
                                 {msg.text}
                             </div>
@@ -207,7 +201,7 @@ export const RedditChat: React.FC = () => {
 
                 {isTyping && (
                     <div className="flex justify-end mt-2">
-                        <div className="px-4 py-2 rounded-2xl rounded-br-sm" style={{ backgroundColor: REDDIT_MSG_ME }}>
+                        <div className="px-4 py-2.5 rounded-2xl rounded-br-sm bg-gradient-to-br from-[#0079D3] to-[#005fa3] opacity-80">
                            <div className="flex gap-1 items-center h-4">
                                 <div className="w-1.5 h-1.5 bg-white/70 rounded-full animate-bounce"></div>
                                 <div className="w-1.5 h-1.5 bg-white/70 rounded-full animate-bounce delay-75"></div>
@@ -221,21 +215,22 @@ export const RedditChat: React.FC = () => {
             {/* Chat Footer (Input) */}
             <div className="p-3 border-t border-[#343536]" style={{ backgroundColor: REDDIT_BG }}>
                 <div className="flex items-center gap-2">
-                    <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
                     </button>
-                    <div className="flex-1 bg-[#272729] rounded-full h-9 flex items-center px-4 border border-[#343536] text-[#818384] text-sm cursor-not-allowed">
+                    <div className="flex-1 bg-[#272729] rounded-full h-10 flex items-center px-4 border border-[#343536] text-[#818384] text-sm cursor-not-allowed hover:border-[#4a4a4c] transition-colors">
                         Message {currentChat.target}
                     </div>
-                    <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM5 19V5h14v14H5zm7-9c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+                    <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                     </button>
                 </div>
             </div>
 
             {/* Strategy Badge Overlay */}
-            <div className="absolute top-14 left-1/2 -translate-x-1/2 z-10 pointer-events-none opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards]">
-                 <div className="bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/10 shadow-lg">
+            <div className="absolute top-16 left-1/2 -translate-x-1/2 z-10 pointer-events-none opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards]">
+                 <div className="bg-[#1A2A3A]/80 backdrop-blur-md text-[#FDFBF7] text-[10px] font-bold px-4 py-1.5 rounded-full border border-[#FF8A75]/30 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse"></span>
                     Strategy: {currentChat.strategy}
                  </div>
             </div>

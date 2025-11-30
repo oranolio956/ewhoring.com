@@ -5,7 +5,7 @@ export const PricingTerminal: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'standard' | 'mentorship'>('standard');
 
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#000000] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
+    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
       
       {/* Matrix Rain Effect (Static CSS implementation for performance) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
@@ -26,7 +26,7 @@ export const PricingTerminal: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             
             {/* TERMINAL UI */}
-            <div className="lg:col-span-2 bg-[#0F0F0F] border border-[#00FF00]/30 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,0,0.1)] relative overflow-hidden">
+            <div className="lg:col-span-2 bg-[#0F1923] border border-[#00FF00]/30 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,0,0.1)] relative overflow-hidden">
                 
                 {/* Header Bar */}
                 <div className="flex items-center gap-2 mb-6 border-b border-[#00FF00]/20 pb-4">
@@ -62,7 +62,7 @@ export const PricingTerminal: React.FC = () => {
             </div>
 
             {/* SOLD OUT TIER (Price Anchoring) */}
-            <div className="bg-[#0F0F0F] border border-red-500/30 rounded-xl p-6 relative opacity-70 hover:opacity-100 transition-opacity">
+            <div className="bg-[#0F1923] border border-red-500/30 rounded-xl p-6 relative opacity-70 hover:opacity-100 transition-opacity">
                 <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                     <div className="border-4 border-red-500 text-red-500 px-6 py-2 font-black text-2xl uppercase tracking-widest transform -rotate-12 bg-black">
                         SOLD OUT

@@ -17,7 +17,6 @@ import { TheSprint } from './components/TheSprint';
 import { RedditChat } from './components/RedditChat';
 import { ScamFooter } from './components/ScamFooter';
 import { Preloader } from './components/Preloader';
-import { CustomCursor } from './components/CustomCursor';
 import { SalesToast } from './components/SalesToast';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
@@ -37,14 +36,22 @@ const App: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let frameId: number;
     const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollTop;
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scroll = `${totalScroll / windowHeight}`;
-      setScrollProgress(Number(scroll));
+      if (frameId) return;
+      frameId = requestAnimationFrame(() => {
+        const totalScroll = document.documentElement.scrollTop;
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scroll = `${totalScroll / windowHeight}`;
+        setScrollProgress(Number(scroll));
+        frameId = 0;
+      });
     }
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (frameId) cancelAnimationFrame(frameId);
+    };
   }, []);
 
   useEffect(() => {
@@ -162,7 +169,6 @@ const App: React.FC = () => {
       {!loading && (
         <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
           
-          <CustomCursor />
           <SalesToast />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
 
@@ -174,7 +180,7 @@ const App: React.FC = () => {
           {/* Global Progress Bar */}
           <div className="fixed top-0 left-0 h-1 bg-[#1A2A3A] z-[100] w-full">
             <div 
-              className="h-full bg-[#FF8A75] shadow-[0_0_10px_#FF8A75]" 
+              className="h-full bg-[#FF8A75] shadow-[0_0_10px_#FF8A75] will-change-transform" 
               style={{ width: `${scrollProgress * 100}%` }} 
             />
           </div>
@@ -188,12 +194,12 @@ const App: React.FC = () => {
           <div className="bg-noise" />
           <div className="scanlines" />
           
-          {/* Ambient Particles */}
+          {/* Ambient Particles - Optimized with will-change */}
           <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
              {[...Array(15)].map((_, i) => (
                 <div 
                   key={i} 
-                  className="particle" 
+                  className="particle will-change-transform" 
                   style={{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
@@ -215,7 +221,7 @@ const App: React.FC = () => {
           {/* 4. Content */}
           <NavBar />
           
-          <main className="relative z-10 w-full cursor-none">
+          <main className="relative z-10 w-full">
             <HeroSection />
 
             <OriginStory />

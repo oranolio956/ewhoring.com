@@ -4,15 +4,49 @@ import React, { useState } from 'react';
 export const PunchMadeParody: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [doxRevealed, setDoxRevealed] = useState(false);
+  const [swatState, setSwatState] = useState<'idle' | 'swatting' | 'arrested'>('idle');
+
+  const triggerSwat = () => {
+      setSwatState('swatting');
+      setTimeout(() => {
+          setSwatState('arrested');
+      }, 2500); // Chaos lasts 2.5s
+  };
 
   return (
     <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
-      {/* Glitchy Background */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+      {/* Glitchy Background - Optimized with will-change */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden will-change-transform">
          <div className="absolute top-0 left-0 w-full h-1 bg-red-500 animate-[pulse_0.1s_infinite]"></div>
          <div className="absolute bottom-0 right-0 w-full h-1 bg-red-500 animate-[pulse_0.2s_infinite]"></div>
       </div>
+
+      {/* Full Screen SWAT Chaos Overlay */}
+      {swatState === 'swatting' && (
+          <div className="fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center overflow-hidden">
+             <div className="absolute inset-0 animate-[police-strobe_0.1s_infinite]"></div>
+             <div className="relative z-10 text-center animate-[shake-hard_0.1s_infinite]">
+                 <h1 className="text-[15vw] font-black text-white leading-none uppercase drop-shadow-[10px_10px_0px_#FF0000]">OH SHIT!!!</h1>
+                 <h1 className="text-[15vw] font-black text-[#0000FF] leading-none uppercase mix-blend-difference absolute inset-0">OH SHIT!!!</h1>
+                 <p className="text-white font-mono text-2xl bg-red-600 px-4 py-2 mt-8">POLICE RAID IN PROGRESS</p>
+             </div>
+             <style>{`
+                @keyframes police-strobe {
+                    0% { background: #FF0000; }
+                    50% { background: #0000FF; }
+                    100% { background: #FF0000; }
+                }
+                @keyframes shake-hard {
+                    0% { transform: translate(0,0) rotate(0deg); }
+                    25% { transform: translate(-10px, 10px) rotate(-5deg); }
+                    50% { transform: translate(10px, -10px) rotate(5deg); }
+                    75% { transform: translate(-10px, -10px) rotate(-5deg); }
+                    100% { transform: translate(0,0) rotate(0deg); }
+                }
+             `}</style>
+          </div>
+      )}
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -55,18 +89,27 @@ export const PunchMadeParody: React.FC = () => {
                         <span className="blur-sm group-hover:blur-none transition-all duration-300 bg-white text-black px-1 mx-1 font-bold">CLARENCE</span>.
                     </p>
 
-                    {doxRevealed ? (
-                        <div className="bg-[#FF0000] text-white p-3 rounded font-bold text-center animate-pulse text-xs uppercase tracking-widest">
-                            🚨 FILE DOWNLOADED: REAL_IDENTITY.PDF 🚨
-                        </div>
-                    ) : (
+                    <div className="space-y-3">
+                        {doxRevealed ? (
+                            <div className="bg-[#FF0000] text-white p-3 rounded font-bold text-center animate-pulse text-xs uppercase tracking-widest">
+                                🚨 FILE DOWNLOADED: REAL_IDENTITY.PDF 🚨
+                            </div>
+                        ) : (
+                            <button 
+                                onClick={() => setDoxRevealed(true)}
+                                className="w-full bg-[#FDFBF7] text-[#1A2A3A] font-bold py-3 uppercase tracking-widest hover:bg-[#FF0000] hover:text-white transition-colors flex items-center justify-center gap-2 text-xs md:text-sm"
+                            >
+                                <span>📥</span> DOWNLOAD FULL DOX (FREE)
+                            </button>
+                        )}
+
                         <button 
-                            onClick={() => setDoxRevealed(true)}
-                            className="w-full bg-[#FDFBF7] text-[#1A2A3A] font-bold py-3 uppercase tracking-widest hover:bg-[#FF0000] hover:text-white transition-colors flex items-center justify-center gap-2 text-xs md:text-sm"
+                            onClick={triggerSwat}
+                            className="w-full bg-blue-600 text-white font-bold py-3 uppercase tracking-widest hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-xs md:text-sm shadow-lg"
                         >
-                            <span>📥</span> DOWNLOAD FULL DOX (FREE)
+                            <span>🚓</span> CALL THE FEDS (SWAT HIM)
                         </button>
-                    )}
+                    </div>
                     
                     <p className="text-[10px] text-[#FDFBF7]/40 mt-3 text-center">
                         *Warning: This file contains embarrassing photos of him without the mask (He looks like a turtle).
@@ -75,9 +118,30 @@ export const PunchMadeParody: React.FC = () => {
 
             </div>
 
-            {/* Right: The Animated Character */}
+            {/* Right: The Animated Character (South Park Style) */}
             <div className="order-1 lg:order-2 relative flex flex-col items-center">
                 
+                {/* Arrested Lights Overlay */}
+                {swatState === 'arrested' && (
+                     <div className="absolute inset-0 z-30 pointer-events-none mix-blend-overlay animate-[police_0.5s_steps(2)_infinite] rounded-full filter blur-xl"></div>
+                )}
+                <style>{`
+                    @keyframes police {
+                        0% { background: rgba(255,0,0,0.6); }
+                        50% { background: rgba(0,0,255,0.6); }
+                    }
+                    @keyframes chain-drop {
+                        0% { transform: translateY(-600px); }
+                        70% { transform: translateY(0px); }
+                        85% { transform: translateY(-50px); }
+                        100% { transform: translateY(0px); }
+                    }
+                    @keyframes south-park-bounce {
+                        0%, 100% { transform: rotate(-3deg) translateY(0); }
+                        50% { transform: rotate(3deg) translateY(-5px); }
+                    }
+                `}</style>
+
                 {/* Fake Media Player */}
                 <div className="bg-[#000] text-white p-4 rounded-xl w-64 mb-8 shadow-2xl relative z-20 border border-gray-800">
                     <div className="flex gap-4 items-center mb-4">
@@ -104,61 +168,88 @@ export const PunchMadeParody: React.FC = () => {
                     )}
                 </div>
 
-                {/* The Character SVG */}
-                <svg viewBox="0 0 400 500" className="w-72 h-96 drop-shadow-2xl">
-                    <defs>
-                        <linearGradient id="skiMask" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stopColor="#333" />
-                            <stop offset="100%" stopColor="#000" />
-                        </linearGradient>
-                    </defs>
+                {/* The South Park SVG Character */}
+                <svg viewBox="0 0 400 500" className={`w-72 h-96 drop-shadow-2xl overflow-visible ${swatState === 'idle' ? 'animate-[south-park-bounce_0.8s_steps(4)_infinite]' : ''}`}>
                     
-                    {/* Body - Bad Posture */}
-                    <path d="M100 500 L120 350 Q125 300 200 300 Q275 300 280 350 L300 500 Z" fill="#1A1A1A" />
-                    
-                    {/* Gold Chain - Massive and Tacky */}
-                    <path d="M150 320 Q200 450 250 320" fill="none" stroke="#FFD700" strokeWidth="15" strokeLinecap="round" />
-                    <circle cx="200" cy="400" r="30" fill="#FFD700" />
-                    <text x="200" y="410" textAnchor="middle" fontSize="20" fontWeight="bold">L</text>
+                    {/* Character Group */}
+                    <g transform="translate(0, 50)">
+                        
+                        {/* Legs/Feet - Stubby Ovals */}
+                        <ellipse cx="140" cy="400" rx="40" ry="15" fill="black" />
+                        <ellipse cx="260" cy="400" rx="40" ry="15" fill="black" />
 
-                    {/* Head - Ski Mask */}
-                    <ellipse cx="200" cy="200" rx="70" ry="90" fill="url(#skiMask)" />
-                    
-                    {/* Eye Holes */}
-                    <ellipse cx="175" cy="180" rx="15" ry="10" fill="#8B4513" /> {/* Skin showing */}
-                    <ellipse cx="225" cy="180" rx="15" ry="10" fill="#8B4513" />
-                    <circle cx="175" cy="180" r="3" fill="#FFF" /> {/* Vacant stare */}
-                    <circle cx="225" cy="180" r="3" fill="#FFF" />
+                        {/* Body - Big Rectangle/Trapezoid (Red Hoodie) */}
+                        <path d="M120 400 L280 400 L270 280 L130 280 Z" fill="#CC0000" stroke="black" strokeWidth="3" />
+                        
+                        {/* Zipper */}
+                        <line x1="200" y1="280" x2="200" y2="400" stroke="black" strokeWidth="2" opacity="0.3" />
 
-                    {/* Mouth Hole */}
-                    <ellipse cx="200" cy="240" rx="20" ry="10" fill="#8B4513" />
-                    <path d="M190 240 Q200 250 210 240" stroke="black" fill="none" strokeWidth="2" /> {/* Frown */}
+                        {/* Arms (Stick-ish but thick) */}
+                        <path d="M130 300 L90 350" stroke="#CC0000" strokeWidth="25" strokeLinecap="round" />
+                        <path d="M270 300 L310 350" stroke="#CC0000" strokeWidth="25" strokeLinecap="round" />
+                        
+                        {/* Hands (Mittens essentially) */}
+                        <circle cx="90" cy="350" r="15" fill="#8B4513" stroke="black" strokeWidth="2" /> {/* Left Hand */}
+                        <g transform="translate(310, 350)"> {/* Right Hand holding Card */}
+                             <circle cx="0" cy="0" r="15" fill="#8B4513" stroke="black" strokeWidth="2" />
+                             {/* The Card */}
+                             <rect x="-10" y="-15" width="40" height="25" fill="#3B82F6" stroke="white" strokeWidth="2" rx="3" transform="rotate(-20)" />
+                             <rect x="-5" y="-10" width="8" height="6" fill="#FFD700" transform="rotate(-20)" />
+                        </g>
 
-                    {/* Dreadlocks (coming out of top) */}
-                    <path d="M150 130 Q130 100 120 150" stroke="#000" strokeWidth="10" fill="none" />
-                    <path d="M250 130 Q270 100 280 150" stroke="#000" strokeWidth="10" fill="none" />
-                    <path d="M200 110 Q200 50 180 80" stroke="#000" strokeWidth="10" fill="none" />
-                    <path d="M220 115 Q240 60 260 90" stroke="#000" strokeWidth="10" fill="none" />
+                        {/* Head - Massive Circle */}
+                        <circle cx="200" cy="180" r="110" fill="#333" stroke="black" strokeWidth="3" /> {/* Ski Mask Head */}
+                        
+                        {/* Eye Holes (South Park Style - Big White Ovals) */}
+                        <ellipse cx="160" cy="170" rx="25" ry="30" fill="white" stroke="black" strokeWidth="2" />
+                        <ellipse cx="240" cy="170" rx="25" ry="30" fill="white" stroke="black" strokeWidth="2" />
+                        
+                        {/* Pupils - Tiny dots looking weird */}
+                        <circle cx="165" cy="170" r="2" fill="black" />
+                        <circle cx="235" cy="170" r="2" fill="black" />
 
-                    {/* Hands holding Card */}
-                    <g transform="translate(260, 320) rotate(-20)">
-                         {/* Card */}
-                         <rect x="-10" y="-10" width="80" height="50" rx="5" fill="#3B82F6" stroke="white" strokeWidth="2" />
-                         <rect x="0" y="5" width="10" height="8" fill="#FFD700" />
-                         <text x="5" y="35" fontSize="5" fontFamily="monospace" fill="white">4200 6969 ...</text>
-                         
-                         {/* Fingers */}
-                         <rect x="60" y="0" width="10" height="40" rx="5" fill="#8B4513" />
-                         <rect x="45" y="0" width="10" height="42" rx="5" fill="#8B4513" />
-                         <rect x="30" y="0" width="10" height="40" rx="5" fill="#8B4513" />
+                        {/* Mouth Hole */}
+                        <ellipse cx="200" cy="240" rx="15" ry="8" fill="#8B4513" /> {/* Skin */}
+                        <path d="M190 242 Q200 238 210 242" stroke="black" fill="none" strokeWidth="1" /> {/* Frown */}
+
+                        {/* Dreadlocks - Sprouting weirdly */}
+                        <path d="M200 70 L180 30" stroke="black" strokeWidth="8" strokeLinecap="round" />
+                        <path d="M220 75 L250 40" stroke="black" strokeWidth="8" strokeLinecap="round" />
+                        <path d="M180 75 L150 40" stroke="black" strokeWidth="8" strokeLinecap="round" />
+                        <path d="M150 100 L110 80" stroke="black" strokeWidth="8" strokeLinecap="round" />
+                        <path d="M250 100 L290 80" stroke="black" strokeWidth="8" strokeLinecap="round" />
+
                     </g>
                     
-                    {/* Speech Bubble */}
-                    <g className="animate-bounce">
-                        <path d="M280 180 L350 120 L380 120 L380 180 L350 180 Z" fill="white" stroke="black" strokeWidth="2" />
-                        <text x="365" y="155" textAnchor="middle" fontSize="10" fontWeight="bold">"I SNITCH ON"</text>
-                        <text x="365" y="165" textAnchor="middle" fontSize="10" fontWeight="bold">"MYSELF!"</text>
-                    </g>
+                    {/* Speech Bubble (Hidden if arrested) */}
+                    {swatState === 'idle' && (
+                        <g className="animate-bounce" transform="translate(0, -20)">
+                            <path d="M280 140 L350 80 L380 80 L380 140 L350 140 Z" fill="white" stroke="black" strokeWidth="2" />
+                            <text x="365" y="115" textAnchor="middle" fontSize="10" fontWeight="bold">"I SNITCH ON"</text>
+                            <text x="365" y="125" textAnchor="middle" fontSize="10" fontWeight="bold">"MYSELF!"</text>
+                        </g>
+                    )}
+
+                    {/* THE MASSIVE PUNCHMADE CHAIN (Drop Animation) */}
+                    {swatState === 'arrested' && (
+                        <g className="animate-[chain-drop_0.8s_cubic-bezier(0.175,0.885,0.32,1.275)_forwards]" style={{ transformOrigin: 'top center' }}>
+                            {/* The Chain Links */}
+                            <path d="M120 -100 L160 300" stroke="#FFD700" strokeWidth="12" fill="none" strokeDasharray="20,5" />
+                            <path d="M280 -100 L240 300" stroke="#FFD700" strokeWidth="12" fill="none" strokeDasharray="20,5" />
+                            
+                            {/* The Pendant Container */}
+                            <rect x="100" y="300" width="200" height="80" rx="10" fill="#1A1A1A" stroke="#FFD700" strokeWidth="5" />
+                            
+                            {/* Diamonds Sparkle */}
+                            <circle cx="110" cy="310" r="2" fill="white" className="animate-pulse" />
+                            <circle cx="290" cy="370" r="3" fill="white" className="animate-pulse delay-75" />
+                            
+                            {/* The Text */}
+                            <text x="200" y="350" textAnchor="middle" fontSize="28" fontWeight="bold" fontFamily="Impact, sans-serif" fill="#FFF" stroke="#000" strokeWidth="1" letterSpacing="2">
+                                PUNCHMADE
+                            </text>
+                        </g>
+                    )}
                 </svg>
 
             </div>

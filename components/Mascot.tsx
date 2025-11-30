@@ -9,18 +9,26 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    let frameId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate normalized mouse position (-1 to 1)
-      const x = (e.clientX / window.innerWidth) * 2 - 1;
-      const y = (e.clientY / window.innerHeight) * 2 - 1;
-      setMousePos({ x, y });
+      if (frameId) return;
+      frameId = requestAnimationFrame(() => {
+        // Calculate normalized mouse position (-1 to 1)
+        const x = (e.clientX / window.innerWidth) * 2 - 1;
+        const y = (e.clientY / window.innerHeight) * 2 - 1;
+        setMousePos({ x, y });
+        frameId = 0;
+      });
     };
 
     if (excitementLevel === 0) {
       window.addEventListener('mousemove', handleMouseMove);
     }
     
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        if (frameId) cancelAnimationFrame(frameId);
+    };
   }, [excitementLevel]);
 
   // Dynamic Styles based on excitement
@@ -36,7 +44,7 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
   const shakeClass = excitementLevel > 0.8 ? 'animate-vibrate' : '';
 
   return (
-    <div className={`w-full h-full relative group cursor-pointer ${shakeClass}`} role="img" aria-label="Oranolio Interactive Eye Mascot">
+    <div className={`w-full h-full relative group cursor-pointer ${shakeClass} will-change-transform`} role="img" aria-label="Oranolio Interactive Eye Mascot">
       <style>{`
         @keyframes vibrate {
           0% { transform: translate(0); }
@@ -83,7 +91,7 @@ export const Mascot: React.FC<MascotProps> = ({ excitementLevel = 0 }) => {
 
         {/* The Eye - Tracks Mouse or Reacts */}
         <g 
-          className="transition-transform duration-100 ease-out origin-center"
+          className="transition-transform duration-100 ease-out origin-center will-change-transform"
           style={{ transform: `translate(${lookX}px, ${lookY}px)` }}
         >
             {/* Sclera */}

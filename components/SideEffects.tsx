@@ -3,7 +3,7 @@ import React from 'react';
 
 export const SideEffects: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#000000] relative overflow-hidden border-t border-[#FDFBF7]/10">
+    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] relative overflow-hidden border-t border-[#FDFBF7]/10">
       
       <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden border border-[#FDFBF7]/10 shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-2">

@@ -36,36 +36,50 @@ export const MoneyPhone: React.FC = () => {
   const textureRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
-  // Mouse Parallax Logic
+  // Mouse Parallax Logic - Optimized
   useEffect(() => {
+    let frameId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) - 0.5;
-      const y = (e.clientY / window.innerHeight) - 0.5;
-      setMousePos({ x, y });
+      if (frameId) return;
+      frameId = requestAnimationFrame(() => {
+        const x = (e.clientX / window.innerWidth) - 0.5;
+        const y = (e.clientY / window.innerHeight) - 0.5;
+        setMousePos({ x, y });
+        frameId = 0;
+      });
     };
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        if (frameId) cancelAnimationFrame(frameId);
+    };
   }, []);
 
-  // Scroll Parallax Logic (Depth Effect)
+  // Scroll Parallax Logic (Depth Effect) - Optimized
   useEffect(() => {
+    let frameId: number;
     const handleScroll = () => {
-        const scrollY = window.scrollY;
-        
-        if (textureRef.current) {
-            // Texture moves at medium speed
-            const yPos = scrollY * 0.12;
-            textureRef.current.style.backgroundPosition = `0px ${yPos}px`;
-        }
-        
-        if (bgRef.current) {
-             // Gradient background moves slower, creating depth separation
-             const yPos = scrollY * 0.06;
-             bgRef.current.style.transform = `translateY(${yPos}px)`;
-        }
+        if (frameId) return;
+        frameId = requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            if (textureRef.current) {
+                // Texture moves at medium speed
+                const yPos = scrollY * 0.12;
+                textureRef.current.style.backgroundPosition = `0px ${yPos}px`;
+            }
+            if (bgRef.current) {
+                 // Gradient background moves slower, creating depth separation
+                 const yPos = scrollY * 0.06;
+                 bgRef.current.style.transform = `translateY(${yPos}px)`;
+            }
+            frameId = 0;
+        });
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+        if (frameId) cancelAnimationFrame(frameId);
+    };
   }, []);
 
   // Block User Handler
@@ -146,7 +160,7 @@ export const MoneyPhone: React.FC = () => {
             <span className="italic text-[#FF8A75] font-bold block mt-2">It's literally free money.</span>
           </p>
           
-          {/* Reaction Mascot */}
+          {/* Reaction Mascot - Optimized Props */}
           <div className="w-32 h-32 md:w-48 md:h-48 relative mx-auto lg:mx-0">
             <Mascot excitementLevel={excitement} />
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-xs font-mono uppercase tracking-widest text-[#1A2A3A]/40 whitespace-nowrap bg-[#FDFBF7] px-2 py-1 rounded-full border border-[#1A2A3A]/5">
@@ -162,7 +176,7 @@ export const MoneyPhone: React.FC = () => {
           <div className="relative w-[80vw] sm:w-[320px] lg:w-[360px] aspect-[9/19]">
             
             {/* Unified Rotation Wrapper */}
-            <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right">
+            <div className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right will-change-transform">
               
               {/* Hand SVG */}
               <svg className="absolute -bottom-[15%] -right-[20%] w-[140%] h-[140%] z-0 pointer-events-none drop-shadow-2xl" viewBox="0 0 400 600">
@@ -187,7 +201,7 @@ export const MoneyPhone: React.FC = () => {
                 
                 {/* Dynamic Glare - Reacts to Mouse */}
                 <div 
-                  className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/10 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out blur-md"
+                  className="absolute inset-[-50%] bg-gradient-to-tr from-transparent via-white/10 to-transparent z-40 pointer-events-none transition-transform duration-100 ease-out blur-md will-change-transform"
                   style={{ 
                       transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px) rotate(45deg)`,
                       opacity: 0.5
