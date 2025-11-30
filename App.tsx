@@ -25,6 +25,8 @@ import { ThePhilosophy } from './components/ThePhilosophy';
 import { GeoGate } from './components/GeoGate';
 import { LoserFilter } from './components/LoserFilter';
 import { OranolioSlam } from './components/OranolioSlam';
+import { ReceiptVault } from './components/ReceiptVault';
+import { PricingTerminal } from './components/PricingTerminal';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -219,6 +221,9 @@ const App: React.FC = () => {
             {/* The Chat Simulation */}
             <RedditChat />
             
+            {/* Visual Proof / Receipts */}
+            <ReceiptVault />
+
             {/* Social Proof Parody */}
             <BannedBy />
             
@@ -261,6 +266,9 @@ const App: React.FC = () => {
             {/* The Why / 29yo Rant */}
             <WhySection />
             
+            {/* The Final Checkout */}
+            <PricingTerminal />
+
             <FAQ />
 
             {/* Footer / CTA Area */}
