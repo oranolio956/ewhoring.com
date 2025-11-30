@@ -67,9 +67,6 @@ export const RealityCheck: React.FC = () => {
                             <span className="text-[#FF8A75]">BANNED</span>
                         </div>
                     </div>
-                    <p className="text-[#1A2A3A]/60 text-xs mt-3 italic">
-                        "We speak English here. We articulate sentences. If you ask me to 'PMO', I will block you."
-                    </p>
                 </div>
             </div>
 
@@ -117,12 +114,10 @@ export const RealityCheck: React.FC = () => {
                                 Give you the exact copy/paste scripts.
                             </div>
                         </div>
-                        <div className="flex gap-4 items-start">
-                            <div className="mt-1 text-[#2D9C8E]">✅</div>
-                            <div>
-                                <span className="block font-bold text-[#2D9C8E]">I WILL:</span>
-                                Teach you how to cash out without getting banned.
-                            </div>
+                        
+                        {/* Legal Insert */}
+                        <div className="p-3 bg-red-900/30 border border-red-500/30 rounded mt-4 text-[10px] leading-tight">
+                            <strong>LEGAL NOTICE:</strong> By accessing this information, you agree that you are solely responsible for your actions. This is educational material. We are not responsible if you get banned from Discord for being "too effective."
                         </div>
                     </div>
 

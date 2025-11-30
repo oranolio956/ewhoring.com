@@ -13,35 +13,39 @@ export const ScamFooter: React.FC = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
         
-        {/* The Mascot - Serious */}
+        {/* The Mascot - Compliance Officer Mode */}
         <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 relative">
            <Mascot excitementLevel={0} /> 
            {/* Speech Bubble */}
-           <div className="absolute -top-4 -right-12 bg-[#FDFBF7] text-[#1A2A3A] text-[10px] font-bold px-3 py-1 rounded-tr-xl rounded-bl-xl shadow-lg transform rotate-12 whitespace-nowrap">
-              Wake up.
+           <div className="absolute -top-4 -right-12 bg-[#2D9C8E] text-[#1A2A3A] text-[10px] font-bold px-3 py-1 rounded-tr-xl rounded-bl-xl shadow-lg transform rotate-12 whitespace-nowrap">
+              Compliance Checked.
            </div>
         </div>
 
         <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help">
-          IS THIS A SCAM?
+          IS THIS LEGAL?
         </h2>
 
         <div className={`transition-all duration-500`}>
             <div className="prose text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto space-y-6 text-[#FDFBF7]/80">
                 <p>
-                    <span className="text-[#2D9C8E] font-bold text-2xl block mb-4">No. The real scam is your 9-5.</span> 
+                    <span className="text-[#2D9C8E] font-bold text-2xl block mb-4">Yes. Selling information is legal.</span> 
                 </p>
                 <p>
-                   You wake up at 7AM. You commute 45 minutes. You sit in a cubicle. You make $200 a day if you're lucky. 
-                   <strong className="text-white"> That is the scam.</strong>
+                   We sell a <strong>Protocol</strong>. It is a PDF and video course. Selling a course on "Social Engineering" is no different than selling a book on "Acting" or "Creative Writing."
                 </p>
+                <div className="bg-[#1A2A3A] p-6 rounded-xl border border-[#FDFBF7]/10 text-sm md:text-base">
+                    <p className="italic mb-2">
+                        "If I sell you a hammer, and you build a house, that's great. 
+                        If I sell you a hammer, and you break a window, that is <strong>your</strong> problem."
+                    </p>
+                    <p className="font-bold text-[#FF8A75]">
+                        We sell hammers. We do not break windows.
+                    </p>
+                </div>
                 <p>
-                    I am offering you a method. A set of instructions. 
-                    If you follow them, you make money. If you don't, you don't.
-                </p>
-                <p>
-                    I charge for this because <strong className="text-[#FF8A75]">free information is ignored.</strong> 
-                    When you pay, you pay attention.
+                    Everything we teach can be used for entertainment, roleplay, and content creation. 
+                    If you choose to use it for... <em>other</em> purposes, that is between you and God.
                 </p>
                 
                 <div className="py-8">
@@ -49,10 +53,10 @@ export const ScamFooter: React.FC = () => {
                         onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})}
                         className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest text-lg md:text-xl hover:bg-[#FDFBF7] transition-colors shadow-[0_0_40px_rgba(255,138,117,0.4)]"
                     >
-                        I AM READY TO WORK
+                        I ACCEPT THE LIABILITY
                     </button>
                     <div className="text-[10px] uppercase tracking-[0.2em] mt-4 opacity-50 font-mono">
-                        Instant Access • Lifetime Updates
+                        By clicking, you confirm you are not a fed.
                     </div>
                 </div>
             </div>
