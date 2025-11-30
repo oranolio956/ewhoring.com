@@ -17,12 +17,12 @@ export const HeroSection: React.FC = () => {
       <header className="flex flex-col relative w-full max-w-[1920px] mx-auto">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10">
           {/* Main Headline */}
-          <h1 className="text-[14vw] leading-[0.85] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none">
+          <h1 className="text-[clamp(3rem,14vw,12rem)] leading-[0.85] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none">
             YOU'RE A DUDE?
           </h1>
           
           {/* Mascot - Positioned safely for mobile vs desktop */}
-          <div className="absolute top-[-15%] right-0 w-[25vw] h-[25vw] md:top-[-10%] md:right-[5%] md:w-[18vw] md:h-[18vw] opacity-90 z-0 pointer-events-none md:pointer-events-auto">
+          <div className="absolute top-[-10%] right-0 w-[25vw] h-[25vw] min-w-[120px] min-h-[120px] md:top-[-10%] md:right-[5%] md:w-[18vw] md:h-[18vw] opacity-90 z-0 pointer-events-none md:pointer-events-auto">
              <Mascot />
           </div>
         </div>
@@ -39,13 +39,13 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Second Headline */}
-        <h1 className="text-[14vw] leading-[0.85] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-[2vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
+        <h1 className="text-[clamp(3rem,14vw,12rem)] leading-[0.85] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-[2vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
           NOW YOU'RE NOT.
         </h1>
       </header>
 
       {/* Bottom Editorial Content */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-8 md:mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ ORANOLIO ARBITRAGE // EST. 2014 ]
@@ -71,7 +71,7 @@ export const HeroSection: React.FC = () => {
            <div className="text-left lg:text-right w-full lg:w-auto">
                 <button 
                   onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} 
-                  className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch"
+                  className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base"
                   aria-label="Start The Grift"
                 >
                     START THE GRIFT

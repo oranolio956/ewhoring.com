@@ -107,7 +107,7 @@ export const RedditChat: React.FC = () => {
   const currentChat = CONVERSATIONS[activeChat];
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] relative overflow-hidden border-b border-[#FDFBF7]/5">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] relative overflow-hidden border-b border-[#FDFBF7]/5 w-full">
       
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 opacity-5 pointer-events-none" 
@@ -131,23 +131,23 @@ export const RedditChat: React.FC = () => {
         </div>
 
         {/* Reddit Chat UI Container - Responsive Width Locked */}
-        <div className="w-full max-w-[450px] mx-auto rounded-t-xl overflow-hidden shadow-2xl font-sans text-sm relative border border-[#343536]">
+        <div className="w-full sm:max-w-[450px] mx-auto rounded-t-xl overflow-hidden shadow-2xl font-sans text-sm relative border border-[#343536]">
             
             {/* Reddit Header */}
             <div className="flex items-center justify-between px-3 py-2 border-b border-[#343536]" style={{ backgroundColor: REDDIT_HEADER }}>
                 <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-lg">
+                    <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-lg flex-shrink-0">
                          <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: currentChat.avatar_color }}>
                              u/
                          </div>
                          <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#46D160] rounded-full border-2 border-[#1A2A3A]"></div>
                     </div>
-                    <div>
-                        <div className="text-[#D7DADC] font-semibold text-xs leading-tight hover:underline cursor-pointer">
+                    <div className="min-w-0">
+                        <div className="text-[#D7DADC] font-semibold text-xs leading-tight hover:underline cursor-pointer truncate">
                             {currentChat.target}
                         </div>
                         <div className="text-[#818384] text-[10px] font-medium flex items-center gap-1">
-                            {currentChat.status} <span className="text-[8px] opacity-50">• Oranolio Secure</span>
+                            {currentChat.status} <span className="text-[8px] opacity-50 hidden sm:inline">• Oranolio Secure</span>
                         </div>
                     </div>
                 </div>
@@ -213,8 +213,8 @@ export const RedditChat: React.FC = () => {
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
                     </button>
                     <div className="flex-1 bg-[#272729] rounded-full h-10 flex items-center px-4 border border-[#343536] text-[#818384] text-sm cursor-not-allowed hover:border-[#4a4a4c] transition-colors relative overflow-hidden">
-                        <span className="relative z-10">Message {currentChat.target}</span>
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[8px] font-mono opacity-20 uppercase tracking-widest">Oranolio Chat</span>
+                        <span className="relative z-10 truncate">Message {currentChat.target}</span>
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[8px] font-mono opacity-20 uppercase tracking-widest hidden sm:block">Oranolio Chat</span>
                     </div>
                     <button className="text-[#818384] hover:bg-[#343536] p-2 rounded-full transition-colors">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -223,10 +223,10 @@ export const RedditChat: React.FC = () => {
             </div>
 
             {/* Strategy Badge Overlay */}
-            <div className="absolute top-16 left-1/2 -translate-x-1/2 z-10 pointer-events-none opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards]">
+            <div className="absolute top-16 left-1/2 -translate-x-1/2 z-10 pointer-events-none opacity-0 animate-[fadeIn_0.5s_ease-out_1s_forwards] w-max max-w-full px-2">
                  <div className="bg-[#1A2A3A]/80 backdrop-blur-md text-[#FDFBF7] text-[10px] font-bold px-4 py-1.5 rounded-full border border-[#FF8A75]/30 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse"></span>
-                    Oranolio Strategy: {currentChat.strategy}
+                    <span className="w-1.5 h-1.5 bg-[#FF8A75] rounded-full animate-pulse flex-shrink-0"></span>
+                    <span className="truncate">Oranolio Strategy: {currentChat.strategy}</span>
                  </div>
             </div>
             <style>{`

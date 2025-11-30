@@ -60,6 +60,10 @@
         --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
       }
 
+      html {
+        -webkit-text-size-adjust: 100%; /* Prevent iOS text scaling */
+      }
+
       html, body {
         width: 100%;
         overflow-x: hidden;
@@ -77,6 +81,7 @@
       img, svg, video {
         max-width: 100%;
         height: auto;
+        display: block;
       }
 
       /* Clean Selection */
@@ -179,6 +184,13 @@
         pointer-events: none;
         animation: floatParticle 10s infinite linear;
       }
+
+      /* Hardware Acceleration Class */
+      .will-change-transform {
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
     </style>
   <script type="importmap">
 {
@@ -205,7 +217,7 @@
         gestureDirection: 'vertical',
         smooth: true,
         mouseMultiplier: 1,
-        smoothTouch: false,
+        smoothTouch: false, // Native scroll on touch devices for perfection
         touchMultiplier: 2,
       });
 

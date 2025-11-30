@@ -24,17 +24,17 @@ export const PricingTerminal: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             
             {/* TERMINAL UI */}
-            <div className="lg:col-span-2 bg-[#0F1923] border border-[#00FF00]/30 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,0,0.1)] relative overflow-hidden">
+            <div className="lg:col-span-2 bg-[#0F1923] border border-[#00FF00]/30 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,0,0.1)] relative overflow-hidden w-full">
                 
                 {/* Header Bar */}
                 <div className="flex items-center gap-2 mb-6 border-b border-[#00FF00]/20 pb-4">
                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    <div className="ml-auto text-xs opacity-50">bash --login oranolio_protocol</div>
+                    <div className="ml-auto text-xs opacity-50 truncate">bash --login oranolio_protocol</div>
                 </div>
 
-                <div className="space-y-4 text-sm md:text-base leading-relaxed">
+                <div className="space-y-4 text-sm md:text-base leading-relaxed break-words">
                     <p>&gt; <span className="text-white">Loading modules...</span></p>
                     <p>&gt; [OK] Simp_Farming_v2.exe</p>
                     <p>&gt; [OK] Voice_Changer_Pro.exe</p>
@@ -51,7 +51,7 @@ export const PricingTerminal: React.FC = () => {
                             <span className="text-white font-bold text-xl">TOTAL ACCESS:</span>
                             <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$150</span>
                         </div>
-                        <button className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none">
+                        <button className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base">
                             [ EXECUTE TRANSACTION ]
                         </button>
                         <p className="text-[10px] mt-4 text-center opacity-50">
@@ -63,7 +63,7 @@ export const PricingTerminal: React.FC = () => {
             </div>
 
             {/* SOLD OUT TIER (Price Anchoring) */}
-            <div className="bg-[#0F1923] border border-red-500/30 rounded-xl p-6 relative opacity-70 hover:opacity-100 transition-opacity">
+            <div className="bg-[#0F1923] border border-red-500/30 rounded-xl p-6 relative opacity-70 hover:opacity-100 transition-opacity w-full">
                 <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                     <div className="border-4 border-red-500 text-red-500 px-6 py-2 font-black text-2xl uppercase tracking-widest transform -rotate-12 bg-black">
                         SOLD OUT
