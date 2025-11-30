@@ -41,7 +41,7 @@ export const GeoGate: React.FC = () => {
 
             <div className="space-y-4 text-lg text-[#FDFBF7]/80 leading-relaxed font-medium">
                 <p>
-                    This protocol relies on high-trust banking infrastructure (Stripe, CashApp, PayPal F&F). 
+                    This protocol relies on high-trust banking infrastructure (Stripe, CashApp, PayPal F&F, Venmo, Zelle). 
                     <strong className="text-white block mt-2">These do not work in the third world.</strong>
                 </p>
                 <p>
