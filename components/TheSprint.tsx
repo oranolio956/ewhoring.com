@@ -96,14 +96,19 @@ export const TheSprint: React.FC = () => {
                 </div>
               ))}
 
-              {/* Day 8 - The Void */}
-              <div className="mt-8 p-6 text-center border-2 border-dashed border-[#FDFBF7]/10 rounded-xl opacity-50 relative overflow-hidden">
+              {/* Day 8 - The Graduation */}
+              <div className="mt-8 p-6 text-center border-2 border-dashed border-[#FDFBF7]/10 rounded-xl relative overflow-hidden hover:border-[#FF8A75]/50 transition-colors group">
                  <div className="absolute inset-0 flex items-center justify-center text-[3rem] font-bold text-[#FDFBF7]/5 -rotate-12 pointer-events-none">
                     ORANOLIO
                  </div>
-                 <h3 className="font-mono text-sm uppercase tracking-widest mb-2">Day 08</h3>
-                 <p className="font-bold text-xl">SILENCE.</p>
-                 <p className="text-xs mt-2 text-[#FDFBF7]/50">(You are now rich. We are strangers.)</p>
+                 <h3 className="font-mono text-sm uppercase tracking-widest mb-2 text-[#FF8A75]">Day 08</h3>
+                 <p className="font-bold text-xl mb-4">GRADUATION.</p>
+                 
+                 <div className="bg-[#1A2A3A]/80 p-4 rounded-lg border border-[#2D9C8E]/30 inline-block max-w-lg shadow-lg backdrop-blur-sm">
+                     <p className="text-xs md:text-sm text-[#FDFBF7]/90 leading-relaxed font-medium italic">
+                        "(Relax. I'll still be here. If I thought you were actually retarded, I wouldn't have even sold this to you. I don't take money from losers. We eat together now.)"
+                     </p>
+                 </div>
               </div>
             </div>
           </div>
