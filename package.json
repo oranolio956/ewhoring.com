@@ -13,7 +13,9 @@
     "monitor:ranks": "node scripts/monitoring/rank-monitor.mjs",
     "monitor:links": "node scripts/monitoring/link-monitor.mjs",
     "deploy:worker": "wrangler deploy",
-    "setup": "node scripts/setup.mjs"
+    "setup": "node scripts/setup.mjs",
+    "update:sitemap": "node scripts/sitemap/update-sitemap.mjs",
+    "build:links": "node scripts/offpage/link-building.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
