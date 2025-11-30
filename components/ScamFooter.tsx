@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { Mascot } from './Mascot';
+import { usePayment } from '../contexts/PaymentContext';
 
 export const ScamFooter: React.FC = () => {
+  const { openPayment } = usePayment();
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
@@ -46,8 +48,8 @@ export const ScamFooter: React.FC = () => {
                 
                 <div className="py-8">
                     <button 
-                        onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})}
-                        className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest text-lg md:text-xl hover:bg-[#FDFBF7] transition-colors shadow-[0_0_40px_rgba(255,138,117,0.4)]"
+                        onClick={openPayment}
+                        className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest text-lg md:text-xl hover:bg-[#FDFBF7] transition-colors shadow-[0_0_40px_rgba(255,138,117,0.4)] cursor-pointer"
                     >
                         I ACCEPT THE LIABILITY
                     </button>

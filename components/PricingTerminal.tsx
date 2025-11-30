@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 export const PricingTerminal: React.FC = () => {
+  const { openPayment } = usePayment();
+  
   return (
     <section id="pricing" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
       
@@ -54,7 +57,10 @@ export const PricingTerminal: React.FC = () => {
                             <span className="text-white font-bold text-xl">TOTAL ACCESS:</span>
                             <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$150</span>
                         </div>
-                        <button className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00]">
+                        <button 
+                            onClick={openPayment}
+                            className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00] cursor-pointer"
+                        >
                             [ EXECUTE TRANSACTION ]
                         </button>
                         <p className="text-[10px] mt-4 text-center opacity-50">

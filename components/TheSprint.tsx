@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 const days = [
   { day: "01", title: "THE WIPE", desc: "Digital footprint erasure. If you exist, you fail." },
@@ -12,6 +13,8 @@ const days = [
 ];
 
 export const TheSprint: React.FC = () => {
+  const { openPayment } = usePayment();
+  
   return (
     <section id="sprint" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
       
@@ -63,7 +66,7 @@ export const TheSprint: React.FC = () => {
               </div>
             </div>
 
-            <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} className="w-full py-4 bg-[#FDFBF7] text-[#1A2A3A] font-bold uppercase tracking-widest md:tracking-[0.2em] hover:bg-[#FF8A75] transition-colors rounded-lg shadow-[0_0_20px_rgba(255,138,117,0.3)] text-[3vw] md:text-base whitespace-nowrap">
+            <button onClick={openPayment} className="w-full py-4 bg-[#FDFBF7] text-[#1A2A3A] font-bold uppercase tracking-widest md:tracking-[0.2em] hover:bg-[#FF8A75] transition-colors rounded-lg shadow-[0_0_20px_rgba(255,138,117,0.3)] text-[3vw] md:text-base whitespace-nowrap cursor-pointer">
                Initialize Protocol
             </button>
           </div>

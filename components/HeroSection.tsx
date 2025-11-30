@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { Mascot } from './Mascot';
+import { usePayment } from '../contexts/PaymentContext';
 
 export const HeroSection: React.FC = () => {
+  const { openPayment } = usePayment();
   return (
     <header id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto will-change-transform" style={{ backfaceVisibility: 'hidden' }}>
       
@@ -77,8 +79,8 @@ export const HeroSection: React.FC = () => {
         <div className="flex lg:col-span-4 justify-start lg:justify-end items-end gap-4 mt-4 lg:mt-0 w-full">
            <div className="text-left lg:text-right w-full lg:w-auto">
                 <button 
-                  onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} 
-                  className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base"
+                  onClick={openPayment} 
+                  className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
                   aria-label="Start The Grift"
                 >
                     START THE GRIFT

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 // AGGRESSIVE KEYWORD TARGETING - MATCHING SITE VOICE
 // The voice: Aggressive, insulting, self-aware dark humor
@@ -71,6 +72,7 @@ const methods = [
 
 export const KeywordTargets: React.FC = () => {
   const [expandedPlatform, setExpandedPlatform] = useState<number | null>(null);
+  const { openPayment } = usePayment();
 
   return (
     <>
@@ -390,7 +392,6 @@ export const KeywordTargets: React.FC = () => {
               { href: "#find-simps", label: "Where Simps Live" },
               { href: "#learn", label: "WTF is Ewhoring" },
               { href: "#sprint", label: "7-Day Protocol" },
-              { href: "#pricing", label: "Buy The Damn Thing" },
               { href: "#faq", label: "Stupid Questions" }
             ].map((link, i) => (
               <a 
@@ -401,6 +402,12 @@ export const KeywordTargets: React.FC = () => {
                 {link.label}
               </a>
             ))}
+            <button 
+              onClick={openPayment}
+              className="px-3 py-1.5 text-xs font-mono border border-[#FF8A75]/50 bg-[#FF8A75]/10 text-[#FF8A75] hover:bg-[#FF8A75] hover:text-[#1A2A3A] transition-colors cursor-pointer"
+            >
+              Buy The Damn Thing
+            </button>
           </div>
         </div>
       </nav>

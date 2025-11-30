@@ -1,9 +1,11 @@
 import React from 'react';
+import { usePayment } from '../contexts/PaymentContext';
 
 // SEO Content Component - Featured Snippet Bait
 // VOICE: Aggressive, insulting, self-aware dark humor - matching site tone
 
 export const SEOContent: React.FC = () => {
+  const { openPayment } = usePayment();
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden" id="learn">
       
@@ -173,9 +175,12 @@ export const SEOContent: React.FC = () => {
             <p className="text-[#FDFBF7]/60 mb-4">
               This is the free preview. The actual Protocol has scripts, templates, server lists, content generation guides, and 10 years of my brain.
             </p>
-            <a href="#pricing" className="inline-block bg-[#FF8A75] text-[#1A2A3A] px-6 py-3 font-bold uppercase tracking-widest text-sm hover:bg-[#FDFBF7] transition-colors">
+            <button 
+              onClick={openPayment}
+              className="inline-block bg-[#FF8A75] text-[#1A2A3A] px-6 py-3 font-bold uppercase tracking-widest text-sm hover:bg-[#FDFBF7] transition-colors cursor-pointer"
+            >
               Fine, I'll Buy It →
-            </a>
+            </button>
           </div>
         </div>
 

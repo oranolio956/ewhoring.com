@@ -36,6 +36,8 @@ import { AsSeenOn } from './components/AsSeenOn';
 import { ClickSparkle } from './components/ClickSparkle';
 import { SEOContent } from './components/SEOContent';
 import { KeywordTargets } from './components/KeywordTargets';
+import { CryptoPayment } from './components/CryptoPayment';
+import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 
 const WARNING_MESSAGES = [
   "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
@@ -45,6 +47,24 @@ const WARNING_MESSAGES = [
   "⚠ Warning: Discord is patching the 'Voice Changer' exploit soon. Hurry.",
   "⚠ Spending 8 hours to scam $20 is a minimum wage violation."
 ];
+
+// Crypto Payment Modal Wrapper - uses the payment context
+const CryptoPaymentModal: React.FC = () => {
+  const { isPaymentOpen, closePayment } = usePayment();
+  return <CryptoPayment isOpen={isPaymentOpen} onClose={closePayment} />;
+};
+
+// Global CTA Button - for use in App.tsx
+const GlobalCTAButton: React.FC = () => {
+  const { openPayment } = usePayment();
+  return (
+    <button onClick={openPayment} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200 btn-glitch">
+      <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
+      <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-100 group-hover:scale-x-0 transition-transform origin-right duration-500 ease-out"></div>
+      <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
+    </button>
+  );
+};
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -611,7 +631,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
+    <PaymentProvider>
       {loading && <Preloader onComplete={() => setLoading(false)} />}
       
       {!loading && (
@@ -623,6 +643,7 @@ const App: React.FC = () => {
           <CookieConsent />
           <ClickSparkle />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
+          <CryptoPaymentModal />
 
           {/* Copy Paste Mock Toast */}
           <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[99999] bg-[#FF0000] text-white px-6 py-2 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl transition-all duration-300 ${copyToast ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}`}>
@@ -773,11 +794,7 @@ const App: React.FC = () => {
                    Stop letting your conscience get in the way of your bag. Men are desperate. You are broke. The solution is simple.
                  </p>
                  
-                 <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior: 'smooth'})} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200 btn-glitch">
-                    <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
-                    <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-100 group-hover:scale-x-0 transition-transform origin-right duration-500 ease-out"></div>
-                    <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
-                 </button>
+                 <GlobalCTAButton />
               </div>
             </section>
 
@@ -817,7 +834,7 @@ const App: React.FC = () => {
         </div>
       )}
       <Analytics />
-    </>
+    </PaymentProvider>
   );
 };
 
