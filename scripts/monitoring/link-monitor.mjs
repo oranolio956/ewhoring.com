@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
+import { config } from 'dotenv';
 import https from 'node:https';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+// Load environment variables from .env file
+config({ path: path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '.env') });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..', '..');
