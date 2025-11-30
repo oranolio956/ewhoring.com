@@ -1,10 +1,50 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mascot } from './Mascot';
 import { usePayment } from '../contexts/PaymentContext';
 
 export const HeroSection: React.FC = () => {
   const { openPayment } = usePayment();
+  const [referrerMessage, setReferrerMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Check referrer on mount
+    const referrer = document.referrer;
+    const currentDomain = window.location.hostname;
+
+    if (referrer && !referrer.includes(currentDomain)) {
+      const referrerUrl = new URL(referrer);
+
+      // Define referrer messages
+      const referrerMap: { [key: string]: string } = {
+        'hackforums.net': 'Welcome HackForum User!',
+        'raidforums.com': 'Welcome RaidForum User!',
+        'crimebb.net': 'Welcome CrimeBB User!',
+        'exploit.in': 'Welcome Exploit User!',
+        'reddit.com': 'Welcome Reddit User!',
+        'twitter.com': 'Welcome Twitter User!',
+        'x.com': 'Welcome X User!',
+        'discord.com': 'Welcome Discord User!',
+        'telegram.org': 'Welcome Telegram User!',
+        '4chan.org': 'Welcome 4chan User!',
+        '8kun.top': 'Welcome 8kun User!',
+        'linkedin.com': 'Welcome LinkedIn User!',
+        'facebook.com': 'Welcome Facebook User!',
+        'instagram.com': 'Welcome Instagram User!',
+        'tiktok.com': 'Welcome TikTok User!',
+        'youtube.com': 'Welcome YouTube User!'
+      };
+
+      // Check for exact domain match
+      const domain = referrerUrl.hostname.replace('www.', '');
+      if (referrerMap[domain]) {
+        setReferrerMessage(referrerMap[domain]);
+        // Auto-hide after 5 seconds
+        setTimeout(() => setReferrerMessage(null), 5000);
+      }
+    }
+  }, []);
+
   return (
     <header id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto will-change-transform" style={{ backfaceVisibility: 'hidden' }}>
       
@@ -29,7 +69,18 @@ export const HeroSection: React.FC = () => {
           <h1 className="text-[clamp(2.25rem,12vw,10rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10 transform-gpu">
             <span className="sr-only">Ewhore Discord Servers 2025 - Complete Ewhoring Guide - </span>YOU'RE A DUDE?
           </h1>
-          
+
+          {/* Referrer Welcome Message */}
+          {referrerMessage && (
+            <div className="mt-4 md:mt-6 animate-[fadeInUp_0.8s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0">
+              <div className="inline-flex items-center gap-3 bg-[#2D9C8E] text-white px-6 py-3 rounded-full shadow-lg shadow-[#2D9C8E]/30 transform-gpu">
+                <span className="text-2xl animate-bounce">👋</span>
+                <span className="font-bold text-lg uppercase tracking-widest">{referrerMessage}</span>
+                <span className="text-sm opacity-80">Found the good stuff!</span>
+              </div>
+            </div>
+          )}
+
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
           <div className="absolute top-[-10%] right-[-20%] w-[40vw] h-[40vw] min-w-[120px] min-h-[120px] md:top-[-15%] md:right-[2%] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
