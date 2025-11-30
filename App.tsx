@@ -38,6 +38,7 @@ import { SEOContent } from './components/SEOContent';
 import { KeywordTargets } from './components/KeywordTargets';
 import { CryptoPayment } from './components/CryptoPayment';
 import { PaymentProvider, usePayment } from './contexts/PaymentContext';
+import { AuthorityStack } from './components/AuthorityStack';
 
 const WARNING_MESSAGES = [
   "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
@@ -216,6 +217,31 @@ const App: React.FC = () => {
           }
         },
         "sameAs": ["https://twitter.com/oranolio", "https://ewhoring.com"]
+      },
+      // 3b. Compliance / trust landing pages
+      {
+        "@type": "WebPage",
+        "@id": "https://ewhoring.com/press-kit",
+        "url": "https://ewhoring.com/press-kit.html",
+        "name": "Oranolio Press Kit",
+        "description": "Official logos, founder bios, verification documents, and media contact.",
+        "lastReviewed": currentDate
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ewhoring.com/privacy",
+        "url": "https://ewhoring.com/privacy.html",
+        "name": "Privacy Policy",
+        "description": "Data handling, retention, and consent management for ewhoring.com.",
+        "lastReviewed": currentDate
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ewhoring.com/terms",
+        "url": "https://ewhoring.com/terms.html",
+        "name": "Terms of Service",
+        "description": "License, refund, and arbitration language governing the Oranolio Protocol.",
+        "lastReviewed": currentDate
       },
       // 4. Course with enhanced details
       {
@@ -798,6 +824,8 @@ const App: React.FC = () => {
               </div>
             </section>
 
+            <AuthorityStack />
+
             {/* Internal Linking for SEO - Hidden for users, seen by bots (or visible as resources) */}
             <section className="py-12 bg-[#0F1923] border-t border-[#FDFBF7]/10">
               <div className="max-w-6xl mx-auto px-4">
@@ -827,9 +855,11 @@ const App: React.FC = () => {
                  © {new Date().getFullYear()} Oranolio. Exploiting Losers Since 2014.
               </div>
               
-              <div className="flex gap-4 text-[10px] opacity-50 underline cursor-pointer">
-                 <span onClick={() => setLegalOpen(true)}>Legal Liability</span>
-                 <span>Terms of Service (LOL)</span>
+              <div className="flex gap-4 text-[10px] opacity-70 underline">
+                 <button type="button" onClick={() => setLegalOpen(true)} className="underline">Legal Liability</button>
+                 <a href="/terms.html" className="underline">Terms</a>
+                 <a href="/privacy.html" className="underline">Privacy</a>
+                 <a href="/press-kit.html" className="underline">Press Kit</a>
               </div>
               
               {/* Unique Visitor Tracker - Interactive */}

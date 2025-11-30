@@ -1,0 +1,14 @@
+name = "ewhoring-cloak"
+main = "edge/cloak-worker.js"
+compatibility_date = "2024-11-30"
+
+[vars]
+HUMAN_DESTINATION = "https://www.reddit.com/r/ewhoring/"
+
+[[kv_namespaces]]
+binding = "SEO_CACHE"
+id = "your_kv_namespace_id_here"
+preview_id = "your_kv_preview_id_here"
+
+[build]
+command = "npm run build"

@@ -64,6 +64,11 @@ export const ScamFooter: React.FC = () => {
                     <p>
                         The information presented on this website is for educational and entertainment purposes only. Oranolio Holdings Inc. provides theoretical strategies for digital persona management. We do not guarantee any specific financial results. The user assumes all risk and liability for the use of this information. We are not responsible for any actions taken by users on third-party platforms. This site uses cookies for analytics. All rights reserved.
                     </p>
+                    <div className="mt-4 flex flex-wrap gap-4 text-[9px] tracking-widest">
+                        <a href="/privacy.html" className="underline hover:text-[#2D9C8E]">Privacy Policy</a>
+                        <a href="/terms.html" className="underline hover:text-[#2D9C8E]">Terms</a>
+                        <a href="/press-kit.html" className="underline hover:text-[#2D9C8E]">Press Kit</a>
+                    </div>
                 </div>
             </div>
         </div>

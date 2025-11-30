@@ -1,0 +1,99 @@
+name: SEO Monitoring & Automation
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+  push:
+    paths:
+      - 'monitoring/**'
+      - 'scripts/monitoring/**'
+
+jobs:
+  rank-monitoring:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run rank monitoring
+        run: npm run monitor:ranks
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+
+      - name: Run link velocity check
+        run: npm run monitor:links
+        env:
+          AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+
+  content-generation:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate new landing pages
+        run: npm run generate:pages
+
+      - name: Ping IndexNow
+        run: npm run ping:indexnow
+
+      - name: Commit and push generated content
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/generated/
+          git commit -m "🤖 Auto-generate SEO content [$(date +%Y-%m-%d)]" || echo "No changes to commit"
+          git push
+
+  syndication:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run syndication campaigns
+        run: npm run syndicate
+        env:
+          REDDIT_TOKEN: ${{ secrets.REDDIT_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+  alerts:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [rank-monitoring, syndication]
+    steps:
+      - name: Send alerts on failure
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{"content": "🚨 SEO Monitoring Alert: Workflow failed - check logs"}' \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}

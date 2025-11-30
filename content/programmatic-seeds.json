@@ -1,0 +1,59 @@
+{
+  "city_targets": [
+    {
+      "slug": "discord-ewhoring-new-york",
+      "city": "New York",
+      "metro_stat": "$6.1B annual sugar spend",
+      "platform_mix": ["Discord", "Telegram", "Tinder"],
+      "server_examples": [
+        { "name": "NYC Late Night", "platform": "Discord", "gate": "Nitro Boost", "hook": "live cam tease" },
+        { "name": "Wall Street Widowers", "platform": "Telegram", "gate": "$150 crypto", "hook": "exclusive finance RP" }
+      ],
+      "faq_seed": [
+        { "q": "Is ewhoring legal in New York?", "a": "Education only. Use VPN + anonymized payments." },
+        { "q": "Best payment apps for NYC simps?", "a": "CashApp, Venmo, and Binance gift cards convert fastest." }
+      ]
+    },
+    {
+      "slug": "discord-ewhoring-london",
+      "city": "London",
+      "metro_stat": "Top UK spenders on GFE roleplay",
+      "platform_mix": ["Discord", "Telegram"],
+      "server_examples": [
+        { "name": "Soho Secrets", "platform": "Discord", "gate": "Patreon", "hook": "voice note addiction" }
+      ],
+      "faq_seed": [
+        { "q": "What time zones convert in London?", "a": "GMT evenings + weekend afternoons show highest AOV." }
+      ]
+    }
+  ],
+  "comparison_targets": [
+    {
+      "slug": "ewhoring-vs-onlyfans",
+      "methods": [
+        { "name": "Classic Discord Ewhoring", "risk": "Medium", "setup_hours": 6, "ticket": "$50-$150" },
+        { "name": "Faceless OnlyFans", "risk": "Low", "setup_hours": 12, "ticket": "$20-$60" },
+        { "name": "AI Persona Rentals", "risk": "High", "setup_hours": 18, "ticket": "$150-$450" }
+      ]
+    }
+  ],
+  "script_targets": [
+    {
+      "platform": "Discord",
+      "persona": "Runaway dancer",
+      "hook": "need quick rent",
+      "objection": "no video proof",
+      "cta": "PayPal friends & family",
+      "script": "omg ur funny 😂 I literally just quit my club bc manager was creepy. I got this stash of clips from my last shoot... send $75 f&f and I'll drop the zip + voice note rn."
+    },
+    {
+      "platform": "Telegram",
+      "persona": "Crypto brat",
+      "hook": "exclusive alpha leaks",
+      "objection": "scam fear",
+      "cta": "USDT TRC20",
+      "script": "I only add 5 guys/week to the vault bc alpha leaks get killed fast. Drop 120 USDT and you get tonight's vid + live texting for 24h. If it's mid I'll refund. Deal?"
+    }
+  ]
+}
+

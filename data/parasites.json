@@ -1,0 +1,35 @@
+[
+  {
+    "platform": "Medium",
+    "url": "https://medium.com/@oranolio/ewhoring-guide-2025-b6c22d5c2d4f",
+    "target_keyword": "ewhoring guide",
+    "status": "draft",
+    "index_state": "pending",
+    "next_action": "embed CTA + set canonical to https://ewhoring.com/"
+  },
+  {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/pulse/discord-monetization-protocol-oranolio",
+    "target_keyword": "discord monetization",
+    "status": "outline",
+    "index_state": "n/a",
+    "next_action": "record 60s video intro, schedule for Tuesday drop"
+  },
+  {
+    "platform": "Google Sites",
+    "url": "https://sites.google.com/view/ewhoring-scripts-hub/home",
+    "target_keyword": "ewhoring scripts",
+    "status": "live",
+    "index_state": "requested",
+    "next_action": "run IndexNow ping + drip 5 T2 links"
+  },
+  {
+    "platform": "Reddit",
+    "url": "https://www.reddit.com/r/sidehustle/comments/xxxxx/faceless_onlyfans_year_two_numbers/",
+    "target_keyword": "faceless onlyfans",
+    "status": "queued",
+    "index_state": "n/a",
+    "next_action": "prep mod pitch and screenshot proof"
+  }
+]
+

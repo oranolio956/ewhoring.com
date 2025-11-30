@@ -7,7 +7,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:pages": "node scripts/programmatic/generate-landing-pages.mjs",
+    "ping:indexnow": "node scripts/offpage/ping-indexnow.mjs",
+    "syndicate": "node scripts/engagement/syndicate-posts.mjs",
+    "monitor:ranks": "node scripts/monitoring/rank-monitor.mjs",
+    "monitor:links": "node scripts/monitoring/link-monitor.mjs",
+    "deploy:worker": "wrangler deploy",
+    "setup": "node scripts/setup.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",

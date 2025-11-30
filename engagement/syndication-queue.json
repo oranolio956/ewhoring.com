@@ -1,0 +1,28 @@
+[
+  {
+    "id": "reddit-faceless",
+    "platform": "reddit",
+    "subreddit": "sidehustle",
+    "title": "How I automated faceless OnlyFans using AI persona farms",
+    "url": "https://ewhoring.com/onlyfans-without-showing-face.html",
+    "status": "error",
+    "error": "Missing REDDIT_TOKEN"
+  },
+  {
+    "id": "tiktok-simpmap",
+    "platform": "tiktok",
+    "title": "Mapping simp density by US city",
+    "asset": "s3://ewhoring-assets/tiktok/simp-map.mp4",
+    "url": "https://ewhoring.com/discord-ewhoring-new-york.html",
+    "status": "render",
+    "published_at": "2025-11-30T19:02:18.634Z"
+  },
+  {
+    "id": "telegram-drop",
+    "platform": "telegram",
+    "title": "New Telegram scripts uploaded",
+    "url": "https://ewhoring.com/ewhoring-telegram-groups.html",
+    "status": "error",
+    "error": "Missing Telegram env vars"
+  }
+]
