@@ -23,6 +23,8 @@ import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
 import { ThePhilosophy } from './components/ThePhilosophy';
 import { GeoGate } from './components/GeoGate';
+import { LoserFilter } from './components/LoserFilter';
+import { OranolioSlam } from './components/OranolioSlam';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -228,6 +230,9 @@ const App: React.FC = () => {
             {/* Earnings Calculator */}
             <ROICalculator />
 
+            {/* DRAMATIC SLAM ANIMATION HERE */}
+            <OranolioSlam />
+
             <Testimonials />
 
             {/* ID for smooth scrolling */}
@@ -243,6 +248,9 @@ const App: React.FC = () => {
 
             {/* The Reality Check / Aggressive Filter */}
             <RealityCheck />
+            
+            {/* The Loser Filter - Aggressive */}
+            <LoserFilter />
             
             {/* The Geographic Gate */}
             <GeoGate />
