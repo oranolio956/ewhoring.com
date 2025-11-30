@@ -212,7 +212,7 @@ export const MoneyPhone: React.FC = () => {
 
                   {/* Status Bar */}
                   <div className="flex justify-between px-6 mb-2 text-[#1A2A3A]/40 text-[9px] md:text-[10px] font-bold relative z-10">
-                     <span>3:00 AM</span>
+                     <span>3<span className="animate-pulse">:</span>00 AM</span>
                      <div className="flex gap-1">
                        <span className="font-mono tracking-tight">LTE</span>
                        <span>69%</span>

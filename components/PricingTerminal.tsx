@@ -34,7 +34,7 @@ export const PricingTerminal: React.FC = () => {
                     <div className="ml-auto text-xs opacity-50 truncate">bash --login oranolio_protocol</div>
                 </div>
 
-                <div className="space-y-4 text-sm md:text-base leading-relaxed break-words">
+                <div className="space-y-4 text-sm md:text-base leading-relaxed break-words drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
                     <p>&gt; <span className="text-white">Loading modules...</span></p>
                     <p>&gt; [OK] Simp_Farming_v2.exe</p>
                     <p>&gt; [OK] Voice_Changer_Pro.exe</p>

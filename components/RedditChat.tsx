@@ -161,7 +161,7 @@ export const RedditChat: React.FC = () => {
             {/* Chat Body */}
             <div 
                 ref={scrollRef} 
-                className="h-[350px] md:h-[400px] overflow-y-auto px-4 py-4 space-y-3 relative" 
+                className="h-[350px] md:h-[400px] overflow-y-auto px-4 py-4 space-y-3 relative custom-inner-scrollbar" 
                 style={{ backgroundColor: REDDIT_BG }}
             >
                 {/* Timestamp */}

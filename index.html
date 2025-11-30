@@ -90,13 +90,13 @@
         display: block;
       }
 
-      /* Clean Selection */
+      /* Clean Selection - Aggressive Red */
       ::selection {
-        background: #2D9C8E;
+        background: #FF0000;
         color: #FDFBF7;
       }
       ::-moz-selection {
-        background: #2D9C8E;
+        background: #FF0000;
         color: #FDFBF7;
       }
       
@@ -114,6 +114,25 @@
       ::-webkit-scrollbar-thumb {
         background: #2D9C8E;
         border-radius: 0px;
+      }
+
+      /* Inner Scrollbar Utils */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      .custom-inner-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-inner-scrollbar::-webkit-scrollbar-track {
+        background: #1A1A1B;
+      }
+      .custom-inner-scrollbar::-webkit-scrollbar-thumb {
+        background: #343536;
+        border-radius: 4px;
       }
 
       /* Base64 PNG Noise Pattern (High Perf) */
