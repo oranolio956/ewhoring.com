@@ -100,39 +100,53 @@ export const FalseIdols: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Rough Sketch Character */}
-                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
-                    <div className="relative bg-white p-8 rounded-2xl shadow-xl border-4 border-[#1A2A3A] transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                        {/* Rough Sketch Style Character */}
-                        <div className="text-center space-y-4">
-                            {/* Bald Head Sketch */}
-                            <div className="relative">
-                                <div className="w-32 h-32 mx-auto bg-[#E0AC69] rounded-full border-4 border-[#1A2A3A] relative overflow-hidden">
-                                    {/* Rough sketch lines */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#1A2A3A]/10 to-transparent"></div>
-                                    <div className="absolute top-4 left-4 w-8 h-6 border-2 border-[#1A2A3A] rounded-full bg-[#1A2A3A]"></div>
-                                    <div className="absolute top-4 right-4 w-8 h-6 border-2 border-[#1A2A3A] rounded-full bg-[#1A2A3A]"></div>
-                                </div>
-                            </div>
+                {/* The Character SVG - Constrained Width */}
+                <svg viewBox="0 0 400 400" className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300">
+                    <defs>
+                        <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stopColor="#E0AC69" />
+                            <stop offset="100%" stopColor="#C68E56" />
+                        </linearGradient>
+                    </defs>
 
-                            {/* Body Sketch */}
-                            <div className="text-6xl font-bold text-[#1A2A3A] leading-none">🧔‍♂️</div>
+                    {/* Bald Head */}
+                    <path d="M100 350 L100 200 Q100 50 200 50 Q300 50 300 200 L300 350 Z" fill="url(#skin)" stroke="#1A2A3A" strokeWidth="4" />
 
-                            {/* Rough Speech Bubble */}
-                            <div className="bg-[#1A2A3A] text-white p-3 rounded-lg transform -rotate-2 text-xs font-bold uppercase tracking-widest">
-                                "GRIND HARDER BRO"
-                            </div>
+                    {/* Ears */}
+                    <path d="M90 200 Q70 200 70 230 Q70 260 100 260" fill="url(#skin)" stroke="#1A2A3A" strokeWidth="4" />
+                    <path d="M310 200 Q330 200 330 230 Q330 260 300 260" fill="url(#skin)" stroke="#1A2A3A" strokeWidth="4" />
 
-                            {/* Cigar Sketch */}
-                            <div className="text-3xl transform rotate-12">🚬</div>
+                    {/* Sunglasses */}
+                    <g transform="translate(0, 10)">
+                        <rect x="130" y="180" width="60" height="30" rx="5" fill="#1A2A3A" />
+                        <rect x="210" y="180" width="60" height="30" rx="5" fill="#1A2A3A" />
+                        <line x1="190" y1="195" x2="210" y2="195" stroke="#1A2A3A" strokeWidth="4" />
+                        <line x1="100" y1="190" x2="130" y2="190" stroke="#1A2A3A" strokeWidth="4" />
+                        <line x1="270" y1="190" x2="300" y2="190" stroke="#1A2A3A" strokeWidth="4" />
 
-                            {/* Name Tag - Rough */}
-                            <div className="bg-[#FF8A75] text-[#1A2A3A] px-4 py-2 rounded font-bold text-sm uppercase tracking-widest border-2 border-[#1A2A3A] transform rotate-1">
-                                BOTTOM G
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        {/* Reflection */}
+                        <path d="M135 185 L150 205" stroke="white" strokeWidth="2" opacity="0.3" />
+                        <path d="M215 185 L230 205" stroke="white" strokeWidth="2" opacity="0.3" />
+                    </g>
+
+                    {/* Mouth / Chin */}
+                    <path d="M180 280 Q200 290 220 280" fill="none" stroke="#1A2A3A" strokeWidth="3" />
+
+                    {/* Beard Stubble */}
+                    <path d="M150 280 Q200 330 250 280" fill="#1A2A3A" fillOpacity="0.1" />
+
+                    {/* Cigar */}
+                    <rect x="220" y="275" width="80" height="15" fill="#5D4037" rx="2" transform="rotate(10 220 275)" stroke="#1A2A3A" strokeWidth="2" />
+                    <rect x="290" y="287" width="5" height="15" fill="#9E9E9E" transform="rotate(10 220 275)" />
+
+                    {/* Smoke */}
+                    <circle cx="320" cy="270" r="10" fill="#E0E0E0" opacity="0.5" className="animate-ping" />
+                    <circle cx="340" cy="250" r="15" fill="#E0E0E0" opacity="0.3" className="animate-ping" style={{animationDelay: '0.5s'}} />
+
+                    {/* Name Tag */}
+                    <rect x="150" y="350" width="100" height="40" fill="#FF8A75" rx="5" stroke="#1A2A3A" strokeWidth="3" />
+                    <text x="200" y="375" textAnchor="middle" fontSize="16" fontWeight="bold" fontFamily="monospace" fill="#1A2A3A">BOTTOM G</text>
+                </svg>
 
             </div>
 
