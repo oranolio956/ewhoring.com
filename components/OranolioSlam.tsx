@@ -31,8 +31,8 @@ export const OranolioSlam: React.FC = () => {
 
   return (
     <>
-      {/* Invisible Trigger Line */}
-      <div ref={triggerRef} className="w-full h-1 pointer-events-none opacity-0 my-12" />
+      {/* Invisible Trigger Line - Removed vertical spacing to close gap */}
+      <div ref={triggerRef} className="w-full h-0 pointer-events-none opacity-0" />
 
       {/* The Overlay */}
       {active && (

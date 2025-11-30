@@ -3,7 +3,7 @@ import React from 'react';
 
 export const LoserFilter: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
       {/* Background Warning Tape */}
       <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
@@ -15,7 +15,7 @@ export const LoserFilter: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto relative z-10 text-center">
+      <div className="max-w-5xl mx-auto relative z-10 text-center w-full">
         
         <div className="w-20 h-20 mx-auto bg-[#FF8A75] rounded-full flex items-center justify-center text-4xl mb-8 animate-bounce shadow-[0_0_30px_#FF8A75]">
             🖕

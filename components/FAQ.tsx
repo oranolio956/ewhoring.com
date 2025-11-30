@@ -28,9 +28,9 @@ export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7]">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12 text-center">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7]">
+      <div className="max-w-4xl mx-auto w-full">
+        <div className="mb-8 md:mb-12 text-center">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 font-['Space_Grotesk'] leading-none">
               QUESTIONS FROM <br/>
               <span className="text-[#FF8A75]">INSECURE MEN</span>
@@ -66,7 +66,7 @@ export const FAQ: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-12 p-6 md:p-8 border border-dashed border-[#FDFBF7]/20 rounded-xl text-center bg-[#1A2A3A] relative overflow-hidden">
+        <div className="mt-8 md:mt-12 p-6 md:p-8 border border-dashed border-[#FDFBF7]/20 rounded-xl text-center bg-[#1A2A3A] relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-stripes.png')] opacity-10"></div>
             <p className="relative z-10 text-xs md:text-sm font-mono text-[#FDFBF7]/50 max-w-2xl mx-auto leading-relaxed">
                 *Disclaimer: We are not responsible if a 65-year-old oil tycoon named 'BigTex' falls in love with you and buys you a condominium in Miami. That is a tax liability you must handle yourself.

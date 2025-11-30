@@ -25,8 +25,8 @@ export const ROICalculator: React.FC = () => {
   };
 
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Text Side */}

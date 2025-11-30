@@ -3,14 +3,14 @@ import React from 'react';
 
 export const PricingTerminal: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#00FF00] font-mono relative overflow-hidden border-t border-[#00FF00]/20">
       
       {/* Matrix Rain Effect (Static CSS implementation for performance) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(0, 255, 0, .3) 25%, rgba(0, 255, 0, .3) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, .3) 75%, rgba(0, 255, 0, .3) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 0, .3) 25%, rgba(0, 255, 0, .3) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, .3) 75%, rgba(0, 255, 0, .3) 76%, transparent 77%, transparent)', backgroundSize: '50px 50px' }}>
       </div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10 w-full">
         
         <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4">

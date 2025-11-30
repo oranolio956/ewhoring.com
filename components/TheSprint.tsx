@@ -13,7 +13,7 @@ const days = [
 
 export const TheSprint: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
       
       {/* Background Tech Lines */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -32,7 +32,7 @@ export const TheSprint: React.FC = () => {
          </div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           
@@ -59,7 +59,7 @@ export const TheSprint: React.FC = () => {
               </p>
             </div>
 
-            <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} className="w-full py-4 bg-[#FDFBF7] text-[#1A2A3A] font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors rounded-lg shadow-[0_0_20px_rgba(255,138,117,0.3)]">
+            <button onClick={() => document.getElementById('manifesto')?.scrollIntoView({behavior:'smooth'})} className="w-full py-4 bg-[#FDFBF7] text-[#1A2A3A] font-bold uppercase tracking-widest md:tracking-[0.2em] hover:bg-[#FF8A75] transition-colors rounded-lg shadow-[0_0_20px_rgba(255,138,117,0.3)] text-[3vw] md:text-base whitespace-nowrap">
                Initialize Protocol
             </button>
           </div>

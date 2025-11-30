@@ -3,7 +3,7 @@ import React from 'react';
 
 export const GeoGate: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
       
       {/* Background World Map Pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none grayscale">
@@ -14,7 +14,7 @@ export const GeoGate: React.FC = () => {
          </svg>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10 text-center">
+      <div className="max-w-4xl mx-auto relative z-10 text-center w-full">
         
         <div className="mb-8">
             <div className="inline-block bg-[#FF4500] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6 animate-pulse">

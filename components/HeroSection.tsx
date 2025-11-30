@@ -4,13 +4,13 @@ import { Mascot } from './Mascot';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-between pt-24 pb-8 md:pt-32 md:pb-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
+    <section id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto">
       
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
-      <header className="flex flex-col relative mt-4 md:mt-0 w-full max-w-[1920px] mx-auto">
+      <header className="flex flex-col relative w-full max-w-[1920px] mx-auto">
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10">
           {/* Main Headline */}
-          <h1 className="text-[13vw] leading-[0.85] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none">
+          <h1 className="text-[14vw] leading-[0.85] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none">
             YOU'RE A DUDE?
           </h1>
           
@@ -32,13 +32,13 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Second Headline */}
-        <h1 className="text-[13vw] leading-[0.85] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-[2vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
+        <h1 className="text-[14vw] leading-[0.85] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-[2vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none">
           NOW YOU'RE NOT.
         </h1>
       </header>
 
       {/* Bottom Editorial Content */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-auto border-t border-[#1A2A3A]/20 pt-8 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mt-12 w-full max-w-[1920px] mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ DIGITAL GENDER ARBITRAGE // EST. 2014 ]
@@ -76,7 +76,7 @@ export const HeroSection: React.FC = () => {
         </div>
         
         {/* Animated Scroll Indicator */}
-        <div className="absolute left-1/2 bottom-[-10px] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pointer-events-none">
+        <div className="absolute left-1/2 bottom-[2vh] -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce pointer-events-none">
             <div className="w-[1px] h-12 bg-gradient-to-b from-[#1A2A3A] to-transparent"></div>
         </div>
       </article>

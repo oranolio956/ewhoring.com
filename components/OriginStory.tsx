@@ -3,11 +3,11 @@ import React from 'react';
 
 export const OriginStory: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-b border-[#1A2A3A]/5">
-      <div className="max-w-7xl mx-auto">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-b border-[#1A2A3A]/5">
+      <div className="max-w-7xl mx-auto w-full">
         
         {/* Header */}
-        <div className="mb-16 md:mb-24 text-center max-w-4xl mx-auto">
+        <div className="mb-12 md:mb-16 text-center max-w-4xl mx-auto">
           <div className="inline-block bg-[#FF8A75] text-[#1A2A3A] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6 transform -rotate-2 shadow-lg">
             The God Complex
           </div>
@@ -25,16 +25,16 @@ export const OriginStory: React.FC = () => {
         </div>
 
         {/* The Timeline Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             
             {/* The Old Way */}
-            <div className="bg-[#1A2A3A]/5 p-8 md:p-12 rounded-3xl relative overflow-hidden border border-[#1A2A3A]/10 group hover:bg-[#1A2A3A]/10 transition-colors">
+            <div className="bg-[#1A2A3A]/5 p-6 md:p-12 rounded-3xl relative overflow-hidden border border-[#1A2A3A]/10 group hover:bg-[#1A2A3A]/10 transition-colors flex flex-col justify-center">
                 <div className="absolute top-0 right-0 bg-[#1A2A3A] text-[#FDFBF7] px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-bl-xl">
                     Method v1.0 (2014-2019)
                 </div>
-                <h3 className="text-3xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] mb-6 opacity-50">THE PIZZA ERA</h3>
+                <h3 className="text-2xl md:text-3xl font-['Space_Grotesk'] font-bold text-[#1A2A3A] mb-6 opacity-50">THE PIZZA ERA</h3>
                 
-                <ul className="space-y-6 text-[#1A2A3A]/70 font-medium">
+                <ul className="space-y-4 md:space-y-6 text-[#1A2A3A]/70 font-medium text-sm md:text-base">
                     <li className="flex gap-4">
                         <span className="text-xl">🍕</span>
                         <div>
@@ -60,13 +60,13 @@ export const OriginStory: React.FC = () => {
             </div>
 
             {/* The New Way (2025) */}
-            <div className="bg-[#1A2A3A] p-8 md:p-12 rounded-3xl relative overflow-hidden text-[#FDFBF7] shadow-2xl transform lg:-translate-y-4">
+            <div className="bg-[#1A2A3A] p-6 md:p-12 rounded-3xl relative overflow-hidden text-[#FDFBF7] shadow-2xl transform lg:-translate-y-4 flex flex-col justify-center">
                 <div className="absolute top-0 right-0 bg-[#FF8A75] text-[#1A2A3A] px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-bl-xl animate-pulse">
                     Method v2.0 (Present Day)
                 </div>
-                <h3 className="text-3xl font-['Space_Grotesk'] font-bold text-[#FDFBF7] mb-6 text-gradient-rich">THE WHALE HUNT</h3>
+                <h3 className="text-2xl md:text-3xl font-['Space_Grotesk'] font-bold text-[#FDFBF7] mb-6 text-gradient-rich">THE WHALE HUNT</h3>
                 
-                <ul className="space-y-6 text-[#FDFBF7]/80 font-medium">
+                <ul className="space-y-4 md:space-y-6 text-[#FDFBF7]/80 font-medium text-sm md:text-base">
                     <li className="flex gap-4 items-start">
                         <span className="text-xl mt-1">🎯</span>
                         <div>

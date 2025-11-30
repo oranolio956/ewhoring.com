@@ -107,17 +107,17 @@ export const RedditChat: React.FC = () => {
   const currentChat = CONVERSATIONS[activeChat];
 
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#0F1923] relative overflow-hidden border-b border-[#FDFBF7]/5">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] relative overflow-hidden border-b border-[#FDFBF7]/5">
       
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 opacity-5 pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#FF8A75 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10 w-full">
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <div className="inline-block bg-[#FF4500] text-[#FFFFFF] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-4 rounded-full">
             Reddit Method v4
           </div>
@@ -161,7 +161,7 @@ export const RedditChat: React.FC = () => {
             {/* Chat Body */}
             <div 
                 ref={scrollRef} 
-                className="h-[400px] overflow-y-auto px-4 py-4 space-y-3 relative" 
+                className="h-[350px] md:h-[400px] overflow-y-auto px-4 py-4 space-y-3 relative" 
                 style={{ backgroundColor: REDDIT_BG }}
             >
                 {/* Timestamp */}

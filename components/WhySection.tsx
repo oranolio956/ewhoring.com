@@ -3,14 +3,14 @@ import React from 'react';
 
 export const WhySection: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/10">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/10">
       
       {/* Background Decor */}
       <div className="absolute top-0 right-0 text-[40rem] leading-none font-bold text-[#FDFBF7]/[0.02] -translate-y-1/2 translate-x-1/4 pointer-events-none font-['Space_Grotesk']">
         ?
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
             

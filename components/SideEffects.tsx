@@ -3,13 +3,13 @@ import React from 'react';
 
 export const SideEffects: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#1A2A3A] relative overflow-hidden border-t border-[#FDFBF7]/10">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] relative overflow-hidden border-t border-[#FDFBF7]/10">
       
-      <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden border border-[#FDFBF7]/10 shadow-2xl">
+      <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden border border-[#FDFBF7]/10 shadow-2xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2">
             
             {/* LEFT SIDE: THE FLAWS (Medical Warning) */}
-            <div className="bg-[#0F1923] p-8 md:p-16 relative overflow-hidden flex flex-col justify-between min-h-[600px]">
+            <div className="bg-[#0F1923] p-8 md:p-16 relative overflow-hidden flex flex-col justify-between min-h-[600px] lg:min-h-auto">
                 
                 {/* Background "Powder" Particles */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
@@ -114,7 +114,7 @@ export const SideEffects: React.FC = () => {
             </div>
 
             {/* RIGHT SIDE: THE BENEFITS */}
-            <div className="bg-[#FDFBF7] p-8 md:p-16 flex flex-col items-center justify-center relative overflow-hidden group">
+            <div className="bg-[#FDFBF7] p-8 md:p-16 flex flex-col items-center justify-center relative overflow-hidden group min-h-[400px] lg:min-h-auto">
                 
                 {/* Radiant Background */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#FFD700_0%,_transparent_70%)] opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>

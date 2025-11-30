@@ -4,14 +4,14 @@ import { Mascot } from './Mascot';
 
 export const ScamFooter: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden border-t border-[#FF8A75]">
       
       {/* Background Warning Stripes */}
       <div className="absolute inset-0 opacity-5 pointer-events-none" 
            style={{ backgroundImage: 'repeating-linear-gradient(45deg, #FF8A75, #FF8A75 10px, #0F1923 10px, #0F1923 20px)' }}>
       </div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
         
         {/* The Mascot - Serious */}
         <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 relative">

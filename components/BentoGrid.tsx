@@ -46,17 +46,17 @@ export const BentoGrid: React.FC = () => {
   };
 
   return (
-    <section className="relative z-10 py-16 md:py-24 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-[100vw] overflow-hidden">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-[100vw] overflow-hidden relative">
       
       {/* Subliminal Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
          ORANOLIO METHOD
       </div>
 
-      <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+      <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
         
         {/* Header */}
-        <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit">
+        <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FF8A75]">
             THE METHOD
           </h2>
@@ -77,7 +77,7 @@ export const BentoGrid: React.FC = () => {
         </div>
 
         {/* List View */}
-        <div className="lg:col-span-8 flex flex-col">
+        <div className="lg:col-span-8 flex flex-col justify-center">
           {modules.map((module) => (
             <div 
               key={module.id} 
@@ -86,7 +86,7 @@ export const BentoGrid: React.FC = () => {
               data-tooltip-content={module.details}
               // Mobile: Click to expand
               onClick={() => toggleExpand(module.id)}
-              className="group border-t border-[#FDFBF7]/20 py-8 md:py-12 hover:bg-[#FDFBF7]/5 transition-colors cursor-pointer md:cursor-help"
+              className="group border-t border-[#FDFBF7]/20 py-6 md:py-10 hover:bg-[#FDFBF7]/5 transition-colors cursor-pointer md:cursor-help"
             >
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
                 <span className="font-mono text-xl text-[#2D9C8E] mb-2 md:mb-0">/ {module.price}</span>

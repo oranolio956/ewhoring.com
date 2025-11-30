@@ -3,12 +3,12 @@ import React from 'react';
 
 export const FalseIdols: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
       {/* Background Decor */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-[#FF8A75] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             

@@ -3,16 +3,16 @@ import React from 'react';
 
 export const ReceiptVault: React.FC = () => {
   return (
-    <section className="py-24 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
       {/* Background text */}
       <div className="absolute right-0 bottom-0 text-[10vw] font-bold text-[#1A2A3A]/[0.03] leading-none pointer-events-none select-none font-['Space_Grotesk']">
         RECEIPTS
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
-        <div className="text-center mb-16 relative">
+        <div className="text-center mb-12 relative">
             <div className="inline-block bg-[#1A2A3A] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-4">
                 Visual Evidence
             </div>
@@ -20,7 +20,7 @@ export const ReceiptVault: React.FC = () => {
                 I DON'T NEED TO FLEX. <br/>
                 <span className="text-[#FF8A75]">BUT I WILL.</span>
             </h2>
-            <p className="text-[#1A2A3A]/60 max-w-2xl mx-auto">
+            <p className="text-[#1A2A3A]/60 max-w-2xl mx-auto text-sm md:text-base">
                 Screenshots don't lie. My students are eating good. 
                 <br/>This is what happens when you stop being a "nice guy."
             </p>
@@ -57,7 +57,7 @@ export const ReceiptVault: React.FC = () => {
             </div>
 
             {/* Item 2: Crypto Balance */}
-            <div className="bg-white border border-[#1A2A3A]/10 p-6 rounded-3xl transform -rotate-1 hover:rotate-0 transition-transform duration-500 shadow-xl relative group mt-12 md:mt-0">
+            <div className="bg-white border border-[#1A2A3A]/10 p-6 rounded-3xl transform -rotate-1 hover:rotate-0 transition-transform duration-500 shadow-xl relative group mt-8 md:mt-0">
                 <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-[#F7931A] rounded-full flex items-center justify-center text-white font-bold">₿</div>
                     <div>
@@ -72,7 +72,7 @@ export const ReceiptVault: React.FC = () => {
             </div>
 
             {/* Item 3: Desperate DM */}
-            <div className="bg-[#0F1923] p-6 rounded-3xl transform rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl relative group lg:mt-24">
+            <div className="bg-[#0F1923] p-6 rounded-3xl transform rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl relative group md:col-span-2 lg:col-span-1">
                 <div className="flex items-center gap-3 mb-4 border-b border-white/10 pb-4">
                     <div className="w-8 h-8 bg-gray-500 rounded-full"></div>
                     <div className="text-white text-xs font-bold">Discord User: SimpKing</div>
@@ -90,8 +90,8 @@ export const ReceiptVault: React.FC = () => {
                 </div>
             </div>
 
-             {/* Item 4: Bank Notification */}
-             <div className="bg-[#FDFBF7] border-2 border-[#1A2A3A] p-6 rounded-3xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 shadow-[10px_10px_0px_#1A2A3A] relative group">
+             {/* Item 4: Bank Notification (Hidden on mobile to save space if needed, or shown if room) */}
+             <div className="hidden lg:block bg-[#FDFBF7] border-2 border-[#1A2A3A] p-6 rounded-3xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 shadow-[10px_10px_0px_#1A2A3A] relative group lg:col-span-3 lg:w-1/2 lg:mx-auto">
                 <div className="flex items-center justify-between mb-4">
                     <div className="font-bold text-[#1A2A3A] uppercase tracking-widest">Bank of America</div>
                     <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
@@ -107,7 +107,7 @@ export const ReceiptVault: React.FC = () => {
         </div>
 
         {/* Mobile Badge */}
-        <div className="mt-16 text-center md:hidden">
+        <div className="mt-8 text-center md:hidden">
              <div className="inline-block border-2 border-[#FF0000] text-[#FF0000] px-4 py-2 rounded-lg font-black uppercase text-xs tracking-widest bg-white shadow-lg transform -rotate-2">
                 TOTALLY REAL <br/>
                 <span className="text-[8px] text-black font-mono">(STOP BEING A HATER)</span>

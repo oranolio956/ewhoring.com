@@ -135,9 +135,9 @@ export const MoneyPhone: React.FC = () => {
   }, []);
 
   return (
-    <section id="money-printer" className="relative w-full py-12 md:py-24 px-4 overflow-hidden flex flex-col items-center max-w-full">
+    <section id="money-printer" className="min-h-[100dvh] flex flex-col justify-center relative w-full py-12 px-4 overflow-hidden items-center max-w-full">
       
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-32 max-w-7xl mx-auto w-full">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-32 max-w-7xl mx-auto w-full h-full">
         
         {/* Left: Text & Mascot Reaction */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10 order-2 lg:order-1 w-full lg:w-1/2 px-4">
@@ -197,8 +197,8 @@ export const MoneyPhone: React.FC = () => {
                 {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[4%] bg-[#1A2A3A] rounded-b-xl z-30 shadow-sm border-b border-white/5"></div>
                 
-                {/* Screen */}
-                <div className="w-full h-full bg-[#FDFBF7] flex flex-col pt-[12%] relative">
+                {/* Screen - Added inner rounded corners to fix white box overflow issue */}
+                <div className="w-full h-full bg-[#FDFBF7] flex flex-col pt-[12%] relative rounded-[12%] overflow-hidden">
                   
                   <div ref={bgRef} className="absolute -top-[20%] -left-[20%] -right-[20%] -bottom-[20%] bg-gradient-to-br from-[#FDFBF7] via-[#FDFBF7] to-[#2D9C8E]/5 z-0 pointer-events-none will-change-transform"></div>
                   <div ref={textureRef} className="absolute inset-0 opacity-[0.05] bg-repeat z-0 pointer-events-none mix-blend-multiply will-change-transform" style={{backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+")'}}></div>
@@ -220,8 +220,8 @@ export const MoneyPhone: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Interactive Feed */}
-                  <div className="flex-1 bg-white rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] p-3 md:p-4 overflow-hidden flex flex-col gap-3 relative z-10">
+                  {/* Interactive Feed - Pushed to bottom with auto margin */}
+                  <div className="flex-1 bg-white shadow-[0_-10px_40px_rgba(0,0,0,0.05)] p-3 md:p-4 overflow-hidden flex flex-col gap-3 relative z-10 mt-auto">
                      {selectedTx ? (
                         <div className="flex flex-col h-full animate-in slide-in-from-right fade-in duration-300">
                            <button 
