@@ -88,6 +88,105 @@ export const faqs = [
   {
     q: "What if I'm not good at talking to people?",
     a: "We provide word-for-word scripts. Copy. Paste. Profit. You don't need charisma - you need to follow instructions. The conversations are templated based on 10+ years of psychological research on what makes lonely men open their wallets. Just use the scripts."
+  },
+  // Discord-Specific FAQs
+  {
+    q: "What are the best ewhore Discord servers?",
+    a: "Look for: dating/relationship servers, lonely/depression support servers, gaming communities with high male ratios, anime servers, e-girl appreciation servers. The Protocol includes a monthly-updated list of 50+ vetted servers with active, paying members."
+  },
+  {
+    q: "How do I find Discord servers for ewhoring?",
+    a: "Use Disboard.org, Discord.me, or Discadia. Search terms: 'dating', 'lonely', '18+', 'egirl', 'social'. Join servers with 1000+ members and active chat. Avoid heavily moderated servers. We provide a curated list in the Protocol."
+  },
+  {
+    q: "How do I avoid getting banned on Discord?",
+    a: "Use aged accounts (buy or age yourself), don't spam DMs, build rapport in public channels first, use different IPs for different personas, don't sell too aggressively. The Protocol includes ban evasion and account farming guides."
+  },
+  {
+    q: "What's the best way to DM guys on Discord?",
+    a: "Never cold DM. Comment on their messages in public first, react to their posts, then DM with context ('hey, saw your message about X'). Our conversation templates have 70%+ response rates."
+  },
+  // Telegram-Specific FAQs
+  {
+    q: "How do I start ewhoring on Telegram?",
+    a: "Create a persona account, join relevant groups (dating, lonely, adult), build presence, then either: 1) DM members directly, 2) Create a premium channel, or 3) Use bots for automation. Telegram is best for high-ticket sales ($50-200)."
+  },
+  {
+    q: "What are the best Telegram groups for ewhoring?",
+    a: "Search for: dating groups, hookup groups, premium content groups, regional lonely groups. Telegram's search is better than Discord's. The Protocol includes Telegram-specific strategies and group recommendations."
+  },
+  {
+    q: "How do I accept payments on Telegram?",
+    a: "Telegram has native crypto support (TON, Bitcoin). Also accept: gift cards, CashApp, PayPal F&F. Telegram's anonymity makes it ideal for crypto payments. Never use payment methods linked to your identity."
+  },
+  // Method-Specific FAQs
+  {
+    q: "Where can I get ewhoring packs?",
+    a: "We don't sell or distribute content packs. The Protocol teaches: 1) AI image generation, 2) Ethical content sourcing, 3) Creating original faceless content. Random packs from forums are usually burned and get you caught instantly."
+  },
+  {
+    q: "Are Hackforums ewhoring methods still working?",
+    a: "Most free methods from Hackforums/Nulled are from 2016-2018 and are completely burned. Images are flagged, scripts are recognized, platforms patched the exploits. The Oranolio Protocol is updated monthly with current methods."
+  },
+  {
+    q: "What's the difference between ewhoring and catfishing?",
+    a: "Same concept, different terms. Ewhoring is the monetization-focused term from hacking communities. Catfishing is the mainstream term. Both involve fake personas. We teach the monetization strategies that turn catfishing into income."
+  },
+  {
+    q: "How do I create a fake girl persona?",
+    a: "Choose: name, age (18-25), location, occupation, personality. Create consistent backstory. Source images (AI-generated or purchased packs). Set up social profiles. The Protocol includes persona templates and psychology guides."
+  },
+  // Money/Payment FAQs
+  {
+    q: "How do I not get scammed while ewhoring?",
+    a: "Golden rule: PAYMENT BEFORE CONTENT. Never accept 'I'll pay after.' Verify gift cards before sending anything. Use crypto for large amounts. Never share personal info. The Protocol covers all safety protocols."
+  },
+  {
+    q: "Can you make money from simps without selling content?",
+    a: "Yes. GFE (Girlfriend Experience) is just texting/attention. Findom is literally being paid to ignore them. Sugar daddy sites pay for conversation. Wish lists get you gifts. Not all monetization requires explicit content."
+  },
+  {
+    q: "How much do simps actually pay?",
+    a: "Entry level: $5-20 for pics/attention. Mid tier: $50-200/month for GFE. High tier: $500-2000/month for findom/sugar arrangements. Whales exist who spend $10k+. It's about finding and nurturing the right targets."
+  },
+  // Technical FAQs
+  {
+    q: "Do I need a VPN for ewhoring?",
+    a: "Yes. Always. Use a paid VPN (NordVPN, ExpressVPN). Change servers for different personas. Never access persona accounts from your real IP. The Protocol covers full OpSec setup."
+  },
+  {
+    q: "How do I use AI for ewhoring?",
+    a: "AI image generators for unique content, ChatGPT for conversation scaling, voice cloning for calls, deepfakes for video (use ethically). AI is the 2025 meta. The Protocol includes full AI integration guides."
+  },
+  {
+    q: "Can I ewhore without a computer?",
+    a: "Yes. Phone-only is viable. You need: smartphone, VPN app, messaging apps, payment apps. Desktop helps for scaling but isn't required. Many successful operators are phone-only."
+  },
+  // Niche FAQs
+  {
+    q: "What is findom and how does it work?",
+    a: "Financial domination: submissive men pay to be financially controlled/humiliated. You demand payment, they comply for the power exchange. Niche but extremely profitable. Requires specific persona type. Covered in advanced Protocol modules."
+  },
+  {
+    q: "How do I sell feet pics online?",
+    a: "Feet content doesn't require face/body. Platforms: FeetFinder, OnlyFans, direct selling via Discord/Telegram. Combine with ewhoring traffic. The Protocol covers feet content as a faceless monetization strategy."
+  },
+  {
+    q: "Can guys do ewhoring?",
+    a: "The personas are female, but operators are any gender. Most successful ewhoring operators are male. You're not being a girl - you're operating a digital business. Gender of the operator is irrelevant."
+  },
+  // Scaling FAQs
+  {
+    q: "How do I run multiple personas?",
+    a: "Separate devices or browser profiles for each persona. Different VPN servers. Different payment accounts. Keep detailed notes on each persona's 'life.' The Protocol includes multi-persona management systems."
+  },
+  {
+    q: "Can ewhoring be automated?",
+    a: "Partially. Bots for initial outreach, templates for conversations, scheduled posts. But high-ticket sales need personal touch. The Protocol teaches what to automate vs. handle personally for max ROI."
+  },
+  {
+    q: "How do I scale from $500 to $5000/week?",
+    a: "Multiple personas, multiple platforms, automation, and moving upmarket. One persona on one platform caps around $1-2k/month. Scaling requires systems. The Protocol is designed for scaling."
   }
 ];
 

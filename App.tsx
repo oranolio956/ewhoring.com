@@ -35,6 +35,7 @@ import { CookieConsent } from './components/CookieConsent';
 import { AsSeenOn } from './components/AsSeenOn';
 import { ClickSparkle } from './components/ClickSparkle';
 import { SEOContent } from './components/SEOContent';
+import { KeywordTargets } from './components/KeywordTargets';
 
 const WARNING_MESSAGES = [
   "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
@@ -453,6 +454,158 @@ const App: React.FC = () => {
           "@type": "DefinedTermSet",
           "name": "Online Monetization Glossary"
         }
+      },
+      // 14. Additional HowTo - Discord Ewhoring
+      {
+        "@type": "HowTo",
+        "name": "How to Find Ewhore Discord Servers",
+        "description": "Step-by-step guide to finding the best Discord servers for ewhoring and monetization in 2025.",
+        "totalTime": "PT30M",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Use Server Discovery Sites",
+            "text": "Search Disboard.org, Discord.me, and Discadia for dating, lonely, and 18+ servers."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Join High-Traffic Servers",
+            "text": "Target servers with 1000+ members and active daily chat. Avoid over-moderated servers."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Build Rapport First",
+            "text": "Engage in public channels before DMing. React to posts, comment naturally."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Move to DMs",
+            "text": "After building presence, move conversations to direct messages for monetization."
+          }
+        ]
+      },
+      // 15. Additional HowTo - Telegram Ewhoring
+      {
+        "@type": "HowTo",
+        "name": "How to Make Money on Telegram with Ewhoring",
+        "description": "Complete guide to monetizing Telegram groups and channels for ewhoring in 2025.",
+        "totalTime": "PT1H",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Create Persona Account",
+            "text": "Set up Telegram with VPN, use virtual number for verification."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Join Relevant Groups",
+            "text": "Find dating, hookup, and premium content groups via Telegram search."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Create Premium Channel",
+            "text": "Set up paid channel with tiered access for recurring revenue."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Accept Crypto Payments",
+            "text": "Use Telegram's native crypto support for anonymous transactions."
+          }
+        ]
+      },
+      // 16. ItemList - Best Discord Servers
+      {
+        "@type": "ItemList",
+        "name": "Best Ewhore Discord Servers 2025",
+        "description": "Top Discord server types for ewhoring and digital persona monetization",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "numberOfItems": 6,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Dating & Relationship Servers" },
+          { "@type": "ListItem", "position": 2, "name": "Lonely & Depression Support Servers" },
+          { "@type": "ListItem", "position": 3, "name": "18+ Adult Community Servers" },
+          { "@type": "ListItem", "position": 4, "name": "E-girl Appreciation Servers" },
+          { "@type": "ListItem", "position": 5, "name": "Gaming Community Servers" },
+          { "@type": "ListItem", "position": 6, "name": "Anime & Weeb Culture Servers" }
+        ]
+      },
+      // 17. ItemList - Best Telegram Methods
+      {
+        "@type": "ItemList",
+        "name": "Best Telegram Ewhoring Methods 2025",
+        "description": "Top Telegram monetization strategies for ewhoring",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "numberOfItems": 5,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Premium Channel Subscriptions" },
+          { "@type": "ListItem", "position": 2, "name": "Direct Message Monetization" },
+          { "@type": "ListItem", "position": 3, "name": "Crypto Payment Integration" },
+          { "@type": "ListItem", "position": 4, "name": "Bot-Automated Responses" },
+          { "@type": "ListItem", "position": 5, "name": "Group Promotion Services" }
+        ]
+      },
+      // 18. Additional DefinedTerms for other keywords
+      {
+        "@type": "DefinedTerm",
+        "name": "Ewhore Discord Servers",
+        "description": "Discord servers used for ewhoring, typically dating servers, lonely servers, and 18+ communities where operators deploy fake female personas to monetize male users through selling content, receiving gifts, and building paid relationships.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Online Monetization Glossary"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Catfishing for Money",
+        "description": "The practice of creating fake online identities to deceive others for financial gain. In ewhoring context, this involves creating believable female personas to monetize lonely men through various platforms and payment methods.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Online Monetization Glossary"
+        }
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Simp",
+        "description": "Internet slang for men who are excessively attentive, submissive, or generous toward women, often online. Simps are the primary monetization targets in ewhoring operations, willing to pay for attention, content, and virtual relationships.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Online Monetization Glossary"
+        }
+      },
+      // 19. Service Schema
+      {
+        "@type": "Service",
+        "name": "Ewhoring Training Course",
+        "serviceType": "Online Education",
+        "description": "Comprehensive training on ewhoring methods, Discord server monetization, Telegram groups, persona creation, and payment processing. Updated monthly with current methods.",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://ewhoring.com/#organization"
+        },
+        "areaServed": "Worldwide",
+        "offers": {
+          "@type": "Offer",
+          "price": "150.00",
+          "priceCurrency": "USD"
+        }
+      },
+      // 20. CollectionPage for keyword grouping
+      {
+        "@type": "CollectionPage",
+        "name": "Ewhoring Resources & Guides",
+        "description": "Complete collection of ewhoring guides, Discord server lists, Telegram methods, and monetization strategies.",
+        "url": "https://ewhoring.com",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "url": "https://ewhoring.com/#discord-servers", "name": "Ewhore Discord Servers Guide" },
+            { "@type": "ListItem", "position": 2, "url": "https://ewhoring.com/#telegram-groups", "name": "Telegram Ewhoring Methods" },
+            { "@type": "ListItem", "position": 3, "url": "https://ewhoring.com/#methods", "name": "Advanced Ewhoring Methods 2025" },
+            { "@type": "ListItem", "position": 4, "url": "https://ewhoring.com/#fake-girl-guide", "name": "Catfish Money Guide" },
+            { "@type": "ListItem", "position": 5, "url": "https://ewhoring.com/#faceless-onlyfans", "name": "OnlyFans Without Face" },
+            { "@type": "ListItem", "position": 6, "url": "https://ewhoring.com/#find-simps", "name": "How to Find Simps" }
+          ]
+        }
       }
     ]
   };
@@ -539,6 +692,9 @@ const App: React.FC = () => {
             
             {/* SEO Content - Definitions, Comparisons, Featured Snippet Bait */}
             <SEOContent />
+            
+            {/* Aggressive Keyword Targeting - Discord, Telegram, Methods, etc */}
+            <KeywordTargets />
             
             {/* The Chat Simulation */}
             <RedditChat />
