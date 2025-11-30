@@ -21,12 +21,14 @@ import { CustomCursor } from './components/CustomCursor';
 import { SalesToast } from './components/SalesToast';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
+import { PunchMadeParody } from './components/PunchMadeParody';
 import { ThePhilosophy } from './components/ThePhilosophy';
 import { GeoGate } from './components/GeoGate';
 import { LoserFilter } from './components/LoserFilter';
 import { OranolioSlam } from './components/OranolioSlam';
 import { ReceiptVault } from './components/ReceiptVault';
 import { PricingTerminal } from './components/PricingTerminal';
+import { SideEffects } from './components/SideEffects';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -250,6 +252,9 @@ const App: React.FC = () => {
             
             {/* The Philosophy */}
             <ThePhilosophy />
+            
+            {/* Side Effects */}
+            <SideEffects />
 
             {/* The Reality Check / Aggressive Filter */}
             <RealityCheck />
@@ -262,6 +267,9 @@ const App: React.FC = () => {
             
             {/* The Tate Roast */}
             <FalseIdols />
+            
+            {/* The PunchMade Parody */}
+            <PunchMadeParody />
 
             {/* The Why / 29yo Rant */}
             <WhySection />

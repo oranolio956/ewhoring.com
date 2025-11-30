@@ -16,10 +16,10 @@ export const PricingTerminal: React.FC = () => {
         
         <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4">
-                INITIATE <span className="text-[#00FF00]">SEQUENCE</span>
+                DEPLOY <span className="text-[#00FF00]">THE GRIFT</span>
             </h2>
             <p className="text-[#00FF00]/60 uppercase tracking-widest text-xs">
-                Secure Connection Established • ID: 994-Alpha
+                Target: Global Male Population • Protocol: ACTIVE
             </p>
         </div>
 
