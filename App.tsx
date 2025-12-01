@@ -154,6 +154,8 @@ const App: React.FC = () => {
         "inLanguage": "en-US",
         "datePublished": "2014-01-01",
         "dateModified": currentDate,
+        "changefreq": "weekly",
+        "priority": "1.0",
         "publisher": {
           "@type": "Organization",
           "@id": "https://ewhoring.com/#organization"
@@ -650,6 +652,29 @@ const App: React.FC = () => {
             { "@type": "ListItem", "position": 6, "url": "https://ewhoring.com/#find-simps", "name": "How to Find Simps" }
           ]
         }
+      },
+      // Content Update Frequency Signal for SEO
+      {
+        "@type": "DataFeed",
+        "name": "Oranolio Protocol Updates",
+        "description": "Weekly content updates with latest ewhoring methods and server intelligence",
+        "dateModified": currentDate,
+        "feedElement": [
+          {
+            "@type": "DataFeedItem",
+            "dateCreated": currentDate,
+            "item": {
+              "@type": "Article",
+              "headline": "Latest Ewhoring Methods & Server Updates",
+              "datePublished": currentDate,
+              "dateModified": currentDate,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://ewhoring.com/"
+              }
+            }
+          }
+        ]
       }
     ]
   };
