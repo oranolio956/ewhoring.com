@@ -34,6 +34,7 @@
     "elite:negative-seo": "node scripts/elite/negative-seo-engine.mjs",
     "research:competitors": "node scripts/research/competitor-analysis.mjs",
     "implement:rapid": "node scripts/implement/rapid-publishing.mjs",
+    "keywords:research": "node scripts/keywords/ewhore-keyword-research.mjs",
     "implement:negative": "node scripts/implement/negative-keywords.mjs"
   },
   "dependencies": {
