@@ -79,14 +79,13 @@ export const BentoGrid: React.FC = () => {
         {/* List View - Technical Dossier Style */}
         <div className="lg:col-span-8 flex flex-col justify-center">
           {modules.map((module) => (
-            <div 
-              key={module.id} 
-              // Desktop: Tooltip
+            <div
+              key={module.id}
               data-tooltip-id="syllabus-tooltip"
               data-tooltip-content={module.details}
-              // Mobile: Click to expand
               onClick={() => toggleExpand(module.id)}
               className="group border-b border-[#FDFBF7]/10 py-8 md:py-10 hover:bg-[#FDFBF7]/5 transition-all cursor-pointer md:cursor-help relative overflow-hidden"
+            >
 
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12 pl-4">
                 <span className="font-mono text-xs md:text-sm text-[#2D9C8E] mb-2 md:mb-0 tracking-widest opacity-60 group-hover:opacity-100">
