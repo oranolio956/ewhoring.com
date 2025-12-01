@@ -94,7 +94,7 @@ export const FalseIdols: React.FC = () => {
             <div className="relative flex justify-center w-full">
                 
                 {/* Speech Bubble */}
-                <div className="absolute top-0 right-0 md:right-10 bg-[#1A2A3A] text-white p-4 rounded-xl rounded-bl-none transform -rotate-6 z-20 shadow-xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]">
+                <div className="absolute top-0 right-0 md:right-10 bg-[#1A2A3A] text-white p-4 rounded-xl rounded-bl-none transform -rotate-6 z-20 shadow-xl max-w-[clamp(120px,30vw,140px)] sm:max-w-[clamp(140px,35vw,160px)] md:max-w-[clamp(160px,40vw,200px)]">
                     <p className="text-[10px] md:text-xs font-mono font-bold uppercase">
                         "BREATHE AIR! YOU DON'T NEED MONEY YOU NEED SPARKLING WATER!"
                     </p>

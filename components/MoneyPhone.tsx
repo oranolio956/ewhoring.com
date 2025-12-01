@@ -178,7 +178,7 @@ export const MoneyPhone: React.FC = () => {
         <div ref={phoneRef} className="relative order-1 lg:order-2 perspective-1000 group w-full flex justify-center py-8">
           
           {/* Constrain size using max-width and aspect ratio lock. This ensures it never breaks. */}
-          <div className="relative w-[90vw] max-w-[320px] sm:max-w-[340px] lg:max-w-[360px] aspect-[9/19] touch-pan-y" style={{ touchAction: 'pan-y' }}>
+          <div className="relative w-[90vw] max-w-[clamp(280px,80vw,320px)] sm:max-w-[clamp(320px,85vw,340px)] lg:max-w-[clamp(340px,90vw,360px)] aspect-[9/19] touch-pan-y" style={{ touchAction: 'pan-y' }}>
             
             {/* Rotation Wrapper with Physics Easing */}
             <div className="w-full h-full relative transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] transform rotate-0 hover:lg:-rotate-12 origin-bottom-right will-change-transform">

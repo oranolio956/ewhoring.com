@@ -6,6 +6,7 @@ import { usePayment } from '../contexts/PaymentContext';
 export const HeroSection: React.FC = () => {
   const { openPayment } = usePayment();
   const [referrerMessage, setReferrerMessage] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<string>('');
 
   useEffect(() => {
     // Check referrer on mount
@@ -43,6 +44,14 @@ export const HeroSection: React.FC = () => {
         setTimeout(() => setReferrerMessage(null), 5000);
       }
     }
+
+    // Set content freshness timestamp
+    const now = new Date();
+    setLastUpdated(now.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }));
   }, []);
 
   return (
@@ -82,14 +91,14 @@ export const HeroSection: React.FC = () => {
           )}
 
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
-          <div className="absolute top-[-10%] right-[-20%] w-[40vw] h-[40vw] min-w-[120px] min-h-[120px] md:top-[-15%] md:right-[2%] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
+          <div className="absolute top-[-10%] right-[-20%] w-[40vw] h-[40vw] min-w-[clamp(80px,20vw,120px)] min-h-[clamp(80px,20vw,120px)] md:top-[-15%] md:right-[2%] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
           </div>
         </div>
         
         {/* Sub-headline */}
         <div className="flex items-center gap-2 md:gap-12 ml-1 md:ml-[5vw] mt-2 md:mt-[1vw] animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.2s_forwards] opacity-0 relative z-20 flex-wrap transform-gpu">
-           <div className="h-[2px] w-[15vw] md:w-[8vw] bg-[#FF8A75] shrink-0"></div>
+           <div className="h-[clamp(1px,0.5vw,2px)] w-[15vw] md:w-[8vw] bg-[#FF8A75] shrink-0"></div>
            <h2 className="text-[clamp(1rem,4vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap leading-tight">
              congratulations,
              <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
@@ -134,7 +143,18 @@ export const HeroSection: React.FC = () => {
 
            </div>
         </div>
-        
+
+        {/* Content Freshness Indicator */}
+        <div className="lg:col-span-2 flex justify-center lg:justify-end items-end">
+          <div className="text-[8px] md:text-[10px] font-mono text-[#1A2A3A]/40 uppercase tracking-wider text-center lg:text-right">
+            <div className="flex items-center gap-1 justify-center lg:justify-end">
+              <span className="w-1 h-1 bg-[#2D9C8E] rounded-full"></span>
+              <span>Updated {lastUpdated}</span>
+              <span className="w-1 h-1 bg-[#2D9C8E] rounded-full"></span>
+            </div>
+          </div>
+        </div>
+
       </article>
 
       <style>{`

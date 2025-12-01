@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePayment } from '../contexts/PaymentContext';
 
 // SEO Content Component - Featured Snippet Bait
@@ -6,6 +6,18 @@ import { usePayment } from '../contexts/PaymentContext';
 
 export const SEOContent: React.FC = () => {
   const { openPayment } = usePayment();
+  const [lastUpdated, setLastUpdated] = useState<string>('');
+
+  useEffect(() => {
+    // Set last updated to current date for freshness signals
+    const now = new Date();
+    setLastUpdated(now.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }));
+  }, []);
+
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden" id="learn">
       
@@ -175,12 +187,24 @@ export const SEOContent: React.FC = () => {
             <p className="text-[#FDFBF7]/60 mb-4">
               This is the free preview. The actual Protocol has scripts, templates, server lists, content generation guides, and 10 years of my brain.
             </p>
-            <button 
+            <button
               onClick={openPayment}
               className="inline-block bg-[#FF8A75] text-[#1A2A3A] px-6 py-3 font-bold uppercase tracking-widest text-sm hover:bg-[#FDFBF7] transition-colors cursor-pointer"
             >
               Fine, I'll Buy It →
             </button>
+
+            {/* Content Freshness Signal */}
+            <div className="mt-6 pt-4 border-t border-[#FDFBF7]/10">
+              <div className="flex items-center justify-center gap-2 text-[10px] text-[#FDFBF7]/40 font-mono">
+                <span className="w-2 h-2 bg-[#2D9C8E] rounded-full animate-pulse"></span>
+                <span>Last updated: {lastUpdated}</span>
+                <span className="w-2 h-2 bg-[#2D9C8E] rounded-full animate-pulse"></span>
+              </div>
+              <p className="text-[9px] text-[#FDFBF7]/30 mt-2 font-mono text-center">
+                Content regularly updated with latest methods and server intelligence
+              </p>
+            </div>
           </div>
         </div>
 
