@@ -20,7 +20,10 @@
     "build:links": "node scripts/automation/link-builder.mjs",
     "setup:analytics": "node scripts/automation/analytics-setup.mjs",
     "local:seo": "node scripts/automation/local-seo.mjs",
-    "ab:test": "node scripts/automation/conversion-testing.mjs"
+    "ab:test": "node scripts/automation/conversion-testing.mjs",
+    "intel": "node scripts/automation/competitor-intelligence.mjs",
+    "generate:content": "node scripts/automation/content-generator.mjs",
+    "cloak": "node scripts/automation/cloaking-engine.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",

@@ -491,5 +491,180 @@
         });
       }
     </script>
+      <script>
+// A/B Testing Framework
+
+// A/B Test: hero_headline
+function getABVariant(testName) {
+  const stored = localStorage.getItem('ab_test_data');
+  let data = stored ? JSON.parse(stored) : {};
+
+  if (!data[testName]) {
+    // Assign random variant
+    const variantIndex = Math.floor(Math.random() * 3);
+    data[testName] = {
+      variant: variantIndex,
+      assigned: new Date().toISOString()
+    };
+    localStorage.setItem('ab_test_data', JSON.stringify(data));
+
+    // Track assignment in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ab_test_assignment', {
+        test_name: testName,
+        variant_index: variantIndex
+      });
+    }
+  }
+
+  return data[testName].variant;
+}
+
+// A/B Test: cta_button
+function getABVariant(testName) {
+  const stored = localStorage.getItem('ab_test_data');
+  let data = stored ? JSON.parse(stored) : {};
+
+  if (!data[testName]) {
+    // Assign random variant
+    const variantIndex = Math.floor(Math.random() * 3);
+    data[testName] = {
+      variant: variantIndex,
+      assigned: new Date().toISOString()
+    };
+    localStorage.setItem('ab_test_data', JSON.stringify(data));
+
+    // Track assignment in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ab_test_assignment', {
+        test_name: testName,
+        variant_index: variantIndex
+      });
+    }
+  }
+
+  return data[testName].variant;
+}
+
+// A/B Test: pricing_display
+function getABVariant(testName) {
+  const stored = localStorage.getItem('ab_test_data');
+  let data = stored ? JSON.parse(stored) : {};
+
+  if (!data[testName]) {
+    // Assign random variant
+    const variantIndex = Math.floor(Math.random() * 3);
+    data[testName] = {
+      variant: variantIndex,
+      assigned: new Date().toISOString()
+    };
+    localStorage.setItem('ab_test_data', JSON.stringify(data));
+
+    // Track assignment in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ab_test_assignment', {
+        test_name: testName,
+        variant_index: variantIndex
+      });
+    }
+  }
+
+  return data[testName].variant;
+}
+
+// Track conversion for hero_headline
+function trackABConversion(testName, goalName = 'cta_click') {
+  const stored = localStorage.getItem('ab_test_data');
+  const data = stored ? JSON.parse(stored) : {};
+
+  if (data[testName]) {
+    // Track in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ab_test_conversion', {
+        test_name: testName,
+        variant_index: data[testName].variant,
+        goal_name: goalName
+      });
+    }
+  }
+}
+
+// Track conversion for cta_button
+function trackABConversion(testName, goalName = 'cta_click') {
+  const stored = localStorage.getItem('ab_test_data');
+  const data = stored ? JSON.parse(stored) : {};
+
+  if (data[testName]) {
+    // Track in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ab_test_conversion', {
+        test_name: testName,
+        variant_index: data[testName].variant,
+        goal_name: goalName
+      });
+    }
+  }
+}
+
+// Track conversion for pricing_display
+function trackABConversion(testName, goalName = 'purchase') {
+  const stored = localStorage.getItem('ab_test_data');
+  const data = stored ? JSON.parse(stored) : {};
+
+  if (data[testName]) {
+    // Track in analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ab_test_conversion', {
+        test_name: testName,
+        variant_index: data[testName].variant,
+        goal_name: goalName
+      });
+    }
+  }
+}
+
+// Apply A/B test variants
+document.addEventListener('DOMContentLoaded', function() {
+  // Hero headline test
+  const heroHeadline = document.querySelector('h1');
+  if (heroHeadline) {
+    const headlines = [
+      'YOU\'RE BROKE? NOW YOU\'RE WEALTHY.',
+      'SECURE MONTHLY ALLOWANCES FROM WEALTHY MEN',
+      'THE #1 PROTOCOL FOR SUGAR DADDY SUCCESS'
+    ];
+    const variant = getABVariant('hero_headline');
+    heroHeadline.textContent = headlines[variant];
+  }
+
+  // CTA button test
+  const ctaButtons = document.querySelectorAll('.cta-button, [data-cta]');
+  ctaButtons.forEach(button => {
+    const buttonTexts = [
+      'GET THE SUGAR DADDY PROTOCOL',
+      'DOWNLOAD THE MASTERCLASS',
+      'START EARNING $5K+/MONTH'
+    ];
+    const variant = getABVariant('cta_button');
+    button.textContent = buttonTexts[variant];
+
+    // Track clicks
+    button.addEventListener('click', () => {
+      trackABConversion('cta_button', 'cta_click');
+    });
+  });
+
+  // Pricing display test
+  const pricingElements = document.querySelectorAll('.pricing, [data-pricing]');
+  pricingElements.forEach(element => {
+    const pricingTexts = [
+      '$97 - ONE-TIME PAYMENT',
+      '$97 - LIFETIME ACCESS',
+      '$97 - UNLIMITED UPDATES'
+    ];
+    const variant = getABVariant('pricing_display');
+    element.textContent = pricingTexts[variant];
+  });
+});</script>
   </body>
 </html>
