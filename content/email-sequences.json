@@ -1,0 +1,74 @@
+{
+  "welcome": {
+    "name": "Welcome Series",
+    "trigger": "new_lead",
+    "emails": [
+      {
+        "delay": 0,
+        "subject": "Welcome to the Sugar Daddy Protocol! 🎉",
+        "content": "Thanks for joining! Here's your free targeting guide...",
+        "goal": "deliver_value"
+      },
+      {
+        "delay": 2,
+        "subject": "The #1 Mistake Killing Your Results",
+        "content": "Most beginners make this critical error...",
+        "goal": "build_credibility"
+      },
+      {
+        "delay": 5,
+        "subject": "How to Get Your First $500 Payment",
+        "content": "Step-by-step guide to your first sugar arrangement...",
+        "goal": "show_results"
+      },
+      {
+        "delay": 7,
+        "subject": "Ready for the Complete System?",
+        "content": "Get 50+ scripts, templates, and strategies for $97...",
+        "goal": "convert_to_sale"
+      }
+    ]
+  },
+  "cart_recovery": {
+    "name": "Cart Recovery",
+    "trigger": "abandoned_cart",
+    "emails": [
+      {
+        "delay": 1,
+        "subject": "Your Protocol is Waiting! ⏰",
+        "content": "Complete your purchase and start earning tonight...",
+        "goal": "immediate_recovery"
+      },
+      {
+        "delay": 24,
+        "subject": "Last Chance: Don't Miss Out",
+        "content": "Your spot in the masterclass is reserved for 24 hours...",
+        "goal": "urgency_recovery"
+      },
+      {
+        "delay": 72,
+        "subject": "Special Discount Inside 🎁",
+        "content": "Thanks for your interest. Here's 30% off your order...",
+        "goal": "discount_recovery"
+      }
+    ]
+  },
+  "re_engagement": {
+    "name": "Re-engagement",
+    "trigger": "inactive_30_days",
+    "emails": [
+      {
+        "delay": 0,
+        "subject": "We Miss You! 👋",
+        "content": "See what's new in the sugar dating world...",
+        "goal": "reconnect"
+      },
+      {
+        "delay": 7,
+        "subject": "New Success Stories Inside",
+        "content": "Students making $10K+ monthly with updated strategies...",
+        "goal": "show_social_proof"
+      }
+    ]
+  }
+}

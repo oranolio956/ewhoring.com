@@ -1,0 +1,57 @@
+{
+  "weekly": [
+    {
+      "day": "Monday",
+      "type": "Blog Post",
+      "topic": "Platform Strategy"
+    },
+    {
+      "day": "Tuesday",
+      "type": "Social Media",
+      "topic": "Success Stories"
+    },
+    {
+      "day": "Wednesday",
+      "type": "Email",
+      "topic": "Tips & Tricks"
+    },
+    {
+      "day": "Thursday",
+      "type": "Video",
+      "topic": "Strategy Breakdown"
+    },
+    {
+      "day": "Friday",
+      "type": "Social Media",
+      "topic": "Weekend Motivation"
+    },
+    {
+      "day": "Saturday",
+      "type": "Live Session",
+      "topic": "Q&A"
+    },
+    {
+      "day": "Sunday",
+      "type": "Email",
+      "topic": "Weekly Recap"
+    }
+  ],
+  "monthly": [
+    {
+      "week": 1,
+      "content": "Monthly case study deep dive"
+    },
+    {
+      "week": 2,
+      "content": "Platform comparison guide"
+    },
+    {
+      "week": 3,
+      "content": "Advanced strategy masterclass"
+    },
+    {
+      "week": 4,
+      "content": "Student success spotlight"
+    }
+  ]
+}

@@ -719,5 +719,663 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     </script>
+      <script>
+// Conversion Funnel Tracking
+function trackFunnelStep(funnelName, stepName, stepData = {}) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'funnel_step', {
+      funnel_name: funnelName,
+      step_name: stepName,
+      ...stepData
+    });
+  }
+
+  // Store in session for multi-step tracking
+  const funnelData = JSON.parse(sessionStorage.getItem('funnel_data') || '{}');
+  if (!funnelData[funnelName]) funnelData[funnelName] = [];
+  funnelData[funnelName].push({
+    step: stepName,
+    timestamp: new Date().toISOString(),
+    ...stepData
+  });
+  sessionStorage.setItem('funnel_data', JSON.stringify(funnelData));
+}
+
+// Auto-track main funnel steps
+document.addEventListener('DOMContentLoaded', function() {
+  // Track initial page view
+  trackFunnelStep('main', 'landing_page_visit', {
+    page: window.location.pathname,
+    referrer: document.referrer
+  });
+
+  // Track CTA clicks
+  document.querySelectorAll('.cta-button, [data-cta]').forEach(button => {
+    button.addEventListener('click', () => {
+      trackFunnelStep('main', 'cta_click', {
+        button_text: button.textContent?.trim(),
+        button_location: button.closest('section')?.className || 'unknown'
+      });
+    });
+  });
+});</script>
+      <script>
+// User Behavior Tracking (Heatmaps & Click Tracking)
+class BehaviorTracker {
+  constructor() {
+    this.clicks = [];
+    this.mouseMovements = [];
+    this.scrollDepths = [];
+    this.maxBatchSize = 50;
+  }
+
+  init() {
+    this.trackClicks();
+    this.trackMouseMovements();
+    this.trackScrollBehavior();
+    this.trackTimeOnPage();
+  }
+
+  trackClicks() {
+    document.addEventListener('click', (event) => {
+      const clickData = {
+        x: event.clientX,
+        y: event.clientY,
+        element: event.target.tagName,
+        className: event.target.className,
+        text: event.target.textContent?.substring(0, 50),
+        timestamp: Date.now(),
+        url: window.location.href
+      };
+
+      this.clicks.push(clickData);
+
+      if (this.clicks.length >= this.maxBatchSize) {
+        this.sendBatch('clicks', this.clicks.splice(0));
+      }
+
+      // Real-time click tracking
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_tracking', {
+          x: clickData.x,
+          y: clickData.y,
+          element: clickData.element,
+          page: clickData.url
+        });
+      }
+    });
+  }
+
+  trackMouseMovements() {
+    let lastMovement = 0;
+    document.addEventListener('mousemove', (event) => {
+      const now = Date.now();
+      if (now - lastMovement < 100) return; // Throttle
+
+      lastMovement = now;
+      this.mouseMovements.push({
+        x: event.clientX,
+        y: event.clientY,
+        timestamp: now
+      });
+
+      if (this.mouseMovements.length >= this.maxBatchSize) {
+        this.sendBatch('mouse', this.mouseMovements.splice(0));
+      }
+    });
+  }
+
+  trackScrollBehavior() {
+    let maxScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+      if (scrollPercent > maxScroll) {
+        maxScroll = scrollPercent;
+        this.scrollDepths.push({
+          depth: scrollPercent,
+          timestamp: Date.now()
+        });
+      }
+    });
+  }
+
+  trackTimeOnPage() {
+    const startTime = Date.now();
+    window.addEventListener('beforeunload', () => {
+      const timeSpent = Date.now() - startTime;
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'time_on_page', {
+          time_spent: timeSpent,
+          page: window.location.href
+        });
+      }
+    });
+  }
+
+  sendBatch(type, data) {
+    // Send to analytics endpoint
+    fetch('/api/analytics/behavior', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, data })
+    }).catch(() => {
+      // Silently fail - don't break user experience
+    });
+  }
+}
+
+// Initialize behavior tracking
+const behaviorTracker = new BehaviorTracker();
+behaviorTracker.init();</script>
+      <script>
+// Exit Intent Popup System
+class ExitIntentPopup {
+  constructor() {
+    this.shown = false;
+    this.mouseLeaveCount = 0;
+  }
+
+  init() {
+    document.addEventListener('mouseleave', (event) => {
+      if (event.clientY <= 0 && !this.shown) {
+        this.mouseLeaveCount++;
+
+        // Only show after 2 mouse leaves to avoid false positives
+        if (this.mouseLeaveCount >= 2) {
+          this.showPopup();
+        }
+      }
+    });
+
+    // Also show on scroll exit (user scrolling up quickly)
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+
+      if (scrollTop < lastScrollTop && scrollTop < 100 && !this.shown) {
+        setTimeout(() => this.showPopup(), 1000);
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  }
+
+  showPopup() {
+    if (this.shown) return;
+
+    this.shown = true;
+
+    // Create popup
+    const popup = document.createElement('div');
+    popup.id = 'exit-intent-popup';
+    popup.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: system-ui, sans-serif;
+      ">
+        <div style="
+          background: white;
+          padding: 2rem;
+          border-radius: 10px;
+          max-width: 500px;
+          text-align: center;
+          position: relative;
+        ">
+          <button onclick="this.closest('#exit-intent-popup').remove()" style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+          ">×</button>
+
+          <h2 style="color: #333; margin-bottom: 1rem;">Wait! Don't Leave Yet!</h2>
+          <p style="color: #666; margin-bottom: 1.5rem;">
+            Get the complete Sugar Daddy Protocol with <strong>50+ scripts</strong> and <strong>safety templates</strong> for only $97.
+          </p>
+
+          <a href="#pricing" onclick="this.closest('#exit-intent-popup').remove()" style="
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+          ">Get My Discount - $97</a>
+
+          <p style="color: #999; font-size: 12px;">
+            No spam, unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    // Track popup events
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'exit_intent_shown', {
+        page: window.location.href
+      });
+    }
+  }
+}
+
+// Initialize exit intent popup
+const exitIntent = new ExitIntentPopup();
+exitIntent.init();</script>
+      <script>
+// Advanced Lead Capture System
+class LeadCapture {
+  constructor() {
+    this.leads = [];
+    this.forms = [];
+  }
+
+  init() {
+    this.createExitIntentForm();
+    this.createScrollPopup();
+    this.createTimedPopup();
+    this.trackFormSubmissions();
+  }
+
+  createExitIntentForm() {
+    const formHTML = `
+      <div id="exit-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center; font-family: system-ui, sans-serif;">
+        <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; position: relative;">
+          <button onclick="document.getElementById('exit-popup').style.display='none'" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+
+          <h3 style="color: #333; margin-bottom: 1rem;">🎁 FREE Sugar Daddy Targeting Guide</h3>
+          <p style="color: #666; margin-bottom: 1.5rem;">Get the exact strategies I used to go from $0 to $12K/month. No spam, unsubscribe anytime.</p>
+
+          <form id="exit-lead-form" style="display: flex; flex-direction: column; gap: 1rem;">
+            <input type="email" placeholder="Your email address" required style="padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+            <button type="submit" style="background: #ff6b6b; color: white; padding: 0.75rem; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Get FREE Guide Now</button>
+          </form>
+
+          <p style="color: #999; font-size: 12px; margin-top: 1rem; text-align: center;">🔒 Privacy protected. We hate spam too.</p>
+        </div>
+      </div>
+    `;
+
+    // Add to page
+    document.body.insertAdjacentHTML('beforeend', formHTML);
+
+    // Show on exit intent
+    let shown = false;
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY <= 0 && !shown) {
+        shown = true;
+        document.getElementById('exit-popup').style.display = 'flex';
+
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'exit_popup_shown');
+        }
+      }
+    });
+  }
+
+  createScrollPopup() {
+    const scrollFormHTML = `
+      <div id="scroll-popup" style="display: none; position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 10px; max-width: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000;">
+        <button onclick="document.getElementById('scroll-popup').style.display='none'" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button>
+
+        <h4 style="margin-bottom: 0.5rem;">📈 Ready to Transform Your Income?</h4>
+        <p style="margin-bottom: 1rem; font-size: 14px;">Join 12,000+ students who've mastered sugar daddy targeting. Get weekly strategies delivered to your inbox.</p>
+
+        <form id="scroll-lead-form" style="display: flex; gap: 0.5rem;">
+          <input type="email" placeholder="Email" required style="flex: 1; padding: 0.5rem; border: none; border-radius: 3px; font-size: 14px;">
+          <button type="submit" style="background: #ff6b6b; color: white; padding: 0.5rem 1rem; border: none; border-radius: 3px; cursor: pointer;">Join</button>
+        </form>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', scrollFormHTML);
+
+    // Show after 50% scroll
+    let shown = false;
+    window.addEventListener('scroll', () => {
+      if (!shown && window.scrollY > document.body.scrollHeight * 0.5) {
+        shown = true;
+        document.getElementById('scroll-popup').style.display = 'block';
+
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'scroll_popup_shown');
+        }
+      }
+    });
+  }
+
+  createTimedPopup() {
+    const timedFormHTML = `
+      <div id="timed-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 10px; max-width: 450px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 10000;">
+        <button onclick="document.getElementById('timed-popup').style.display='none'" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+
+        <h3 style="color: #333; margin-bottom: 1rem;">⏰ Your FREE Success Blueprint</h3>
+        <p style="color: #666; margin-bottom: 1.5rem;">Most people struggle with sugar dating because they don't have a proven system. Get my exact blueprint that generated $500-$5000/week.</p>
+
+        <form id="timed-lead-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="text" placeholder="Your name" required style="padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
+          <input type="email" placeholder="Your email" required style="padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
+          <button type="submit" style="background: #ff6b6b; color: white; padding: 0.75rem; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Send Me the Blueprint</button>
+        </form>
+
+        <p style="color: #999; font-size: 12px; margin-top: 1rem; text-align: center;">📧 We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', timedFormHTML);
+
+    // Show after 30 seconds
+    setTimeout(() => {
+      if (!sessionStorage.getItem('timed_popup_shown')) {
+        document.getElementById('timed-popup').style.display = 'block';
+        sessionStorage.setItem('timed_popup_shown', 'true');
+
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'timed_popup_shown');
+        }
+      }
+    }, 30000);
+  }
+
+  trackFormSubmissions() {
+    // Track all lead form submissions
+    document.addEventListener('submit', (e) => {
+      if (e.target.id.includes('lead-form')) {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const leadData = {
+          name: formData.get('name') || '',
+          email: formData.get('email'),
+          source: e.target.id.replace('-lead-form', '').replace('-form', ''),
+          timestamp: new Date().toISOString(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        };
+
+        // Send to email service
+        this.submitLead(leadData);
+
+        // Hide popup
+        e.target.closest('[id*="-popup"]').style.display = 'none';
+
+        // Show success message
+        alert('Thanks! Check your email for the free guide.');
+
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'lead_capture', {
+            source: leadData.source,
+            value: 97 // Estimated lead value
+          });
+        }
+      }
+    });
+  }
+
+  async submitLead(leadData) {
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadData)
+      });
+
+      if (!response.ok) {
+        console.warn('Lead submission failed:', response.status);
+      }
+    } catch (error) {
+      console.warn('Lead submission error:', error.message);
+      // Store locally for retry
+      this.storeLeadLocally(leadData);
+    }
+  }
+
+  storeLeadLocally(leadData) {
+    const leads = JSON.parse(localStorage.getItem('pending_leads') || '[]');
+    leads.push(leadData);
+    localStorage.setItem('pending_leads', JSON.stringify(leads));
+  }
+}
+
+// Initialize lead capture
+const leadCapture = new LeadCapture();
+leadCapture.init();</script>
+      <script>
+// Abandoned Cart Recovery System
+class CartRecovery {
+  constructor() {
+    this.cartData = {};
+    this.recoveryAttempts = {};
+  }
+
+  init() {
+    this.trackCartActions();
+    this.setupRecoveryTriggers();
+  }
+
+  trackCartActions() {
+    // Track when someone views pricing
+    const pricingSections = document.querySelectorAll('[data-pricing]');
+    pricingSections.forEach(section => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.cartData.lastPricingView = Date.now();
+            this.cartData.pricingViewed = true;
+            this.saveCartData();
+          }
+        });
+      });
+      observer.observe(section);
+    });
+
+    // Track CTA clicks
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-cta]')) {
+        this.cartData.lastCtaClick = Date.now();
+        this.cartData.ctaClicked = true;
+        this.saveCartData();
+      }
+    });
+
+    // Track payment modal opens
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-payment]')) {
+        this.cartData.lastPaymentAttempt = Date.now();
+        this.cartData.paymentAttempted = true;
+        this.saveCartData();
+      }
+    });
+  }
+
+  setupRecoveryTriggers() {
+    // Recovery trigger 1: Exit intent after pricing view
+    let pricingViewed = false;
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY <= 0 && pricingViewed && !this.recoveryAttempts.exitIntent) {
+        this.triggerRecovery('exit_intent');
+      }
+    });
+
+    // Recovery trigger 2: Timed popup after CTA click
+    setTimeout(() => {
+      if (this.cartData.ctaClicked && !this.cartData.converted) {
+        this.triggerRecovery('timed_recovery');
+      }
+    }, 300000); // 5 minutes
+
+    // Recovery trigger 3: Scroll away after payment attempt
+    window.addEventListener('blur', () => {
+      if (this.cartData.paymentAttempted && !this.cartData.converted) {
+        setTimeout(() => this.triggerRecovery('tab_switch'), 5000);
+      }
+    });
+  }
+
+  triggerRecovery(type) {
+    if (this.recoveryAttempts[type]) return;
+
+    this.recoveryAttempts[type] = true;
+
+    // Show recovery popup
+    this.showRecoveryPopup(type);
+
+    // Track recovery attempt
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'cart_recovery_attempt', {
+        recovery_type: type,
+        cart_value: 97
+      });
+    }
+  }
+
+  showRecoveryPopup(type) {
+    const messages = {
+      exit_intent: {
+        title: 'Wait! Complete Your Order',
+        content: 'Get instant access to 50+ proven scripts and safety templates.',
+        cta: 'Complete Purchase - $97'
+      },
+      timed_recovery: {
+        title: 'Ready to Transform Your Income?',
+        content: 'Your success blueprint is just one click away.',
+        cta: 'Get Instant Access'
+      },
+      tab_switch: {
+        title: 'Don't Lose Your Progress!',
+        content: 'Complete your order now and start earning tonight.',
+        cta: 'Finish Order'
+      }
+    };
+
+    const msg = messages[type];
+    const popup = document.createElement('div');
+    popup.innerHTML = `
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; display: flex; align-items: center; justify-content: center; font-family: system-ui, sans-serif;">
+        <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; text-align: center; position: relative;">
+          <button onclick="this.closest('div').parentElement.remove()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+
+          <h2 style="color: #333; margin-bottom: 1rem;">${msg.title}</h2>
+          <p style="color: #666; margin-bottom: 1.5rem;">${msg.content}</p>
+
+          <a href="#pricing" onclick="this.closest('div').parentElement.remove()" style="background: #ff6b6b; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin-bottom: 1rem;">${msg.cta}</a>
+
+          <p style="color: #999; font-size: 12px;">⏰ Limited time offer</p>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(popup);
+  }
+
+  saveCartData() {
+    localStorage.setItem('cart_data', JSON.stringify(this.cartData));
+  }
+
+  loadCartData() {
+    const data = localStorage.getItem('cart_data');
+    if (data) {
+      this.cartData = JSON.parse(data);
+    }
+  }
+}
+
+// Initialize cart recovery
+const cartRecovery = new CartRecovery();
+cartRecovery.init();</script>
+      <script>
+// Email Marketing Analytics
+class EmailAnalytics {
+  constructor() {
+    this.events = [];
+  }
+
+  trackEmailEvent(eventType, data) {
+    const event = {
+      type: eventType,
+      timestamp: new Date().toISOString(),
+      url: window.location.href,
+      userAgent: navigator.userAgent,
+      ...data
+    };
+
+    this.events.push(event);
+
+    // Send to analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'email_' + eventType, data);
+    }
+
+    // Store for batch processing
+    this.batchEvents();
+  }
+
+  batchEvents() {
+    if (this.events.length >= 10) {
+      fetch('/api/email-analytics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ events: this.events.splice(0) })
+      }).catch(() => {
+        // Silently fail
+      });
+    }
+  }
+
+  trackUtmParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmData = {};
+
+    ['source', 'medium', 'campaign', 'term', 'content'].forEach(param => {
+      const value = urlParams.get('utm_' + param);
+      if (value) {
+        utmData['utm_' + param] = value;
+      }
+    });
+
+    if (Object.keys(utmData).length > 0) {
+      this.trackEmailEvent('utm_detected', utmData);
+    }
+
+    return utmData;
+  }
+}
+
+// Initialize email analytics
+const emailAnalytics = new EmailAnalytics();
+
+// Track UTM parameters on page load
+document.addEventListener('DOMContentLoaded', () => {
+  emailAnalytics.trackUtmParameters();
+});
+
+// Track email link clicks
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (link && link.href.includes('utm_')) {
+    emailAnalytics.trackEmailEvent('link_click', {
+      href: link.href,
+      text: link.textContent?.trim()
+    });
+  }
+});</script>
   </body>
 </html>

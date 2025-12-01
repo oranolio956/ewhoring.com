@@ -1,0 +1,55 @@
+{
+  "series": [
+    {
+      "day": 0,
+      "subject": "🎉 Welcome to the Sugar Daddy Protocol!",
+      "content": {
+        "greeting": "Welcome to the family!",
+        "main_content": "Thanks for joining 12,000+ students who've transformed their income with sugar dating.",
+        "value_prop": "Inside your welcome kit: FREE targeting guide, conversation starters, and safety checklist.",
+        "cta": "Download Your Welcome Kit",
+        "cta_link": "/welcome-kit.pdf"
+      }
+    },
+    {
+      "day": 1,
+      "subject": "Your First Step to $500/Month 💰",
+      "content": {
+        "greeting": "Ready to get started?",
+        "main_content": "Most beginners make the same mistake: they target the wrong men. Here's how to find sugar daddies who actually pay.",
+        "value_prop": "Today's lesson: The 3 types of sugar daddies and where to find them.",
+        "cta": "Read Today's Lesson",
+        "cta_link": "/lesson-1"
+      }
+    },
+    {
+      "day": 3,
+      "subject": "The Conversation That Closes $1,000 Arrangements",
+      "content": {
+        "greeting": "Let's talk about money 💸",
+        "main_content": "The key to successful sugar arrangements isn't just finding the right man - it's knowing how to discuss terms professionally.",
+        "value_prop": "Master the art of the \"arrangement conversation\" with proven scripts.",
+        "cta": "Get the Conversation Scripts",
+        "cta_link": "/conversation-scripts"
+      }
+    },
+    {
+      "day": 7,
+      "subject": "Your Complete Success System Awaits",
+      "content": {
+        "greeting": "You've learned the basics...",
+        "main_content": "Now it's time to put it all together. The complete Sugar Daddy Protocol includes 50+ scripts, safety templates, and weekly strategy updates.",
+        "value_prop": "Join students earning $5K-$15K monthly with the full system.",
+        "cta": "Get the Complete Protocol - $97",
+        "cta_link": "#pricing"
+      }
+    }
+  ],
+  "settings": {
+    "from_name": "Oranolio",
+    "from_email": "oranolio@sugardaddyprotocol.com",
+    "reply_to": "support@sugardaddyprotocol.com",
+    "send_time": "14:00",
+    "timezone": "America/New_York"
+  }
+}

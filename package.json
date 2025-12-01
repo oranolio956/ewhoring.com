@@ -26,7 +26,9 @@
     "cloak": "node scripts/automation/cloaking-engine.mjs",
     "audit:seo": "node scripts/audit/seo-audit.mjs",
     "enhance:schema": "node scripts/audit/schema-validator.mjs",
-    "advanced:features": "node scripts/advanced/monitoring-system.mjs"
+    "advanced:features": "node scripts/advanced/monitoring-system.mjs",
+    "optimize:high-impact": "node scripts/advanced/image-optimizer.mjs",
+    "email:automation": "node scripts/advanced/email-automation.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
