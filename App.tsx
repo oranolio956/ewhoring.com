@@ -2,9 +2,47 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const DISCORD_LINK = "https://discord.gg/ovrtime";
 
+// THE RIDICULOUS HATER SONG LYRICS
+const HATER_SONG_LYRICS = [
+  "🎤 OH YOU'RE A HATER? 🎤",
+  "Yeah you mad, yeah you big mad! 😤",
+  "Scrolling through my page, making you so sad! 😢",
+  "You ain't got the sauce, you ain't got the drip! 💧",
+  "While I'm making moves, you just sit and trip! 🚶",
+  "",
+  "🔥 CHORUS: HATER HATER HATER! 🔥",
+  "See you later, alligator! 🐊",
+  "You're a spectator, I'm the creator! 🎨",
+  "OVERTIME got me feeling greater! 💪",
+  "",
+  "🎵 VERSE 2: 🎵",
+  "You clicked on my site, now you're stuck in the vibe! 🌊",
+  "discord.gg/ovrtime - join the tribe! 👥",
+  "BUY! SELL! REPEAT! That's the way we roll! 🎲",
+  "Haters gonna hate but we got that SOUL! 👻",
+  "",
+  "💜 BRIDGE: 💜",
+  "Dunkaroos in my veins, cookies for days! 🍪",
+  "This website so fire, setting haters ablaze! 🔥",
+  "Respect the drip or get out the way! 💦",
+  "OVERTIME GANG - we don't play! 🎮",
+  "",
+  "🚀 FINAL CHORUS: 🚀",
+  "HATER HATER, why you gotta hate? 😠",
+  "Join the Discord, it's never too late! ⏰",
+  "discord.gg/ovrtime - that's the spot! 📍",
+  "OVERTIME crew - WE'RE TOO HOT! 🌶️",
+  "",
+  "🎤 *mic drop* 🎤",
+  "~ Produced by Dunkaroos Gang ~"
+];
+
 const App: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [clicks, setClicks] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [currentLyricIndex, setCurrentLyricIndex] = useState(0);
+  const [showSong, setShowSong] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -13,6 +51,30 @@ const App: React.FC = () => {
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Auto-play the hater song lyrics
+  useEffect(() => {
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        setCurrentLyricIndex(prev => {
+          if (prev >= HATER_SONG_LYRICS.length - 1) {
+            return 0; // Loop back
+          }
+          return prev + 1;
+        });
+      }, 1500); // Change lyric every 1.5 seconds
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying]);
+
+  // Show song after 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSong(true);
+      setIsPlaying(true);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClick = (e: React.MouseEvent) => {
@@ -152,6 +214,69 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#5865F2] via-[#7289da] to-[#5865F2] opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#ff00ff] via-[#00ffff] to-[#ff00ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-gradient" />
         </button>
+
+        {/* 🎤 THE RIDICULOUS HATER SONG 🎤 */}
+        {showSong && (
+          <div className="hater-song-container mt-8 md:mt-12 w-full max-w-2xl mx-auto">
+            <div className="song-header text-center mb-4">
+              <h2 className="text-2xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ff00ff] via-[#ffff00] to-[#00ffff] animate-pulse">
+                🎵 THE HATER SONG 🎵
+              </h2>
+              <p className="text-white/60 text-sm mt-2">~ A Musical Journey for All You Haters ~</p>
+            </div>
+            
+            <div className="lyrics-display relative overflow-hidden rounded-2xl p-6 md:p-8" style={{
+              background: 'linear-gradient(135deg, rgba(88,101,242,0.3) 0%, rgba(255,0,255,0.2) 50%, rgba(0,255,255,0.3) 100%)',
+              border: '2px solid rgba(255,255,255,0.2)',
+              boxShadow: '0 0 40px rgba(255,0,255,0.3), inset 0 0 60px rgba(88,101,242,0.2)'
+            }}>
+              {/* Bouncing Music Notes */}
+              <div className="absolute top-2 left-4 text-2xl music-note">🎵</div>
+              <div className="absolute top-2 right-4 text-2xl music-note delay-1">🎶</div>
+              <div className="absolute bottom-2 left-8 text-2xl music-note delay-2">🎤</div>
+              <div className="absolute bottom-2 right-8 text-2xl music-note delay-3">🔥</div>
+              
+              {/* Current Lyric Display */}
+              <div className="lyric-text text-center min-h-[80px] flex items-center justify-center">
+                <p className={`text-xl md:text-3xl font-bold text-white lyric-bounce ${HATER_SONG_LYRICS[currentLyricIndex] === '' ? 'opacity-0' : ''}`}>
+                  {HATER_SONG_LYRICS[currentLyricIndex] || '♪ ♫ ♪'}
+                </p>
+              </div>
+              
+              {/* Progress Bar */}
+              <div className="mt-4 h-2 bg-white/20 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-[#ff00ff] via-[#5865F2] to-[#00ffff] transition-all duration-300"
+                  style={{ width: `${((currentLyricIndex + 1) / HATER_SONG_LYRICS.length) * 100}%` }}
+                />
+              </div>
+              
+              {/* Visualizer Bars */}
+              <div className="flex justify-center gap-1 mt-4">
+                {[...Array(20)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className="visualizer-bar w-2 bg-gradient-to-t from-[#5865F2] to-[#ff00ff] rounded-full"
+                    style={{ 
+                      animationDelay: `${i * 0.05}s`,
+                      height: `${10 + Math.random() * 30}px`
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+            
+            {/* Play/Pause Button */}
+            <div className="flex justify-center mt-4 gap-4">
+              <button 
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#ff00ff] to-[#5865F2] text-white font-bold hover:scale-110 transition-transform"
+              >
+                {isPlaying ? '⏸️ PAUSE THE HEAT' : '▶️ DROP THE BEAT'}
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Scattered Discord Links */}
         <div className="scattered-links absolute inset-0 pointer-events-none">
@@ -516,6 +641,78 @@ const App: React.FC = () => {
           20%, 24%, 55% {
             text-shadow: none;
           }
+        }
+
+        /* 🎤 HATER SONG STYLES 🎤 */
+        .hater-song-container {
+          animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+          0% { opacity: 0; transform: translateY(50px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .music-note {
+          animation: bounce 0.6s ease-in-out infinite;
+        }
+
+        .music-note.delay-1 { animation-delay: 0.15s; }
+        .music-note.delay-2 { animation-delay: 0.3s; }
+        .music-note.delay-3 { animation-delay: 0.45s; }
+
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-15px) rotate(10deg); }
+        }
+
+        .lyric-bounce {
+          animation: lyricPop 0.5s ease-out;
+        }
+
+        @keyframes lyricPop {
+          0% { transform: scale(0.5); opacity: 0; }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); opacity: 1; }
+        }
+
+        .visualizer-bar {
+          animation: visualize 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes visualize {
+          0% { transform: scaleY(0.3); }
+          100% { transform: scaleY(1); }
+        }
+
+        /* Karaoke glow effect */
+        .lyrics-display::before {
+          content: '';
+          position: absolute;
+          inset: -2px;
+          background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #5865F2);
+          background-size: 400% 400%;
+          border-radius: inherit;
+          z-index: -1;
+          animation: borderRotate 3s linear infinite;
+          filter: blur(10px);
+        }
+
+        @keyframes borderRotate {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        /* Spinning record effect */
+        .song-header h2 {
+          animation: textShine 2s linear infinite;
+          background-size: 200% auto;
+        }
+
+        @keyframes textShine {
+          0% { background-position: 0% center; }
+          100% { background-position: 200% center; }
         }
 
         body {
