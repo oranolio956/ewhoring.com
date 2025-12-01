@@ -15,7 +15,9 @@ const CRYPTO_OPTIONS = [
     icon: '₿',
     color: '#F7931A',
     address: 'bc1qxv394xty8p380gq25qf70nm5r84zemgwzh3z06',
-    network: 'Bitcoin Network'
+    network: 'Bitcoin Network',
+    uriScheme: 'bitcoin',
+    estimatedAmount: '0.0015' // Approximate BTC amount for $150
   },
   {
     id: 'eth',
@@ -24,7 +26,9 @@ const CRYPTO_OPTIONS = [
     icon: 'Ξ',
     color: '#627EEA',
     address: '0xde0F05DAB6c6c335161505B36268ccFc104E506f',
-    network: 'Ethereum Network (ERC-20)'
+    network: 'Ethereum Network (ERC-20)',
+    uriScheme: 'ethereum',
+    estimatedAmount: '0.045' // Approximate ETH amount for $150
   },
   {
     id: 'usdt',
@@ -33,7 +37,9 @@ const CRYPTO_OPTIONS = [
     icon: '₮',
     color: '#26A17B',
     address: '0xde0F05DAB6c6c335161505B36268ccFc104E506f',
-    network: 'ERC-20 (Ethereum Network)'
+    network: 'ERC-20 (Ethereum Network)',
+    uriScheme: 'ethereum',
+    estimatedAmount: '150' // USDT amount (stable coin)
   },
   {
     id: 'ltc',
@@ -42,7 +48,9 @@ const CRYPTO_OPTIONS = [
     icon: 'Ł',
     color: '#BFBBBB',
     address: 'LW1rr8n8u437YkHuBjKdhNkhAWqJy2tezG',
-    network: 'Litecoin Network'
+    network: 'Litecoin Network',
+    uriScheme: 'litecoin',
+    estimatedAmount: '2.5' // Approximate LTC amount for $150
   },
   {
     id: 'sol',
@@ -51,20 +59,42 @@ const CRYPTO_OPTIONS = [
     icon: '◎',
     color: '#9945FF',
     address: '3BPJBjiPSvHfmjp6isCAfi1HtxJsjFSV3GWuCFaQK1Te',
-    network: 'Solana Network'
+    network: 'Solana Network',
+    uriScheme: 'solana',
+    estimatedAmount: '1.2' // Approximate SOL amount for $150
   }
 ];
 
+// Generate proper cryptocurrency URI for wallet integration
+const generateCryptoURI = (crypto: typeof CRYPTO_OPTIONS[0]) => {
+  const { uriScheme, address, estimatedAmount } = crypto;
+
+  // Different cryptocurrencies have different URI formats
+  switch (uriScheme) {
+    case 'bitcoin':
+      return `${uriScheme}:${address}?amount=${estimatedAmount}`;
+    case 'ethereum':
+      return `${uriScheme}:${address}?value=${estimatedAmount}`;
+    case 'litecoin':
+      return `${uriScheme}:${address}?amount=${estimatedAmount}`;
+    case 'solana':
+      return `${uriScheme}:${address}?amount=${estimatedAmount}`;
+    default:
+      return address; // Fallback to just the address
+  }
+};
+
 // QR Code Component using Google Charts API
-const QRCode: React.FC<{ data: string; size?: number }> = ({ data, size = 180 }) => {
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}&bgcolor=FFFFFF&color=1A2A3A&margin=1`;
-  
+const QRCode: React.FC<{ crypto: typeof CRYPTO_OPTIONS[0]; size?: number }> = ({ crypto, size = 180 }) => {
+  const cryptoURI = generateCryptoURI(crypto);
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(cryptoURI)}&bgcolor=FFFFFF&color=1A2A3A&margin=1`;
+
   return (
     <img
       src={qrUrl}
-      alt="Cryptocurrency payment QR code for secure transaction"
+      alt={`Scan to pay ${crypto.name} to ${crypto.address}`}
       width={size}
-      loading="lazy" 
+      loading="lazy"
       height={size}
       className="mx-auto"
       style={{ imageRendering: 'pixelated' }}
@@ -309,17 +339,27 @@ export const CryptoPayment: React.FC<CryptoPaymentProps> = ({ isOpen, onClose })
 
               {/* QR Code */}
               <div className="bg-white p-4 rounded mb-4">
-                <QRCode data={selectedCryptoData.address} size={180} />
+                <QRCode crypto={selectedCryptoData} size={180} />
+                <div className="text-center mt-2">
+                  <div className="text-[10px] text-[#1A2A3A]/70 font-mono">
+                    Scan with {selectedCryptoData.name} wallet app
+                  </div>
+                </div>
               </div>
 
               {/* Amount */}
               <div className="text-center mb-4">
-                <div className="text-xs text-[#FDFBF7]/50 uppercase tracking-wider mb-1">Send Exactly</div>
-                <div className="text-2xl font-bold text-[#2D9C8E] font-['Space_Grotesk']">
-                  ${PRODUCT_PRICE} <span className="text-sm text-[#FDFBF7]/50">USD</span>
+                <div className="text-xs text-[#FDFBF7]/50 uppercase tracking-wider mb-2">Send Exactly</div>
+                <div className="bg-[#1A2A3A] p-3 rounded-lg border border-[#2D9C8E]/20 mb-2">
+                  <div className="text-xl font-bold text-[#2D9C8E] font-['Space_Grotesk']">
+                    {selectedCryptoData.estimatedAmount} {selectedCryptoData.symbol}
+                  </div>
+                  <div className="text-[10px] text-[#FDFBF7]/60">
+                    ≈ ${PRODUCT_PRICE} USD (estimated)
+                  </div>
                 </div>
                 <div className="text-[10px] text-[#FDFBF7]/40">
-                  in {selectedCryptoData.symbol} (check current exchange rate)
+                  Rate may vary - check your wallet for current exchange rate
                 </div>
               </div>
 
@@ -346,6 +386,21 @@ export const CryptoPayment: React.FC<CryptoPaymentProps> = ({ isOpen, onClose })
                       </svg>
                     )}
                   </button>
+                </div>
+              </div>
+
+              {/* Wallet Integration Info */}
+              <div className="bg-[#1A2A3A] border border-[#2D9C8E]/20 p-3 rounded mb-4">
+                <div className="flex items-start gap-2 mb-2">
+                  <svg className="w-4 h-4 text-[#2D9C8E] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                  </svg>
+                  <div className="text-[11px] font-semibold text-[#2D9C8E] uppercase tracking-wider">
+                    Wallet Integration
+                  </div>
+                </div>
+                <div className="text-[10px] text-[#FDFBF7]/70 leading-relaxed ml-6">
+                  Scanning with a {selectedCryptoData.name} wallet will automatically populate the address and amount. No manual copying required.
                 </div>
               </div>
 
