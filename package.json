@@ -15,7 +15,12 @@
     "deploy:worker": "wrangler deploy",
     "setup": "node scripts/setup.mjs",
     "update:sitemap": "node scripts/sitemap/update-sitemap.mjs",
-    "build:links": "node scripts/offpage/link-building.mjs"
+    "update:content": "node scripts/automation/content-updater.mjs",
+    "syndicate:social": "node scripts/automation/social-syndicator.mjs",
+    "build:links": "node scripts/automation/link-builder.mjs",
+    "setup:analytics": "node scripts/automation/analytics-setup.mjs",
+    "local:seo": "node scripts/automation/local-seo.mjs",
+    "ab:test": "node scripts/automation/conversion-testing.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",

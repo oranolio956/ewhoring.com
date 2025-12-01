@@ -108,6 +108,17 @@
     <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" /> -->
     <!-- <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> -->
     <!-- <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" /> -->
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        'custom_map': {'dimension1': 'device_type', 'metric1': 'page_load_time'}
+      });
+    </script>
     
     <!-- PWA & App Manifest -->
     <link rel="manifest" href="/manifest.json" />
@@ -402,7 +413,7 @@
   }
 }
 </script>
-    <script type="module" crossorigin src="/assets/index-ClXN54qv.js"></script>
+    <script type="module" crossorigin src="/assets/index-CMdgFUgU.js"></script>
   </head>
   <body>
     <div id="root"></div>

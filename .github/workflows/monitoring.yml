@@ -49,6 +49,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Update content freshness
+        run: npm run update:content
+
       - name: Generate new landing pages
         run: npm run generate:pages
 
@@ -59,8 +62,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add public/generated/
-          git commit -m "🤖 Auto-generate SEO content [$(date +%Y-%m-%d)]" || echo "No changes to commit"
+          git add public/generated/ public/resources/ public/sitemap.xml index.html
+          git commit -m "🤖 Auto-update content freshness & generate SEO content [$(date +%Y-%m-%d)]" || echo "No changes to commit"
           git push
 
   syndication:
@@ -78,13 +81,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run syndication campaigns
-        run: npm run syndicate
+      - name: Run social syndication
+        run: npm run syndicate:social weekly
         env:
-          REDDIT_TOKEN: ${{ secrets.REDDIT_TOKEN }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Run link building analysis
+        run: npm run build:links analyze
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
 
   alerts:
     runs-on: ubuntu-latest

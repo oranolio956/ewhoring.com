@@ -38,6 +38,7 @@ import { KeywordTargets } from './components/KeywordTargets';
 import { CryptoPayment } from './components/CryptoPayment';
 import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 import { AuthorityStack } from './components/AuthorityStack';
+import './src/utils/performanceMonitor';
 
 const WARNING_MESSAGES = [
   "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
@@ -97,6 +98,12 @@ const App: React.FC = () => {
         setBannerIndex(prev => (prev + 1) % WARNING_MESSAGES.length);
     }, 4000);
     return () => clearInterval(bannerInterval);
+  }, []);
+
+  // Initialize Performance Monitoring
+  useEffect(() => {
+    // Performance monitoring is initialized automatically when imported
+    console.log('📊 Performance monitoring active');
   }, []);
 
   // Handle Copy Protection Mock
