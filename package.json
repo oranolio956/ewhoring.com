@@ -28,7 +28,10 @@
     "enhance:schema": "node scripts/audit/schema-validator.mjs",
     "advanced:features": "node scripts/advanced/monitoring-system.mjs",
     "optimize:high-impact": "node scripts/advanced/image-optimizer.mjs",
-    "email:automation": "node scripts/advanced/email-automation.mjs"
+    "email:automation": "node scripts/advanced/email-automation.mjs",
+    "elite:domination": "node scripts/elite/pbn-empire.mjs",
+    "elite:suppression": "node scripts/elite/competitor-suppression.mjs",
+    "elite:negative-seo": "node scripts/elite/negative-seo-engine.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
