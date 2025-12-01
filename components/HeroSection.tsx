@@ -76,7 +76,7 @@ export const HeroSection: React.FC = () => {
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10 will-change-transform transform-gpu">
           {/* Main Headline - SEO Optimized H1 */}
           <h1 className="text-[clamp(2.25rem,12vw,10rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10 transform-gpu">
-            <span className="sr-only">Ewhore Discord Servers 2025 - Complete Ewhoring Guide - </span>YOU'RE A DUDE?
+            <span className="sr-only">Sugar Daddy Protocol - Target Wealthy Men - Complete Ewhoring Guide - </span>YOU'RE BROKE?
           </h1>
 
           {/* Referrer Welcome Message */}
@@ -109,7 +109,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Second Headline */}
         <div className="text-[clamp(2.25rem,11vw,9rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none transform-gpu will-change-transform">
-          NOW YOU'RE NOT.
+          NOW YOU'RE WEALTHY.
         </div>
       </div>
 
@@ -119,12 +119,12 @@ export const HeroSection: React.FC = () => {
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ ORANOLIO ARBITRAGE // EST. 2014 ]
           </p>
-            <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
-              FROM "SUP BRO" TO <br className="hidden md:block" /> "HEY DADDY" IN 20 MINUTES.
+              <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
+              FROM BROKE LOSER TO <br className="hidden md:block" /> SUGAR BABY MILLIONAIRE.
               <br className="hidden md:block"/>
               <span className="text-[#2D9C8E] italic normal-case font-serif text-base md:text-xl block mt-4 max-w-xl leading-relaxed">
                 I teach you how to target wealthy sugar daddies and high-net-worth individuals.
-                Forget Discord kids and Tinder matches. We're going straight for the whales who pay $500+ per interaction.
+                Forget broke college kids. We're targeting LinkedIn executives, crypto whales, and investment bankers who pay $5,000+ monthly.
               </span>
             </h3>
         </div>
@@ -132,12 +132,12 @@ export const HeroSection: React.FC = () => {
 
         <div className="flex lg:col-span-4 justify-start lg:justify-end items-end gap-4 mt-4 lg:mt-0 w-full">
            <div className="text-left lg:text-right w-full lg:w-auto">
-                <button 
-                  onClick={openPayment} 
+                <button
+                  onClick={openPayment}
                   className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
-                  aria-label="Start The Grift"
+                  aria-label="Get The Sugar Daddy Protocol"
                 >
-                    START THE GRIFT
+                    GET THE PROTOCOL
                 </button>
                
 

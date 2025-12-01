@@ -145,3 +145,4 @@ if (platform === 'telegram') {
   sendAlerts();
 }
 
+

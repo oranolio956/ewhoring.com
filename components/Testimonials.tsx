@@ -4,28 +4,28 @@ import { usePayment } from '../contexts/PaymentContext';
 
 const reviews = [
   {
-    name: "Tom, 34",
-    role: "Ex-Plumber",
-    alias: "Tomantha_UwU",
-    income: "+$18,500/mo",
-    quote: "I put on a wig as a joke. 20 minutes later, a guy named 'Tex' sent me $150 just to say 'good morning'. I haven't touched a toilet in 8 months. My hands are still hairy, but my bank account is smooth.",
-    tags: ["Sold His Van", "Sugar Baby"]
+    name: "Marcus, 28",
+    role: "Ex-Bartender",
+    alias: "Sophia_Executive",
+    income: "+$25,000/mo",
+    quote: "I targeted LinkedIn executives and now I have three sugar daddies. One CEO flies me to Dubai every month and pays my rent. Another bought me a condo. I went from $40k/year to $300k/year overnight.",
+    tags: ["Multiple Daddies", "Luxury Lifestyle"]
   },
   {
-    name: "Barry, 52",
-    role: "Forklift Certified",
-    alias: "Kitten_XoXo",
-    income: "+$14,200/mo",
-    quote: "I don't even use a voice changer anymore. I just tell them I have 'morning voice' because I'm sleepy. They send me $500 for 'coffee' while I'm watching football. I am a 52-year-old man named Barry.",
-    tags: ["Bought a Boat", "Zero Shame"]
+    name: "David, 31",
+    role: "Former IT Support",
+    alias: "Isabella_Investor",
+    income: "+$15,000/mo",
+    quote: "Crypto whales on Telegram are insane. One guy sent me $50,000 in BTC just because I 'understood his world.' I positioned myself as a 'tech entrepreneur' and now I have passive income for life.",
+    tags: ["Crypto Mining", "Financial Freedom"]
   },
   {
-    name: "Kevin, 19",
-    role: "Failed Crypto Trader",
-    alias: "Queen_Slayer_99",
-    income: "+$8,500/mo",
-    quote: "My dad thinks I'm day trading. I'm actually farming simps on Discord. I bought a Lambo with money meant for a discord mod's insulin.",
-    tags: ["Debt Free", "Going to Hell"]
+    name: "Alex, 25",
+    role: "College Dropout",
+    alias: "Victoria_Elite",
+    income: "+$12,000/mo",
+    quote: "Seeking.com sugar daddies are the real deal. I get $6,000 monthly allowances from two different executives. They think I'm a 'graduate student' - total discretion, total wealth.",
+    tags: ["Monthly Allowances", "Elite Clients"]
   }
 ];
 
@@ -41,13 +41,13 @@ export const Testimonials: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="mb-12 md:mb-16">
           <h2 className="text-4xl md:text-7xl font-bold text-[#1A2A3A] tracking-tighter mb-4">
-            THEY LEFT THE MATRIX <br/>
-            <span className="text-[#FF8A75] italic font-serif">(AND THEIR DIGNITY)</span>
+            THEY FOUND WEALTH <br/>
+            <span className="text-[#FF8A75] italic font-serif">(NOT DIGNITY)</span>
           </h2>
-          <p className="text-lg text-[#1A2A3A]/60 max-w-2xl">
-            Real men. Real results. Fake genders. <br/>
-            See how regular dudes are securing the bag by simply lying on the internet.
-          </p>
+            <p className="text-lg text-[#1A2A3A]/60 max-w-2xl">
+              Real wealth. Real results. Strategic targeting. <br/>
+              See how operators are securing monthly allowances and luxury arrangements from sugar daddies.
+            </p>
         </div>
 
         {/* Responsive Grid: 1 col mobile, 2 col tablet, 3 col desktop */}

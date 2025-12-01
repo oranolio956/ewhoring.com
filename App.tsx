@@ -59,7 +59,7 @@ const GlobalCTAButton: React.FC = () => {
   const { openPayment } = usePayment();
   return (
     <button onClick={openPayment} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200 btn-glitch">
-      <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">BECOME A GIRL NOW</span>
+      <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">GET THE SUGAR DADDY PROTOCOL</span>
       <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-100 group-hover:scale-x-0 transition-transform origin-right duration-500 ease-out"></div>
       <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
     </button>

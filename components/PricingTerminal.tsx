@@ -37,17 +37,17 @@ export const PricingTerminal: React.FC = () => {
 
                 <div className="space-y-4 text-sm md:text-base leading-relaxed break-words drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
                     <p>&gt; <span className="text-white">Loading modules...</span></p>
-                    <p>&gt; [OK] Simp_Farming_v2.exe</p>
-                    <p>&gt; [OK] Voice_Changer_Pro.exe</p>
-                    <p>&gt; [OK] Whale_Radar_Global.dat</p>
+                    <p>&gt; [OK] Sugar_Daddy_Radar.exe</p>
+                    <p>&gt; [OK] Executive_Network_Access.dat</p>
+                    <p>&gt; [OK] Luxury_Lifestyle_Profile.sys</p>
                     <p className="text-[#00FF00]/50">&gt; Checking Legal Framework...</p>
                     <p className="text-[#00FF00]">&gt; [SAFE] Educational Use Only Verified.</p>
                     <p className="text-[#00FF00]">&gt; [SAFE] Plausible Deniability Established.</p>
                     <p>&gt; <span className="text-white">Verifying User Competence...</span></p>
                     <p className="text-yellow-500 font-bold">&gt; WARNING: Social Engineering Skill Required.</p>
                     <p className="text-red-500 opacity-80 italic">&gt; [CHECK] If you are a retard, this transaction will fail.</p>
-                    <p>&gt; <span className="text-white">Calculating market value...</span> $4,500.00</p>
-                    <p>&gt; <span className="text-white">Applying "Broke Loser" discount...</span></p>
+                    <p>&gt; <span className="text-white">Calculating premium client value...</span> $25,000.00</p>
+                    <p>&gt; <span className="text-white">Applying "Strategic Operator" discount...</span></p>
                     <p className="animate-pulse">&gt; FINAL PRICE: $150.00</p>
                     
                     <div className="mt-8 pt-8 border-t border-[#00FF00]/20">

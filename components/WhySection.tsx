@@ -22,27 +22,28 @@ export const WhySection: React.FC = () => {
                     The Philosophy
                 </div>
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95]">
-                    WHY AM I GIVING <br/>
-                    YOU THE SAUCE?
+                    WHY SUGAR DADDIES <br/>
+                    ARE THE REAL MONEY?
                 </h2>
                 
                 <div className="space-y-6 text-lg md:text-xl text-[#FDFBF7]/80 leading-relaxed font-light">
                     <p>
-                        <strong className="text-[#FDFBF7]">I am 29 years old.</strong> I have been doing this for a decade. 
-                        To be honest with you? <span className="text-[#FF8A75] font-bold">I am bored as hell.</span>
+                        <strong className="text-[#FDFBF7]">Broke college kids on Discord pay $20.</strong> Sugar daddies pay $5,000+ monthly.
+                        The difference? <span className="text-[#FF8A75] font-bold">Target selection and positioning.</span>
                     </p>
                     <p>
-                        I have extracted enough wealth from the internet to retire in a bunker. 
-                        I've bought the cars. I've travelled. I've done it all. 
-                        Now, I just want to see if I can take a random loser (you) and turn them into a weapon before I completely move on to something boring like Real Estate.
+                        Discord and Tinder are filled with broke 20-somethings who can barely afford McDonald's.
+                        LinkedIn and Seeking.com are filled with wealthy executives who fly private jets.
+                        Why waste time on minimum wage when you can target seven figures?
                     </p>
                     <p>
-                        Consider this my version of charity. I could build a well in a village, but I'd rather build a legion of digital menaces. 
-                        I'm about to pivot into "legitimate business" where I have to wear a suit and pretend to have morals. 
-                        Before I go legit, I want to light one last fire in the dumpster. <strong className="text-[#FF8A75]">You are the match.</strong>
+                        Sugar daddies want sophistication, discretion, and intellectual connection.
+                        They pay for monthly allowances, luxury travel, and exclusive arrangements.
+                        One sugar daddy can replace 50 Discord simps. <strong className="text-[#FF8A75]">That's the real arbitrage.</strong>
                     </p>
                     <p>
-                        This is my final lap. I am dumping my entire brain into this site because I want to watch the chaos unfold.
+                        I've extracted millions from the internet over a decade. Now I'm teaching you to target the whales, not the minnows.
+                        This is wealth creation, not content farming. This is how you build a seven-figure lifestyle.
                     </p>
                 </div>
             </div>
