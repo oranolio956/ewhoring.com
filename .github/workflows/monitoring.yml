@@ -98,3 +98,4 @@ jobs:
             --data '{"content": "🚨 SEO Monitoring Alert: Workflow failed - check logs"}' \
             ${{ secrets.DISCORD_WEBHOOK_URL }}
 
+

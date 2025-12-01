@@ -51,3 +51,4 @@ CREATE TABLE IF NOT EXISTS ewhoring.serp_monitor (
 - **Grafana Cloud** for real-time log-derived alerts (ingests via Loki).
 
 
+

@@ -20,3 +20,4 @@
 Track KPIs: UTMs `utm_source=syndicate&utm_medium={platform}&utm_campaign={id}` and log inside GA4 custom dimension “syndication_id”.
 
 
+

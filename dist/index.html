@@ -120,6 +120,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Oranolio" />
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*; object-src 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     
     <!-- Preconnect / DNS Prefetch for Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -154,8 +161,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- Performance Monitoring -->
+    <script>
+      // Basic performance monitoring
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          const pageLoadTime = perfData.loadEventEnd - perfData.fetchStart;
+          const domReadyTime = perfData.domContentLoadedEventEnd - perfData.fetchStart;
+
+          console.log('Page Load Time:', Math.round(pageLoadTime), 'ms');
+          console.log('DOM Ready Time:', Math.round(domReadyTime), 'ms');
+
+          // Send to analytics if available
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_load_time', {
+              value: Math.round(pageLoadTime),
+              event_category: 'Performance'
+            });
+          }
+        }, 0);
+      });
+
+      // Monitor Largest Contentful Paint
+      new PerformanceObserver(function(list) {
+        const entries = list.getEntries();
+        const lastEntry = entries[entries.length - 1];
+        console.log('LCP:', Math.round(lastEntry.startTime), 'ms');
+      }).observe({ type: 'largest-contentful-paint', buffered: true });
+
+      // Scroll Progress Indicator
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.offsetHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+        const progressBar = document.getElementById('scroll-progress');
+        if (progressBar) {
+          progressBar.style.transform = `scaleX(${scrollPercent})`;
+        }
+      });
+    </script> 
     <style>
       :root {
         --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
@@ -341,6 +390,11 @@
       }
     </style>
 
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#1A2A3A] text-white px-4 py-2 rounded z-50">Skip to main content</a>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="fixed top-0 left-0 w-full h-1 bg-[#FF8A75] z-50 transform scale-x-0 origin-left transition-transform duration-300"></div>
 <script type="importmap">
 {
   "imports": {
@@ -353,8 +407,8 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-DqIq5AkX.js"></script>
-</head>
+    <script type="module" crossorigin src="/assets/index-CiTZMjxO.js"></script>
+  </head>
   <body>
     <div id="root"></div>
     
