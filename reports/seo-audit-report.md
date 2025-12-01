@@ -1,6 +1,6 @@
 # SEO Audit Report
 
-Generated: 2025-12-01T04:25:31.681Z
+Generated: 2025-12-01T05:01:03.928Z
 
 ## Executive Summary
 
@@ -22,7 +22,7 @@ Generated: 2025-12-01T04:25:31.681Z
 
 
 ### Medium Priority Issues (2)
-- **schema_markup**: Missing schema types: WebSite, Organization, WebPage, Article, FAQPage, HowTo
+- **schema_markup**: Missing schema types: WebSite, WebPage, Article, FAQPage, HowTo
   *Impact*: Reduced rich snippet opportunities
   *Fix*: Add missing structured data markup
 
@@ -30,7 +30,7 @@ Generated: 2025-12-01T04:25:31.681Z
   *Impact*: Poor crawlability and link equity distribution
   *Fix*: Add internal links to these pages from other pages
 
-### Low Priority Issues (10)
+### Low Priority Issues (9)
 - **meta_description**: Meta description too long in best-ewhoring-platforms-2025.html (171 chars)
   *Impact*: Description may be truncated in SERP
   *Fix*: Shorten to 150-160 characters
@@ -66,10 +66,6 @@ Generated: 2025-12-01T04:25:31.681Z
 - **meta_description**: Meta description too short in privacy.html (88 chars)
   *Impact*: May not display full description in SERP
   *Fix*: Expand to 150-160 characters
-
-- **json_ld**: No JSON-LD structured data found
-  *Impact*: Search engines prefer JSON-LD format
-  *Fix*: Convert microdata to JSON-LD format
 
 ### Informational (1)
 - **no_images**: No images found in public directory

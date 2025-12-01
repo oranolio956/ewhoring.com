@@ -1,0 +1,22 @@
+{
+  "contentTypes": [
+    "Educational articles (Medium-style)",
+    "User reviews and complaints (RipoffReport-style)",
+    "Trending topic coverage",
+    "Success/failure case studies",
+    "Multi-part content series",
+    "Real-time Q&A responses"
+  ],
+  "publishingStrategy": {
+    "velocity": "100 articles/month minimum",
+    "mix": "70% educational, 20% reviews, 10% trending",
+    "timing": "Peak publishing hours + real-time trending",
+    "indexing": "Instant publishing with auto-sitemap"
+  },
+  "seoStrategy": {
+    "keywords": "Long-tail + negative + brand name combinations",
+    "schema": "Article + Review + FAQ + Complaint schemas",
+    "social": "Native sharing + viral triggers",
+    "technical": "Sub-1s loading + perfect mobile scores"
+  }
+}
