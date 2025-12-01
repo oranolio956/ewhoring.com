@@ -10,6 +10,24 @@
     <!-- ============================================== -->
     
     <!-- Primary SEO Meta - AGGRESSIVE TARGETING -->
+    
+    <!-- CDN Optimizations -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+
+    <!-- Resource Hints -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" crossorigin>
+    <link rel="modulepreload" href="/src/main.tsx">
+
+    <!-- Critical CSS Inlining -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: system-ui, sans-serif; }
+      .hero-section { min-height: 100vh; display: flex; align-items: center; }
+      .cta-button { background: #ff6b6b; color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; }
+    </style>
     <title>Sugar Daddy Protocol | Target Wealthy Men | Ewhoring Guide | Oranolio</title>
     <meta name="description" content="Master the art of targeting wealthy sugar daddies and high-net-worth individuals. Complete ewhoring guide: LinkedIn executives, crypto whales, seeking.com arrangements. 12,000+ students since 2014. The Oranolio Protocol - $500-$5000/week from premium clients." />
     
@@ -132,7 +150,8 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains" />
     
     <!-- Preconnect / DNS Prefetch for Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -290,6 +309,29 @@
       .custom-inner-scrollbar::-webkit-scrollbar-thumb {
         background: #343536;
         border-radius: 4px;
+      }
+
+      /* Mobile-specific optimizations for SEO audit */
+      @media (max-width: 768px) {
+        .mobile-optimized {
+          padding: 1rem !important;
+          font-size: 0.9rem !important;
+        }
+        .mobile-text-lg {
+          font-size: 1.125rem !important;
+        }
+        .mobile-full-width {
+          width: 100% !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .mobile-stack {
+          flex-direction: column !important;
+        }
+        .mobile-center {
+          text-align: center !important;
+        }
       }
 
       /* Base64 PNG Noise Pattern (High Perf) */
@@ -665,5 +707,16 @@ document.addEventListener('DOMContentLoaded', function() {
     element.textContent = pricingTexts[variant];
   });
 });</script>
+  
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => console.log('SW registered'))
+            .catch(error => console.log('SW registration failed'));
+        });
+      }
+    </script>
   </body>
 </html>

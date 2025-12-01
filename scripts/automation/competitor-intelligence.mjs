@@ -354,7 +354,7 @@ class BacklinkOpportunities {
    */
   generateOutreachTemplates() {
     const templates = {
-      brokenLink: `Subject: Broken Link on Your ${site} Page
+      brokenLink: `Subject: Broken Link on Your [Site] Page
 
 Hi [Name],
 

@@ -23,7 +23,10 @@
     "ab:test": "node scripts/automation/conversion-testing.mjs",
     "intel": "node scripts/automation/competitor-intelligence.mjs",
     "generate:content": "node scripts/automation/content-generator.mjs",
-    "cloak": "node scripts/automation/cloaking-engine.mjs"
+    "cloak": "node scripts/automation/cloaking-engine.mjs",
+    "audit:seo": "node scripts/audit/seo-audit.mjs",
+    "enhance:schema": "node scripts/audit/schema-validator.mjs",
+    "advanced:features": "node scripts/advanced/monitoring-system.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",

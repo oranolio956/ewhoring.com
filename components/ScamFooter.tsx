@@ -58,6 +58,45 @@ export const ScamFooter: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Comprehensive Site Links */}
+                <div className="mt-16 border-t border-[#FDFBF7]/10 pt-8">
+                    <h3 className="text-lg font-bold mb-6 text-[#FF8A75]">Complete Protocol Resources</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div>
+                            <h4 className="font-bold text-[#2D9C8E] mb-2">Getting Started</h4>
+                            <ul className="space-y-1 text-[#FDFBF7]/60">
+                                <li><a href="/ewhoring-for-beginners-step-by-step.html" className="hover:text-[#FF8A75]">Beginners Guide</a></li>
+                                <li><a href="/ewhoring-methods-2025.html" className="hover:text-[#FF8A75]">Methods 2025</a></li>
+                                <li><a href="/best-ewhoring-platforms-2025.html" className="hover:text-[#FF8A75]">Best Platforms</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-[#2D9C8E] mb-2">Advanced Strategies</h4>
+                            <ul className="space-y-1 text-[#FDFBF7]/60">
+                                <li><a href="/ewhoring-scripts.html" className="hover:text-[#FF8A75]">Scripts & Templates</a></li>
+                                <li><a href="/ewhoring-ai-guide.html" className="hover:text-[#FF8A75]">AI Enhancement</a></li>
+                                <li><a href="/target-wealthy-men.html" className="hover:text-[#FF8A75]">Target Wealthy Men</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-[#2D9C8E] mb-2">Success & Stories</h4>
+                            <ul className="space-y-1 text-[#FDFBF7]/60">
+                                <li><a href="/ewhoring-success-stories.html" className="hover:text-[#FF8A75]">Success Stories</a></li>
+                                <li><a href="/ewhoring-compared.html" className="hover:text-[#FF8A75]">Compared to Others</a></li>
+                                <li><a href="/ewhoring-glossary.html" className="hover:text-[#FF8A75]">Glossary</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-[#2D9C8E] mb-2">Resources</h4>
+                            <ul className="space-y-1 text-[#FDFBF7]/60">
+                                <li><a href="/ewhoring-resources.html" className="hover:text-[#FF8A75]">All Resources</a></li>
+                                <li><a href="/discord-ewhoring-servers.html" className="hover:text-[#FF8A75]">Discord Servers</a></li>
+                                <li><a href="/findom-guide.html" className="hover:text-[#FF8A75]">Findom Guide</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Legal Links */}
                 <div className="mt-12 text-center text-[10px] text-[#FDFBF7]/40 font-mono">
                     <p>This is educational content. Use at your own risk.</p>
