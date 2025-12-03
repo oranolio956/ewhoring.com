@@ -38,6 +38,7 @@ import { KeywordTargets } from './components/KeywordTargets';
 import { CryptoPayment } from './components/CryptoPayment';
 import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 import { AuthorityStack } from './components/AuthorityStack';
+import { NationalAnthemAnimation } from './components/NationalAnthemAnimation';
 import './src/utils/performanceMonitor';
 
 const WARNING_MESSAGES = [
@@ -73,6 +74,7 @@ const App: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [bannerIndex, setBannerIndex] = useState(0);
   const [copyToast, setCopyToast] = useState(false);
+  const [showNationalAnthem, setShowNationalAnthem] = useState(false);
 
   useEffect(() => {
     let frameId: number;
@@ -104,6 +106,32 @@ const App: React.FC = () => {
   useEffect(() => {
     // Performance monitoring is initialized automatically when imported
     console.log('📊 Performance monitoring active');
+  }, []);
+
+  // Random National Anthem Animation Trigger
+  useEffect(() => {
+    // Don't trigger if already showing
+    if (showNationalAnthem) return;
+
+    // Random delay between 30 seconds and 5 minutes (300000ms)
+    const minDelay = 30000; // 30 seconds
+    const maxDelay = 300000; // 5 minutes
+    const randomDelay = Math.random() * (maxDelay - minDelay) + minDelay;
+
+    const timer = setTimeout(() => {
+      // Only trigger if user has been on page for a bit (at least 10 seconds)
+      const timeOnPage = Date.now() - (window as any).pageLoadTime || 0;
+      if (timeOnPage > 10000) {
+        setShowNationalAnthem(true);
+      }
+    }, randomDelay);
+
+    return () => clearTimeout(timer);
+  }, [showNationalAnthem]);
+
+  // Track page load time
+  useEffect(() => {
+    (window as any).pageLoadTime = Date.now();
   }, []);
 
   // Handle Copy Protection Mock
@@ -697,6 +725,10 @@ const App: React.FC = () => {
           <ClickSparkle />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
           <CryptoPaymentModal />
+          <NationalAnthemAnimation 
+            isActive={showNationalAnthem} 
+            onComplete={() => setShowNationalAnthem(false)} 
+          />
 
           {/* Copy Paste Mock Toast */}
           <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[99999] bg-[#FF0000] text-white px-6 py-2 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl transition-all duration-300 ${copyToast ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}`}>
