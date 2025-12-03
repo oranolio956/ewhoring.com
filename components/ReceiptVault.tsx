@@ -1,36 +1,7 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
-interface ReceiptVaultProps {
-  onFlexTextVisible?: () => void;
-}
-
-export const ReceiptVault: React.FC<ReceiptVaultProps> = ({ onFlexTextVisible }) => {
-  const flexTextRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    if (!flexTextRef.current || !onFlexTextVisible) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-            // Trigger animation when text is 50% visible
-            setTimeout(() => {
-              onFlexTextVisible();
-            }, 500);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(flexTextRef.current);
-
-    return () => observer.disconnect();
-  }, [onFlexTextVisible]);
-
+export const ReceiptVault: React.FC = () => {
   return (
     <section id="receipts" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-t border-[#1A2A3A]/5">
       
@@ -45,7 +16,7 @@ export const ReceiptVault: React.FC<ReceiptVaultProps> = ({ onFlexTextVisible })
             <div className="inline-block bg-[#1A2A3A] text-[#FDFBF7] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-4">
                 Visual Evidence
             </div>
-            <h2 ref={flexTextRef} className="text-4xl md:text-6xl font-bold text-[#1A2A3A] tracking-tighter mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1A2A3A] tracking-tighter mb-6">
                 I DON'T NEED TO FLEX. <br/>
                 <span className="text-[#FF8A75]">BUT I WILL.</span>
             </h2>
