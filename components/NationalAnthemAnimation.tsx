@@ -10,7 +10,11 @@ export const NationalAnthemAnimation: React.FC<NationalAnthemAnimationProps> = (
   const [shushCount, setShushCount] = useState(0);
 
   useEffect(() => {
-    if (!isActive) return;
+    if (!isActive) {
+      setPhase('entering');
+      setShushCount(0);
+      return;
+    }
 
     // Phase 1: Characters enter and push content (0-2000ms)
     setPhase('entering');
@@ -64,28 +68,33 @@ export const NationalAnthemAnimation: React.FC<NationalAnthemAnimationProps> = (
 
   return (
     <>
-      {/* Overlay that pushes content off screen */}
+      {/* Overlay that pushes content off screen - slides in from right */}
       <div 
         className={`fixed inset-0 z-[99998] bg-[#FDFBF7] transition-transform duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isActive && phase !== 'exiting' ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          willChange: 'transform'
+          willChange: 'transform',
+          transform: isActive && phase !== 'exiting' ? 'translateX(0)' : 'translateX(100%)'
         }}
       />
 
-      {/* Main animation container */}
-      <div 
-        className={`fixed inset-0 z-[99999] bg-[#FDFBF7] transition-opacity duration-500 ${
-          phase === 'exiting' ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
-        style={{
-          transform: phase === 'entering' ? 'translateX(100%)' : 
-                     phase === 'exiting' ? 'translateX(-100%)' : 'translateX(0)',
-          transition: 'transform 2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease-out',
-          willChange: 'transform, opacity'
-        }}
-      >
+      {/* Main animation container - slides in from right */}
+      {isActive && (
+        <div 
+          className={`fixed inset-0 z-[99999] bg-[#FDFBF7] ${
+            phase === 'exiting' ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
+          style={{
+            transform: phase === 'entering' 
+              ? 'translateX(100%)' 
+              : phase === 'exiting'
+              ? 'translateX(-100%)' 
+              : 'translateX(0)',
+            transition: 'transform 2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease-out',
+            willChange: 'transform, opacity'
+          }}
+        >
 
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -606,7 +615,8 @@ export const NationalAnthemAnimation: React.FC<NationalAnthemAnimationProps> = (
             </div>
           )}
         </div>
-      </div>
+        </div>
+      )}
 
       {/* Push main content off screen - using a more targeted approach */}
       <style>{`
@@ -621,13 +631,13 @@ export const NationalAnthemAnimation: React.FC<NationalAnthemAnimationProps> = (
         body {
           overflow: ${isActive && phase !== 'exiting' ? 'hidden' : 'auto'};
         }
-        /* Push the main app container off screen */
+        /* Push the main app container off screen - only when animation is active */
         body > div:first-child {
           transform: ${isActive && (phase === 'entering' || phase === 'saluting' || phase === 'shushing')
             ? 'translateX(-100%)' 
             : 'translateX(0)'};
           transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
-          will-change: transform;
+          will-change: ${isActive ? 'transform' : 'auto'};
         }
       `}</style>
     </>

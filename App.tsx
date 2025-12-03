@@ -807,7 +807,7 @@ const App: React.FC = () => {
             <div id="money-printer">
                 <MoneyPhone />
             </div>
-            <ReceiptVault />
+            <ReceiptVault onFlexTextVisible={() => setShowNationalAnthem(true)} />
             <ROICalculator />
 
             {/* === SOCIAL PROOF REINFORCEMENT === */}
