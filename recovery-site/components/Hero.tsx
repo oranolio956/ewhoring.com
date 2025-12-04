@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScamIllustration } from './Illustration';
+import { GradientOrb } from './DecorativeElements';
 
 export const Hero: React.FC = () => {
   return (
@@ -13,10 +14,10 @@ export const Hero: React.FC = () => {
         }}></div>
       </div>
 
-      {/* Animated Gradient Orbs */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-[#00D9C0] to-[#00B8A3] rounded-full opacity-8 blur-[120px] animate-float"></div>
-      <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-gradient-to-br from-[#FF5757] to-[#FF8A8A] rounded-full opacity-6 blur-[140px] animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#FFD93D] to-[#FFC107] rounded-full opacity-4 blur-[160px] animate-float" style={{ animationDelay: '4s' }}></div>
+      {/* Animated Gradient Orbs - More Sophisticated */}
+      <GradientOrb color="teal" size="md" className="top-20 right-10" />
+      <GradientOrb color="red" size="lg" className="bottom-20 left-10" style={{ animationDelay: '2s' }} />
+      <GradientOrb color="yellow" size="lg" className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style={{ animationDelay: '4s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
