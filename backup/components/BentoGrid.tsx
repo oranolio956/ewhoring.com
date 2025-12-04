@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { ModuleItem } from '../types';
+// @ts-ignore - Backup file, not used in build
+import { ModuleItem } from '../../types';
 import { Tooltip } from 'react-tooltip';
 
 const modules: ModuleItem[] = [

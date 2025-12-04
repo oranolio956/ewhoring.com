@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Mascot } from './Mascot';
 import { usePayment } from '../contexts/PaymentContext';
 import { AnimatedTherapist } from './AnimatedTherapist';
 import { AnimatedVictim } from './AnimatedVictim';
