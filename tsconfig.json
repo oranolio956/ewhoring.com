@@ -14,12 +14,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "dist", "backup-old-site", "recovery-site", "backup", "public"]
+  "exclude": ["node_modules"]
 }
