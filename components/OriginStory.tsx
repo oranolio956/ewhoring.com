@@ -3,7 +3,8 @@ import React from 'react';
 
 export const OriginStory: React.FC = () => {
   return (
-    <section id="origin" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden border-b border-[#1A2A3A]/5">
+    <section id="origin" className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#FDFBF7] relative overflow-hidden border-b border-[#1A2A3A]/5">
+      <div className="edge-container w-full">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Header */}
@@ -110,6 +111,7 @@ export const OriginStory: React.FC = () => {
 
         </div>
 
+      </div>
       </div>
     </section>
   );

@@ -10,11 +10,11 @@ interface VisualIssue {
 
 class VisualDebugger {
   private issues: VisualIssue[] = [];
-  private isActive = false;
 
   constructor() {
     // Only run in development or when explicitly enabled
-    if (typeof window !== 'undefined' && (import.meta.env.DEV || localStorage.getItem('visual-debug') === 'true')) {
+    const isDev = typeof import.meta !== 'undefined' && typeof (import.meta as any).env !== 'undefined' && Boolean((import.meta as any).env.DEV);
+    if (typeof window !== 'undefined' && (isDev || localStorage.getItem('visual-debug') === 'true')) {
       this.init();
     }
   }
@@ -71,7 +71,7 @@ class VisualDebugger {
 
   private checkContrast() {
     // Check text contrast ratios
-    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, button');
+    const textElements = document.querySelectorAll<HTMLElement>('p, h1, h2, h3, h4, h5, h6, span, a, button');
     textElements.forEach(el => {
       const style = window.getComputedStyle(el);
       const color = style.color;
@@ -164,9 +164,27 @@ class VisualDebugger {
   }
 
   private calculateContrast(color1: string, color2: string): number {
-    // Simplified contrast calculation
-    // In production, use a proper library like 'color-contrast-checker'
-    return 4.5; // Placeholder - would need proper RGB conversion
+    const toRgb = (color: string) => {
+      const ctx = document.createElement('canvas').getContext('2d');
+      if (!ctx) return [0, 0, 0];
+      ctx.fillStyle = color;
+      const computed = ctx.fillStyle as string;
+      const match = /rgba?\((\d+), (\d+), (\d+)/.exec(computed);
+      return match ? [Number(match[1]), Number(match[2]), Number(match[3])] : [0, 0, 0];
+    };
+
+    const [r1, g1, b1] = toRgb(color1).map(v => v / 255);
+    const [r2, g2, b2] = toRgb(color2).map(v => v / 255);
+
+    const luminance = (r: number, g: number, b: number) => {
+      const transform = (v: number) => (v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+      return 0.2126 * transform(r) + 0.7152 * transform(g) + 0.0722 * transform(b);
+    };
+
+    const l1 = luminance(r1, g1, b1) + 0.05;
+    const l2 = luminance(r2, g2, b2) + 0.05;
+
+    return l1 > l2 ? l1 / l2 : l2 / l1;
   }
 
   private elementsOverlap(el1: HTMLElement, el2: HTMLElement): boolean {
@@ -185,13 +203,11 @@ class VisualDebugger {
   }
 
   public enable() {
-    this.isActive = true;
     localStorage.setItem('visual-debug', 'true');
     this.scanForIssues();
   }
 
   public disable() {
-    this.isActive = false;
     localStorage.removeItem('visual-debug');
   }
 }

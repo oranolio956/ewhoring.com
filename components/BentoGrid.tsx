@@ -46,14 +46,15 @@ export const BentoGrid: React.FC = () => {
   };
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-full overflow-x-hidden relative">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-full overflow-x-hidden relative">
       
       {/* Subliminal Watermark - Reduced opacity for better visibility */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.01] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
          ORANOLIO PROTOCOL
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
+      <div className="edge-container w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
         
         {/* Header */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
@@ -130,11 +131,11 @@ export const BentoGrid: React.FC = () => {
           ))}
         </div>
         
-        <Tooltip 
-            id="syllabus-tooltip" 
-            style={{ 
-                backgroundColor: '#0F1923', 
-                color: '#FDFBF7', 
+        <Tooltip
+            id="syllabus-tooltip"
+            style={{
+                backgroundColor: '#0F1923',
+                color: '#FDFBF7',
                 border: '1px solid #2D9C8E',
                 borderRadius: '0px',
                 padding: '12px 20px',
@@ -148,6 +149,7 @@ export const BentoGrid: React.FC = () => {
             opacity={1}
             border="1px solid #2D9C8E"
         />
+        </div>
 
       </div>
     </section>

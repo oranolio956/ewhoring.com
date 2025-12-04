@@ -56,7 +56,12 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <header id="hero" className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12 overflow-hidden w-full max-w-full mx-auto will-change-transform" style={{ backfaceVisibility: 'hidden' }}>
+    <header
+      id="hero"
+      className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center py-12 md:py-16 overflow-hidden w-full max-w-full mx-auto will-change-transform"
+      style={{ backfaceVisibility: 'hidden' }}
+    >
+      <div className="edge-container w-full">
       
       {/* Vertical Branding - Architectural */}
       <div className="absolute left-4 bottom-32 hidden lg:block -rotate-90 origin-bottom-left z-0">
@@ -99,7 +104,7 @@ export const HeroSection: React.FC = () => {
           )}
 
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
-          <div className="absolute top-[-10%] right-0 md:right-[2%] w-[clamp(80px,30vw,200px)] h-[clamp(80px,30vw,200px)] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-60 md:opacity-90 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu overflow-hidden" style={{ transform: 'translate3d(0,0,0)' }}>
+          <div className="absolute right-2 top-4 md:top-[-6%] md:right-[2%] w-[clamp(96px,32vw,220px)] h-[clamp(96px,32vw,220px)] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-60 md:opacity-90 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu overflow-hidden" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
           </div>
         </div>
@@ -122,7 +127,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
         {/* Bottom Editorial Content */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-7xl mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20 transform-gpu px-4 md:px-0">
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-7xl mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20 transform-gpu">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ ORANOLIO ARBITRAGE // EST. 2014 ]
@@ -165,16 +170,17 @@ export const HeroSection: React.FC = () => {
 
       </article>
 
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-      `}</style>
+        <style>{`
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+        `}</style>
+      </div>
     </header>
   );
 };

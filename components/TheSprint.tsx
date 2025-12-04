@@ -16,7 +16,7 @@ export const TheSprint: React.FC = () => {
   const { openPayment } = usePayment();
   
   return (
-    <section id="sprint" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+    <section id="sprint" className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
       
       {/* Background Tech Lines */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -35,8 +35,9 @@ export const TheSprint: React.FC = () => {
          </div>
       </div>
 
+      <div className="edge-container w-full">
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           
           {/* Header / Rant */}
@@ -121,6 +122,7 @@ export const TheSprint: React.FC = () => {
           </div>
 
         </div>
+      </div>
       </div>
     </section>
   );

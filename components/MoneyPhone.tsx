@@ -144,8 +144,9 @@ export const MoneyPhone: React.FC = () => {
   }, []);
 
   return (
-    <section id="money-printer" className="min-h-[100dvh] flex flex-col justify-center relative w-full py-12 px-4 overflow-hidden items-center max-w-full">
-      
+    <section id="money-printer" className="min-h-[100dvh] flex flex-col justify-center relative w-full py-12 md:py-16 overflow-hidden items-center max-w-full">
+
+      <div className="edge-container w-full">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-32 max-w-7xl mx-auto w-full h-full">
         
         {/* Left: Text & Mascot Reaction */}
@@ -291,6 +292,7 @@ export const MoneyPhone: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

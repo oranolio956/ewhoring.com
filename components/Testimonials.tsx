@@ -33,21 +33,24 @@ const reviews = [
 export const Testimonials: React.FC = () => {
   const { openPayment } = usePayment();
   return (
-    <section id="testimonials" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] relative overflow-hidden">
+    <section
+      id="testimonials"
+      className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#FDFBF7] relative overflow-hidden"
+    >
       {/* Decorative Background Text - Branding Injection - Increased visibility */}
       <div className="absolute top-0 left-0 text-[clamp(100px,18vw,350px)] font-bold text-[#1A2A3A]/[0.015] leading-none pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap z-0">
         ORANOLIO
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-7xl font-bold text-[#1A2A3A] tracking-tighter mb-4">
+      <div className="max-w-7xl mx-auto relative z-10 w-full edge-container">
+        <div className="mb-12 md:mb-16 max-w-5xl">
+          <h2 className="text-4xl md:text-7xl font-bold text-[#1A2A3A] tracking-tighter mb-4 leading-[1.05]">
             <ShakeOnHover>
               THEY FOUND WEALTH <br/>
               <span className="text-[#FF8A75] italic font-serif"><GlitchText>(NOT DIGNITY)</GlitchText></span>
             </ShakeOnHover>
           </h2>
-            <p className="text-lg text-[#1A2A3A]/60 max-w-2xl">
+            <p className="text-lg text-[#1A2A3A]/60 max-w-3xl leading-relaxed">
               Real wealth. Real results. Strategic targeting. <br/>
               See how operators are securing monthly allowances and luxury arrangements from sugar daddies.
             </p>

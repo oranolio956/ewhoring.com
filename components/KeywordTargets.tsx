@@ -79,13 +79,14 @@ export const KeywordTargets: React.FC = () => {
       {/* ============================================== */}
       {/* WHERE TO FIND SIMPS - PLATFORM BREAKDOWN */}
       {/* ============================================== */}
-      <section id="discord-servers" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+      <section id="discord-servers" className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
         
         {/* Background Tape */}
         <div className="absolute top-20 -left-10 bg-[#FF8A75] text-[#000] font-bold text-[10px] px-20 py-1 -rotate-6 tracking-[0.3em] whitespace-nowrap opacity-20">
           TARGET ACQUIRED // TARGET ACQUIRED // TARGET ACQUIRED
         </div>
 
+        <div className="edge-container w-full">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
           
           {/* Header */}
@@ -165,18 +166,20 @@ export const KeywordTargets: React.FC = () => {
               </div>
             ))}
           </div>
+          </div>
         </div>
       </section>
 
       {/* ============================================== */}
       {/* EWHORING METHODS - THE ARSENAL */}
       {/* ============================================== */}
-      <section id="methods" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#FDFBF7] text-[#1A2A3A] relative overflow-hidden border-t border-[#1A2A3A]/5">
+      <section id="methods" className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#FDFBF7] text-[#1A2A3A] relative overflow-hidden border-t border-[#1A2A3A]/5">
         
         <div className="absolute top-0 right-0 text-[30rem] leading-none font-bold text-[#1A2A3A]/[0.03] translate-x-1/4 -translate-y-1/4 pointer-events-none font-['Space_Grotesk']">
           METHODS
         </div>
 
+        <div className="edge-container w-full">
         <div className="max-w-6xl mx-auto relative z-10 w-full">
           
           <div className="text-center mb-12 md:mb-16">
@@ -233,17 +236,19 @@ export const KeywordTargets: React.FC = () => {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* ============================================== */}
       {/* HOW TO CATFISH FOR MONEY */}
       {/* ============================================== */}
-      <section id="fake-girl-guide" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
+      <section id="fake-girl-guide" className="min-h-[100dvh] flex flex-col justify-center py-12 md:py-16 bg-[#1A2A3A] text-[#FDFBF7] relative overflow-hidden border-t border-[#FDFBF7]/5">
         
         <div className="absolute bottom-0 left-0 text-[15rem] leading-none font-bold text-[#FDFBF7]/[0.02] -translate-x-1/4 translate-y-1/4 pointer-events-none font-['Space_Grotesk']">
           $$$
         </div>
 
+        <div className="edge-container w-full">
         <div className="max-w-6xl mx-auto relative z-10 w-full">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -315,13 +320,15 @@ export const KeywordTargets: React.FC = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* ============================================== */}
       {/* WHERE TO FIND SIMPS */}
       {/* ============================================== */}
-      <section id="find-simps" className="py-16 md:py-24 px-4 md:px-12 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden">
+      <section id="find-simps" className="py-16 md:py-24 bg-[#0F1923] text-[#FDFBF7] relative overflow-hidden">
 
+        <div className="edge-container w-full">
         <div className="max-w-6xl mx-auto relative z-10">
           
           <div className="text-center mb-12">
@@ -385,10 +392,12 @@ export const KeywordTargets: React.FC = () => {
           </div>
 
         </div>
+        </div>
       </section>
 
       {/* Quick Nav */}
-      <nav className="py-8 px-4 bg-[#1A2A3A] border-t border-[#FDFBF7]/10" aria-label="Related Topics">
+      <nav className="py-8 bg-[#1A2A3A] border-t border-[#FDFBF7]/10" aria-label="Related Topics">
+        <div className="edge-container w-full">
         <div className="max-w-6xl mx-auto">
           <p className="text-[10px] font-mono text-[#FDFBF7]/30 mb-4 uppercase tracking-widest text-center">// Navigate This Mess</p>
           <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -416,6 +425,7 @@ export const KeywordTargets: React.FC = () => {
               Buy The Damn Thing
             </button>
           </div>
+        </div>
         </div>
       </nav>
     </>
