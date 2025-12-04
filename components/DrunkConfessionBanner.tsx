@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 interface RamblingMessage {
   text: string;
@@ -7,7 +7,7 @@ interface RamblingMessage {
   background?: string;
 }
 
-export const DrunkConfessionBanner: React.FC = () => {
+export const DrunkConfessionBanner: React.FC = React.memo(() => {
   const [copied, setCopied] = useState<string | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [showRambling, setShowRambling] = useState(false);
@@ -328,7 +328,7 @@ export const DrunkConfessionBanner: React.FC = () => {
     'XRP': xrpStory,
   };
 
-  const copyToClipboard = (address: string, label: string) => {
+  const copyToClipboard = useCallback((address: string, label: string) => {
     navigator.clipboard.writeText(address);
     setCopied(label);
     setTimeout(() => setCopied(null), 2000);
@@ -338,7 +338,7 @@ export const DrunkConfessionBanner: React.FC = () => {
     setShowRambling(true);
     setCurrentMessageIndex(0);
     setDisplayedText('');
-  };
+  }, []);
 
   // Handle the rambling animation
   useEffect(() => {
@@ -354,25 +354,39 @@ export const DrunkConfessionBanner: React.FC = () => {
 
     const currentMessage = currentStory[currentMessageIndex];
     let charIndex = 0;
+    let lastTime = Date.now();
+    let rafId: number;
     setDisplayedText('');
 
-    // Typing effect
-    const typingInterval = setInterval(() => {
-      if (charIndex < currentMessage.text.length) {
-        setDisplayedText(currentMessage.text.substring(0, charIndex + 1));
-        charIndex++;
-      } else {
-        clearInterval(typingInterval);
-        setTimeout(() => {
-          setCurrentMessageIndex(prev => prev + 1);
-        }, currentMessage.duration);
+    // Typing effect with RAF for smooth performance
+    const typeCharacter = () => {
+      const now = Date.now();
+      const delta = now - lastTime;
+      
+      if (delta >= 30) {
+        if (charIndex < currentMessage.text.length) {
+          setDisplayedText(currentMessage.text.substring(0, charIndex + 1));
+          charIndex++;
+          lastTime = now;
+        } else {
+          setTimeout(() => {
+            setCurrentMessageIndex(prev => prev + 1);
+          }, currentMessage.duration);
+          return;
+        }
       }
-    }, 30);
+      
+      rafId = requestAnimationFrame(typeCharacter);
+    };
 
-    return () => clearInterval(typingInterval);
+    rafId = requestAnimationFrame(typeCharacter);
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [showRambling, currentMessageIndex, currentStory]);
 
-  const getTextStyle = (emotion: string) => {
+  const getTextStyle = useCallback((emotion: string) => {
     switch (emotion) {
       case 'excited':
       case 'party':
@@ -404,9 +418,9 @@ export const DrunkConfessionBanner: React.FC = () => {
       default:
         return 'text-[#FDFBF7] drop-shadow-[0_0_15px_rgba(253,251,247,0.3)]';
     }
-  };
+  }, []);
 
-  const getBackground = (bg: string = 'default') => {
+  const getBackground = useCallback((bg: string = 'default') => {
     const backgrounds: { [key: string]: string } = {
       'party': 'bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500 animate-gradient-flow',
       'sad': 'bg-gradient-to-b from-gray-700 via-blue-900 to-gray-900',
@@ -426,9 +440,12 @@ export const DrunkConfessionBanner: React.FC = () => {
       'default': 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900',
     };
     return backgrounds[bg] || backgrounds['default'];
-  };
+  }, []);
 
-  const currentBg = currentStory[currentMessageIndex]?.background || 'default';
+  const currentBg = useMemo(() => 
+    currentStory[currentMessageIndex]?.background || 'default',
+    [currentStory, currentMessageIndex]
+  );
 
   return (
     <div className="fixed top-[calc(4rem+env(safe-area-inset-top))] left-0 right-0 bg-gradient-to-r from-[#FF8A75]/10 via-[#FDFBF7] to-[#2D9C8E]/10 border-b-2 border-[#FF8A75]/30 z-40 shadow-sm backdrop-blur-md">
@@ -552,11 +569,11 @@ export const DrunkConfessionBanner: React.FC = () => {
 
       {/* Epic Story Overlay with Dynamic Backgrounds */}
       {showRambling && (
-        <div className={`fixed inset-0 z-[99999] flex items-center justify-center transition-all duration-1000 ${getBackground(currentBg)}`}>
-          {/* Particle effects based on mood */}
+        <div className={`fixed inset-0 z-[99999] flex items-center justify-center transition-all duration-1000 will-change-auto ${getBackground(currentBg)}`} style={{ transform: 'translateZ(0)' }}>
+          {/* Particle effects based on mood - optimized for performance */}
           {currentBg === 'party' && (
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(30)].map((_, i) => (
+            <div className="absolute inset-0 overflow-hidden pointer-events-none will-change-transform">
+              {[...Array(window.innerWidth < 768 ? 15 : 30)].map((_, i) => (
                 <div 
                   key={i}
                   className="absolute w-2 h-2 bg-white rounded-full animate-float-random"
@@ -564,7 +581,8 @@ export const DrunkConfessionBanner: React.FC = () => {
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
                     animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: `${3 + Math.random() * 4}s`
+                    animationDuration: `${3 + Math.random() * 4}s`,
+                    willChange: 'transform, opacity'
                   }}
                 />
               ))}
@@ -572,15 +590,16 @@ export const DrunkConfessionBanner: React.FC = () => {
           )}
           
           {currentBg === 'rain' && (
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(50)].map((_, i) => (
+            <div className="absolute inset-0 overflow-hidden pointer-events-none will-change-transform">
+              {[...Array(window.innerWidth < 768 ? 25 : 50)].map((_, i) => (
                 <div 
                   key={i}
                   className="absolute w-0.5 h-8 bg-blue-300/30 animate-rain"
                   style={{
                     left: `${Math.random() * 100}%`,
                     animationDelay: `${Math.random() * 2}s`,
-                    animationDuration: `${0.5 + Math.random() * 0.5}s`
+                    animationDuration: `${0.5 + Math.random() * 0.5}s`,
+                    willChange: 'transform'
                   }}
                 />
               ))}
@@ -622,19 +641,21 @@ export const DrunkConfessionBanner: React.FC = () => {
       
       <style>{`
         @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-4px); }
+          0%, 100% { transform: translateY(0) translateZ(0); }
+          50% { transform: translateY(-4px) translateZ(0); }
         }
         .animate-bounce-slow {
           animation: bounce-slow 2s ease-in-out infinite;
+          will-change: transform;
         }
         @keyframes shake {
-          0%, 100% { transform: translateX(0) scale(1); }
-          25% { transform: translateX(-10px) scale(1.05); }
-          75% { transform: translateX(10px) scale(1.05); }
+          0%, 100% { transform: translateX(0) scale(1) translateZ(0); }
+          25% { transform: translateX(-10px) scale(1.05) translateZ(0); }
+          75% { transform: translateX(10px) scale(1.05) translateZ(0); }
         }
         .animate-shake {
           animation: shake 0.5s ease-in-out infinite;
+          will-change: transform;
         }
         @keyframes gradient-flow {
           0%, 100% { background-position: 0% 50%; }
@@ -643,6 +664,7 @@ export const DrunkConfessionBanner: React.FC = () => {
         .animate-gradient-flow {
           background-size: 200% 200%;
           animation: gradient-flow 3s ease infinite;
+          will-change: background-position;
         }
         @keyframes gradient-fast {
           0%, 100% { background-position: 0% 50%; }
@@ -651,6 +673,7 @@ export const DrunkConfessionBanner: React.FC = () => {
         .animate-gradient-fast {
           background-size: 200% 200%;
           animation: gradient-fast 1s ease infinite;
+          will-change: background-position;
         }
         @keyframes pulse-slow {
           0%, 100% { opacity: 1; }
@@ -660,29 +683,43 @@ export const DrunkConfessionBanner: React.FC = () => {
           animation: pulse-slow 3s ease-in-out infinite;
         }
         @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+          from { transform: rotate(0deg) translateZ(0); }
+          to { transform: rotate(360deg) translateZ(0); }
         }
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
+          will-change: transform;
         }
         @keyframes float-random {
-          0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+          0%, 100% { transform: translateY(0) translateX(0) translateZ(0); opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 1; }
-          100% { transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px); opacity: 0; }
+          100% { transform: translateY(-100vh) translateX(50px) translateZ(0); opacity: 0; }
         }
         .animate-float-random {
           animation: float-random 5s ease-in infinite;
+          will-change: transform, opacity;
         }
         @keyframes rain {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100vh); }
+          0% { transform: translateY(-100%) translateZ(0); }
+          100% { transform: translateY(100vh) translateZ(0); }
         }
         .animate-rain {
           animation: rain 1s linear infinite;
+          will-change: transform;
+        }
+        
+        /* Performance optimizations */
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Smooth transitions */
+        .transition-all {
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
     </div>
   );
-};
+});

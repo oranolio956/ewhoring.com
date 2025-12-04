@@ -672,7 +672,7 @@ const App: React.FC = () => {
 
   return (
     <PaymentProvider>
-      <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white" style={{ scrollBehavior: 'smooth' }}>
+      <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white scroll-smooth" style={{ scrollBehavior: 'smooth' }}>
           
           <HaterBlocker />
           <ExitModal />

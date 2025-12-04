@@ -36,7 +36,41 @@
     <!-- Critical CSS Inlining -->
     <style>
       /* Critical above-the-fold styles */
-      body { margin: 0; font-family: system-ui, sans-serif; }
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      body { 
+        margin: 0; 
+        font-family: system-ui, sans-serif;
+        overscroll-behavior-y: none;
+      }
+      
+      /* Hardware acceleration for smooth animations */
+      * {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        perspective: 1000;
+      }
+      
+      /* Optimize transitions */
+      .transition-all {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Smooth image loading */
+      img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+      
       .hero-section { min-height: 100vh; display: flex; align-items: center; }
       .cta-button { background: #ff6b6b; color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; }
     </style>
@@ -673,7 +707,7 @@
 
     <!-- Scroll Progress Indicator -->
     <div id="scroll-progress" class="fixed top-0 left-0 w-full h-1 bg-[#FF8A75] z-50 transform scale-x-0 origin-left transition-transform duration-300"></div>
-    <script type="module" crossorigin src="/assets/index-B6NlAjlJ.js"></script>
+    <script type="module" crossorigin src="/assets/index-yspxd_GS.js"></script>
   </head>
   <body>
     <div id="root"></div>
