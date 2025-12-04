@@ -32,6 +32,7 @@
       html {
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
+        scroll-padding-top: 4rem; /* Account for fixed header */
       }
       
       body { 
@@ -506,9 +507,14 @@
         touch-action: pan-y; /* Prioritize vertical scroll */
       }
       
-      /* Prevent horizontal overflow globally */
+      /* Prevent horizontal overflow globally - but allow natural widths for form elements */
       * {
         max-width: 100%;
+      }
+      
+      /* Allow form elements to maintain natural width */
+      input, textarea, select, button {
+        max-width: none;
       }
       
       /* Fix for images and media */
@@ -517,8 +523,14 @@
         height: auto;
       }
       
-      /* Fix text overflow */
-      p, h1, h2, h3, h4, h5, h6, span, div {
+      /* Fix text overflow - but not on all divs (too aggressive) */
+      p, h1, h2, h3, h4, h5, h6, span {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Only apply to text containers, not layout divs */
+      [class*="text"], [class*="prose"], article, section {
         word-wrap: break-word;
         overflow-wrap: break-word;
       }
@@ -776,6 +788,97 @@
       /* Fix for backdrop blur performance */
       [class*="backdrop-blur"] {
         will-change: backdrop-filter;
+      }
+      
+      /* Accessibility: Focus states for keyboard navigation */
+      *:focus-visible {
+        outline: 2px solid #2D9C8E;
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+      
+      /* Remove default focus outline for mouse users, keep for keyboard */
+      *:focus:not(:focus-visible) {
+        outline: none;
+      }
+      
+      /* Enhanced focus for interactive elements */
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 3px solid #2D9C8E;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 3px rgba(45, 156, 142, 0.2);
+      }
+      
+      /* Skip link focus */
+      .sr-only:focus {
+        position: absolute;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        background: #1A2A3A;
+        color: white;
+        z-index: 9999;
+      }
+      
+      /* Prevent text selection on UI elements that shouldn't be selectable */
+      button, [role="button"] {
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      
+      /* Ensure proper contrast for selected text */
+      ::selection {
+        background-color: #2D9C8E;
+        color: white;
+      }
+      
+      ::-moz-selection {
+        background-color: #2D9C8E;
+        color: white;
+      }
+      
+      /* Loading state improvements */
+      [aria-busy="true"] {
+        cursor: wait;
+        pointer-events: none;
+      }
+      
+      /* Disabled state improvements */
+      [disabled], [aria-disabled="true"] {
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      
+      /* Reduce motion for users who prefer it */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        * {
+          border-color: currentColor;
+        }
+        
+        button, a {
+          border: 2px solid currentColor;
+        }
       }
       
       /* Click Sparkle Animation */
