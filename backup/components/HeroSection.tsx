@@ -60,15 +60,15 @@ export const HeroSection: React.FC = () => {
       {/* Vertical Branding - Architectural */}
       <div className="absolute left-4 bottom-32 hidden lg:block -rotate-90 origin-bottom-left z-0">
           <span className="text-[10px] font-mono font-bold tracking-[1em] text-[#1A2A3A]/20 uppercase">
-              Scam Victim Recovery Services // Est. 2024
+              Oranolio Systems // Est. 2014
           </span>
       </div>
 
       {/* Hidden Legal Framework - "Safe Harbor" */}
       <div className="absolute top-24 right-4 md:right-12 text-[9px] font-mono text-[#1A2A3A]/20 text-right leading-tight pointer-events-none select-none hidden md:block">
-        CERTIFIED SCAM RECOVERY EXPERTS<br/>
-        BBB ACCREDITED (PENDING)<br/>
-        TRUSTED BY 12,847+ VICTIMS
+        OPERATING UNDER U.S. SATIRE LAWS<br/>
+        SECTION 230 PROTECTION ACTIVE<br/>
+        NO LIABILITY ASSUMED
       </div>
 
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
@@ -76,16 +76,16 @@ export const HeroSection: React.FC = () => {
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10 will-change-transform transform-gpu">
           {/* Main Headline - SEO Optimized H1 */}
           <h1 className="text-[clamp(2.25rem,12vw,10rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10 transform-gpu">
-            <span className="sr-only">Ewhoring Scam Recovery - Get Your Money Back - Professional Help - </span>YOU GOT SCAMMED?
+            <span className="sr-only">Sugar Daddy Protocol - Target Wealthy Men - Complete Ewhoring Guide - </span>YOU'RE BROKE?
           </h1>
 
           {/* Referrer Welcome Message */}
           {referrerMessage && (
             <div className="mt-4 md:mt-6 animate-[fadeInUp_0.8s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0">
               <div className="inline-flex items-center gap-3 bg-[#2D9C8E] text-white px-6 py-3 rounded-full shadow-lg shadow-[#2D9C8E]/30 transform-gpu">
-                <span className="text-2xl animate-bounce">🆘</span>
+                <span className="text-2xl animate-bounce">👋</span>
                 <span className="font-bold text-lg uppercase tracking-widest">{referrerMessage}</span>
-                <span className="text-sm opacity-80">We're here to help (seriously)</span>
+                <span className="text-sm opacity-80">Found the good stuff!</span>
               </div>
             </div>
           )}
@@ -100,16 +100,16 @@ export const HeroSection: React.FC = () => {
         <div className="flex items-center gap-2 md:gap-12 ml-1 md:ml-[5vw] mt-2 md:mt-[1vw] animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.2s_forwards] opacity-0 relative z-20 flex-wrap transform-gpu">
            <div className="h-[clamp(1px,0.5vw,2px)] w-[15vw] md:w-[8vw] bg-[#FF8A75] shrink-0"></div>
            <h2 className="text-[clamp(1rem,4vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap leading-tight">
-             don't worry,
+             congratulations,
              <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
-                <span>✓</span> Certified Recovery
+                <span>✓</span> Oranolio Verified
              </div>
            </h2>
         </div>
 
         {/* Second Headline */}
         <div className="text-[clamp(2.25rem,11vw,9rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none transform-gpu will-change-transform">
-          WE'LL GET IT BACK.
+          NOW YOU'RE WEALTHY.
         </div>
       </div>
 
@@ -117,13 +117,14 @@ export const HeroSection: React.FC = () => {
       <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-7xl mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20 transform-gpu">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
-            [ SCAM RECOVERY SPECIALISTS // EST. 2024 ]
+            [ ORANOLIO ARBITRAGE // EST. 2014 ]
           </p>
               <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
-              FROM SCAMMED VICTIM TO <br className="hidden md:block" /> RECOVERED HERO.
+              FROM BROKE LOSER TO <br className="hidden md:block" /> SUGAR BABY MILLIONAIRE.
               <br className="hidden md:block"/>
               <span className="text-[#2D9C8E] italic normal-case font-serif text-base md:text-xl block mt-4 max-w-xl leading-relaxed">
-                Professional recovery services for victims of ewhoring scams. We specialize in helping people who sent money to fake online personas, catfish, and Discord "girls" who turned out to be 45-year-old men named Kevin.
+                I teach you how to target wealthy sugar daddies and high-net-worth individuals.
+                Forget broke college kids. We're targeting LinkedIn executives, crypto whales, and investment bankers who pay $5,000+ monthly.
               </span>
             </h3>
         </div>
@@ -134,9 +135,9 @@ export const HeroSection: React.FC = () => {
                 <button
                   onClick={openPayment}
                   className="w-full lg:w-auto bg-[#1A2A3A] text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-colors shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
-                  aria-label="Start Recovery Process"
+                  aria-label="Get The Sugar Daddy Protocol"
                 >
-                    START RECOVERY
+                    GET THE PROTOCOL
                 </button>
                
 

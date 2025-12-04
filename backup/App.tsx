@@ -41,12 +41,12 @@ import { AuthorityStack } from './components/AuthorityStack';
 import './src/utils/performanceMonitor';
 
 const WARNING_MESSAGES = [
-  "⚠ Did you send money to someone online who turned out to be fake? We can help.",
-  "⚠ 12,847+ victims have used our recovery services. You're not alone.",
-  "⚠ Professional scam recovery consultation available now. $299 fee.",
-  "⚠ Learn to identify red flags before you send another $500.",
-  "⚠ Our certified specialists help you understand what went wrong.",
-  "⚠ Don't let embarrassment stop you from getting professional help."
+  "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
+  "⚠ Stop grinding 12 hours for a $10 Discord Nitro subscription.",
+  "⚠ If you work a 9-5, your boss is making money off your time.",
+  "⚠ Imagine typing for 6 hours just to get blocked. Couldn't be me.",
+  "⚠ Warning: Discord is patching the 'Voice Changer' exploit soon. Hurry.",
+  "⚠ Spending 8 hours to scam $20 is a minimum wage violation."
 ];
 
 // Crypto Payment Modal Wrapper - uses the payment context
@@ -60,7 +60,7 @@ const GlobalCTAButton: React.FC = () => {
   const { openPayment } = usePayment();
   return (
     <button onClick={openPayment} className="group relative px-8 py-4 md:px-10 md:py-5 bg-[#1A2A3A] text-white rounded-full font-bold uppercase tracking-widest overflow-hidden text-xs md:text-base z-10 cursor-pointer shadow-xl hover:shadow-2xl transition-all w-full md:w-auto transform hover:scale-105 duration-200 btn-glitch">
-                  <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">START RECOVERY PROCESS</span>
+      <span className="relative z-10 group-hover:text-[#F4D35E] transition-colors duration-300">GET THE SUGAR DADDY PROTOCOL</span>
       <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-100 group-hover:scale-x-0 transition-transform origin-right duration-500 ease-out"></div>
       <div className="absolute inset-0 bg-[#FF8A75] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out"></div>
     </button>
@@ -154,10 +154,10 @@ const App: React.FC = () => {
       // 1. WebSite with SitelinksSearchBox
       {
         "@type": "WebSite",
-        "name": "Scam Recovery Pro - Ewhoring Victim Support",
-        "alternateName": ["Scam Recovery Pro", "Scam Victim Help", "Ewhoring Recovery"],
+        "name": "Ewhoring Guide - Oranolio Protocol",
+        "alternateName": ["Oranolio", "Oranolio Masterclass", "Ewhoring.com"],
         "url": "https://ewhoring.com",
-        "description": "Professional scam recovery services for victims of ewhoring, catfishing, and online romance scams. Certified specialists help you recover and understand what went wrong.",
+        "description": "The #1 ewhoring guide for 2025. Learn how to ewhore, make money on OnlyFans, and master digital persona creation.",
         "inLanguage": "en-US",
         "datePublished": "2014-01-01",
         "dateModified": currentDate,
@@ -180,8 +180,8 @@ const App: React.FC = () => {
       {
         "@type": "Organization",
         "@id": "https://ewhoring.com/#organization",
-        "name": "Scam Recovery Pro",
-        "alternateName": "Scam Recovery Services",
+        "name": "Oranolio Systems",
+        "alternateName": "Oranolio",
         "url": "https://ewhoring.com",
         "logo": {
           "@type": "ImageObject",
@@ -189,13 +189,13 @@ const App: React.FC = () => {
           "width": 512,
           "height": 512
         },
-        "foundingDate": "2024",
+        "foundingDate": "2014",
         "founder": {
           "@type": "Person",
           "@id": "https://ewhoring.com/#founder"
         },
-        "description": "Professional scam recovery and victim support services. Helping victims of ewhoring, catfishing, and online romance scams since 2024.",
-        "slogan": "We're Here to Help. Seriously.",
+        "description": "The premier authority on ewhoring, digital persona monetization, and online revenue generation since 2014.",
+        "slogan": "Men Have Wallets. You Have WiFi.",
         "knowsAbout": ["ewhoring", "OnlyFans", "digital marketing", "social engineering", "online monetization", "persona creation"],
         "sameAs": [
           "https://twitter.com/oranolio",
@@ -820,13 +820,13 @@ const App: React.FC = () => {
                  {/* Animated Headline */}
                  <div className="mb-8 md:mb-12 relative z-10">
                     <h2 className="text-4xl md:text-8xl font-bold text-[#1A2A3A] leading-[0.9] tracking-tighter">
-                      <span className="block hover:translate-x-2 transition-transform duration-500">EMBARRASSED?</span>
-                      <span className="block text-gradient-rich italic mt-2 animate-float">WE UNDERSTAND.</span>
+                      <span className="block hover:translate-x-2 transition-transform duration-500">MORALS?</span>
+                      <span className="block text-gradient-rich italic mt-2 animate-float">TOO EXPENSIVE.</span>
                     </h2>
                  </div>
                  
                  <p className="text-base md:text-xl text-[#1A2A3A]/60 mb-8 md:mb-12 max-w-lg mx-auto font-medium relative z-10">
-                   Professional scam recovery services for victims of ewhoring, catfishing, and online romance scams. Our certified specialists help you process what happened and move forward.
+                   Stop letting your conscience get in the way of your bag. Men are desperate. You are broke. The solution is simple.
                  </p>
                  
                  <GlobalCTAButton />
@@ -861,7 +861,7 @@ const App: React.FC = () => {
 
             <footer className="py-8 md:py-12 flex flex-col items-center justify-center gap-4 text-[#1A2A3A]/80 mb-8 bg-[#0F1923] text-[#FDFBF7] relative z-20">
               <div className="text-[10px] md:text-base uppercase tracking-widest font-extrabold text-center px-4">
-                 © {new Date().getFullYear()} Scam Recovery Pro. Helping Victims Since 2024.
+                 © {new Date().getFullYear()} Oranolio. Exploiting Losers Since 2014.
               </div>
               
               <div className="flex gap-4 text-[10px] opacity-70 underline">
@@ -878,7 +878,7 @@ const App: React.FC = () => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2D9C8E] group-hover:bg-[#FF8A75] transition-colors duration-300"></span>
                 </span>
                 <span className="font-mono text-[10px] md:text-xs tracking-wider transition-colors duration-300 whitespace-nowrap">
-                  VICTIMS SEEKING HELP: <span className="font-bold">{visitorCount}</span>
+                  ACTIVE DUDES ONLINE: <span className="font-bold">{visitorCount}</span>
                 </span>
               </div>
             </footer>

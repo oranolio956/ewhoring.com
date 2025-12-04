@@ -4,28 +4,28 @@ import { usePayment } from '../contexts/PaymentContext';
 
 const reviews = [
   {
-    name: "Jake, 24",
-    role: "Software Engineer",
-    alias: "ThoughtSheWasReal",
-    income: "-$3,200",
-    quote: "I sent $3,200 to 'Jessica' over 6 months on Discord. She said she was a 22-year-old college student. We were planning to meet. Then I found out 'Jessica' was actually a 47-year-old man named Kevin from Ohio. Our recovery specialist helped me process this trauma.",
-    tags: ["Discord Scam", "6 Months Wasted"]
+    name: "Marcus, 28",
+    role: "Ex-Bartender",
+    alias: "Sophia_Executive",
+    income: "+$25,000/mo",
+    quote: "I targeted LinkedIn executives and now I have three sugar daddies. One CEO flies me to Dubai every month and pays my rent. Another bought me a condo. I went from $40k/year to $300k/year overnight.",
+    tags: ["Multiple Daddies", "Luxury Lifestyle"]
   },
   {
-    name: "Mike, 31",
-    role: "Marketing Manager",
-    alias: "CryptoWhaleVictim",
-    income: "-$8,500",
-    quote: "I sent $8,500 in Bitcoin to 'Isabella' on Telegram. She said she was a crypto trader and needed help with her 'investment fund.' After 3 months of daily conversations, I realized the photos were AI-generated. The recovery process has been... enlightening.",
-    tags: ["Telegram Scam", "Crypto Loss"]
+    name: "David, 31",
+    role: "Former IT Support",
+    alias: "Isabella_Investor",
+    income: "+$15,000/mo",
+    quote: "Crypto whales on Telegram are insane. One guy sent me $50,000 in BTC just because I 'understood his world.' I positioned myself as a 'tech entrepreneur' and now I have passive income for life.",
+    tags: ["Crypto Mining", "Financial Freedom"]
   },
   {
-    name: "Chris, 27",
-    role: "Accountant",
-    alias: "TinderCatfish",
-    income: "-$2,100",
-    quote: "Matched with 'Victoria' on Tinder. She asked for Steam gift cards because her 'dad was controlling.' Sent $2,100 worth over 4 months. Never met. Never video called. Recovery services helped me understand the red flags I missed.",
-    tags: ["Tinder Scam", "Gift Card Fraud"]
+    name: "Alex, 25",
+    role: "College Dropout",
+    alias: "Victoria_Elite",
+    income: "+$12,000/mo",
+    quote: "Seeking.com sugar daddies are the real deal. I get $6,000 monthly allowances from two different executives. They think I'm a 'graduate student' - total discretion, total wealth.",
+    tags: ["Monthly Allowances", "Elite Clients"]
   }
 ];
 
@@ -41,12 +41,12 @@ export const Testimonials: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="mb-12 md:mb-16">
           <h2 className="text-4xl md:text-7xl font-bold text-[#1A2A3A] tracking-tighter mb-4">
-            THEY GOT SCAMMED <br/>
-            <span className="text-[#FF8A75] italic font-serif">(WE HELPED THEM)</span>
+            THEY FOUND WEALTH <br/>
+            <span className="text-[#FF8A75] italic font-serif">(NOT DIGNITY)</span>
           </h2>
             <p className="text-lg text-[#1A2A3A]/60 max-w-2xl">
-              Real victims. Real recovery. Professional support. <br/>
-              See how our certified recovery specialists helped these victims process their trauma and understand what went wrong.
+              Real wealth. Real results. Strategic targeting. <br/>
+              See how operators are securing monthly allowances and luxury arrangements from sugar daddies.
             </p>
         </div>
 
@@ -58,18 +58,18 @@ export const Testimonials: React.FC = () => {
                 <span className="text-4xl">❝</span>
               </div>
 
-              {/* Header: Scam Visualization */}
+              {/* Header: Identity Swap */}
               <div className="flex items-center gap-3 mb-6 border-b border-[#1A2A3A]/5 pb-6">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-200 flex items-center justify-center text-lg md:text-xl grayscale group-hover:grayscale-0 transition-all shrink-0">
-                  😢
+                  🧔🏻‍♂️
                 </div>
                 <div className="text-xl text-[#1A2A3A]/20">→</div>
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-tr from-[#FF8A75] to-[#F4D35E] flex items-center justify-center text-lg md:text-xl shadow-lg animate-pulse shrink-0">
-                  🎭
+                  👩🏼‍🎤
                 </div>
                 <div className="ml-auto text-right min-w-0">
-                    <div className="text-[9px] md:text-[10px] uppercase font-bold text-[#1A2A3A]/40 truncate">Money Lost</div>
-                    <div className="text-[#FF8A75] font-bold font-mono text-sm md:text-base">{review.income}</div>
+                    <div className="text-[9px] md:text-[10px] uppercase font-bold text-[#1A2A3A]/40 truncate">Monthly Haul</div>
+                    <div className="text-[#2D9C8E] font-bold font-mono text-sm md:text-base">{review.income}</div>
                 </div>
               </div>
 
@@ -99,10 +99,10 @@ export const Testimonials: React.FC = () => {
             onClick={openPayment}
             className="bg-[#FF8A75] text-[#1A2A3A] px-8 py-4 font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-all shadow-xl hover:scale-105 transform duration-200 btn-glitch text-sm md:text-base cursor-pointer"
           >
-            START YOUR RECOVERY PROCESS →
+            BECOME THE NEXT SUCCESS STORY →
           </button>
           <p className="text-xs text-[#1A2A3A]/60 mt-2 font-mono">
-            Professional help is just one click away
+            Stop reading and start doing
           </p>
         </div>
       </div>

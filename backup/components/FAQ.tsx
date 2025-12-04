@@ -1,37 +1,37 @@
 
 import React, { useState } from 'react';
 
-// Scam Victim Recovery FAQs - Professional Support Questions
+// SEO-Optimized FAQs targeting People Also Ask (PAA) queries
 export const faqs = [
   // Core Questions
   {
-    q: "I sent money to someone on Discord who said they were a girl. Can I get it back?",
-    a: "Unfortunately, once money is sent via cryptocurrency, gift cards, or unverified payment methods, recovery is extremely difficult. However, our certified recovery specialists can help you: 1) Process the emotional trauma, 2) Understand the red flags you missed, 3) Create a recovery plan for future interactions, and 4) Connect you with support groups. We charge a consultation fee of $299 to begin the recovery process."
+    q: "What is ewhoring?",
+    a: "Ewhoring is the practice of creating fake female online personas to monetize lonely men on platforms like Discord, Telegram, and dating apps. It involves social engineering, persona creation, and various revenue strategies like selling pics, getting gift cards, or running premium content subscriptions. The Oranolio Protocol teaches the complete system."
   },
   {
-    q: "How much money have people lost to ewhoring scams?",
-    a: "Based on our database of 12,847+ victims, the average loss is $2,400 per person. Some victims have lost $10,000-$50,000 over extended periods. The most common scenario: sending money for 3-6 months before realizing the person was fake. Our recovery services help you understand why this happened and how to prevent it."
+    q: "How much money can you make ewhoring?",
+    a: "Realistic earnings range from $500-$5000 per week depending on effort and skill level. Beginners typically make $200-$500 in their first week. Advanced operators running multiple personas can exceed $10,000/month. The key is consistency and following proven methods rather than improvising. <a href='/ewhoring-vs-onlyfans.html'>Compare ewhoring vs OnlyFans</a> for detailed breakdowns."
   },
   {
-    q: "Is it illegal to catfish someone for money?",
-    a: "Yes, in many jurisdictions, creating a fake identity to obtain money through deception is considered fraud. However, prosecuting these cases is difficult because: 1) Scammers use anonymous payment methods, 2) They operate across international borders, 3) Victims often don't report due to embarrassment. Our recovery specialists can help you understand your legal options (consultation fee applies)."
+    q: "Is ewhoring illegal?",
+    a: "We sell educational information. The legality depends on YOUR actions and jurisdiction. Selling info products is legal everywhere. What you do with knowledge is your responsibility. We're the bookstore, not the author of your story. Consult local laws before doing anything questionable."
   },
   {
-    q: "I've been talking to someone for 6 months and sent $5,000. How do I know if I'm being scammed?",
-    a: "Red flags: 1) They refuse video calls, 2) They always have emergencies requiring money, 3) They use AI-generated or stolen photos, 4) They avoid meeting in person, 5) They ask for gift cards or crypto. If you're experiencing 3+ of these, you're likely being scammed. Our $299 consultation includes a professional assessment of your situation."
+    q: "How do I start ewhoring as a beginner?",
+    a: "Start with Day 1: Create anonymous accounts, get a VPN, and wipe your digital footprint. Day 2: Build your persona with AI-generated images and a believable backstory. Day 3: Deploy to Discord servers and Telegram groups. The Oranolio Protocol walks you through each step in detail."
   },
   // Platform-Specific
   {
-    q: "I sent money to someone on OnlyFans who turned out to be fake. Can I get a refund?",
-    a: "OnlyFans has strict refund policies. If you purchased content from a fake account, you may be able to dispute the charge with your bank, but success rates are low. Our recovery specialists can help you: 1) Document the fraud, 2) File proper complaints, 3) Understand why you fell for it. Consultation fee: $299."
+    q: "How to make money on OnlyFans without showing your face?",
+    a: "Multiple strategies work: 1) Focus on body content only, 2) Use AI face-swapping tools, 3) Wear masks or use strategic angles, 4) Buy content packs and rebrand them, 5) Operate as a 'faceless' account selling exclusivity. The Protocol covers all methods with specific implementation guides."
   },
   {
-    q: "What platforms are most common for ewhoring scams?",
-    a: "Based on our victim database: 1) Discord (45% of cases) - dating servers, lonely servers, 2) Telegram (30%) - premium groups, direct messages, 3) Dating apps (15%) - Tinder, Bumble, Hinge, 4) Reddit (5%) - relationship subs, 5) Other (5%). Our recovery program teaches you to identify scams on each platform. $299 consultation includes platform-specific training."
+    q: "What are the best platforms for ewhoring in 2025?",
+    a: "Top platforms ranked by ROI: 1) Discord (highest volume), 2) Telegram (best for premium groups), 3) Dating apps (Tinder, Bumble for gift card farming), 4) Reddit (for building initial following), 5) Twitter/X (for driving traffic). Each platform requires different approaches covered in our training."
   },
   {
-    q: "How do Discord ewhoring scams work?",
-    a: "Scammers join dating/lonely servers, create fake female personas, build rapport over weeks/months, then ask for: Steam gift cards, Discord Nitro, Amazon cards, crypto, or PayPal. They use AI-generated photos, stolen images, or deepfakes. Our recovery specialists can help you understand the psychological manipulation techniques used. Consultation: $299."
+    q: "How does Discord ewhoring work?",
+    a: "Join dating/lonely servers, build rapport with simps, then monetize through: selling pics, getting Nitro gifts, Amazon gift cards, or PayPal donations. Key is building trust first. Advanced method: create your own server with premium tiers. We provide full scripts and conversation templates."
   },
   // Technical Questions
   {
@@ -305,10 +305,10 @@ export const FAQ: React.FC = () => {
         <div className="mb-8 md:mb-12 text-center">
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 font-['Space_Grotesk'] leading-none">
               QUESTIONS FROM <br/>
-              <span className="text-[#FF8A75]">SCAM VICTIMS</span>
+              <span className="text-[#FF8A75]">LAZY PEOPLE</span>
             </h2>
             <p className="text-[#FDFBF7]/50 uppercase tracking-widest text-[10px] md:text-xs font-bold mt-4">
-                (We're here to help - professional recovery services)
+                (Read this so you don't ask me stupid things)
             </p>
         </div>
 
@@ -341,7 +341,7 @@ export const FAQ: React.FC = () => {
         <div className="mt-8 md:mt-12 p-6 md:p-8 border border-dashed border-[#FDFBF7]/20 rounded-xl text-center bg-[#1A2A3A] relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-stripes.png')] opacity-10"></div>
             <p className="relative z-10 text-xs md:text-sm font-mono text-[#FDFBF7]/50 max-w-2xl mx-auto leading-relaxed">
-                *Note: Recovery consultation fee is $299 (non-refundable). This covers professional assessment, emotional support, and recovery planning. We cannot guarantee money recovery, but we can help you understand what happened and prevent future scams.
+                *Note: If you email support asking "Does this really work?", you will be blocked. We do not have time to convince you to make money.
             </p>
         </div>
       </div>

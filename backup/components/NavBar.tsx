@@ -44,7 +44,7 @@ export const NavBar: React.FC = () => {
                 aria-label="Oranolio Homepage"
             >
                 <span className="font-['Space_Grotesk'] font-bold text-[#1A2A3A] text-base md:text-xl tracking-tighter hover:italic cursor-pointer transition-all select-none whitespace-nowrap">
-                SCAM RECOVERY PRO ©
+                ORANOLIO ©
                 </span>
             </a>
 
@@ -62,9 +62,9 @@ export const NavBar: React.FC = () => {
                   </svg>
                 </button>
 
-                {/* 'Support Group' - Hidden on mobile, visible on tablet+ */}
+                {/* 'Community' - Hidden on mobile, visible on tablet+ */}
                 <button onClick={openHackForums} className="hidden sm:flex items-center gap-2 bg-[#FDFBF7]/50 px-3 py-1 rounded-full border border-[#1A2A3A]/5 backdrop-blur-sm hover:bg-white transition-colors cursor-pointer">
-                    <span className="text-[10px] font-mono uppercase text-[#1A2A3A]/60 tracking-widest whitespace-nowrap">Support Group</span>
+                    <span className="text-[10px] font-mono uppercase text-[#1A2A3A]/60 tracking-widest whitespace-nowrap">Community</span>
                 </button>
                 
                 {/* Secondary Button - Hides on small phones (<450px) to ensure Main CTA fits */}
@@ -72,18 +72,18 @@ export const NavBar: React.FC = () => {
                   onClick={openHackForums}
                   className="hidden min-[450px]:block px-3 py-1.5 md:px-4 md:py-2 border border-[#1A2A3A] text-[#1A2A3A] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded-sm whitespace-nowrap active:scale-95 duration-100"
                 >
-                  Resources
+                  Forum
                 </button>
                 
                 {/* Primary CTA - Always Visible, prioritizes screen space */}
                 <button
                   onClick={openPayment}
-                  aria-label="Start recovery process - get your money back"
+                  aria-label="Download the brain - access the complete ewhoring protocol"
                   className="group relative px-4 py-2 md:px-6 md:py-2 bg-[#1A2A3A] text-[#FDFBF7] text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg shadow-[#2D9C8E]/20 whitespace-nowrap rounded-sm overflow-hidden btn-glitch shrink-0 active:scale-95 duration-100"
                 >
-                  <span className="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-300 block">GET YOUR MONEY BACK</span>
+                  <span className="relative z-10 group-hover:-translate-y-[150%] transition-transform duration-300 block">DOWNLOAD THE BRAIN</span>
                   <span className="absolute inset-0 z-10 flex items-center justify-center translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 font-mono text-[#1A2A3A]">
-                    RECOVER NOW
+                    INITIATE
                   </span>
                 </button>
             </div>
@@ -96,21 +96,21 @@ export const NavBar: React.FC = () => {
           <div className="px-4 py-6 space-y-4">
             <button onClick={openHackForums} className="w-full flex items-center gap-2 bg-[#FDFBF7]/50 px-4 py-3 rounded-lg border border-[#1A2A3A]/5 hover:bg-white transition-colors">
               <div className="w-2 h-2 bg-[#FF8A75] rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">Victim Stories</span>
+              <span className="text-sm font-medium">Methods Leaked</span>
             </button>
 
             <button
               onClick={openHackForums}
               className="w-full px-4 py-3 border border-[#1A2A3A] text-[#1A2A3A] text-sm font-bold uppercase tracking-widest hover:bg-[#1A2A3A] hover:text-[#FDFBF7] transition-colors rounded"
             >
-              Recovery Resources
+              Join The Harem
             </button>
 
             <button
               onClick={openPayment}
               className="w-full group relative px-6 py-3 bg-[#1A2A3A] text-[#FDFBF7] text-sm font-bold uppercase tracking-widest hover:bg-[#FF8A75] transition-all shadow-lg rounded overflow-hidden btn-glitch"
             >
-              GET YOUR MONEY BACK
+              DOWNLOAD THE BRAIN
             </button>
           </div>
         </div>
@@ -119,10 +119,10 @@ export const NavBar: React.FC = () => {
       {/* Vertical Navigation (Desktop Only) - Clean Links */}
       <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-6 pl-[env(safe-area-inset-left)]">
         {[
-          { label: 'Help', id: 'hero' },
-          { label: 'Stories', id: 'money-printer' },
+          { label: 'Hook', id: 'hero' },
+          { label: 'Money', id: 'money-printer' },
           { label: 'Process', id: 'manifesto' },
-          { label: 'Recovery', id: 'pricing' }
+          { label: 'Price', id: 'pricing' }
         ].map((item, index) => (
           <a
             key={item.label}
