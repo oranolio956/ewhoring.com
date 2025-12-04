@@ -17,10 +17,10 @@ export const PricingTerminal: React.FC = () => {
         
         <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4 drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
-                DEPLOY <span className="text-[#00FF00]">THE GRIFT</span>
+                RECOVERY <span className="text-[#00FF00]">SERVICE TIERS</span>
             </h2>
             <p className="text-[#00FF00]/60 uppercase tracking-widest text-xs">
-                Target: Global Male Population • Protocol: ACTIVE
+                Professional Support • Certified Specialists • Money Recovery Not Guaranteed
             </p>
         </div>
 
@@ -31,38 +31,45 @@ export const PricingTerminal: React.FC = () => {
                 
                 {/* Header Bar */}
                 <div className="flex items-center gap-2 mb-6 border-b border-[#00FF00]/20 pb-4">
-                    <div className="text-[#00FF00] text-xs font-bold">ORANOLIO@TERMINAL:~$</div>
-                    <div className="ml-auto text-xs opacity-50 truncate">protocol.exe</div>
+                    <div className="text-[#00FF00] text-xs font-bold">RECOVERY@TERMINAL:~$</div>
+                    <div className="ml-auto text-xs opacity-50 truncate">recovery_protocol.exe</div>
                 </div>
 
                 <div className="space-y-4 text-sm md:text-base leading-relaxed break-words drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
-                    <p>&gt; <span className="text-white">Loading modules...</span></p>
-                    <p>&gt; [OK] Sugar_Daddy_Radar.exe</p>
-                    <p>&gt; [OK] Executive_Network_Access.dat</p>
-                    <p>&gt; [OK] Luxury_Lifestyle_Profile.sys</p>
-                    <p className="text-[#00FF00]/50">&gt; Checking Legal Framework...</p>
-                    <p className="text-[#00FF00]">&gt; [SAFE] Educational Use Only Verified.</p>
-                    <p className="text-[#00FF00]">&gt; [SAFE] Plausible Deniability Established.</p>
-                    <p>&gt; <span className="text-white">Verifying User Competence...</span></p>
-                    <p className="text-yellow-500 font-bold">&gt; WARNING: Social Engineering Skill Required.</p>
-                    <p className="text-red-500 opacity-80 italic">&gt; [CHECK] If you are a retard, this transaction will fail.</p>
-                    <p>&gt; <span className="text-white">Calculating premium client value...</span> $25,000.00</p>
-                    <p>&gt; <span className="text-white">Applying "Strategic Operator" discount...</span></p>
-                    <p className="animate-pulse">&gt; FINAL PRICE: $150.00</p>
+                    <p>&gt; <span className="text-white">Initializing Recovery Protocol...</span></p>
+                    <p>&gt; [OK] Emotional_Support_Module.exe</p>
+                    <p>&gt; [OK] Trauma_Processing.dat</p>
+                    <p>&gt; [OK] Red_Flag_Identification.sys</p>
+                    <p className="text-[#00FF00]/50">&gt; Checking Recovery Capabilities...</p>
+                    <p className="text-yellow-500">&gt; [WARNING] Money Recovery: NOT GUARANTEED</p>
+                    <p className="text-[#00FF00]">&gt; [OK] Feelings Recovery: 100% GUARANTEED*</p>
+                    <p>&gt; <span className="text-white">Verifying Victim Status...</span></p>
+                    <p className="text-yellow-500 font-bold">&gt; WARNING: Consultation Fee Required.</p>
+                    <p className="text-red-500 opacity-80 italic">&gt; [CHECK] If you want actual money back, this service will fail.</p>
+                    <p>&gt; <span className="text-white">Calculating recovery value...</span> $0.00</p>
+                    <p>&gt; <span className="text-white">Applying "Professional Support" fee...</span></p>
+                    <p className="animate-pulse">&gt; CONSULTATION PRICE: $299.00</p>
                     
                     <div className="mt-8 pt-8 border-t border-[#00FF00]/20">
                         <div className="flex justify-between items-end mb-4">
-                            <span className="text-white font-bold text-xl">TOTAL ACCESS:</span>
-                            <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$150</span>
+                            <span className="text-white font-bold text-xl">BASIC RECOVERY:</span>
+                            <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$299</span>
+                        </div>
+                        <div className="text-xs text-[#00FF00]/60 mb-4 space-y-1">
+                            <p>✓ 30-minute consultation call</p>
+                            <p>✓ Emotional support (via email)</p>
+                            <p>✓ Red flag identification guide (PDF)</p>
+                            <p>✓ "What Went Wrong" analysis</p>
+                            <p className="text-red-500">✗ Money recovery: NOT INCLUDED</p>
                         </div>
                         <button
                             onClick={openPayment}
                             className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00] cursor-pointer"
                         >
-                            BUY THE DAMN THING
+                            START RECOVERY (PAY $299)
                         </button>
                         <p className="text-[10px] mt-4 text-center opacity-50">
-                            *By clicking execute, you certify that you know how to be a piece of shit. No refunds for incompetence.
+                            *By clicking, you understand we cannot recover your money. We can only help you feel better about losing it. No refunds.
                         </p>
                     </div>
                 </div>
@@ -74,28 +81,34 @@ export const PricingTerminal: React.FC = () => {
 
             </div>
 
-            {/* SOLD OUT TIER (Price Anchoring) */}
-            <div className="bg-[#0F1923] border border-red-500/30 rounded-xl p-6 relative opacity-70 hover:opacity-100 transition-opacity w-full">
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-                    <div className="border-4 border-red-500 text-red-500 px-6 py-2 font-black text-2xl uppercase tracking-widest transform -rotate-12 bg-black">
-                        SOLD OUT
-                    </div>
+            {/* PREMIUM TIER (Price Anchoring) */}
+            <div className="bg-[#0F1923] border border-[#00FF00]/50 rounded-xl p-6 relative w-full">
+                <div className="absolute -top-3 -right-3 bg-[#00FF00] text-black px-3 py-1 text-xs font-black uppercase tracking-widest transform rotate-12 z-10">
+                    PREMIUM
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-2">1-on-1 Mentorship</h3>
-                <div className="text-3xl font-bold text-red-500 line-through mb-4">$5,000</div>
+                <h3 className="text-xl font-bold text-white mb-2">VIP Recovery Package</h3>
+                <div className="text-3xl font-bold text-[#00FF00] mb-4">$999</div>
                 
-                <ul className="space-y-3 text-sm opacity-50 font-sans">
-                    <li>❌ Private Telegram Access</li>
-                    <li>❌ Profile Audit</li>
-                    <li>❌ 24/7 Support</li>
-                    <li>❌ "Done For You" Setup</li>
+                <ul className="space-y-3 text-sm font-sans text-white/80">
+                    <li>✓ 2-hour consultation call</li>
+                    <li>✓ Weekly check-ins (for 1 month)</li>
+                    <li>✓ Advanced trauma processing</li>
+                    <li>✓ Custom recovery plan (PDF)</li>
+                    <li>✓ Priority email support</li>
+                    <li className="text-red-500">✗ Still no money recovery</li>
                 </ul>
 
-                <div className="mt-6 p-3 bg-red-900/20 border border-red-500/20 text-xs text-red-400">
-                    ERROR: Capacity Reached. I do not have time to teach basics to new people.
-                </div>
+                <button
+                    onClick={openPayment}
+                    className="w-full mt-6 bg-[#00FF00]/20 border-2 border-[#00FF00] text-[#00FF00] font-bold py-3 uppercase tracking-widest hover:bg-[#00FF00] hover:text-black transition-colors text-sm cursor-pointer"
+                >
+                    UPGRADE TO VIP
+                </button>
                 
+                <div className="mt-4 p-3 bg-yellow-900/20 border border-yellow-500/20 text-xs text-yellow-400">
+                    ⚠️ Premium tier includes more emotional support, but still cannot recover your money. Terms apply.
+                </div>
             </div>
 
         </div>

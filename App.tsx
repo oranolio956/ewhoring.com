@@ -18,6 +18,7 @@ import { TheSprint } from './components/TheSprint';
 import { RedditChat } from './components/RedditChat';
 import { ScamFooter } from './components/ScamFooter';
 import { SalesToast } from './components/SalesToast';
+import { UrgencyTimer } from './components/UrgencyTimer';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
 import { PunchMadeParody } from './components/PunchMadeParody';
@@ -41,12 +42,16 @@ import { AuthorityStack } from './components/AuthorityStack';
 import './src/utils/performanceMonitor';
 
 const WARNING_MESSAGES = [
-  "⚠ Did you send money to someone online who turned out to be fake? We can help.",
-  "⚠ 12,847+ victims have used our recovery services. You're not alone.",
-  "⚠ Professional scam recovery consultation available now. $299 fee.",
-  "⚠ Learn to identify red flags before you send another $500.",
-  "⚠ Our certified specialists help you understand what went wrong.",
-  "⚠ Don't let embarrassment stop you from getting professional help."
+  "⚠ Did you send money to someone online who turned out to be fake? We can help (for $299).",
+  "⚠ 12,847+ victims have paid our consultation fee. Money recovered: $0.",
+  "⚠ Professional scam recovery consultation available now. Money recovery: NOT INCLUDED.",
+  "⚠ Learn to identify red flags before you send another $500. Consultation: $299.",
+  "⚠ Our certified specialists (certified by us) help you understand what went wrong.",
+  "⚠ Don't let embarrassment stop you from paying us $299 for emotional support.",
+  "⚠ Limited time offer: Pay $299 now, or pay $299 later. Price never actually changes.",
+  "⚠ 100% satisfaction rate* *Satisfaction = they paid and didn't chargeback (yet).",
+  "⚠ We cannot recover your money, but we can help you feel better about losing it!",
+  "⚠ Trusted by thousands* *Thousands = we made up this number. Trust us though."
 ];
 
 // Crypto Payment Modal Wrapper - uses the payment context
@@ -693,6 +698,7 @@ const App: React.FC = () => {
           <HaterBlocker />
           <ExitModal />
           <SalesToast />
+          <UrgencyTimer />
           <CookieConsent />
           <ClickSparkle />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />

@@ -6,35 +6,35 @@ import { Tooltip } from 'react-tooltip';
 const modules: ModuleItem[] = [
   {
     id: 1,
-    title: "The Honey Pot",
-    description: "Building a female identity when you are a 30-year-old man.",
-    details: "Sourcing content that isn't reverse searchable. Concealing identifiers. The art of the 'broken camera' excuse. Creating a believable digital footprint.",
+    title: "Emotional Support Module",
+    description: "Processing the trauma of being scammed (for $299).",
+    details: "Our certified specialists help you work through the 5 stages of grief: denial, anger, bargaining, depression, and acceptance. Learn to accept that your money is gone while we charge you for the privilege of telling you this.",
     price: "01",
-    tags: ["Identity"]
+    tags: ["Feelings"]
   },
   {
     id: 2,
-    title: "Voice Changers",
-    description: "Sounding female without getting caught.",
-    details: "AI voice changers are for amateurs. I teach you the psychological text patterns that make them 'hear' a girl's voice in their head. It's linguistics.",
+    title: "Red Flag Identification",
+    description: "Learning what you should have noticed (PDF guide included).",
+    details: "We'll teach you to identify red flags like: asking for gift cards, refusing video calls, AI-generated photos, and being a 47-year-old man named Kevin. This information is free on Google, but we charge $299 to tell it to you.",
     price: "02",
-    tags: ["Audio"]
+    tags: ["Education"]
   },
   {
     id: 3,
-    title: "Simp Farming",
-    description: "Targeting high-net-worth losers.",
-    details: "Where to find lonely men with disposable income. How to become their 'online girlfriend' while maintaining complete anonymity.",
+    title: "Trauma Processing",
+    description: "Understanding why you fell for it (spoiler: you're lonely).",
+    details: "Our specialists will help you understand that loneliness makes people vulnerable. We'll explain why you sent money to someone you never met. This insight is worth $299 according to us.",
     price: "03",
-    tags: ["Acquisition"]
+    tags: ["Therapy"]
   },
   {
     id: 4,
-    title: "The Cashout",
-    description: "Structuring payments and anonymity.",
-    details: "Receiving funds without doxxing yourself. Crypto rails. How to manage multiple 'clients' efficiently without getting burned.",
+    title: "Money Recovery",
+    description: "Just kidding, we can't recover your money.",
+    details: "This module doesn't actually exist. We cannot recover your money. We can only help you feel better about losing it. But hey, at least you learned something! That's worth $299, right?",
     price: "04",
-    tags: ["Safety"]
+    tags: ["Reality"]
   }
 ];
 
@@ -50,7 +50,7 @@ export const BentoGrid: React.FC = () => {
       
       {/* Subliminal Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
-         ORANOLIO PROTOCOL
+         RECOVERY PROTOCOL
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10 w-full">
@@ -58,20 +58,20 @@ export const BentoGrid: React.FC = () => {
         {/* Header */}
         <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit flex flex-col justify-center">
           <div className="mb-4 flex items-center gap-2">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">The Protocol</span>
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF8A75]">Recovery Services</span>
           </div>
           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-8 text-[#FDFBF7]">
-            THE METHOD
+            OUR PROCESS
           </h2>
           
 
           <p className="text-base md:text-xl font-light text-[#FDFBF7]/70 leading-relaxed font-mono">
-            // Subject: Wealth Extraction<br/>
-            // Status: Active
+            // Subject: Emotional Recovery<br/>
+            // Money Recovery: NOT INCLUDED
           </p>
           <div className="mt-8 md:mt-12 p-4 md:p-6 border-l-2 border-[#FF8A75] bg-[#FDFBF7]/5 backdrop-blur-sm">
             <p className="text-xs md:text-sm text-[#FDFBF7]/60 font-mono">
-              "You don't need talent. You need a system. This is the system."
+              "We can't get your money back, but we can help you feel better about losing it. That's worth $299, right?"
             </p>
           </div>
         </div>

@@ -68,7 +68,25 @@ export const HeroSection: React.FC = () => {
       <div className="absolute top-24 right-4 md:right-12 text-[9px] font-mono text-[#1A2A3A]/20 text-right leading-tight pointer-events-none select-none hidden md:block">
         CERTIFIED SCAM RECOVERY EXPERTS<br/>
         BBB ACCREDITED (PENDING)<br/>
-        TRUSTED BY 12,847+ VICTIMS
+        TRUSTED BY 12,847+ VICTIMS<br/>
+        ISO 9001:2024 COMPLIANT (ALLEGEDLY)<br/>
+        FTC APPROVED (WE THINK)
+      </div>
+      
+      {/* Fake Trust Badges - Absolutely Ridiculous */}
+      <div className="absolute top-32 left-4 md:left-12 hidden md:flex flex-col gap-2 z-20">
+        <div className="bg-white/80 backdrop-blur-sm border-2 border-[#2D9C8E] rounded-lg px-3 py-2 text-center shadow-lg">
+          <div className="text-[8px] font-bold text-[#1A2A3A] uppercase tracking-wider">✓ VERIFIED</div>
+          <div className="text-[7px] text-[#1A2A3A]/60 mt-1">By Ourselves</div>
+        </div>
+        <div className="bg-white/80 backdrop-blur-sm border-2 border-[#FF8A75] rounded-lg px-3 py-2 text-center shadow-lg">
+          <div className="text-[8px] font-bold text-[#1A2A3A] uppercase tracking-wider">🏆 AWARD</div>
+          <div className="text-[7px] text-[#1A2A3A]/60 mt-1">Best Recovery 2024*</div>
+        </div>
+        <div className="bg-white/80 backdrop-blur-sm border-2 border-[#2D9C8E] rounded-lg px-3 py-2 text-center shadow-lg">
+          <div className="text-[8px] font-bold text-[#1A2A3A] uppercase tracking-wider">🔒 SECURE</div>
+          <div className="text-[7px] text-[#1A2A3A]/60 mt-1">SSL Certificate</div>
+        </div>
       </div>
 
       {/* Massive Background Typography - Viewport Width Locked for Perfect Scaling */}
@@ -123,8 +141,22 @@ export const HeroSection: React.FC = () => {
               FROM SCAMMED VICTIM TO <br className="hidden md:block" /> RECOVERED HERO.
               <br className="hidden md:block"/>
               <span className="text-[#2D9C8E] italic normal-case font-serif text-base md:text-xl block mt-4 max-w-xl leading-relaxed">
-                Professional recovery services for victims of ewhoring scams. We specialize in helping people who sent money to fake online personas, catfish, and Discord "girls" who turned out to be 45-year-old men named Kevin.
+                Professional recovery services for victims of ewhoring scams. We specialize in helping people who sent money to fake online personas, catfish, and Discord "girls" who turned out to be 45-year-old men named Kevin. Our certified specialists (certified by us) use advanced recovery techniques like "emotional support" and "explaining what went wrong" to help you process your trauma. <span className="font-bold text-[#FF8A75]">Money recovery not guaranteed, but feelings recovery is 100% guaranteed*</span>
               </span>
+              
+              {/* Fake Statistics Banner */}
+              <div className="mt-6 flex flex-wrap gap-4 text-xs">
+                <div className="bg-[#2D9C8E]/10 px-4 py-2 rounded-full border border-[#2D9C8E]/30">
+                  <span className="font-bold text-[#2D9C8E]">$0</span> <span className="text-[#1A2A3A]/60">Recovered</span>
+                </div>
+                <div className="bg-[#FF8A75]/10 px-4 py-2 rounded-full border border-[#FF8A75]/30">
+                  <span className="font-bold text-[#FF8A75]">12,847+</span> <span className="text-[#1A2A3A]/60">Victims Helped*</span>
+                </div>
+                <div className="bg-[#1A2A3A]/10 px-4 py-2 rounded-full border border-[#1A2A3A]/30">
+                  <span className="font-bold text-[#1A2A3A]">100%</span> <span className="text-[#1A2A3A]/60">Satisfaction**</span>
+                </div>
+              </div>
+              <p className="text-[8px] text-[#1A2A3A]/40 mt-2 italic">*Helped = charged consultation fee. **Satisfaction = they paid and didn't chargeback (yet).</p>
             </h3>
         </div>
         

@@ -8,24 +8,48 @@ const reviews = [
     role: "Software Engineer",
     alias: "ThoughtSheWasReal",
     income: "-$3,200",
-    quote: "I sent $3,200 to 'Jessica' over 6 months on Discord. She said she was a 22-year-old college student. We were planning to meet. Then I found out 'Jessica' was actually a 47-year-old man named Kevin from Ohio. Our recovery specialist helped me process this trauma.",
-    tags: ["Discord Scam", "6 Months Wasted"]
+    quote: "I sent $3,200 to 'Jessica' over 6 months on Discord. She said she was a 22-year-old college student. We were planning to meet. Then I found out 'Jessica' was actually a 47-year-old man named Kevin from Ohio. Our recovery specialist helped me process this trauma. Worth every penny of the $299 consultation fee!",
+    tags: ["Discord Scam", "6 Months Wasted", "Recovery: $0"]
   },
   {
     name: "Mike, 31",
     role: "Marketing Manager",
     alias: "CryptoWhaleVictim",
     income: "-$8,500",
-    quote: "I sent $8,500 in Bitcoin to 'Isabella' on Telegram. She said she was a crypto trader and needed help with her 'investment fund.' After 3 months of daily conversations, I realized the photos were AI-generated. The recovery process has been... enlightening.",
-    tags: ["Telegram Scam", "Crypto Loss"]
+    quote: "I sent $8,500 in Bitcoin to 'Isabella' on Telegram. She said she was a crypto trader and needed help with her 'investment fund.' After 3 months of daily conversations, I realized the photos were AI-generated. The recovery process has been... enlightening. At least I understand what went wrong now!",
+    tags: ["Telegram Scam", "Crypto Loss", "Feelings: Recovered"]
   },
   {
     name: "Chris, 27",
     role: "Accountant",
     alias: "TinderCatfish",
     income: "-$2,100",
-    quote: "Matched with 'Victoria' on Tinder. She asked for Steam gift cards because her 'dad was controlling.' Sent $2,100 worth over 4 months. Never met. Never video called. Recovery services helped me understand the red flags I missed.",
-    tags: ["Tinder Scam", "Gift Card Fraud"]
+    quote: "Matched with 'Victoria' on Tinder. She asked for Steam gift cards because her 'dad was controlling.' Sent $2,100 worth over 4 months. Never met. Never video called. Recovery services helped me understand the red flags I missed. The PDF guide was very informative!",
+    tags: ["Tinder Scam", "Gift Card Fraud", "Education: Priceless"]
+  },
+  {
+    name: "Brandon, 29",
+    role: "IT Consultant",
+    alias: "OnlyFansVictim",
+    income: "-$4,800",
+    quote: "Subscribed to an OnlyFans for 8 months. Paid $600/month. Found out the 'girl' was using deepfake technology and the content was stolen. Recovery specialist explained that I should have reverse image searched. Very helpful advice! Money still gone though.",
+    tags: ["OnlyFans Scam", "Deepfake", "Advice: Received"]
+  },
+  {
+    name: "Ryan, 33",
+    role: "Sales Manager",
+    alias: "SugarDaddyVictim",
+    income: "-$12,000",
+    quote: "Met 'Sophia' on Seeking.com. She said she was a 23-year-old med student. Sent $12,000 over 6 months for 'tuition' and 'emergencies.' Never met in person. Recovery consultation helped me realize I should have asked for ID. Great learning experience!",
+    tags: ["Sugar Daddy Scam", "6 Months", "Wisdom: Gained"]
+  },
+  {
+    name: "Alex, 26",
+    role: "Graphic Designer",
+    alias: "RedditVictim",
+    income: "-$1,500",
+    quote: "Met someone on Reddit who claimed to be a 'cam girl' needing help. Sent $1,500 via CashApp. Turned out to be a 52-year-old man from Florida. Recovery service's red flag guide is now my bible. At least I won't make the same mistake twice!",
+    tags: ["Reddit Scam", "CashApp", "Prevention: Learned"]
   }
 ];
 

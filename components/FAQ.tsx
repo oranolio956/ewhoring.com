@@ -293,6 +293,47 @@ export const faqs = [
   {
     q: "What are red flags to avoid in ewhoring?",
     a: "Users asking for real photos immediately, wanting to move off-platform too quickly, being overly aggressive, asking about your 'real' identity, offering too much money upfront. Trust your instincts and block freely."
+  },
+  // More Absurd Victim Questions
+  {
+    q: "I sent $5,000 to someone who said they were a Nigerian princess. Can you help?",
+    a: "Yes! Our $299 consultation includes a comprehensive analysis of why you fell for a 20-year-old scam. We'll help you understand that Nigerian princes don't use Discord. Money recovery: still not possible, but you'll feel smarter!"
+  },
+  {
+    q: "The person I sent money to said they were stuck at the airport and needed $500. Was I scammed?",
+    a: "Classic airport scam! Our recovery specialists will explain that: 1) Real people don't get 'stuck' at airports, 2) They have credit cards, 3) This scam is from 2005. For just $299, we'll teach you about modern scams too!"
+  },
+  {
+    q: "I sent money because they said they loved me after 2 days of chatting. Is that normal?",
+    a: "No, that's not normal. But don't worry - you're not alone! 47% of our clients fell for the 'love bombing' technique. Our consultation will help you understand why 2 days isn't enough time to fall in love. $299 well spent!"
+  },
+  {
+    q: "Can you actually get my money back?",
+    a: "No. We cannot recover your money. We can: 1) Help you process the emotional trauma, 2) Explain what went wrong, 3) Give you a PDF guide on red flags, 4) Make you feel better about losing it. That's what the $299 consultation covers. Money recovery is not included."
+  },
+  {
+    q: "Why does your service cost $299 if you can't recover money?",
+    a: "Great question! Our certified specialists (certified by us) provide valuable services: emotional support, trauma processing, red flag education, and 'what went wrong' analysis. Think of it as therapy, but for people who got scammed. Therapy costs money, and so does this!"
+  },
+  {
+    q: "I've been scammed 3 times. Will your service prevent future scams?",
+    a: "Our $299 consultation includes a comprehensive red flag guide (PDF format). If you read it and apply it, you might avoid future scams. However, we cannot guarantee you won't fall for another one. Some people are just... special. We offer a $999 VIP package with monthly check-ins if you're a repeat victim."
+  },
+  {
+    q: "Do you offer refunds if I'm not satisfied?",
+    a: "No. All consultation fees are non-refundable. This is clearly stated in our terms. If you're not satisfied with the emotional support we provided, we're sorry, but that's the risk you take when paying for services that can't actually recover your money."
+  },
+  {
+    q: "Are your recovery specialists actually certified?",
+    a: "Yes! Our specialists are certified by our own certification program. We created the certification, we administer the tests, and we issue the certificates. It's a completely legitimate process (by our standards). Trust us, we're professionals!"
+  },
+  {
+    q: "I sent money via gift cards. Can you trace those?",
+    a: "No. Gift cards are untraceable once redeemed. That's why scammers love them. Our consultation will help you understand why gift cards are a red flag. For $299, you'll learn that legitimate people don't ask for Steam gift cards as payment."
+  },
+  {
+    q: "The person I sent money to blocked me. What should I do?",
+    a: "First, accept that your money is gone. Second, book our $299 consultation to process this trauma. Third, understand that blocking you after taking your money is a clear sign you were scammed. Our specialists will help you work through the 5 stages of grief (denial, anger, bargaining, depression, acceptance)."
   }
 ];
 

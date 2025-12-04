@@ -1,19 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
 
-const NAMES = ["Kyle", "Brandon", "Jessica", "Mike", "Alex", "Sarah", "Anon", "David", "Chris"];
-const LOCATIONS = ["Texas", "London", "Dubai", "New York", "California", "Ohio", "Toronto", "Sydney", "Miami"];
-const ACTIONS = ["started the grift", "joined the harem", "secured a spot", "purchased the tools"];
+const NAMES = ["Jake", "Mike", "Chris", "Brandon", "Ryan", "Alex", "David", "Kevin", "Tom"];
+const LOCATIONS = ["Texas", "California", "New York", "Ohio", "Florida", "Illinois", "Washington", "Arizona", "Georgia"];
+const ACTIONS = ["started recovery", "booked consultation", "paid $299 fee", "joined support group", "got emotional help"];
 const REALITY_CHECKS = [
-  "He bought I promise",
-  "Sh*t's a real purchase",
-  "F*ck yeah I'm rich",
-  "Totally legitimate transaction",
-  "Mom's credit card confirmed",
+  "Money: Still gone",
+  "Feelings: Recovered",
+  "Wisdom: Gained",
   "Not a paid actor",
-  "IRS please ignore",
-  "Source: Trust me bro",
-  "Money printed successfully"
+  "100% satisfied*",
+  "Would recommend**",
+  "Source: Trust us",
+  "Recovery: Emotional",
+  "Consultation: Worth it"
 ];
 
 export const SalesToast: React.FC = () => {
@@ -49,7 +49,7 @@ export const SalesToast: React.FC = () => {
     <div className={`fixed bottom-4 left-4 z-50 transition-all duration-500 transform ${show ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
       <div className="bg-[#1A2A3A]/90 backdrop-blur-md border border-[#2D9C8E]/30 p-4 rounded-xl shadow-2xl flex items-center gap-4 max-w-xs cursor-default hover:scale-105 transition-transform">
          <div className="w-10 h-10 rounded-full bg-[#2D9C8E] flex items-center justify-center text-[#FDFBF7] font-bold text-lg shadow-[0_0_15px_rgba(45,156,142,0.5)]">
-           ✓
+           🆘
          </div>
          <div>
            <div className="text-xs text-[#FDFBF7] font-bold">

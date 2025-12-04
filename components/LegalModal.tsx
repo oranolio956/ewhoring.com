@@ -13,10 +13,10 @@ export const LegalModal: React.FC<{ isOpen: boolean, onClose: () => void }> = ({
         <div className="p-6 border-b-2 border-[#1A2A3A] bg-[#1A2A3A] text-[#FDFBF7] flex justify-between items-center">
             <div>
                 <h2 className="text-xl md:text-2xl font-bold font-['Space_Grotesk'] uppercase tracking-widest text-[#FDFBF7]">
-                    TERMS OF SERVICE & LEGAL DISCLAIMER
+                    RECOVERY SERVICE TERMS & DISCLAIMERS
                 </h2>
                 <p className="text-[10px] font-mono opacity-70 mt-1">
-                    LAST UPDATED: OCTOBER 2025 // BINDING AGREEMENT
+                    LAST UPDATED: 2024 // LEGALLY BINDING (WE THINK)
                 </p>
             </div>
             <button onClick={onClose} className="text-4xl hover:text-[#FF8A75] transition-colors">&times;</button>
@@ -33,22 +33,22 @@ export const LegalModal: React.FC<{ isOpen: boolean, onClose: () => void }> = ({
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">1. Educational and Entertainment Purpose Only</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">1. Money Recovery Disclaimer</h3>
               <p>
-                  The content provided on this website and within "The Oranolio Protocol" (the "Product") is strictly for <strong>educational, informational, and entertainment purposes only</strong>. The Product is a theoretical analysis of social engineering, digital marketing strategies, and human psychology.
+                  <strong>WE CANNOT AND WILL NOT RECOVER YOUR MONEY.</strong> Our recovery services provide emotional support, trauma processing, red flag education, and "what went wrong" analysis. We do not recover funds, contact scammers, file police reports, or perform any actual recovery actions.
               </p>
               <p className="mt-2">
-                  Oranolio Holdings Inc. ("The Company") does not condone, encourage, or advocate for the commission of any illegal acts, including but not limited to fraud, identity theft, wire fraud, blackmail, or extortion. Any anecdotes or examples used are hypothetical or satirical in nature.
+                  Scam Recovery Pro ("The Company") is a support service, not a financial recovery service. By purchasing our consultation, you acknowledge that your money is likely gone forever and we cannot help you get it back. We can only help you feel better about losing it.
               </p>
           </div>
           
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">2. Earnings Disclaimer</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">2. Certification Disclaimer</h3>
               <p>
-                  In accordance with FTC guidelines, we make no guarantees regarding your ability to generate income using the strategies provided. The revenue figures ($30,000/mo, $1,000/day) referenced on this website are exceptional results and are not intended to serve as a guarantee, warranty, or prediction of your future earnings.
+                  Our "certified recovery specialists" are certified by our own certification program. We created the certification, we administer the tests, and we issue the certificates. This certification is not recognized by any external authority, government agency, or professional organization.
               </p>
               <p className="mt-2">
-                  Your success depends on various factors including your background, dedication, social intelligence, and market conditions. All business entails risk. By purchasing this Product, you acknowledge that you may earn nothing.
+                  When we say "certified," we mean we gave ourselves certificates. When we say "professional," we mean we charge money. When we say "specialists," we mean we read some articles about scams. Your results may vary.
               </p>
           </div>
 
@@ -80,19 +80,32 @@ export const LegalModal: React.FC<{ isOpen: boolean, onClose: () => void }> = ({
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">6. Refund Policy for Digital Goods</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">6. No Refund Policy</h3>
               <p>
-                  The Product is a digital information good delivered via internet download. Upon purchase, you receive immediate access to the intellectual property.
+                  All consultation fees ($299 basic, $999 VIP) are <strong>NON-REFUNDABLE.</strong> This applies even if: 1) You realize we can't recover your money, 2) You're not satisfied with the emotional support, 3) You feel scammed again, 4) You change your mind.
               </p>
               <p className="mt-2">
-                  <strong>ALL SALES ARE FINAL.</strong> Due to the nature of digital goods, we do not offer refunds or exchanges. By completing your purchase, you waive your right to a refund and acknowledge that any chargeback attempts will be contested with this agreement as proof of purchase and delivery.
+                  By paying the consultation fee, you acknowledge that you're paying for services that cannot recover your money. If you're not satisfied, that's unfortunate, but we already spent your $299 on coffee and donuts. No refunds. No exceptions. No, really.
+              </p>
+          </div>
+          
+          <div>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">7. Success Rate Disclaimer</h3>
+              <p>
+                  When we claim "12,847+ victims helped," we mean 12,847+ people paid our consultation fee. "Helped" does not mean we recovered their money (we didn't). It means they paid us and received emotional support.
+              </p>
+              <p className="mt-2">
+                  Our "100% satisfaction rate" means 100% of people who paid didn't chargeback (yet). Our "$0 recovered" statistic is accurate - we have never recovered a single dollar for any client. This is not a bug, it's a feature.
               </p>
           </div>
 
           <div>
-              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">7. Governing Law</h3>
+              <h3 className="text-lg font-bold uppercase border-b border-[#1A2A3A] pb-2 mb-3">8. Governing Law & Jurisdiction</h3>
               <p>
-                  These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which The Company is established, without regard to its conflict of law provisions.
+                  These Terms are governed by the laws of wherever we feel like claiming we're based. If you try to sue us, good luck finding us. We operate from the internet, which has no physical location. Our legal address is "The Cloud."
+              </p>
+              <p className="mt-2">
+                  Any disputes will be resolved through binding arbitration conducted via email. The arbitrator will be chosen by us. The decision will be final. You will lose. This is not legal advice (we're not lawyers, we just play them on the internet).
               </p>
           </div>
 
@@ -103,7 +116,7 @@ export const LegalModal: React.FC<{ isOpen: boolean, onClose: () => void }> = ({
             <div className="flex items-start gap-3">
                 <input type="checkbox" id="legal-check" className="mt-1 w-5 h-5 accent-[#1A2A3A]" />
                 <label htmlFor="legal-check" className="text-xs md:text-sm font-bold text-[#1A2A3A]">
-                    I HAVE READ AND AGREE TO THE TERMS OF SERVICE, EARNINGS DISCLAIMER, AND PRIVACY POLICY. I UNDERSTAND THIS IS FOR EDUCATIONAL PURPOSES.
+                    I UNDERSTAND THAT THIS SERVICE CANNOT RECOVER MY MONEY. I AGREE TO PAY $299 FOR EMOTIONAL SUPPORT AND ACCEPT THAT ALL FEES ARE NON-REFUNDABLE. I ACKNOWLEDGE THAT "CERTIFIED" MEANS CERTIFIED BY THEMSELVES.
                 </label>
             </div>
             <button onClick={onClose} className="w-full py-4 bg-[#1A2A3A] text-white font-bold text-lg uppercase tracking-widest hover:bg-[#2D9C8E] transition-colors shadow-lg">
