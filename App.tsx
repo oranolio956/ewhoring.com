@@ -27,7 +27,7 @@ import { OranolioSlam } from './components/OranolioSlam';
 import { ReceiptVault } from './components/ReceiptVault';
 import { PricingTerminal } from './components/PricingTerminal';
 import { SideEffects } from './components/SideEffects';
-import { CookieConsent } from './components/CookieConsent';
+// CookieConsent removed per user request
 import { AsSeenOn } from './components/AsSeenOn';
 import { SEOContent } from './components/SEOContent';
 import { KeywordTargets } from './components/KeywordTargets';
@@ -663,7 +663,6 @@ const App: React.FC = () => {
       <div className="relative min-h-screen w-full max-w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white scroll-smooth" style={{ scrollBehavior: 'smooth' }} role="main" aria-label="Main content">
           
           {/* Essential modals only */}
-          <CookieConsent />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
           <CryptoPaymentModal />
 

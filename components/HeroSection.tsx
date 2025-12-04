@@ -105,12 +105,12 @@ export const HeroSection: React.FC = () => {
         </div>
         
         {/* Sub-headline */}
-        <div className="flex items-center gap-2 md:gap-12 ml-1 md:ml-[5vw] mt-2 md:mt-[1vw] animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.2s_forwards] opacity-0 relative z-20 flex-wrap transform-gpu">
+        <div className="flex items-center gap-2 md:gap-12 ml-1 md:ml-[5vw] mt-2 md:mt-[1vw] animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.2s_forwards] opacity-0 relative z-20 flex-wrap transform-gpu px-4 md:px-0">
            <div className="h-[clamp(1px,0.5vw,2px)] w-[15vw] md:w-[8vw] bg-[#FF8A75] shrink-0"></div>
-           <h2 className="text-[clamp(1rem,4vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-3 flex-wrap leading-tight">
-             congratulations,
-             <div className="bg-[#2D9C8E] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
-                <span>✓</span> Oranolio Verified
+           <h2 className="text-[clamp(1rem,4vw,2.5rem)] font-light italic text-[#1A2A3A] font-serif flex items-center gap-2 md:gap-3 flex-wrap leading-tight">
+             <span className="block">congratulations,</span>
+             <div className="bg-[#2D9C8E] text-white text-sm md:text-base font-bold px-4 py-2 md:px-3 md:py-1 rounded-full flex items-center gap-1.5 uppercase tracking-widest shadow-lg shadow-[#2D9C8E]/30 whitespace-nowrap">
+                <span className="text-base md:text-sm">✓</span> <span className="text-xs md:text-sm">Oranolio Verified</span>
              </div>
            </h2>
         </div>
@@ -122,7 +122,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
         {/* Bottom Editorial Content */}
-      <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-7xl mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20 transform-gpu">
+      <article className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-8 mt-4 md:mt-12 w-full max-w-7xl mx-auto animate-[fadeIn_1s_ease-out_1s_forwards] opacity-0 relative z-20 transform-gpu px-4 md:px-0">
         <div className="lg:col-span-6">
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ ORANOLIO ARBITRAGE // EST. 2014 ]
