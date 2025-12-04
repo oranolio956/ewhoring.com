@@ -38,6 +38,7 @@ import { KeywordTargets } from './components/KeywordTargets';
 import { CryptoPayment } from './components/CryptoPayment';
 import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 import { AuthorityStack } from './components/AuthorityStack';
+import { DrunkConfessionBanner } from './components/DrunkConfessionBanner';
 import './src/utils/performanceMonitor';
 
 const WARNING_MESSAGES = [
@@ -725,6 +726,9 @@ const App: React.FC = () => {
                 }
              `}</style>
           </div>
+
+          {/* Drunk Confession Banner with Crypto & Telegram */}
+          <DrunkConfessionBanner />
 
           {/* 1. Global Noise Overlay (Clean Version) */}
           <div className="bg-noise" />
