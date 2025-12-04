@@ -36,6 +36,7 @@ import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 import { AuthorityStack } from './components/AuthorityStack';
 import { DrunkConfessionBanner } from './components/DrunkConfessionBanner';
 import './src/utils/performanceMonitor';
+import './src/utils/visualDebugger';
 
 // Crypto Payment Modal Wrapper - uses the payment context
 const CryptoPaymentModal: React.FC = () => {
