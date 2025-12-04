@@ -8,22 +8,24 @@ export const FloatingBlobs: React.FC = () => {
       <div className="absolute inset-0 bg-[#FDFBF7]"></div>
 
       {/* TACTICAL GRID - Replaces soft blobs with precision engineering look */}
-      <div className="absolute inset-0 opacity-[0.03]" 
+      <div className="absolute inset-0 opacity-[0.015]" 
            style={{ 
              backgroundImage: 'linear-gradient(#1A2A3A 1px, transparent 1px), linear-gradient(90deg, #1A2A3A 1px, transparent 1px)', 
              backgroundSize: '40px 40px' 
            }}>
       </div>
 
-      {/* Floating Crosshairs - The "Sniper/Targeting" Aesthetic */}
-      {[...Array(6)].map((_, i) => (
+      {/* Floating Crosshairs - The "Sniper/Targeting" Aesthetic - Reduced on mobile for performance */}
+      {[...Array(typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 6)].map((_, i) => (
         <div 
             key={i}
-            className="absolute w-4 h-4 flex items-center justify-center opacity-20 will-change-transform"
+            className="absolute w-4 h-4 flex items-center justify-center opacity-20"
             style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animation: `float ${10 + Math.random() * 10}s linear infinite`
+                animation: typeof window !== 'undefined' && window.innerWidth < 768 
+                  ? 'none' 
+                  : `float ${10 + Math.random() * 10}s linear infinite`
             }}
         >
             <div className="absolute w-full h-[1px] bg-[#1A2A3A]"></div>

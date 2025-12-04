@@ -45,16 +45,23 @@ export const EasterEggs: React.FC = React.memo(() => {
       'font-size: 14px; color: #FF4444; font-weight: bold;'
     );
 
-    // Detect if DevTools opened
-    const devToolsCheck = setInterval(() => {
-      const widthThreshold = window.outerWidth - window.innerWidth > 160;
-      const heightThreshold = window.outerHeight - window.innerHeight > 160;
-      if (widthThreshold || heightThreshold) {
-        setShowDevMessage(true);
-      }
-    }, 1000);
+    // Detect if DevTools opened - Only on desktop, not mobile
+    // Mobile browsers have different window dimensions naturally
+    const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
+    
+    if (!isMobile) {
+      const devToolsCheck = setInterval(() => {
+        // More accurate detection - check for significant size differences
+        const widthDiff = window.outerWidth - window.innerWidth;
+        const heightDiff = window.outerHeight - window.innerHeight;
+        // Only trigger if difference is significant (DevTools open) and not just mobile browser UI
+        if ((widthDiff > 200 || heightDiff > 200) && widthDiff < 1000 && heightDiff < 1000) {
+          setShowDevMessage(true);
+        }
+      }, 2000); // Check less frequently to reduce performance impact
 
-    return () => clearInterval(devToolsCheck);
+      return () => clearInterval(devToolsCheck);
+    }
   }, []);
 
   // Konami Code Handler
@@ -176,16 +183,15 @@ export const EasterEggs: React.FC = React.memo(() => {
         </div>
       )}
 
-      {/* DevTools Detective */}
+      {/* DevTools Detective - Redesigned to match site aesthetic */}
       {showDevMessage && (
-        <div className="fixed top-24 right-4 z-[9999] bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-4 rounded-lg shadow-2xl max-w-sm animate-slide-in-right">
+        <div className="fixed top-24 right-4 z-[9999] bg-gradient-to-r from-[#1A2A3A] to-[#2D9C8E] text-white px-6 py-4 rounded-xl shadow-2xl max-w-sm border border-[#2D9C8E]/30 backdrop-blur-sm">
           <div className="flex items-start gap-3">
-            <span className="text-3xl">👨‍💻</span>
+            <span className="text-2xl">👨‍💻</span>
             <div>
-              <h3 className="font-bold text-lg mb-1">I SEE YOU</h3>
-              <p className="text-sm opacity-90">
-                Inspecting my code? Respect. But this whole site is just a drunk domain purchase. 
-                The real value is in the stories. And maybe therapy.
+              <h3 className="font-bold text-sm uppercase tracking-widest mb-2 font-mono">// DevTools Detected</h3>
+              <p className="text-xs opacity-90 leading-relaxed">
+                Inspecting the code? Respect. This site is satire. The real value is in the stories. And maybe therapy.
               </p>
             </div>
           </div>

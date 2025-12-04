@@ -707,26 +707,30 @@ const App: React.FC = () => {
           {/* 1. Global Noise Overlay (Clean Version) */}
           <div className="bg-noise" />
           
-          {/* Ambient Particles - Optimized with will-change */}
+          {/* Ambient Particles - Optimized for low-end devices */}
           <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-             {[...Array(15)].map((_, i) => (
+             {[...Array(typeof window !== 'undefined' && (window.innerWidth < 768 || window.devicePixelRatio < 1.5) ? 5 : 15)].map((_, i) => (
                 <div 
                   key={i} 
-                  className="particle will-change-transform" 
+                  className="particle" 
                   style={{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
                     width: `${Math.random() * 4 + 1}px`,
                     height: `${Math.random() * 4 + 1}px`,
                     animationDelay: `${Math.random() * 10}s`,
-                    animationDuration: `${Math.random() * 20 + 10}s`
+                    animationDuration: `${Math.random() * 20 + 10}s`,
+                    // Disable animation on low-end devices
+                    animation: typeof window !== 'undefined' && (window.innerWidth < 768 || window.devicePixelRatio < 1.5) 
+                      ? 'none' 
+                      : 'floatParticle 10s infinite linear'
                   }}
                 />
              ))}
           </div>
           
-          {/* 2. Global Subliminal Branding Layer */}
-          <div className="fixed inset-0 z-0 pointer-events-none bg-subliminal mix-blend-multiply opacity-50" />
+          {/* 2. Global Subliminal Branding Layer - Reduced opacity for brighter appearance */}
+          <div className="fixed inset-0 z-0 pointer-events-none bg-subliminal mix-blend-multiply opacity-20" />
           
           {/* 3. Floating Blobs Background */}
           <FloatingBlobs />

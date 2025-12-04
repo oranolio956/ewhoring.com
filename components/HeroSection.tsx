@@ -83,19 +83,23 @@ export const HeroSection: React.FC = () => {
             </LongHoverEasterEgg>
           </h1>
 
-          {/* Referrer Welcome Message */}
+          {/* Referrer Welcome Message - Redesigned to match site aesthetic */}
           {referrerMessage && (
             <div className="mt-4 md:mt-6 animate-[fadeInUp_0.8s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0">
-              <div className="inline-flex items-center gap-3 bg-[#2D9C8E] text-white px-6 py-3 rounded-full shadow-lg shadow-[#2D9C8E]/30 transform-gpu">
-                <span className="text-2xl animate-bounce">👋</span>
-                <span className="font-bold text-lg uppercase tracking-widest">{referrerMessage}</span>
-                <span className="text-sm opacity-80">Found the good stuff!</span>
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1A2A3A] to-[#2D9C8E] text-white px-6 py-4 rounded-xl shadow-2xl shadow-[#2D9C8E]/40 transform-gpu border border-[#2D9C8E]/30 backdrop-blur-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl md:text-2xl">👋</span>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-sm md:text-base uppercase tracking-widest leading-tight">{referrerMessage}</span>
+                    <span className="text-[10px] md:text-xs font-mono opacity-90 mt-0.5">// Protocol Access Granted</span>
+                  </div>
+                </div>
               </div>
             </div>
           )}
 
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
-          <div className="absolute top-[-10%] right-0 md:right-[2%] w-[clamp(80px,30vw,200px)] h-[clamp(80px,30vw,200px)] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu overflow-hidden" style={{ transform: 'translate3d(0,0,0)' }}>
+          <div className="absolute top-[-10%] right-0 md:right-[2%] w-[clamp(80px,30vw,200px)] h-[clamp(80px,30vw,200px)] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-60 md:opacity-90 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu overflow-hidden" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
           </div>
         </div>

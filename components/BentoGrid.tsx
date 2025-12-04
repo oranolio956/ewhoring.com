@@ -48,8 +48,8 @@ export const BentoGrid: React.FC = () => {
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7] w-full max-w-full overflow-x-hidden relative">
       
-      {/* Subliminal Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.02] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
+      {/* Subliminal Watermark - Reduced opacity for better visibility */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-bold text-[#FDFBF7]/[0.01] -rotate-45 pointer-events-none select-none font-['Space_Grotesk'] whitespace-nowrap">
          ORANOLIO PROTOCOL
       </div>
 
