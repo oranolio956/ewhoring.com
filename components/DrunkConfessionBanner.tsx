@@ -19,7 +19,7 @@ export const DrunkConfessionBanner: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-r from-[#FF8A75]/10 via-[#FDFBF7] to-[#2D9C8E]/10 border-b-2 border-[#FF8A75]/30 z-50 shadow-sm">
+    <div className="fixed top-[calc(4rem+env(safe-area-inset-top))] left-0 right-0 bg-gradient-to-r from-[#FF8A75]/10 via-[#FDFBF7] to-[#2D9C8E]/10 border-b-2 border-[#FF8A75]/30 z-40 shadow-sm backdrop-blur-sm">
       {/* Collapsed View - Minimal Banner */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}

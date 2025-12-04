@@ -730,7 +730,7 @@ const App: React.FC = () => {
           {/* 4. Content */}
           <NavBar />
           
-          <main id="main-content" className="relative z-10 w-full">
+          <main id="main-content" className="relative z-10 w-full pt-[calc(4rem+env(safe-area-inset-top)+3rem)]">
             {/* === HOOK & ATTENTION === */}
             <HeroSection />
 
