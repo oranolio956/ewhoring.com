@@ -20,19 +20,19 @@ export const ScamFooter: React.FC = () => {
         <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 relative">
            <Mascot excitementLevel={0} /> 
            {/* Speech Bubble */}
-           <div className="absolute -top-4 -right-12 bg-[#2D9C8E] text-[#1A2A3A] text-[10px] font-bold px-3 py-1 rounded-tr-xl rounded-bl-xl shadow-lg transform rotate-12 whitespace-nowrap">
+           <div className="absolute -top-4 right-0 md:-right-12 bg-[#2D9C8E] text-[#1A2A3A] text-[10px] font-bold px-3 py-1 rounded-tr-xl rounded-bl-xl shadow-lg transform rotate-12 whitespace-nowrap max-w-[80px] overflow-hidden text-ellipsis">
               I Got This.
            </div>
         </div>
 
         <TripleClickEasterEgg message="👨‍⚖️ Plot twist: My lawyer is actually a drunk AI assistant from 2025">
-          <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help">
+          <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help break-words px-4">
             IS THIS LEGAL?
           </h2>
         </TripleClickEasterEgg>
 
         <div className={`transition-all duration-500`}>
-            <div className="prose text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto space-y-6 text-[#FDFBF7]/80">
+            <div className="prose text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto space-y-6 text-[#FDFBF7]/80 break-words px-4">
                 <p>
                     <span className="text-[#2D9C8E] font-bold text-2xl block mb-4">Yes. Selling information is legal.</span> 
                 </p>

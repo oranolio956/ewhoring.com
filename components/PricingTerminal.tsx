@@ -18,7 +18,7 @@ export const PricingTerminal: React.FC = () => {
         
         <div className="text-center mb-12">
             <TripleClickEasterEgg message="💸 I genuinely can't believe people are actually reading this far. Respect.">
-              <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4 drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
+              <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4 drop-shadow-[0_0_5px_rgba(0,255,0,0.5)] break-words px-4">
                   DEPLOY <span className="text-[#00FF00]">THE GRIFT</span>
               </h2>
             </TripleClickEasterEgg>
@@ -30,7 +30,7 @@ export const PricingTerminal: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             
             {/* TERMINAL UI */}
-            <div className="lg:col-span-2 bg-[#0F1923] border border-[#00FF00]/30 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,0,0.1)] relative overflow-hidden w-full">
+            <div className="lg:col-span-2 bg-[#0F1923] border border-[#00FF00]/30 rounded-xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,0,0.1)] relative overflow-hidden w-full max-w-full">
                 
                 {/* Header Bar */}
                 <div className="flex items-center gap-2 mb-6 border-b border-[#00FF00]/20 pb-4">
@@ -38,7 +38,7 @@ export const PricingTerminal: React.FC = () => {
                     <div className="ml-auto text-xs opacity-50 truncate">protocol.exe</div>
                 </div>
 
-                <div className="space-y-4 text-sm md:text-base leading-relaxed break-words drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
+                <div className="space-y-4 text-sm md:text-base leading-relaxed break-words overflow-wrap-anywhere drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
                     <p>&gt; <span className="text-white">Loading modules...</span></p>
                     <p>&gt; [OK] Sugar_Daddy_Radar.exe</p>
                     <p>&gt; [OK] Executive_Network_Access.dat</p>

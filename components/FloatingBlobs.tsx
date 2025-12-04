@@ -32,8 +32,8 @@ export const FloatingBlobs: React.FC = () => {
       ))}
 
       {/* Large Geometric Watermarks - Architectural, not organic */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] border-[1px] border-[#1A2A3A]/5 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] border-[1px] border-[#1A2A3A]/5 rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[400px] max-h-[400px] border-[1px] border-[#1A2A3A]/5 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden"></div>
+      <div className="absolute bottom-0 left-0 w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] border-[1px] border-[#1A2A3A]/5 rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none overflow-hidden"></div>
       
       {/* 
          PERFORMANCE FIX: Removed SVG Noise Filter. 

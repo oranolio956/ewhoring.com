@@ -35,7 +35,7 @@ export const NavBar: React.FC = () => {
           scrolled ? 'bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#1A2A3A]/5 shadow-sm' : 'bg-transparent'
         }`}
       >
-        <div className="w-full h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between max-w-7xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]">
+        <div className="w-full h-[calc(4rem+env(safe-area-inset-top))] pt-[env(safe-area-inset-top)] px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between max-w-7xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] overflow-hidden">
             
             {/* Branding - Always Visible, Shrinks if needed but stays readable */}
             <a 
@@ -52,7 +52,7 @@ export const NavBar: React.FC = () => {
             </a>
 
             {/* Actions Container */}
-            <div className="flex gap-2 md:gap-4 items-center shrink-0">
+            <div className="flex gap-2 md:gap-4 items-center shrink-0 min-w-0">
                 {/* Mobile Menu Button */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -95,7 +95,7 @@ export const HeroSection: React.FC = () => {
           )}
 
           {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
-          <div className="absolute top-[-10%] right-[-20%] w-[40vw] h-[40vw] min-w-[clamp(80px,20vw,120px)] min-h-[clamp(80px,20vw,120px)] md:top-[-15%] md:right-[2%] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
+          <div className="absolute top-[-10%] right-0 md:right-[2%] w-[clamp(80px,30vw,200px)] h-[clamp(80px,30vw,200px)] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu overflow-hidden" style={{ transform: 'translate3d(0,0,0)' }}>
              <Mascot />
           </div>
         </div>
@@ -112,7 +112,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Second Headline */}
-        <div className="text-[clamp(2.25rem,11vw,9rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none transform-gpu will-change-transform">
+        <div className="text-[clamp(2.25rem,11vw,9rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full w-full overflow-hidden hover:hue-rotate-15 transition-all duration-500 select-none transform-gpu will-change-transform">
           <GlitchText>NOW YOU'RE WEALTHY.</GlitchText>
         </div>
       </div>
@@ -123,10 +123,10 @@ export const HeroSection: React.FC = () => {
           <p className="text-[10px] md:text-xs font-mono uppercase text-[#FF8A75] mb-3 font-bold tracking-widest bg-[#1A2A3A] w-fit px-2 py-1 text-white">
             [ ORANOLIO ARBITRAGE // EST. 2014 ]
           </p>
-              <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase">
+              <h3 className="text-xl md:text-3xl leading-none font-bold text-[#1A2A3A] uppercase break-words">
               FROM BROKE LOSER TO <br className="hidden md:block" /> SUGAR BABY MILLIONAIRE.
               <br className="hidden md:block"/>
-              <span className="text-[#2D9C8E] italic normal-case font-serif text-base md:text-xl block mt-4 max-w-xl leading-relaxed">
+              <span className="text-[#2D9C8E] italic normal-case font-serif text-base md:text-xl block mt-4 max-w-xl leading-relaxed break-words">
                 I teach you how to target wealthy sugar daddies and high-net-worth individuals.
                 Forget broke college kids. We're targeting LinkedIn executives, crypto whales, and investment bankers who pay $5,000+ monthly.
               </span>

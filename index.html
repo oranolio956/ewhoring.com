@@ -493,6 +493,7 @@
 
       html, body {
         width: 100%;
+        max-width: 100vw;
         overflow-x: hidden;
         position: relative;
         font-family: 'Outfit', 'sans-serif';
@@ -503,6 +504,28 @@
         text-rendering: optimizeLegibility;
         overscroll-behavior-y: auto; /* Restored native bounce for smoother feel */
         touch-action: pan-y; /* Prioritize vertical scroll */
+      }
+      
+      /* Prevent horizontal overflow globally */
+      * {
+        max-width: 100%;
+      }
+      
+      /* Fix for images and media */
+      img, video, iframe, embed, object {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Fix text overflow */
+      p, h1, h2, h3, h4, h5, h6, span, div {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Prevent layout shifts */
+      [class*="animate-"] {
+        will-change: transform, opacity;
       }
 
       /* iOS Safe Area Support */
@@ -667,6 +690,92 @@
         will-change: transform;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      
+      /* Fix z-index layering issues */
+      .z-0 { z-index: 0; }
+      .z-10 { z-index: 10; }
+      .z-20 { z-index: 20; }
+      .z-30 { z-index: 30; }
+      .z-40 { z-index: 40; }
+      .z-50 { z-index: 50; }
+      
+      /* Ensure proper stacking context */
+      [class*="fixed"], [class*="absolute"] {
+        isolation: isolate;
+      }
+      
+      /* Fix responsive text sizing */
+      @media (max-width: 640px) {
+        h1, h2, h3 {
+          word-break: break-word;
+          hyphens: auto;
+        }
+      }
+      
+      /* Fix button overflow */
+      button {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      /* Fix container overflow */
+      .container, [class*="max-w-"] {
+        overflow-x: hidden;
+      }
+      
+      /* Improve text rendering */
+      .break-words, [class*="break-words"] {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+      
+      /* Fix for long URLs and text */
+      a, p, span, div {
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Prevent layout shifts from images */
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+      
+      /* Fix for flex containers */
+      .flex {
+        min-width: 0;
+      }
+      
+      /* Fix for grid containers */
+      .grid {
+        min-width: 0;
+      }
+      
+      /* Improve mobile touch targets */
+      @media (max-width: 768px) {
+        button, a {
+          min-height: 44px;
+          min-width: 44px;
+        }
+      }
+      
+      /* Fix for absolute positioned elements */
+      [class*="absolute"] {
+        max-width: 100%;
+      }
+      
+      /* Smooth scrolling improvements */
+      html {
+        scroll-padding-top: 4rem;
+      }
+      
+      /* Fix for backdrop blur performance */
+      [class*="backdrop-blur"] {
+        will-change: backdrop-filter;
       }
       
       /* Click Sparkle Animation */
