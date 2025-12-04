@@ -118,17 +118,16 @@ export const Stats: React.FC = () => {
           </div>
         </div>
 
-          {/* Editorial Disclaimer */}
-          <div className="mt-12 relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00D9C0] to-[#FF5757] rounded-full"></div>
-            <div className="ml-8 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <div className="text-xs font-bold text-[#00D9C0] uppercase tracking-wider mb-4">Important Note</div>
-              <p className="text-base text-white/70 leading-relaxed max-w-3xl">
-                These statistics are based on our internal metrics. "Victims Helped" means they paid our consultation fee. 
-                "Money Recovered" is accurate - we have never recovered a single dollar. "Satisfaction Rate" means no chargebacks (yet). 
-                All numbers are real, but the interpretation is up to you.
-              </p>
-            </div>
+        {/* Editorial Disclaimer */}
+        <div className="mt-12 relative">
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00D9C0] to-[#FF5757] rounded-full"></div>
+          <div className="ml-8 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div className="text-xs font-bold text-[#00D9C0] uppercase tracking-wider mb-4">Important Note</div>
+            <p className="text-base text-white/70 leading-relaxed max-w-3xl">
+              These statistics are based on our internal metrics. "Victims Helped" means they paid our consultation fee. 
+              "Money Recovered" is accurate - we have never recovered a single dollar. "Satisfaction Rate" means no chargebacks (yet). 
+              All numbers are real, but the interpretation is up to you.
+            </p>
           </div>
         </div>
       </div>

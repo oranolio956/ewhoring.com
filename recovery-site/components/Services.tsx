@@ -133,17 +133,16 @@ export const Services: React.FC = () => {
           ))}
         </div>
 
-          {/* Editorial Disclaimer */}
-          <div className="mt-16 relative">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF5757] to-[#00D9C0] rounded-full"></div>
-            <div className="ml-8 bg-gradient-to-br from-[#FFD93D]/5 to-[#FF5757]/5 rounded-2xl p-8 border border-[#FFD93D]/20">
-              <div className="text-xs font-bold text-[#FF5757] uppercase tracking-wider mb-4">Important Disclaimer</div>
-              <p className="text-base text-[#4A4A4A] leading-relaxed max-w-3xl">
-                All consultation fees are non-refundable. We cannot and will not recover your money. 
-                Our services provide emotional support, education, and trauma processing only. 
-                By purchasing, you acknowledge that money recovery is not included and will not be provided.
-              </p>
-            </div>
+        {/* Editorial Disclaimer */}
+        <div className="mt-16 relative">
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#FF5757] to-[#00D9C0] rounded-full"></div>
+          <div className="ml-8 bg-gradient-to-br from-[#FFD93D]/5 to-[#FF5757]/5 rounded-2xl p-8 border border-[#FFD93D]/20">
+            <div className="text-xs font-bold text-[#FF5757] uppercase tracking-wider mb-4">Important Disclaimer</div>
+            <p className="text-base text-[#4A4A4A] leading-relaxed max-w-3xl">
+              All consultation fees are non-refundable. We cannot and will not recover your money. 
+              Our services provide emotional support, education, and trauma processing only. 
+              By purchasing, you acknowledge that money recovery is not included and will not be provided.
+            </p>
           </div>
         </div>
       </div>

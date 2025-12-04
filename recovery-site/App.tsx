@@ -9,10 +9,17 @@ import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { UrgencyBanner } from './components/UrgencyBanner';
+import { FloatingMoney, QuestionMarkCloud } from './components/DecorativeElements';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-x-hidden">
+      {/* Decorative Elements Throughout */}
+      <FloatingMoney className="top-1/4 left-10 hidden lg:block" />
+      <FloatingMoney className="top-1/2 right-20 hidden lg:block" />
+      <QuestionMarkCloud className="top-1/3 right-10 hidden lg:block" />
+      <QuestionMarkCloud className="bottom-1/4 left-20 hidden lg:block" />
+
       <UrgencyBanner />
       <Header />
       <main>

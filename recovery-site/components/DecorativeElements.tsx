@@ -34,7 +34,8 @@ export const GradientOrb: React.FC<{
   className?: string;
   color: 'teal' | 'red' | 'yellow';
   size?: 'sm' | 'md' | 'lg';
-}> = ({ className = "", color, size = 'md' }) => {
+  style?: React.CSSProperties;
+}> = ({ className = "", color, size = 'md', style }) => {
   const sizeClasses = {
     sm: 'w-64 h-64',
     md: 'w-96 h-96',
@@ -48,6 +49,6 @@ export const GradientOrb: React.FC<{
   };
 
   return (
-    <div className={`absolute ${className} ${sizeClasses[size]} ${colorClasses[color]} rounded-full opacity-8 blur-3xl animate-float pointer-events-none`}></div>
+    <div className={`absolute ${className} ${sizeClasses[size]} ${colorClasses[color]} rounded-full opacity-8 blur-3xl animate-float pointer-events-none`} style={style}></div>
   );
 };
