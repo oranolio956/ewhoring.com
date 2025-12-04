@@ -41,15 +41,6 @@ import { AuthorityStack } from './components/AuthorityStack';
 import { DrunkConfessionBanner } from './components/DrunkConfessionBanner';
 import './src/utils/performanceMonitor';
 
-const WARNING_MESSAGES = [
-  "⚠ Math Check: $20 / 8 hours = $2.50/hr. You are literally losing money.",
-  "⚠ Stop grinding 12 hours for a $10 Discord Nitro subscription.",
-  "⚠ If you work a 9-5, your boss is making money off your time.",
-  "⚠ Imagine typing for 6 hours just to get blocked. Couldn't be me.",
-  "⚠ Warning: Discord is patching the 'Voice Changer' exploit soon. Hurry.",
-  "⚠ Spending 8 hours to scam $20 is a minimum wage violation."
-];
-
 // Crypto Payment Modal Wrapper - uses the payment context
 const CryptoPaymentModal: React.FC = () => {
   const { isPaymentOpen, closePayment } = usePayment();
@@ -72,7 +63,6 @@ const App: React.FC = () => {
   const [visitorCount, setVisitorCount] = useState<string>("0");
   const [legalOpen, setLegalOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [bannerIndex, setBannerIndex] = useState(0);
   const [copyToast, setCopyToast] = useState(false);
 
   useEffect(() => {
@@ -92,13 +82,6 @@ const App: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
       if (frameId) cancelAnimationFrame(frameId);
     };
-  }, []);
-
-  useEffect(() => {
-    const bannerInterval = setInterval(() => {
-        setBannerIndex(prev => (prev + 1) % WARNING_MESSAGES.length);
-    }, 4000);
-    return () => clearInterval(bannerInterval);
   }, []);
 
   // Initialize Performance Monitoring
@@ -712,19 +695,6 @@ const App: React.FC = () => {
           {/* Global Progress Bar */}
           <div className="fixed top-0 left-0 h-1 bg-[#1A2A3A] z-[100] w-full origin-left will-change-transform" style={{ transform: `scaleX(${scrollProgress})` }}>
             <div className="h-full w-full bg-[#FF8A75] shadow-[0_0_10px_#FF8A75]" />
-          </div>
-
-          {/* 0. Fake Urgency Banner - Rotating Messages */}
-          <div className="bg-[#FF8A75] text-[#1A2A3A] text-[10px] md:text-xs font-bold text-center py-2 uppercase tracking-widest z-[60] relative px-2 cursor-pointer hover:underline overflow-hidden">
-             <div key={bannerIndex} className="animate-[slide-up_0.5s_ease-out]">
-                {WARNING_MESSAGES[bannerIndex]}
-             </div>
-             <style>{`
-                @keyframes slide-up {
-                    from { transform: translateY(100%); opacity: 0; }
-                    to { transform: translateY(0); opacity: 1; }
-                }
-             `}</style>
           </div>
 
           {/* Drunk Confession Banner with Crypto & Telegram */}

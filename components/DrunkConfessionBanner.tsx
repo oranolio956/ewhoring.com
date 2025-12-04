@@ -19,35 +19,57 @@ export const DrunkConfessionBanner: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-[#FDFBF7] border-b border-[#1A2A3A]/10 z-50">
+    <div className="relative bg-gradient-to-r from-[#FF8A75]/10 via-[#FDFBF7] to-[#2D9C8E]/10 border-b-2 border-[#FF8A75]/30 z-50 shadow-sm">
       {/* Collapsed View - Minimal Banner */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full px-4 py-2 flex items-center justify-between hover:bg-[#FDFBF7]/80 transition-colors group"
+        className="w-full px-4 py-2.5 flex items-center justify-between hover:bg-white/50 transition-all group"
       >
-        <div className="flex items-center gap-2 md:gap-3">
-          <span className="text-sm">🍺</span>
-          <span className="text-[#1A2A3A] text-[10px] md:text-xs font-mono uppercase tracking-widest">
-            <span className="font-bold">Drunk Purchase:</span> $3k Domain · 100% Satire
-          </span>
-          <span className="hidden sm:inline text-[#1A2A3A]/50 text-[10px] md:text-xs font-mono">
-            · If I made you laugh...
-          </span>
+        <div className="flex items-center gap-2 md:gap-4">
+          <span className="text-lg md:text-xl animate-bounce-slow">🍺</span>
+          <div className="flex items-center gap-2">
+            <span className="text-[#1A2A3A] text-[10px] md:text-xs font-mono uppercase tracking-widest font-bold">
+              Drunk Purchase:
+            </span>
+            <span className="text-[#FF8A75] text-[10px] md:text-xs font-mono uppercase tracking-widest font-bold">
+              $3k Domain
+            </span>
+            <span className="hidden sm:inline text-[#1A2A3A]/60 text-[10px] md:text-xs font-mono">
+              · 100% Satire
+            </span>
+            <span className="hidden md:inline text-[#2D9C8E] text-[10px] md:text-xs font-mono font-bold animate-pulse">
+              · Tip if you laughed
+            </span>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#FF8A75] group-hover:text-[#1A2A3A] transition-colors">
-            {isExpanded ? 'Close' : 'Support'}
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF8A75] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF8A75]"></span>
+          </div>
+          <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest font-bold text-[#FF8A75] group-hover:text-[#2D9C8E] transition-colors">
+            {isExpanded ? '✕ Close' : '💰 Tips'}
           </span>
           <svg 
-            className={`w-3 h-3 text-[#1A2A3A]/60 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+            className={`w-3 h-3 md:w-4 md:h-4 text-[#FF8A75] transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
           </svg>
         </div>
       </button>
+      
+      <style>{`
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 2s ease-in-out infinite;
+        }
+      `}</style>
 
       {/* Expanded Content */}
       <div 
