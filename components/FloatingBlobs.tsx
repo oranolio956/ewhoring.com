@@ -15,17 +15,17 @@ export const FloatingBlobs: React.FC = () => {
            }}>
       </div>
 
-      {/* Floating Crosshairs - The "Sniper/Targeting" Aesthetic - Reduced on mobile for performance */}
-      {[...Array(typeof window !== 'undefined' && window.innerWidth < 768 ? 3 : 6)].map((_, i) => (
+      {/* Floating Crosshairs - Static on mobile, minimal animation on desktop */}
+      {[...Array(typeof window !== 'undefined' && window.innerWidth < 768 ? 2 : 4)].map((_, i) => (
         <div 
             key={i}
-            className="absolute w-4 h-4 flex items-center justify-center opacity-20"
+            className="absolute w-4 h-4 flex items-center justify-center opacity-15"
             style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animation: typeof window !== 'undefined' && window.innerWidth < 768 
-                  ? 'none' 
-                  : `float ${10 + Math.random() * 10}s linear infinite`
+                top: `${20 + i * 25}%`,
+                left: `${15 + i * 30}%`,
+                animation: typeof window !== 'undefined' && window.innerWidth >= 768 && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+                  ? `float ${15 + i * 2}s linear infinite`
+                  : 'none'
             }}
         >
             <div className="absolute w-full h-[1px] bg-[#1A2A3A]"></div>

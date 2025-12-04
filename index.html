@@ -673,11 +673,17 @@
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        0%, 100% { transform: translateY(0) translateZ(0); }
+        50% { transform: translateY(-8px) translateZ(0); }
       }
       .animate-float {
-        animation: float 6s ease-in-out infinite;
+        animation: float 8s ease-in-out infinite;
+      }
+      
+      @media (prefers-reduced-motion: reduce) {
+        .animate-float {
+          animation: none;
+        }
       }
       
       /* Glass Utility */
@@ -899,23 +905,45 @@
       @media (max-width: 767px) {
         /* Reduce backdrop blur on mobile */
         [class*="backdrop-blur"] {
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
         }
         
         /* Simplify shadows */
         [class*="shadow"] {
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
         }
         
         /* Reduce transform complexity */
-        [class*="transform"] {
+        [class*="transform"]:not([class*="translate"]):not([class*="scale"]) {
           transform: none !important;
         }
         
         /* Disable hover effects on touch devices */
         *:hover {
           transform: none !important;
+        }
+        
+        /* Reduce animation complexity */
+        [class*="animate-"] {
+          animation-duration: 0.3s !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+      
+      /* Performance: Reduce repaints - but not too aggressive */
+      [class*="animate-"], [class*="transition"] {
+        contain: layout style paint;
+      }
+      
+      /* Performance: Optimize scrolling */
+      html {
+        scroll-behavior: auto;
+      }
+      
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
         }
       }
       

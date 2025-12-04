@@ -17,7 +17,6 @@ import { WhySection } from './components/WhySection';
 import { TheSprint } from './components/TheSprint';
 import { RedditChat } from './components/RedditChat';
 import { ScamFooter } from './components/ScamFooter';
-import { SalesToast } from './components/SalesToast';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
 import { PunchMadeParody } from './components/PunchMadeParody';
@@ -28,19 +27,14 @@ import { OranolioSlam } from './components/OranolioSlam';
 import { ReceiptVault } from './components/ReceiptVault';
 import { PricingTerminal } from './components/PricingTerminal';
 import { SideEffects } from './components/SideEffects';
-import { HaterBlocker } from './components/HaterBlocker';
-import { ExitModal } from './components/ExitModal';
 import { CookieConsent } from './components/CookieConsent';
 import { AsSeenOn } from './components/AsSeenOn';
-import { ClickSparkle } from './components/ClickSparkle';
 import { SEOContent } from './components/SEOContent';
 import { KeywordTargets } from './components/KeywordTargets';
 import { CryptoPayment } from './components/CryptoPayment';
 import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 import { AuthorityStack } from './components/AuthorityStack';
 import { DrunkConfessionBanner } from './components/DrunkConfessionBanner';
-import { EasterEggs } from './components/EasterEggs';
-import { EasterEggStyles } from './components/SectionEasterEggs';
 import './src/utils/performanceMonitor';
 
 // Crypto Payment Modal Wrapper - uses the payment context
@@ -65,7 +59,6 @@ const App: React.FC = () => {
   const [visitorCount, setVisitorCount] = useState<string>("0");
   const [legalOpen, setLegalOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [copyToast, setCopyToast] = useState(false);
 
   useEffect(() => {
     let frameId: number;
@@ -92,15 +85,7 @@ const App: React.FC = () => {
     console.log('📊 Performance monitoring active');
   }, []);
 
-  // Handle Copy Protection Mock
-  useEffect(() => {
-    const handleCopy = () => {
-        setCopyToast(true);
-        setTimeout(() => setCopyToast(false), 3000);
-    };
-    document.addEventListener('copy', handleCopy);
-    return () => document.removeEventListener('copy', handleCopy);
-  }, []);
+  // Copy protection removed for better UX
 
   useEffect(() => {
     // Logic to generate a realistic, consistent "Weekly Unique Visitor" count
@@ -676,20 +661,10 @@ const App: React.FC = () => {
     <PaymentProvider>
       <div className="relative min-h-screen w-full max-w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white scroll-smooth" style={{ scrollBehavior: 'smooth' }} role="main" aria-label="Main content">
           
-          <EasterEggs />
-          <EasterEggStyles />
-          <HaterBlocker />
-          <ExitModal />
-          <SalesToast />
+          {/* Essential modals only */}
           <CookieConsent />
-          <ClickSparkle />
           <LegalModal isOpen={legalOpen} onClose={() => setLegalOpen(false)} />
           <CryptoPaymentModal />
-
-          {/* Copy Paste Mock Toast */}
-          <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[99999] bg-[#FF0000] text-white px-6 py-2 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl transition-all duration-300 ${copyToast ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}`}>
-             🚫 Don't steal the sauce. Write your own.
-          </div>
 
           {/* Inject Structured Data */}
           <script type="application/ld+json">

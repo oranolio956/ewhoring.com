@@ -19,10 +19,10 @@ export const AsSeenOn: React.FC = () => {
         </span>
       </div>
       
-      <div className="relative flex overflow-x-hidden group">
-        <div className="animate-marquee whitespace-nowrap flex gap-16 md:gap-32 px-16">
+      <div className="relative flex overflow-x-hidden group" style={{ touchAction: 'pan-x' }}>
+        <div className="animate-marquee whitespace-nowrap flex gap-16 md:gap-32 px-16" style={{ willChange: 'transform' }}>
           {[...BRANDS, ...BRANDS].map((brand, i) => (
-            <div key={i} className="flex items-center gap-2 opacity-30 hover:opacity-100 transition-opacity duration-300 cursor-help grayscale hover:grayscale-0">
+            <div key={i} className="flex items-center gap-2 opacity-30 grayscale flex-shrink-0">
                <span className="text-xl md:text-2xl font-black font-['Space_Grotesk'] uppercase tracking-tighter" style={{ color: brand.color }}>
                  {brand.name}
                </span>
@@ -30,9 +30,9 @@ export const AsSeenOn: React.FC = () => {
           ))}
         </div>
 
-        <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex gap-16 md:gap-32 px-16">
+        <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex gap-16 md:gap-32 px-16" style={{ willChange: 'transform' }}>
           {[...BRANDS, ...BRANDS].map((brand, i) => (
-            <div key={i} className="flex items-center gap-2 opacity-30 hover:opacity-100 transition-opacity duration-300 cursor-help grayscale hover:grayscale-0">
+            <div key={i} className="flex items-center gap-2 opacity-30 grayscale flex-shrink-0">
                <span className="text-xl md:text-2xl font-black font-['Space_Grotesk'] uppercase tracking-tighter" style={{ color: brand.color }}>
                  {brand.name}
                </span>
@@ -42,15 +42,26 @@ export const AsSeenOn: React.FC = () => {
       </div>
       
       <style>{`
-        .animate-marquee { animation: marquee 25s linear infinite; }
-        .animate-marquee2 { animation: marquee2 25s linear infinite; }
+        .animate-marquee { 
+          animation: marquee 30s linear infinite;
+          transform: translateZ(0);
+        }
+        .animate-marquee2 { 
+          animation: marquee2 30s linear infinite;
+          transform: translateZ(0);
+        }
         @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-100%); }
+          0% { transform: translateX(0%) translateZ(0); }
+          100% { transform: translateX(-50%) translateZ(0); }
         }
         @keyframes marquee2 {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(0%); }
+          0% { transform: translateX(50%) translateZ(0); }
+          100% { transform: translateX(0%) translateZ(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-marquee, .animate-marquee2 {
+            animation: none;
+          }
         }
       `}</style>
     </section>
