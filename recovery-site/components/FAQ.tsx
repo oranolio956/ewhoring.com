@@ -39,53 +39,94 @@ export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-[#666]">
+    <section id="faq" className="relative py-32 bg-white overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-[#00D9C0]/5 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#FF5757]/5 to-transparent rounded-full blur-3xl"></div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Editorial Header */}
+        <div className="mb-20">
+          <div className="inline-block mb-6">
+            <span className="text-xs font-bold text-[#00D9C0] uppercase tracking-[0.2em]">FAQ</span>
+          </div>
+          <h2 className="text-headline font-black text-[#0A1A2E] mb-6 leading-none">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-subheadline text-[#4A4A4A] font-light">
             Common questions from scam victims
           </p>
         </div>
 
-        <div className="space-y-4">
+        {/* Editorial FAQ Layout */}
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`border-2 rounded-2xl overflow-hidden transition-all ${
+              className={`group relative rounded-2xl overflow-hidden transition-all border-2 ${
                 openIndex === index
-                  ? 'border-[#4ECDC4] shadow-elegant'
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'border-[#00D9C0] shadow-layered bg-white'
+                  : 'border-[#E8E8E8] hover:border-[#00D9C0]/50 bg-white'
               }`}
             >
+              {/* Left Border Accent */}
+              <div className={`absolute left-0 top-0 bottom-0 w-1 transition-all ${
+                openIndex === index 
+                  ? 'bg-gradient-to-b from-[#00D9C0] to-[#FF5757]' 
+                  : 'bg-[#E8E8E8] group-hover:bg-[#00D9C0]'
+              }`}></div>
+
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#FAFAFA] transition-colors group/btn"
               >
-                <span className="font-semibold text-[#0A2540] pr-8">{faq.question}</span>
-                <span className={`text-2xl text-[#4ECDC4] transition-transform flex-shrink-0 ${
-                  openIndex === index ? 'rotate-180' : ''
+                <div className="flex items-start gap-4 flex-1">
+                  <span className="text-2xl font-black text-[#0A1A2E]/20 group-hover/btn:text-[#00D9C0] transition-colors flex-shrink-0 mt-1">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-semibold text-lg text-[#0A1A2E] pr-8 leading-relaxed">
+                    {faq.question}
+                  </span>
+                </div>
+                <span className={`text-2xl text-[#00D9C0] transition-all flex-shrink-0 ${
+                  openIndex === index ? 'rotate-180' : 'group-hover/btn:translate-x-1'
                 }`}>
                   ▼
                 </span>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-5 pt-0">
-                  <p className="text-[#666] leading-relaxed">{faq.answer}</p>
+                <div className="px-8 pb-8 pt-0 ml-12">
+                  <div className="pl-6 border-l-2 border-[#00D9C0]/30">
+                    <p className="text-base text-[#4A4A4A] leading-relaxed font-light">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               )}
             </div>
           ))}
         </div>
 
-        <div className="mt-12 bg-[#0A2540] rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
-          <p className="text-gray-300 mb-6">
-            Our certified specialists are standing by to answer your questions (for $299).
-          </p>
-          <button className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-elegant transition-all hover:scale-105">
-            Contact Support
-          </button>
+        {/* CTA Section */}
+        <div className="mt-16 relative">
+          <div className="bg-gradient-to-br from-[#0A1A2E] to-[#1A2A4E] rounded-3xl p-12 text-white overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                backgroundSize: '30px 30px',
+              }}></div>
+            </div>
+            <div className="relative z-10 text-center space-y-6 max-w-2xl mx-auto">
+              <h3 className="text-3xl lg:text-4xl font-black mb-4">Still Have Questions?</h3>
+              <p className="text-lg text-white/70 font-light leading-relaxed">
+                Our certified specialists are standing by to answer your questions (for $299).
+              </p>
+              <button className="group/btn relative bg-gradient-to-r from-[#FF5757] to-[#FF8A8A] text-white px-10 py-4 rounded-full font-semibold text-base hover:shadow-layered transition-all hover:scale-105 overflow-hidden mt-6">
+                <span className="relative z-10">Contact Support</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A8A] to-[#FF5757] opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

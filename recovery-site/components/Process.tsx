@@ -35,56 +35,94 @@ const steps = [
 
 export const Process: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">Our Recovery Process</h2>
-          <p className="text-xl text-[#666]">
+    <section className="relative py-32 bg-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(45deg, #0A1A2E 1px, transparent 1px), linear-gradient(-45deg, #0A1A2E 1px, transparent 1px)`,
+          backgroundSize: '40px 40px',
+        }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Editorial Header */}
+        <div className="mb-20 max-w-3xl">
+          <div className="inline-block mb-6">
+            <span className="text-xs font-bold text-[#00D9C0] uppercase tracking-[0.2em]">The Process</span>
+          </div>
+          <h2 className="text-headline font-black text-[#0A1A2E] mb-6 leading-none">
+            Our Recovery Process
+          </h2>
+          <p className="text-subheadline text-[#4A4A4A] font-light">
             A professional 5-step process to help you understand what happened
           </p>
         </div>
 
+        {/* Editorial Timeline Layout */}
         <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#4ECDC4] to-[#FF6B6B] transform -translate-x-1/2"></div>
+          {/* Vertical Timeline Line - More Sophisticated */}
+          <div className="hidden lg:block absolute left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00D9C0] via-[#FFD93D] to-[#FF5757]"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-16">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                className="relative flex items-start gap-8 lg:gap-12 group"
               >
-                {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <div className="inline-block bg-gradient-to-br from-[#FF6B6B] to-[#FF8E8E] text-white text-sm font-bold px-3 py-1 rounded-full mb-3">
-                    Step {step.number}
+                {/* Timeline Dot */}
+                <div className="hidden lg:block absolute left-8 top-6 w-8 h-8 bg-white rounded-full border-4 border-[#00D9C0] shadow-layered z-10 group-hover:scale-125 transition-transform">
+                  <div className="absolute inset-0 bg-[#00D9C0] rounded-full animate-pulse-slow opacity-20"></div>
+                </div>
+
+                {/* Step Number - Editorial Style */}
+                <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-[#0A1A2E] to-[#1A2A4E] rounded-2xl flex items-center justify-center shadow-layered group-hover:scale-110 transition-transform">
+                  <span className="text-3xl lg:text-4xl font-black text-white">{step.number}</span>
+                </div>
+
+                {/* Content - Editorial Layout */}
+                <div className="flex-1 space-y-4 pt-2">
+                  <div>
+                    <h3 className="text-3xl lg:text-4xl font-black text-[#0A1A2E] mb-4 leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-lg text-[#4A4A4A] font-light leading-relaxed max-w-2xl">
+                      {step.description}
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0A2540] mb-3">{step.title}</h3>
-                  <p className="text-[#666] leading-relaxed">{step.description}</p>
-                </div>
 
-                {/* Icon Circle */}
-                <div className="relative z-10 w-24 h-24 bg-white rounded-full shadow-elegant flex items-center justify-center border-4 border-[#4ECDC4]">
-                  <span className="text-4xl">{step.icon}</span>
+                  {/* Icon Badge */}
+                  <div className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00D9C0]/10 to-[#FF5757]/10 rounded-full px-4 py-2 border border-[#00D9C0]/20">
+                    <span className="text-2xl">{step.icon}</span>
+                    <span className="text-sm font-semibold text-[#0A1A2E]">Step {index + 1}</span>
+                  </div>
                 </div>
-
-                {/* Spacer */}
-                <div className="flex-1"></div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-16 bg-[#0A2540] rounded-3xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Start Your Recovery?</h3>
-          <p className="text-gray-300 mb-6">
-            Remember: We can help you feel better, but we cannot recover your money.
-          </p>
-          <button className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-elegant transition-all hover:scale-105">
-            Book Your $299 Consultation
-          </button>
+        {/* CTA Section - Editorial Style */}
+        <div className="mt-20 relative">
+          <div className="bg-gradient-to-br from-[#0A1A2E] to-[#1A2A4E] rounded-3xl p-12 lg:p-16 text-white overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                backgroundSize: '30px 30px',
+              }}></div>
+            </div>
+
+            <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+              <h3 className="text-4xl lg:text-5xl font-black mb-4 leading-tight">Ready to Start Your Recovery?</h3>
+              <p className="text-xl text-white/70 font-light leading-relaxed">
+                Remember: We can help you feel better, but we cannot recover your money.
+              </p>
+              <button className="group/btn relative bg-gradient-to-r from-[#FF5757] to-[#FF8A8A] text-white px-10 py-5 rounded-full font-semibold text-lg hover:shadow-layered transition-all hover:scale-105 overflow-hidden mt-8">
+                <span className="relative z-10">Book Your $299 Consultation</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A8A] to-[#FF5757] opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

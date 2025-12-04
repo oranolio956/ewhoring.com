@@ -13,38 +13,48 @@ export const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-[#E8E8E8]' 
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#FF6B6B] to-[#4ECDC4] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">🛡️</span>
+        <div className="flex items-center justify-between h-24">
+          {/* Logo - More Sophisticated */}
+          <a href="#" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#FF5757] to-[#00D9C0] rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-layered transition-all group-hover:scale-105">
+                <span className="text-white font-bold text-xl">🛡️</span>
+              </div>
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#FFD93D] rounded-full border-2 border-white animate-pulse-slow"></div>
             </div>
             <div>
-              <div className="text-lg font-bold text-[#0A2540]">ScamVictimRecovery</div>
-              <div className="text-[10px] text-[#666] uppercase tracking-wider">Certified Specialists</div>
+              <div className="text-lg font-black text-[#0A1A2E] tracking-tight">ScamVictimRecovery</div>
+              <div className="text-[9px] text-[#8A8A8A] uppercase tracking-[0.15em] font-semibold">Certified Specialists</div>
             </div>
-          </div>
+          </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-[#0A2540] hover:text-[#FF6B6B] transition-colors font-medium">
+          {/* Desktop Navigation - More Sophisticated */}
+          <nav className="hidden md:flex items-center space-x-1">
+            <a href="#services" className="px-4 py-2 text-[#0A1A2E] hover:text-[#FF5757] transition-colors font-medium text-sm relative group">
               Services
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#FF5757] to-[#00D9C0] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
             </a>
-            <a href="#testimonials" className="text-[#0A2540] hover:text-[#FF6B6B] transition-colors font-medium">
-              Success Stories
+            <a href="#testimonials" className="px-4 py-2 text-[#0A1A2E] hover:text-[#FF5757] transition-colors font-medium text-sm relative group">
+              Stories
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#FF5757] to-[#00D9C0] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
             </a>
-            <a href="#pricing" className="text-[#0A2540] hover:text-[#FF6B6B] transition-colors font-medium">
+            <a href="#pricing" className="px-4 py-2 text-[#0A1A2E] hover:text-[#FF5757] transition-colors font-medium text-sm relative group">
               Pricing
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#FF5757] to-[#00D9C0] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
             </a>
-            <a href="#faq" className="text-[#0A2540] hover:text-[#FF6B6B] transition-colors font-medium">
+            <a href="#faq" className="px-4 py-2 text-[#0A1A2E] hover:text-[#FF5757] transition-colors font-medium text-sm relative group">
               FAQ
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#FF5757] to-[#00D9C0] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
             </a>
-            <button className="bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105">
-              Start Recovery
+            <button className="ml-4 group/btn relative bg-gradient-to-r from-[#FF5757] to-[#FF8A8A] text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:shadow-layered transition-all hover:scale-105 overflow-hidden">
+              <span className="relative z-10">Start Recovery</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF8A8A] to-[#FF5757] opacity-0 group-hover/btn:opacity-100 transition-opacity"></div>
             </button>
           </nav>
 
