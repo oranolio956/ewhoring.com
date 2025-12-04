@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Mascot } from './Mascot';
 import { usePayment } from '../contexts/PaymentContext';
+import { LongHoverEasterEgg, GlitchText } from './SectionEasterEggs';
 
 export const HeroSection: React.FC = () => {
   const { openPayment } = usePayment();
@@ -76,7 +77,10 @@ export const HeroSection: React.FC = () => {
         <div className="relative w-full animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_forwards] opacity-0 z-10 will-change-transform transform-gpu">
           {/* Main Headline - SEO Optimized H1 */}
           <h1 className="text-[clamp(2.25rem,12vw,10rem)] leading-[0.9] font-bold text-[#1A2A3A] tracking-tighter mix-blend-darken break-words w-full transition-colors duration-500 cursor-default select-none relative z-10 transform-gpu">
-            <span className="sr-only">Sugar Daddy Protocol - Target Wealthy Men - Complete Ewhoring Guide - </span>YOU'RE BROKE?
+            <span className="sr-only">Sugar Daddy Protocol - Target Wealthy Men - Complete Ewhoring Guide - </span>
+            <LongHoverEasterEgg secret="Fun fact: I was so drunk when I made this headline, I thought I was writing a thesis on economics">
+              YOU'RE BROKE?
+            </LongHoverEasterEgg>
           </h1>
 
           {/* Referrer Welcome Message */}
@@ -109,7 +113,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Second Headline */}
         <div className="text-[clamp(2.25rem,11vw,9rem)] leading-[0.9] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C8E] to-[#1A2A3A] tracking-tighter self-end text-right mt-4 md:mt-[1vw] relative z-20 animate-[fadeInUp_1.5s_cubic-bezier(0.19,1,0.22,1)_0.4s_forwards] opacity-0 drop-shadow-sm max-w-full hover:hue-rotate-15 transition-all duration-500 select-none transform-gpu will-change-transform">
-          NOW YOU'RE WEALTHY.
+          <GlitchText>NOW YOU'RE WEALTHY.</GlitchText>
         </div>
       </div>
 

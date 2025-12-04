@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { usePayment } from '../contexts/PaymentContext';
+import { TripleClickEasterEgg, LongHoverEasterEgg } from './SectionEasterEggs';
 
 export const PricingTerminal: React.FC = () => {
   const { openPayment } = usePayment();
@@ -16,9 +17,11 @@ export const PricingTerminal: React.FC = () => {
       <div className="max-w-5xl mx-auto relative z-10 w-full">
         
         <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4 drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
-                DEPLOY <span className="text-[#00FF00]">THE GRIFT</span>
-            </h2>
+            <TripleClickEasterEgg message="💸 I genuinely can't believe people are actually reading this far. Respect.">
+              <h2 className="text-4xl md:text-6xl font-bold text-white font-['Space_Grotesk'] tracking-tighter mb-4 drop-shadow-[0_0_5px_rgba(0,255,0,0.5)]">
+                  DEPLOY <span className="text-[#00FF00]">THE GRIFT</span>
+              </h2>
+            </TripleClickEasterEgg>
             <p className="text-[#00FF00]/60 uppercase tracking-widest text-xs">
                 Target: Global Male Population • Protocol: ACTIVE
             </p>
@@ -55,12 +58,14 @@ export const PricingTerminal: React.FC = () => {
                             <span className="text-white font-bold text-xl">TOTAL ACCESS:</span>
                             <span className="text-4xl md:text-5xl font-bold text-[#00FF00]">$150</span>
                         </div>
-                        <button
-                            onClick={openPayment}
-                            className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00] cursor-pointer"
-                        >
-                            BUY THE DAMN THING
-                        </button>
+                        <LongHoverEasterEgg secret="Pro tip: This is literally just a satirical website. But the Telegram is real tho 👀">
+                          <button
+                              onClick={openPayment}
+                              className="w-full bg-[#00FF00] text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors animate-pulse hover:animate-none text-sm md:text-base shadow-[0_0_20px_#00FF00] cursor-pointer"
+                          >
+                              BUY THE DAMN THING
+                          </button>
+                        </LongHoverEasterEgg>
                         <p className="text-[10px] mt-4 text-center opacity-50">
                             *By clicking execute, you certify that you know how to be a piece of shit. No refunds for incompetence.
                         </p>

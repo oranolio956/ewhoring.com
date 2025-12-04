@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { usePayment } from '../contexts/PaymentContext';
+import { ShakeOnHover, GlitchText } from './SectionEasterEggs';
 
 const reviews = [
   {
@@ -41,8 +42,10 @@ export const Testimonials: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="mb-12 md:mb-16">
           <h2 className="text-4xl md:text-7xl font-bold text-[#1A2A3A] tracking-tighter mb-4">
-            THEY FOUND WEALTH <br/>
-            <span className="text-[#FF8A75] italic font-serif">(NOT DIGNITY)</span>
+            <ShakeOnHover>
+              THEY FOUND WEALTH <br/>
+              <span className="text-[#FF8A75] italic font-serif"><GlitchText>(NOT DIGNITY)</GlitchText></span>
+            </ShakeOnHover>
           </h2>
             <p className="text-lg text-[#1A2A3A]/60 max-w-2xl">
               Real wealth. Real results. Strategic targeting. <br/>

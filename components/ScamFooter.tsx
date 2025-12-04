@@ -2,6 +2,7 @@
 import React from 'react';
 import { Mascot } from './Mascot';
 import { usePayment } from '../contexts/PaymentContext';
+import { TripleClickEasterEgg, TypingReveal } from './SectionEasterEggs';
 
 export const ScamFooter: React.FC = () => {
   const { openPayment } = usePayment();
@@ -24,9 +25,11 @@ export const ScamFooter: React.FC = () => {
            </div>
         </div>
 
-        <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help">
-          IS THIS LEGAL?
-        </h2>
+        <TripleClickEasterEgg message="👨‍⚖️ Plot twist: My lawyer is actually a drunk AI assistant from 2025">
+          <h2 className="text-4xl md:text-7xl font-bold font-['Space_Grotesk'] tracking-tighter mb-8 text-[#FDFBF7] hover:text-[#FF8A75] transition-colors cursor-help">
+            IS THIS LEGAL?
+          </h2>
+        </TripleClickEasterEgg>
 
         <div className={`transition-all duration-500`}>
             <div className="prose text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto space-y-6 text-[#FDFBF7]/80">
@@ -99,7 +102,7 @@ export const ScamFooter: React.FC = () => {
 
                 {/* Legal Links */}
                 <div className="mt-12 text-center text-[10px] text-[#FDFBF7]/40 font-mono">
-                    <p>This is educational content. Use at your own risk.</p>
+                    <p>This is <TypingReveal trigger="educational content" hiddenText="totally satirical drunk rambling that somehow became a real website with actual crypto addresses and I'm still wondering how we got here" />. Use at your own risk.</p>
                     <div className="mt-2 flex justify-center gap-4">
                         <a href="/privacy.html" className="underline hover:text-[#2D9C8E]">Privacy</a>
                         <a href="/terms.html" className="underline hover:text-[#2D9C8E]">Terms</a>

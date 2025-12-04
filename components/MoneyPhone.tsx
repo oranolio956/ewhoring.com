@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mascot } from './Mascot';
 import { usePayment } from '../contexts/PaymentContext';
+import { LongHoverEasterEgg } from './SectionEasterEggs';
 
 interface Transaction {
   id: number;
@@ -149,10 +150,12 @@ export const MoneyPhone: React.FC = () => {
         
         {/* Left: Text & Mascot Reaction */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10 order-2 lg:order-1 w-full lg:w-1/2 px-4">
-          <h2 className="text-4xl md:text-6xl font-bold text-[#1A2A3A] mb-6">
-            TARGET <br/>
-            <span className="text-gradient-rich">SUGAR DADDIES</span>
-          </h2>
+          <LongHoverEasterEgg secret="These fake transactions are more realistic than most OnlyFans earnings screenshots">
+            <h2 className="text-4xl md:text-6xl font-bold text-[#1A2A3A] mb-6">
+              TARGET <br/>
+              <span className="text-gradient-rich">SUGAR DADDIES</span>
+            </h2>
+          </LongHoverEasterEgg>
           <p className="text-lg md:text-xl text-[#1A2A3A]/60 mb-8 max-w-md mx-auto lg:mx-0">
             They think they are texting a 22-year-old model. <br/>
             They are actually texting <span className="font-bold text-[#1A2A3A]">YOU</span> (a 30-year-old man in sweatpants). <br/>

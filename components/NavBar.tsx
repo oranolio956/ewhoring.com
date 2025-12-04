@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { usePayment } from '../contexts/PaymentContext';
+import { TripleClickEasterEgg } from './SectionEasterEggs';
 
 export const NavBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,9 +44,11 @@ export const NavBar: React.FC = () => {
                 className="block shrink-0 relative z-50 mr-4"
                 aria-label="Oranolio Homepage"
             >
-                <span className="font-['Space_Grotesk'] font-bold text-[#1A2A3A] text-base md:text-xl tracking-tighter hover:italic cursor-pointer transition-all select-none whitespace-nowrap">
-                ORANOLIO ©
-                </span>
+                <TripleClickEasterEgg message="💀 You found the secret! This domain cost $3k drunk. Send help.">
+                  <span className="font-['Space_Grotesk'] font-bold text-[#1A2A3A] text-base md:text-xl tracking-tighter hover:italic cursor-pointer transition-all select-none whitespace-nowrap">
+                  ORANOLIO ©
+                  </span>
+                </TripleClickEasterEgg>
             </a>
 
             {/* Actions Container */}

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { ShakeOnHover, TypingReveal } from './SectionEasterEggs';
 
 // SEO-Optimized FAQs targeting People Also Ask (PAA) queries
 export const faqs = [
@@ -303,12 +304,14 @@ export const FAQ: React.FC = () => {
     <section id="faq" className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 md:px-12 bg-[#1A2A3A] text-[#FDFBF7]">
       <div className="max-w-4xl mx-auto w-full">
         <div className="mb-8 md:mb-12 text-center">
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 font-['Space_Grotesk'] leading-none">
-              QUESTIONS FROM <br/>
-              <span className="text-[#FF8A75]">LAZY PEOPLE</span>
-            </h2>
+            <ShakeOnHover>
+              <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 font-['Space_Grotesk'] leading-none">
+                QUESTIONS FROM <br/>
+                <span className="text-[#FF8A75]">LAZY PEOPLE</span>
+              </h2>
+            </ShakeOnHover>
             <p className="text-[#FDFBF7]/50 uppercase tracking-widest text-[10px] md:text-xs font-bold mt-4">
-                (Read this so you don't ask me stupid things)
+                (<TypingReveal trigger="Read this" hiddenText="Seriously I wrote all this drunk at 3am and I'm still amazed it makes sense" /> so you don't ask me stupid things)
             </p>
         </div>
 

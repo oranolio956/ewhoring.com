@@ -39,6 +39,8 @@ import { CryptoPayment } from './components/CryptoPayment';
 import { PaymentProvider, usePayment } from './contexts/PaymentContext';
 import { AuthorityStack } from './components/AuthorityStack';
 import { DrunkConfessionBanner } from './components/DrunkConfessionBanner';
+import { EasterEggs } from './components/EasterEggs';
+import { EasterEggStyles } from './components/SectionEasterEggs';
 import './src/utils/performanceMonitor';
 
 // Crypto Payment Modal Wrapper - uses the payment context
@@ -674,6 +676,8 @@ const App: React.FC = () => {
     <PaymentProvider>
       <div className="relative min-h-screen w-full overflow-x-hidden selection:bg-[#2D9C8E] selection:text-white scroll-smooth" style={{ scrollBehavior: 'smooth' }}>
           
+          <EasterEggs />
+          <EasterEggStyles />
           <HaterBlocker />
           <ExitModal />
           <SalesToast />

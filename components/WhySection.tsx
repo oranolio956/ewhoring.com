@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { usePayment } from '../contexts/PaymentContext';
+import { TripleClickEasterEgg, ShakeOnHover } from './SectionEasterEggs';
 
 export const WhySection: React.FC = () => {
   const { openPayment } = usePayment();
@@ -21,10 +22,12 @@ export const WhySection: React.FC = () => {
                 <div className="inline-block bg-[#FF8A75] text-[#1A2A3A] text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
                     The Philosophy
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95]">
-                    WHY SUGAR DADDIES <br/>
-                    ARE THE REAL MONEY?
-                </h2>
+                <TripleClickEasterEgg message="🤑 The real secret? I spent 3 years perfecting this and now I'm selling it for $150. That's the real scam.">
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.95]">
+                      WHY SUGAR DADDIES <br/>
+                      ARE THE REAL MONEY?
+                  </h2>
+                </TripleClickEasterEgg>
                 
                 <div className="space-y-6 text-lg md:text-xl text-[#FDFBF7]/80 leading-relaxed font-light">
                     <p>
@@ -50,15 +53,16 @@ export const WhySection: React.FC = () => {
 
             {/* Right: The Filter (No Kids) - Container Constraints added */}
             <div className="lg:col-span-5 px-4 md:px-0">
-                <div className="bg-[#FDFBF7] text-[#1A2A3A] p-8 md:p-10 rounded-3xl transform rotate-2 shadow-[10px_10px_0px_rgba(255,138,117,1)] md:shadow-[20px_20px_0px_rgba(255,138,117,1)] relative group hover:rotate-0 transition-transform duration-300 max-w-sm mx-auto">
-                    
-                    <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#FF8A75] rounded-full flex items-center justify-center text-3xl font-bold shadow-lg animate-bounce">
-                        ✋
-                    </div>
+                <ShakeOnHover>
+                  <div className="bg-[#FDFBF7] text-[#1A2A3A] p-8 md:p-10 rounded-3xl transform rotate-2 shadow-[10px_10px_0px_rgba(255,138,117,1)] md:shadow-[20px_20px_0px_rgba(255,138,117,1)] relative group hover:rotate-0 transition-transform duration-300 max-w-sm mx-auto">
+                      
+                      <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#FF8A75] rounded-full flex items-center justify-center text-3xl font-bold shadow-lg animate-bounce">
+                          ✋
+                      </div>
 
-                    <h3 className="text-2xl font-bold font-['Space_Grotesk'] mb-4 uppercase">
-                        Read This, Kid.
-                    </h3>
+                      <h3 className="text-2xl font-bold font-['Space_Grotesk'] mb-4 uppercase">
+                          Read This, Kid.
+                      </h3>
                     
                     <p className="text-sm md:text-base font-medium leading-relaxed mb-6">
                         If you are <span className="font-bold underline decoration-[#FF8A75]">16 years old</span> and you are planning to invite your other 16-year-old retard friends into a Discord call to giggle while you scam someone for $5...
@@ -74,7 +78,8 @@ export const WhySection: React.FC = () => {
                         I don't want your mom's credit card chargeback.
                     </p>
 
-                </div>
+                  </div>
+                </ShakeOnHover>
             </div>
 
             {/* Additional Payment CTA */}

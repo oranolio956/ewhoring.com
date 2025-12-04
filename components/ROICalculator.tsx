@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { LongHoverEasterEgg, GlitchText } from './SectionEasterEggs';
 
 export const ROICalculator: React.FC = () => {
   const [morals, setMorals] = useState(80); // 100 = Saint, 0 = Sociopath
@@ -35,8 +36,10 @@ export const ROICalculator: React.FC = () => {
                Financial Projections
              </div>
              <h2 className="text-4xl md:text-6xl font-bold text-[#1A2A3A] mb-6 leading-none">
-               CALCULATE YOUR <br/>
-               <span className="text-[#2D9C8E]">LACK OF DIGNITY</span>
+               <LongHoverEasterEgg secret="This calculator is 100% scientifically inaccurate but emotionally devastating">
+                 CALCULATE YOUR <br/>
+                 <span className="text-[#2D9C8E]"><GlitchText>LACK OF DIGNITY</GlitchText></span>
+               </LongHoverEasterEgg>
              </h2>
              <p className="text-lg text-[#1A2A3A]/70 mb-8 max-w-md">
                Most jobs pay you for your time. We pay you for your soul. 
