@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Mascot } from './Mascot';
 import { usePayment } from '../contexts/PaymentContext';
+import { AnimatedTherapist } from './AnimatedTherapist';
+import { AnimatedVictim } from './AnimatedVictim';
 
 export const HeroSection: React.FC = () => {
   const { openPayment } = usePayment();
@@ -108,9 +110,12 @@ export const HeroSection: React.FC = () => {
             </div>
           )}
 
-          {/* Mascot - Improved Mobile Positioning to prevent overlap/clutter on iPhone */}
-          <div className="absolute top-[-10%] right-[-20%] w-[40vw] h-[40vw] min-w-[clamp(80px,20vw,120px)] min-h-[clamp(80px,20vw,120px)] md:top-[-15%] md:right-[2%] md:w-[18vw] md:h-[18vw] lg:w-[20vw] lg:h-[20vw] opacity-40 md:opacity-80 z-0 pointer-events-none md:pointer-events-auto mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
-             <Mascot />
+          {/* Animated Characters - Subtly Making Fun */}
+          <div className="absolute top-[-5%] right-[-15%] w-[35vw] h-[35vw] min-w-[clamp(100px,25vw,150px)] min-h-[clamp(100px,25vw,150px)] md:top-[-10%] md:right-[5%] md:w-[15vw] md:h-[15vw] lg:w-[18vw] lg:h-[18vw] opacity-30 md:opacity-60 z-0 pointer-events-none mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
+             <AnimatedTherapist className="w-full h-full" />
+          </div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[30vw] h-[30vw] min-w-[clamp(80px,20vw,120px)] min-h-[clamp(80px,20vw,120px)] md:bottom-[-5%] md:left-[2%] md:w-[12vw] md:h-[12vw] lg:w-[15vw] lg:h-[15vw] opacity-20 md:opacity-40 z-0 pointer-events-none mix-blend-multiply transform-gpu" style={{ transform: 'translate3d(0,0,0)' }}>
+             <AnimatedVictim className="w-full h-full" />
           </div>
         </div>
         

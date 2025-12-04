@@ -19,6 +19,8 @@ import { RedditChat } from './components/RedditChat';
 import { ScamFooter } from './components/ScamFooter';
 import { SalesToast } from './components/SalesToast';
 import { UrgencyTimer } from './components/UrgencyTimer';
+import { RecoveryStats } from './components/RecoveryStats';
+import { CaseStudies } from './components/CaseStudies';
 import { LegalModal } from './components/LegalModal';
 import { FalseIdols } from './components/FalseIdols';
 import { PunchMadeParody } from './components/PunchMadeParody';
@@ -786,6 +788,8 @@ const App: React.FC = () => {
 
             {/* === SOCIAL PROOF REINFORCEMENT === */}
             <Testimonials />
+            <RecoveryStats />
+            <CaseStudies />
             <RedditChat />
 
             {/* === PROCESS EXPLANATION === */}
