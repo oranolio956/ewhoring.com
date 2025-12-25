@@ -237,3 +237,70 @@ body {
     50% { transform: scale(1.2); }
     100% { transform: scale(1); opacity: 1; }
 }
+
+/* Responsive Design */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .sidebar-right {
+        display: none;
+    }
+
+    .sidebar-left {
+        width: 200px;
+    }
+
+    .server-list {
+        width: 60px;
+    }
+
+    .server-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .sidebar-left, .sidebar-right {
+        display: none;
+    }
+
+    body {
+        font-size: 14px;
+        overflow: auto; /* Allow scrolling on mobile */
+    }
+
+    .discord-app {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .main-content {
+        flex: 1;
+        min-height: 100vh;
+    }
+
+    .chat-messages {
+        padding: 8px;
+    }
+
+    .chat-input {
+        padding: 0 8px;
+    }
+
+    .message {
+        margin-bottom: 12px;
+    }
+
+    .message-avatar {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
+}
