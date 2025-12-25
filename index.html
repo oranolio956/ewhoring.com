@@ -7,8 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="discord-container">
-        <div class="chat-interface">
+    <div class="discord-app">
+        <div class="left-sidebar">
+            <div class="server-list">
+                <div class="server-icon">🏠</div>
+                <div class="server-icon">💬</div>
+                <div class="server-icon">🎯</div>
+            </div>
+            <div class="channels">
+                <div class="channel-category">TEXT CHANNELS</div>
+                <div class="channel active"># general</div>
+                <div class="channel"># random</div>
+                <div class="channel"># announcements</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="chat-header">
+                <h2># general</h2>
+            </div>
             <div class="chat-messages">
                 <div class="message">
                     <span class="username">ShelfyXD:</span> Hey there! Looking for some easy money?
@@ -23,8 +39,15 @@
                     <span class="username">Anonymous:</span> Tell me more!
                 </div>
             </div>
-            <div id="scammer-freakout" class="freakout">
-                SCAMMER FREAKOUT!
+            <div class="chat-input">
+                <input type="text" placeholder="Message #general" />
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="user-list">
+                <div class="user">ShelfyXD (Online)</div>
+                <div class="user">Anonymous (Online)</div>
+                <div class="user">Bot (Bot)</div>
             </div>
         </div>
     </div>
